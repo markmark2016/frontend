@@ -1,0 +1,53 @@
+【设计原则】：
+1、依照RESTful风格设计，请求的是资源，url中不能有动词，只能有名词，且为复数。
+2、请求方法对应动作：
+	GET（SELECT）：从服务器取出资源（一项或多项）。
+	POST（CREATE）：在服务器新建一个资源。
+	PUT（UPDATE）：在服务器更新资源（客户端提供改变后的完整资源）。
+	PATCH（UPDATE）：在服务器更新资源（客户端提供改变的属性）。
+	DELETE（DELETE）：从服务器删除资源。
+3、API应该提供参数，过滤返回结果。例如：
+	?limit=10：指定返回记录的数量
+	?offset=10：指定返回记录的开始位置。
+	?page=2&per_page=100：指定第几页，以及每页的记录数。
+	?sortby=name&order=asc：指定返回结果按照哪个属性排序，以及排序顺序。
+	?animal_type_id=1：指定筛选条件
+4、返回数据格式：json
+	{	
+		"reselut":{
+			"status":"ok"
+			"msg":"成功",
+		},
+		"data":{
+		}
+	}
+
+【接口设计】
+1、接口域名（目前imark还没有申请独立域名，以下的域名‘imark.com’只是示例）
+http:api.imark.com
+
+2、接口版本
+http://api.imark.com/v1/
+
+3、小组相关接口
+	1）获取小组列表：http://api.imark.com/v1/groups
+	...
+
+4、用户相关接口
+	1）获取用户列表：http://api.imark.com/v1/users
+	...
+
+4、书籍相关接口
+	1）获取书籍列表：http://api.imark.com/v1/books
+	...
+	
+
+
+
+
+
+
+
+
+
+
