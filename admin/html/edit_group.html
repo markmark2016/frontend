@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+<title>iMark-管理系统</title>
+   	<meta charset="utf-8">
+	<link rel="stylesheet" href="../static/reset.css">
+    <link rel="stylesheet" href="../static/normalize.css">
+    <link rel="stylesheet" href="../static/am/css/amazeui.min.css">
+	<link rel="stylesheet" href="../static/style/admin-main.css">
+	
+	<script type="text/javascript" src="../static/am/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../static/am/js/amazeui.min.js"></script>
+</head>
+<body>
+	<?php include APP_PATH.'View/Admin/nav.php'; ?>
+	<div class="admin-content">
+		<form class="am-form form-horizontal" action="#" method="post" data-am-validator>
+		<div class="am-form-group">
+			<label class="control-label">小组名称</label>
+			<div class="col-sm-10">
+				<input type="hidden" name="group_id" value="<?=$group->id?>" >
+				<input type="text" class="form-control" name="name" placeholder="小组名称" value="李兴读书小组" required>
+			</div>
+		</div>
+		<div class="am-form-group">
+			<label for="recruit_annoncement" class="control-label">口号</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" name="recruit_annoncement" value="去追忆、去探索、去放飞，那美妙的童年秘密" placeholder="口号" required>
+			</div>
+  		</div>
+  		<div class="am-form-group">
+			<label for="recruit_annoncement" class="col-sm-2 control-label">开始日期(*活动一旦开始则无法修改)</label>
+			<div class="am-input-group am-datepicker-date" data-am-datepicker="{format: 'yyyy-mm-dd'}">
+			  <input type="text" class="am-form-field" placeholder="开始日期" name="start_date" value="2015-11-1" readonly>
+			  <span class="am-input-group-btn am-datepicker-add-on">
+			    <button class="am-btn am-btn-default" type="button"><span class="am-icon-calendar"></span></button>
+			  </span>
+			</div>
+  		</div>
+  		<div class="am-form-group">
+			<label for="recruit_annoncement" class="col-sm-2 control-label">小组简介</label>
+			<div class="col-sm-10">
+				<textarea class="form-control" rows="6" name="group_desc" placeholder="小组简介" required>杨林三小组</textarea>
+			</div>
+  		</div>
+  		<div class="am-form-group">
+			<label for="recruit_annoncement" class="control-label">小组管理员Email(登陆用)</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" name="group_leader_email" value="b@b.com" placeholder="Email" required>
+			</div>
+  		</div>
+  		<div class="am-form-group">
+			<label for="recruit_annoncement" class="control-label">小组管理员密码(登陆用, 留空则不修改，如果填写则覆盖原密码)</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" name="group_leader_password" placeholder="Password">
+			</div>
+  		</div>
+  		<div class="am-form-group am-form-icon">
+			<label for="book_id" class="col-sm-2 control-label">图书ID</label><br>
+			<input type="text" class="form-control" placeholder="图书id" name="book_id" required value="2" requried>
+   		</div>
+   		<div class="am-form-group am-form-icon">
+			<label for="creator_id" class="col-sm-2 control-label">用户ID</label><br>
+			<input type="text" class="form-control" placeholder="用户id" name="creator_id" required value="11" required>
+   		</div>
+   		<div class="am-form-group am-form-icon">
+			<label for="wechat_qrcode" class="col-sm-2 control-label">加入小组后显示的二维码</label><br>
+			<input type="text" class="form-control" placeholder="请填写二维码的对应文本，程序会自动生成二维码图案" name="wechat_qrcode" value="http://weixin.com/" required>
+   		</div>
+  		<div class="am-form-group">
+			<label for="mode" class="col-sm-2 control-label">新增成员方式</label>
+			<div class="col-sm-10">
+				<input type="radio" class="am-checkbox-inline" name="mode" value="no_limit" checked?>>&nbsp;<span>无限制加入</span>&nbsp;
+
+				<input type="radio" class="am-checkbox-inline" name="mode" value="no_new_user" ?>>&nbsp;<span>活动开始后不能再加入</span>&nbsp;
+			</div>
+  		</div>
+  		<div class="am-form-group">
+			<label for="mode" class="col-sm-2 control-label">小组状态</label>
+			<div class="col-sm-10">
+				<input type="radio" class="am-checkbox-inline" name="state" value="OPEN" checked?>>&nbsp;<span>开放状态</span>&nbsp;<br>
+				<input type="radio" class="am-checkbox-inline" name="state" value="CLOSE" ?>>&nbsp;<span>关闭状态 - 无法在列表页面中查看，并且不能访问</span>&nbsp;<br>
+				<input type="radio" class="am-checkbox-inline" name="state" value="END" ?>>&nbsp;<span>结束状态 - 可以在列表页面中查看，不再向成员推送打卡提醒消息</span>&nbsp;<br>
+			</div>
+  		</div>
+  		<button type="submit" class="am-btn am-btn-primary">保存</button>
+	</form>
+	</div>
+</body>
+</html>

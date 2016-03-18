@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+<title>iMark-管理系统</title>
+   	<meta charset="utf-8">
+	<link rel="stylesheet" href="../static/reset.css">
+    <link rel="stylesheet" href="../static/normalize.css">
+    <link rel="stylesheet" href="../static/am/css/amazeui.min.css">
+	<link rel="stylesheet" href="../static/style/admin-main.css">
+	
+	<script type="text/javascript" src="../static/am/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../static/am/js/amazeui.min.js"></script>
+</head>
+<body>
+	<header class="am-topbar">
+	<div class="am-collapse am-topbar-collapse" id="doc-topbar-collapse">
+    <ul class="am-nav am-nav-pills am-topbar-nav">
+      <li>
+      	<a href="user_list.html">用户列表</a>
+      </li>
+      <li>
+      	<a href="menu.html">微信菜单</a>
+      </li>
+      <li>
+      	<a href="apply_group_list.html">申请小组</a>
+      </li>
+      <li>
+      	<a href="book_list.html">图书列表</a>
+      </li>
+       <li>
+      	<a href="group_list.html">小组列表</a>
+      </li>
+    </ul>
+	</div>
+</header>
+	<div class="admin-content">
+		<form class="am-form form-horizontal" action="#" method="post" data-am-validator>
+			<div class="am-form-group">
+				<label class="control-label">图书名称</label>
+				<div class="col-sm-10">
+					<input type="hidden" name="book_id" value="12">
+					<input type="text" class="form-control" name="title" value="营销的本质" required>
+				</div>
+			</div>
+	  		<div class="am-form-group">
+				<label for="recruit_annoncement" class="col-sm-2 control-label">作者</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" name="author" value="包政"  required>
+				</div>
+	  		</div>
+	  		<div class="am-form-group">
+				<label for="recruit_annoncement" class="col-sm-2 control-label">图书图像URL</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" name="image"  value="http://ec4.images-amazon.com/images/I/41W3OhqtirL._SX309_BO1,204,203,200_.jpg" required>
+				</div>
+	  		</div>
+	  		<div class="am-form-group am-form-icon">
+				<label for="recruit_annoncement" class="col-sm-2 control-label">图书简介</label><br>
+				<textarea class="form-control" rows="6" name="summary">十年磨一剑，颠覆科特勒营销思想。从大量销售方式，到深度分销方式，未来属于社区商务方式……</textarea>
+	  		</div>
+	  		<button type="submit" class="am-btn am-btn-primary">保存</button>
+		</form>
+	</div>
+</body>
+</html>

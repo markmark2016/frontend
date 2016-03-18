@@ -1,0 +1,463 @@
+body {
+  font-size: 1.5rem;
+  font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+  color: black;
+  max-width: 640px;
+  margin: 0 auto;
+}
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6 {
+  margin: 0;
+  padding: 0;
+}
+body hr {
+  margin: 3px;
+  padding: 0;
+}
+body a {
+  color: #39A9CF;
+}
+body.main-panel {
+  background-color: #f1f1f1;
+}
+body.share-panel {
+  background-color: #E1F1FF;
+}
+body .user-pic img {
+  border-radius: 50%;
+}
+.group-list-panel .group {
+  margin: 5px 0 5px 0;
+  padding: 10px 0 10px 0;
+  background-color: white;
+}
+.group-list-panel .group .group-creator-pic img {
+  width: 100%;
+  height: auto;
+}
+.group-list-panel .group .group-info-item span {
+  color: #999;
+}
+.group-list-panel .group .group-book-info .group-book-info-item span {
+  color: #999;
+}
+.group-detail-panel .group {
+  margin: 5px 0 5px 0;
+  padding: 10px 0 10px 0;
+  background-color: white;
+}
+.group-detail-panel .group .group-creator-pic img {
+  width: 100%;
+  height: auto;
+}
+.group-detail-panel .group .group-info-item span {
+  color: #666;
+}
+.group-detail-panel .group .tips {
+  color: green;
+  text-align: center;
+}
+.group-detail-panel .group .group-declaration {
+  margin: 3px auto;
+}
+.group-detail-panel .group .group-declaration .group-declaration span {
+  color: #999;
+}
+.group-detail-panel .book {
+  background-color: white;
+  margin: 5px 0 0 0;
+  padding: 10px 0 10px 0;
+}
+.group-detail-panel .book .book-cover-pic {
+  text-align: center;
+}
+.group-detail-panel .book .book-cover-pic img {
+  width: 35%;
+  height: auto;
+}
+.group-detail-panel .book .book-name {
+  text-align: center;
+}
+.group-detail-panel .book .book-author {
+  text-align: center;
+}
+.group-detail-panel .book .book-description {
+  padding: 0 10px;
+}
+.group-detail-panel .more-remarks-link {
+	background-color:white;
+	text-align: center;
+}
+.group-detail-panel .book-remarks {
+  padding-top: 10px;
+  background-color: white;
+  padding-bottom: 40px;
+}
+.group-detail-panel .book-remarks .timeline {
+  text-align: center;
+  background-color: #eee;
+}
+.group-detail-panel .book-remarks .timeline a {
+	color: #333;
+}
+.group-detail-panel .book-remarks .remark-item {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.group-detail-panel .book-remarks .remark-item .remark-info .remark-content img {
+	width: 100%;
+}
+.group-detail-panel .book-remarks .remark-item .remark-user-pic {
+  padding: 0 5px;
+}
+.group-detail-panel .book-remarks .remark-item .remark-user-pic img {
+  width: 100%;
+  height: auto;
+}
+.group-detail-panel .book-remarks .remark-item .remark-time {
+  color: #999;
+  text-align: right;
+}
+.group-detail-panel .book-remarks .remark-item .remark-operation {
+	color: #39A9CF;
+}
+.group-detail-panel .group-operation {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  line-height: 40px;
+}
+.group-detail-panel .group-operation .add-group {
+  background-color: #E7E3A2;
+  text-align: center;
+}
+.group-detail-panel .group-operation .add-group a {
+  display: block;
+  font-size: 14px;
+  color: black;
+}
+.join-group-panel {
+	text-align: center;
+	margin: 10px 5px;
+}
+.remark-panel {
+	margin-bottom: 40px;
+}
+.remark-panel article {
+  background-color: white;
+  margin-top: 5px;
+}
+.remark-panel article .remark {
+  width: 90%;
+  margin: 0 auto;
+  padding-bottom: 1px;
+}
+.remark-panel article .remark .remark-content img {
+  width: 100%;
+  height: auto;
+}
+.remark-panel article .remark .remark-op {
+	line-height: 30px;
+	color: #39A9CF;
+}
+.remark-panel article .remark .remark-op a {
+}
+.remark-panel article .remark .remark-op .time {
+  color: #999;
+  text-align: center;
+}
+.remark-panel article h1,
+.remark-panel article .book-name {
+  text-align: center;
+}
+.remark-panel article .share-tips {
+  text-align: center;
+  color: green;
+  font-size: 14px;
+}
+.remark-panel .remark-comment {
+  background-color: white;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 14px;
+  padding-top: 10px;
+  padding-margin: 10px;
+}
+.remark-panel .remark-comment .remark-comment-user-pic img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.remark-panel .remark-comment .time {
+  color: #999;
+}
+.remark-panel .remark-comment-form {
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 40px;
+	background-color: #f1f1f1;
+	font-size: 2rem;
+}
+.remark-panel .remark-comment-form input {
+	border: none;
+	border-bottom: 1px solid #999;
+	background: none;
+	width: 100%;
+	height: 36px;
+}
+.remark-panel .remark-comment-form button {
+	border: none;
+	background: none;
+}
+
+.remark-list-panel {
+  padding-top: 10px;
+  background-color: white;
+
+}
+.remark-list-panel .am-btn-group {
+	background-color: white;
+	text-align: center;
+	margin: 5px auto;
+}
+.remark-list-panel .am-pagination {
+	background-color: white;
+	margin: 0;
+}
+.remark-list-panel .am-pagination a {
+	background-color: #39A9CF;
+	color: white;
+}
+.remark-list-panel .am-pagination a:hover {
+    background-color: #39A9CF;
+    color: white;
+}
+.remark-list-panel .group {
+  background-color:white;
+  text-align: center;
+}
+.remark-list-panel .timeline {
+  text-align: center;
+  background-color: #eee;
+}
+.remark-list-panel .timeline a {
+    color: #333;
+}
+.remark-list-panel .remark-item {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: white;
+}
+.remark-list-panel .remark-item .remark-info .remark-content img {
+    width: 100%;
+}
+.remark-list-panel .remark-item .remark-user-pic {
+  padding: 0 5px;
+}
+.remark-list-panel .remark-item .remark-user-pic img {
+  width: 100%;
+  height: auto;
+}
+.remark-list-panel .remark-item .remark-time {
+  color: #999;
+  text-align: right;
+}
+.remark-list-panel .remark-item .remark-operation {
+    color: #39A9CF;
+}
+
+.remark-record-panel .remark-record {
+  margin-top: 5px;
+  background-color: white;
+}
+.remark-record-panel .remark-record-list .record-item {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.remark-record-panel .record-item .user-pic img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+}
+.remark-record-panel .record-item .record-user-name {
+  line-height: 40px;
+  overflow: hidden;
+}
+.remark-record-panel .record-item .record-info {
+  line-height: 40px;
+  text-align: right;
+}
+.remark-record-panel .record-item .record-info img {
+	width: 16px;
+	height: auto;
+}
+.remark-record-panel .okay-active .record-info {
+  color: green;
+}
+.remark-record-panel .non-active .user-pic img {
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+  filter: grayscale(100%);
+  filter: gray;
+}
+.remark-record-panel .non-active .record-info {
+  color: #cc3333;
+}
+.remark-submit-list-panel .remark-submit-list .remark-submit-item {
+  background-color: white;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding-top: 10px;
+  padding-bottom: 0;
+}
+.remark-submit-list-panel .remark-submit-list .remark-submit-item h2,
+.remark-submit-list-panel .remark-submit-list .remark-submit-item .book-cover-pic,
+.remark-submit-list-panel .remark-submit-list .remark-submit-item .book-name,
+.remark-submit-list-panel .remark-submit-list .remark-submit-item .book-author,
+.remark-submit-list-panel .remark-submit-list .remark-submit-item .view-remarks {
+  text-align: center;
+}
+.remark-submit-list-panel .remark-submit-list .remark-submit-item .book-cover-pic {
+  margin: 10px 0;
+}
+.remark-submit-list-panel .remark-submit-list .remark-submit-item .book-cover-pic img {
+  width: 30%;
+  height: auto;
+}
+.remark-submit-list-panel .remark-submit-list .remark-submit-item .submit-state {
+  text-align: center;
+  height: 40px;
+  line-height: 40px;
+  color: white;
+}
+.remark-submit-list-panel .remark-submit-list .remark-submit-item .submit-state .non-active {
+  background-color: #CC3333;
+}
+.remark-submit-list-panel .remark-submit-list .remark-submit-item .submit-state .non-active a {
+  color: white;
+}
+.remark-submit-list-panel .remark-submit-list .remark-submit-item .submit-state .okay-active {
+  background-color: #86DF79;
+}
+.remark-submit-panel .remark-info {
+  background-color: white;
+  text-align: center;
+  margin-top: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.remark-submit-panel .remark-info input {
+	width: 50px;
+}
+.remark-submit-panel .remark-content {
+  background-color: white;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding-top: 10px;
+}
+.remark-submit-panel .remark-content textarea {
+  width: 100%;
+  height: 150px;
+  border: none;
+}
+.remark-submit-panel .remark-content button {
+  display: block;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  border: none;
+  background-color: #E7E3A2;
+}
+.remark-submit-panel .remark-content .take-photo {
+  margin: 5px 0;
+  text-align: center;
+}
+.remark-submit-panel .remark-content .take-photo img {
+  width: 50px;
+}
+.remark-submit-panel .remark-content .take-photo .photo-list img {
+    width: 50px;
+    height: 50px;
+    margin: 3px;
+    border: 1px solid #ccc;
+}
+.ranking-group-panel {
+	margin: 10px auto;
+	font-size: 2rem;
+}
+.ranking-group-panel .ranking-group-item {
+	background-color: white;
+	padding: 0 5px;
+	line-height: 45px;
+}
+.ranking-group-panel .ranking-group-item .mark {
+	color: #FF3333;
+}
+.ranking-user-panel {
+	margin: 10px auto;
+    font-size: 2rem;
+}
+.ranking-user-panel .ranking-user-item {
+	background-color: white;
+	padding: 0 5px;
+	line-height: 45px;
+}
+.ranking-user-panel .ranking-user-item div {
+	padding: 0;
+}
+.ranking-user-panel .ranking-user-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
+.ranking-user-panel .ranking-group-item .mark {
+    color: #FF3333;
+}
+
+/* remark_share 20151207 */
+.remark-share-section{
+position: relative;
+margin-top: 5px;
+}
+.remark-share-section ul li h4{
+  margin: 30px 0 0;
+  color: #999;
+}
+.remark-share-section ul li p{
+  margin: 5px 0;
+  color: #0e90d2;
+  font-size: 18px;
+}
+.remark-share-section .user_photo{
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  left: 50%;
+  margin-left: -20px;
+  top:-20px;
+}
+.user_photo img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.footer{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding-bottom: 10px;
+}
+.doc-qrcode{
+  display: none;
+}

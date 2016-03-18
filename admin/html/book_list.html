@@ -1,0 +1,148 @@
+<!doctype html>
+<html>
+<head>
+<title>iMark-管理系统</title>
+   	<meta charset="utf-8">
+	<link rel="stylesheet" href="../static/reset.css">
+    <link rel="stylesheet" href="../static/normalize.css">
+    <link rel="stylesheet" href="../static/am/css/amazeui.min.css">
+	<link rel="stylesheet" href="../static/style/admin-main.css">
+	
+	<script type="text/javascript" src="../static/am/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../static/am/js/amazeui.min.js"></script>
+</head>
+<body>
+	<header class="am-topbar">
+	<div class="am-collapse am-topbar-collapse" id="doc-topbar-collapse">
+    <ul class="am-nav am-nav-pills am-topbar-nav">
+      <li>
+      	<a href="user_list.html">用户列表</a>
+      </li>
+      <li>
+      	<a href="menu.html">微信菜单</a>
+      </li>
+      <li>
+      	<a href="apply_group_list.html">申请小组</a>
+      </li>
+      <li>
+      	<a href="book_list.html">图书列表</a>
+      </li>
+       <li>
+      	<a href="group_list.html">小组列表</a>
+      </li>
+    </ul>
+	</div>
+</header>
+	<div class="admin-content">
+		<a href="edit_book.html">Add New Book</a>
+		<hr>
+		<table class="am-table">
+			<thead>
+				<tr>
+					<td>#ID</td>
+					<td>Book Name</td>
+					<td>Author</td>
+					<td>Image</td>
+					<td>Summary</td>
+					<td>***</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>1</td>
+					<td>营销的本质</td>
+					<td>包政</td>
+					<td>
+						<img style="width:50px;height:auto;" src="http://ec4.images-amazon.com/images/I/41W3OhqtirL._SX309_BO1,204,203,200_.jpg">
+					</td>
+					<td>十年磨一剑，颠覆科特勒营销思想。从大量销售方式，到深度分销方式，未来属于社区商务方式……</td>
+					<td><a class="am-btn am-btn-primary" href="?c=Admin&amp;a=edit_book&amp;book_id=1">Edit</a></td>
+				</tr>
+							<tr>
+					<td>2</td>
+					<td>童年的秘密</td>
+					<td>玛丽亚·蒙台梭利 </td>
+					<td>
+						<img style="width:50px;height:auto;" src="http://img3.douban.com/lpic/s2673223.jpg">
+					</td>
+					<td>《童年的秘密》是蒙台梭利对幼儿之谜的探索和解答，记录了她在学前儿童方面的研究和教育工作，阐述了幼儿教育的原则和方法。在“导论”中，蒙台梭利指出：“儿童并不是一个只可以从外表观察的陌生人。更确切地说，童年构成了人生中最重要的一部分，因为一个人是在他的早期就形成的。”“为儿童的利益所作的孜孜不倦和真诚的努力将使我们能够发现人类的秘密，正如科学的调查研究能使我们洞察众多的自然秘密一样。”</td>
+					<td><a class="am-btn am-btn-primary" href="?c=Admin&amp;a=edit_book&amp;book_id=2">Edit</a></td>
+				</tr>
+							<tr>
+					<td>3</td>
+					<td>翻转课堂的可汗学院</td>
+					<td>萨尔曼·可汗（Salman Khan）</td>
+					<td>
+						<img style="width:50px;height:auto;" src="http://img4.douban.com/lpic/s27283266.jpg">
+					</td>
+					<td>和大家一起读，跟着可汗的视野和实践，去看看: 1. 传统教育的弊端；2. 真正的教育应该是什么样子；3. 技术如何让我们到达那里。这本书之前粗读过，现在和大家一起，读起来，拆了它！</td>
+					<td><a class="am-btn am-btn-primary" href="?c=Admin&amp;a=edit_book&amp;book_id=3">Edit</a></td>
+				</tr>
+							<tr>
+					<td>4</td>
+					<td>自由的基因</td>
+					<td>丹尼尔·汉南 </td>
+					<td>
+						<img style="width:50px;height:auto;" src="http://img4.douban.com/lpic/s28313137.jpg">
+					</td>
+					<td>本书讲述了自由的故事，解释了为什么自由与其说是“西方的”、毋宁说是“英国的”独特发明。它向我们揭示了欧亚大陆西端一角湿冷孤岛上的居民如何偶然间发现了国家是个人的公仆而非主人的观念。</td>
+					<td><a class="am-btn am-btn-primary" href="?c=Admin&amp;a=edit_book&amp;book_id=4">Edit</a></td>
+				</tr>
+							<tr>
+					<td>5</td>
+					<td>引爆点：如何引发流行</td>
+					<td>马尔科姆·格拉德威尔</td>
+					<td>
+						<img style="width:50px;height:auto;" src="http://ec4.images-amazon.com/images/I/41XObhMyu7L.jpg">
+					</td>
+					<td>《引爆点》，怪才格拉德威尔所著，他的思想可以抓住你的想象，他认为思想、行为、信息及产品常会像传染病毒暴发一样迅速传播。为什么有些观念和产品能突然流行呢，想一探究竟，一起来读书吧。</td>
+					<td><a class="am-btn am-btn-primary" href="?c=Admin&amp;a=edit_book&amp;book_id=5">Edit</a></td>
+				</tr>
+							<tr>
+					<td>6</td>
+					<td>影响力</td>
+					<td>罗伯特·B·西奥迪尼</td>
+					<td>
+						<img style="width:50px;height:auto;" src="http://ec4.images-amazon.com/images/I/A1cvH5kW5eL.jpg">
+					</td>
+					<td>这是一本集心理学、社会学、营销学、影响力、话术、骗术与防骗术为一体的书，我没骗你！读到很多地方，你会恍然大悟：嗖戴斯乃，原来我就是这么被影响（pian）的！不信？你可以读读看哦~</td>
+					<td><a class="am-btn am-btn-primary" href="?c=Admin&amp;a=edit_book&amp;book_id=6">Edit</a></td>
+				</tr>
+							<tr>
+					<td>7</td>
+					<td>注册会计师全国统一考试辅导教材</td>
+					<td>中国注册会计师协会</td>
+					<td>
+						<img style="width:50px;height:auto;" src="http://img3.douban.com/lpic/s28045542.jpg">
+					</td>
+					<td>2016CPA备考团，考试书籍包括《会计》《财务管理》《审计》《税法》《经济法》《战略与风险管理 》</td>
+					<td><a class="am-btn am-btn-primary" href="?c=Admin&amp;a=edit_book&amp;book_id=7">Edit</a></td>
+				</tr>
+							<tr>
+					<td>24</td>
+					<td>理性的非理性</td>
+					<td>郑毓煌 苏丹</td>
+					<td>
+						<img style="width:50px;height:auto;" src="http://img3.doubanio.com/lpic/s26859317.jpg">
+					</td>
+					<td>《理性的非理性》是什么让苹果的Mac在与微软的PC之争中反败为胜？星巴克咖啡如何风靡全世界？中国联通是怎么制定3G套餐？中国南方航空公司为什么会推出“高端经济舱”？淘宝的光棍节网购为什么会那么疯狂？在本书中，你会发现那些最优秀的企业、那些脱颖而出的品牌，无不把全部精力和时间投入到对“人”的了解上。传统经济学认为人都是理性的“经济人”，但现实生活中人们总是做出各种令人匪夷所思的“非理性”决策。这本书把心理学和经济运作规律完美结合，通过讲解10条行为经济学法则，从人的非理性出发，深入剖析潜伏在日常生活中的10大心理陷阱，从而透彻研究市场上人性行为的复杂性及其重要的商业运用。21世纪是变革的世纪，传统商业的盈利模式、生存模式受到互联网的严重冲击，行业的界限越来越模糊。在变化的世界里，永远不变的是人的行为，它们总是被共同的规律所引导着。只有看透人的非理性行为，才能洞悉商业和人性本质！在大变革时代，人们需要再造竞争力。这本书会告诉你，如何用非理性的积极力量，构筑现代商业竞争力！</td>
+					<td><a class="am-btn am-btn-primary" href="?c=Admin&amp;a=edit_book&amp;book_id=24">Edit</a></td>
+				</tr>
+			</tbody>
+		</table>
+		<ul data-am-widget="pagination" class="am-pagination am-pagination-select am-no-layout">
+			<li class="am-pagination-prev ">
+				<a href="#" class="">上一页</a>
+			</li>
+	        <li class="am-pagination-select">
+	          <select>
+	              <option value="#" class="">2 / 3</option>
+	          </select>
+	        </li>
+		    <li class="am-pagination-next ">
+	    		<a href="#" class="">下一页</a>
+		  	</li>
+		</ul>
+	</div>
+</body>
+</html>

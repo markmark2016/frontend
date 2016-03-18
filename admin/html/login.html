@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+   	<title>iMark-管理系统</title>
+   	<meta charset="utf-8">
+   	<link rel="stylesheet" href="../static/reset.css">
+    <link rel="stylesheet" href="../static/normalize.css">
+    <link rel="stylesheet" href="../static/am/css/amazeui.min.css">
+	
+	<script type="text/javascript" src="../static/am/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../static/am/js/amazeui.min.js"></script>
+    <script type="text/javascript" src="../static/lrz/lrz.bundle.js"></script>
+	
+	<style type="text/css">
+		form {
+			width: 600px;
+			margin: 10px auto;
+		}
+		form h1 {
+			color: red;
+		}
+	</style>
+</head>
+<body>
+	<form method="POST" action="#" class="am-form" data-am-validator>
+		<!-- 错误信息显示 -->
+		<h1>密码错误</h1> 
+  		<div class="am-form-group">
+    		<label for="user">用户名</label>
+    		<input type="text" name="user" class="form-control" id="user" placeholder="User Name" required>
+  		</div>
+		<div class="am-form-group">
+			<label for="password">密码</label>
+			<input type="password" name="password" class="form-control" id="password" placeholder="Password" required>
+		</div>
+		<button type="submit" class="am-btn am-btn-default">登录</button>
+</form>
+</body>
+</html>

@@ -1,0 +1,330 @@
+body {
+    font-size: 12px;
+    font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    color: black;
+    max-width: 640px;
+    margin: 0 auto;
+
+    h1,h2,h3,h4,h5,h6 {
+        margin: 0;
+        padding: 0;
+    }
+
+    hr {
+        margin: 3px;
+        padding: 0;
+    }
+
+    a {
+        color: #39A9CF;
+    }
+}
+
+@main-bg-color: #f1f1f1;
+@module-bg-color: white;
+@module-margin-top: 5px;
+@module-margin-bottom: 5px;
+@module-padding-top: 10px;
+@module-padding-bottom: 10px;
+
+body.main-panel { background-color: @main-bg-color; }
+
+body .user-pic {
+    img {
+        border-radius: 50%;
+    }
+}
+body .readable-text {
+    font-size: 14px;
+}
+
+.group-list-panel { 
+
+    .group {
+        margin: @module-margin-top 0 @module-margin-bottom 0;
+        padding: @module-padding-top 0 @module-padding-bottom 0;
+        background-color: white;
+    
+        .group-creator-pic {
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+        .group-info-item {
+            span {
+                color: #999;
+            }
+        }
+        .group-book-info {
+            .group-book-info-item {
+                span {
+                    color: #999;
+                }
+            }
+        }
+    }
+}
+
+.group-detail-panel {
+    .group {
+        margin: @module-margin-top 0 @module-margin-bottom 0;
+        padding: @module-padding-top 0 @module-padding-bottom 0;
+        background-color: white;
+
+        .group-creator-pic {
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+        .group-declaration {
+            margin: 3px auto;
+            width: 80%;
+            .group-declaration {
+                span {
+                    color: #999;
+                }
+            }
+        }
+    }
+    .book {
+        background-color: white;
+        margin: @module-margin-top 0 0 0;
+        padding: @module-padding-top 0 @module-padding-bottom 0;
+        
+        .book-cover-pic {
+            text-align: center;
+            img {
+                width: 35%;
+                height: auto;
+            }
+        }
+        .book-name {
+            text-align: center;
+        }
+        .book-author {
+            text-align: center;
+        }
+        .book-description {
+            padding: 0 10px;
+        }
+    }
+    .book-remarks { 
+        padding-top: 10px;
+        background-color: white;
+        padding-bottom: 40px;
+
+        .timeline {
+            text-align: center;
+            background-color: #FBF8CD;
+        }
+        .remark-item {
+            padding-top: 5px;
+            padding-bottom: 5px;
+
+            .remark-user-pic {
+                padding: 0 5px;
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+            .remark-info {
+                .remark-content {
+                     font-size: 14px;
+                }
+            }
+            .remark-time {
+                color: #999;
+            }
+        }
+    }
+    .group-operation {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 40px;
+        line-height: 40px;
+        
+        
+        .add-group {
+            background-color: #E7E3A2;
+            text-align: center;
+            a {
+                display: block;
+                font-size: 14px;
+                color: black;
+            }
+        }
+    }
+}
+
+.remark-panel {
+    article {
+        background-color: white;
+        margin-top: 5px;
+
+        .remark {
+            width: 90%;
+            margin: 0 auto;
+            
+            .time {
+                color: #999;
+                text-align: right;
+            }
+        }
+
+        h1, .book-name {
+            text-align: center;
+        }
+        .share-tips {
+            text-align: center;
+            color: #999;
+        }
+    }
+    .remark-comment {
+        background-color: white;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        font-size: 14px;
+        padding-top: 10px;
+        padding-margin: 10px;
+        
+        .remark-comment-user-pic {
+            img {
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+            }
+        }
+        .time {
+            font-size: 12px;
+            color: #999;
+        }
+    }
+}
+.remark-record-panel {
+    .remark-record {
+        margin-top: 5px;
+        background-color: white;
+    }
+    .date-operation {
+    }
+    .remark-record-list {
+        .record-item {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+    }
+    .record-item {
+        .user-pic {
+            img {
+                width: 100%;
+                height: auto;
+                border-radius: 50%;
+            }
+        }
+        .record-user-name {
+            font-size: 14px;
+            line-height: 30px;
+        }
+        .record-info {
+            line-height: 30px;
+        }
+        .non-active {
+            img {
+                -webkit-filter: grayscale(100%); 
+                -moz-filter: grayscale(100%); 
+                -ms-filter: grayscale(100%); 
+                -o-filter: grayscale(100%); 
+                filter: grayscale(100%); 
+                filter: gray; 
+            }
+        }
+        .record-info {
+            text-align: right;
+        }
+    }
+}
+.remark-submit-list-panel {
+    .remark-submit-list {
+        .remark-submit-item {
+            background-color: white;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        
+            h2, .book-cover-pic, .book-name, .book-author, .view-remarks{
+                text-align: center;
+            }
+            .book-cover-pic {
+                margin: 10px 0;
+                img {
+                    width: 30%;
+                    height: auto;
+                }
+            }
+            .submit-state {
+                text-align: center;
+                height: 30px;
+                line-height: 30px;
+                color: white;
+            }
+            .submit-state {
+                .non-active {
+                    background-color: #CC3333;
+
+                    a {
+                        color: white;
+                    }
+                }
+                .okay-active {
+                    background-color: #86DF79;
+                }
+            }
+        }
+    }
+}
+
+.remark-submit-panel {
+    .remark-info {
+        background-color: white;
+        text-align: center;
+        margin-top: 5px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .remark-content {
+        background-color: white;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        padding-top: 10px;
+        padding-top: 10px;
+    
+        textarea {
+            width: 100%;
+            height: 150px;
+            border: none;
+            font-size: 14px;
+        }
+        button {
+            display: block;
+            width: 100%;
+            height: 30px;
+            line-height: 30px;
+            border: none;
+            background-color: #E7E3A2;
+        }
+        .take-photo {
+            margin: 5px 0;
+            text-align: center;
+            img {
+                width: 50px;
+            }
+        }
+    }
+}
+
