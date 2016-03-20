@@ -4,10 +4,10 @@
 
 [References](https://github.com/creationix/nvm)
 
-### Install grunt & bower
+### Install gulp & bower
 ```
 nvm use node
-npm install --global bower grunt-cli
+npm install --global bower gulp
 ```
 
 ### Install dependences
@@ -23,21 +23,15 @@ bower install
 
 ```bash
 nvm use node
-grunt serve 
+gulp serve 
 ```
 
 ## Build
 
 ```bash
 nvm use node
-grunt build
+gulp develop
+gulp prod
 ```
-
-
-## fix
-npm install karma
-npm install grunt-karma
-npm install grunt-contrib-imagemin@1.0.0 --save-dev
-clean: options:{force:true},
 
 
