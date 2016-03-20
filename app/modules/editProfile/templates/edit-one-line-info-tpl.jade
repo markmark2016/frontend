@@ -1,0 +1,10 @@
+ion-view(view-title='{{ pageTitle }}')
+  ion-content
+    ion-list
+      ion-item.item-divider.custom-rewrite
+      |       
+      label.item.item-input
+        input(ng-model='infoField', type='text', placeholder='{{ placeholder }}')
+    |     
+    .padding
+      button.button.button-block.button-energized(ng-click='onSubmit(infoField)') &#x4FDD;&#x5B58;

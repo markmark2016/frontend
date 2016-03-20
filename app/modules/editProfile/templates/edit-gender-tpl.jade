@@ -1,0 +1,7 @@
+ion-view(view-title='性 别')
+  ion-content
+    ion-list
+      ion-item.item-divider.custom-rewrite
+      |       
+      ion-radio(ng-repeat='gender in genders', ng-model='user.gender', ng-value='gender.value', ng-change='onGenderChange(gender)')
+        | {{ gender.title }}

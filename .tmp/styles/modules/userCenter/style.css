@@ -1,0 +1,11 @@
+ion-content#user_center ion-list .list > ion-item:nth-child(1) .item-content {
+  padding-left: 92px;
+}
+
+ion-content#user_center ion-list .list > ion-item:nth-child(1) > a > img {
+  min-height: 60px;
+  min-width: 60px;
+}
+
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInN0eWxlLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLG1CQUFtQjtDQUNwQjs7QUFFRDtFQUNFLGlCQUFpQjtFQUNqQixnQkFBZ0I7Q0FDakIiLCJmaWxlIjoic3R5bGUuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW9uLWNvbnRlbnQjdXNlcl9jZW50ZXIgaW9uLWxpc3QgLmxpc3QgPiBpb24taXRlbTpudGgtY2hpbGQoMSkgLml0ZW0tY29udGVudCB7XG4gIHBhZGRpbmctbGVmdDogOTJweDtcbn1cblxuaW9uLWNvbnRlbnQjdXNlcl9jZW50ZXIgaW9uLWxpc3QgLmxpc3QgPiBpb24taXRlbTpudGgtY2hpbGQoMSkgPiBhID4gaW1nIHtcbiAgbWluLWhlaWdodDogNjBweDtcbiAgbWluLXdpZHRoOiA2MHB4O1xufVxuXG4iXX0= */

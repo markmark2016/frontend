@@ -1,0 +1,17 @@
+ion-view(view-title='{{ selectTypeTitle }}')
+  ion-content
+    ion-list
+      ion-item.item-divider.custom-rewrite
+      |       
+      .item-input-inset
+        label.item-input-wrapper
+          i.icon.ion-search.placeholder-icon
+          |           
+          input(type='text', ng-model='searchText', ng-change='onSearch(searchText)', placeholder='Search')
+      |       
+      ion-item.item-thumbnail-left(ng-repeat='book in searchResults', ng-click='onBookSelect(book)')
+        img(src='{{ book.img }}')
+        |         
+        h2 {{ book.title }}
+        |         
+        p {{ book.desc }}
