@@ -1,0 +1,14 @@
+用户相关接口：
+	1）点击 下侧 “我” 菜单的页面信息：http://api.imark.com/mark-backend/users/{openId}
+		方法：GET
+		RequireParamater:openId（这里指微信对于每个公众号的openId，可以改为自己数据库的user表主 键id）
+		返回json：{"status":1,"data":{"id":15,"nickName":"杨某某","headImage":"http://wx.qlogo.cn/mmopen/GC8GWzs2iaicQqhZHSndC2gsic8czBgk1zrylefXribgjhSiazicSnicABe2lbBSVbYXTO9umFpfjrsS5IdvOu2TbNy0w/0","intro":"用户的描述","totalGroup":"加入小组数","totalRemark":"累计书评","totalRead":"累计读书","punch":"连续打卡（这个还没有实现，回头确定一下到底怎么算联系）","leader":"这个字段在这里不用使用"}}
+		返回json中还没有排名和积分数据，确定下来规则，会记入
+	2)用户详细信息 ： http://api.imark.com/mark-backend/users//details/{openId}
+		方法：GET
+		RequireParamater:openId
+		返回json：{"status":1,"data":{"bookList":{"likeList":[{"id":1,"title":"白夜行","image":"lsjdflsadjf","type":"1"}],"wantList":[{"id":1,"title":"白夜行","image":"lsjdflsadjf","type":"2"}]},"user":{"id":15,"createTime":null,"updateTime":1458445442000,"userId":null,"openid":"oNMD9w2tMr4ZnSnBfhGTFQe7SsNY","nickname":"杨某某","gender":"1","interests":null,"intro":null,"city":"海淀","province":"北京","school":null,"occupation":null,"constellation":null,"affectiveStatus":null,"headImgUrl":"http://wx.qlogo.cn/mmopen/GC8GWzs2iaicQqhZHSndC2gsic8czBgk1zrylefXribgjhSiazicSnicABe2lbBSVbYXTO9umFpfjrsS5IdvOu2TbNy0w/0"}}}
+		booklist中的likelist为用户最喜欢的书，wantlist为最想看的书，user为下面的显示内容。
+	3）用户点击编辑资料后，在编辑页面：http://api.imark.com/mark-backend/users//details/{openId}
+		方法：PUT
+		RequireParamater:nickname(昵称)，gender（1 or 2），interests(兴趣领域)，intro（描述），city（城市），school（学校），occupation（职业），constellation（星座）,affectiveStatus（0 or 1 or 2,0单身，1恋爱，2已婚）

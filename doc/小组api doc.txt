@@ -1,21 +1,29 @@
 小组相关接口
 	1）获取小组列表：http://api.imark.com/mark-backend/groups 
-	方法：GET
-	返回Json：{"status":1,"data":[{"id":1,"groupImage":"lsjdflsadjf","groupName":"一号小组","bookName":"白夜行","author":null,"readSlogan":null,"groupDesc":"读书人的事儿","beginDate":null,"endDate":null,"frequency":null,"guarantee":null,"latestDate":null,"bookSummary":null}],"msg":"成功"}
+		方法：GET
+		返回Json：{"status":1,"data":[{"id":1,"groupImage":"lsjdflsadjf","groupName":"一号小组","bookName":"白夜行","author":null,"readSlogan":null,"groupDesc":"读书人的事儿","beginDate":null,"endDate":null,"frequency":null,"guarantee":null,"latestDate":null,"bookSummary":null}],"msg":"成功"}
 	2）查看指定小组：http://api.imark.com/mark-backend/groups/{groupId}
-	方法GET
-	返回json：{"status":1,"data":{"id":1,"groupImage":"lsjdflsadjf","groupName":"一号小组","bookName":"白夜行","author":"东野圭吾","readSlogan":"读好书","groupDesc":"读书人的事儿","beginDate":1458039500000,"endDate":1458730702000,"frequency":"一天1-此卡","guarantee":"100","latestDate":1458039518000,"bookSummary":"jianjie le "},"msg":"成功"}
+		方法GET
+		返回json：{"status":1,"data":{"id":1,"groupImage":"lsjdflsadjf","groupName":"一号小组","bookName":"白夜行","author":"东野圭吾","readSlogan":"读好书","groupDesc":"读书人的事儿","beginDate":1458039500000,"endDate":1458730702000,"frequency":"一天1-此卡","guarantee":"100","latestDate":1458039518000,"bookSummary":"jianjie le "},"msg":"成功"}
 	3）申请小组：http://api.imark.com/mark-backend/groups/apply
-	方法：POST 
-	RequireParamter:groupName,bookName,readSlogan(读书标语),groupDesc,captainName,captainBrief,captainEmail,captainWecode(微信号),captainPhone
+		方法：POST 
+		RequireParamter:groupName,bookName,readSlogan(读书标语),groupDesc,captainName,captainBrief,captainEmail,captainWecode(微信号),captainPhone
 	4)用户加入小组 ：http://api.imark.com/mark-backend/groups/join
-	方法：POST
-	RequireParamter：groupIdFk，userIdFk
-	5）用戶退出小組：http://api.imark.com/mark-backend/groups/join
-	方法：POST
-	RequireParamter：groupIdFk，userIdFk
+		方法：POST
+		RequireParamter：groupIdFk，userIdFk
+	5）用戶退出小組：http://api.imark.com/mark-backend/groups/quit
+		方法：PUT
+		RequireParamter：groupIdFk，userIdFk
 	6）小組內成員列表 ：http://api.imark.com/mark-backend/groups/{groupId}/users
-	方法：GET
-	放回JSon：{"groupId":1,"status":"1","data":[{"id":1,"nickName":"aa","headImage":"a","intro":null,"totalGroup":null,"totalRemark":null,"totalRead":null,"punch":null,"leader":true},{"id":2,"nickName":"ww","headImage":"a","intro":null,"totalGroup":null,"totalRemark":null,"totalRead":null,"punch":null,"leader":false}],"msg":"sucess"}
-	leader字段代表是否为本组的领读人
+		方法：GET
+		放回JSon：{"groupId":1,"status":"1","data":[{"id":1,"nickName":"aa","headImage":"a","intro":null,"totalGroup":null,"totalRemark":null,"totalRead":null,"punch":null,"leader":true},{"id":2,"nickName":"ww","headImage":"a","intro":null,"totalGroup":null,"totalRemark":null,"totalRead":null,"punch":null,"leader":false}],"msg":"sucess"}
+		leader字段代表是否为本组的领读人
+	7）社群列表：http://api.imark.com/mark-backend/associations
+		方法：GET
+		返回json：{"status":1,"data":[{"id":1,"associationName":"读书社群","associationDesc":"社群啊","image":"社群图片","groupList":null}],"msg":"成功"}
+	8）社群内信息：http://api.imark.com/mark-backend/associations/{associationId}
+		方法：GET
+		RequireParamter：associationId
+		返回Json：{"status":1,"data":{"id":1,"associationName":"读书社群","associationDesc":"社群啊","image":"adsfasdf","groupList":[{"id":1,"groupImage":"lsjdflsadjf","groupName":"一号小组","bookName":"白夜行","author":null,"readSlogan":null,"groupDesc":"读书人的事儿","beginDate":null,"endDate":null,"frequency":null,"guarantee":null,"latestDate":null,"bookSummary":null}]},"msg":"成功"}
+
 
