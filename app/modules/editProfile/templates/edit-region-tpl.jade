@@ -1,0 +1,7 @@
+ion-view(view-title='城 市')
+  ion-content
+    ion-list
+      ion-item.item-divider.custom-rewrite
+      |       
+      ion-radio(ng-repeat='region in regions', ng-model='user.region', ng-value='region.value', ng-change='onRegionChange(region)')
+        | {{ region.title }}

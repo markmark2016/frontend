@@ -1,0 +1,41 @@
+ion-view(view-title='{{ user.name }} - 个人主页')
+  ion-content#page
+    ion-list.personal-abstract
+      ion-item.item.no-border
+        .row
+          .col.col-33.col-offset-33
+            .avatar
+              img.circular(src='{{ user.avatar }}')
+        |         
+        h2.text-center {{ user.name }}
+        |         
+        .row
+          .col.col-70.col-offset-15
+            p.normal-p.text-center {{ user.slogan }}
+        |         
+        p.info.text-center
+          span(ng-if="user.gender=='male'") &male;
+          |           
+          span(ng-if="user.gender=='female'") &female;
+          |           
+          span(ng-if='user.region') {{ user.region }}
+          |           
+          span(ng-if='user.occupation') {{ user.occupation }}
+          |           
+          span(ng-if='user.college') {{ user.college }}
+      |       
+      ion-item.item.text-center.no-border
+        a.button.button-outline.button-calm.slim-button(href='#/tab/edit-profile')
+          | &#x7F16;&#x8F91;&#x4E2A;&#x4EBA;&#x8D44;&#x6599;
+      |       
+      ion-item.item.no-top-padding.no-bottom-padding
+        .button-bar.no-border-radius
+          a.button.button-clear.button-stable(ng-class="{'border-bottom-active button-energized': isActiveSection('myGroups')}", ng-click="selectSection('myGroups')") &#x5C0F;&#x7EC4;
+          |           
+          a.button.button-clear.button-stable(ng-class="{'border-bottom-active button-energized': isActiveSection('profile')}", ng-click="selectSection('profile')") &#x4E2A;&#x4EBA;&#x8D44;&#x6599;
+          |           
+          a.button.button-clear.button-stable(ng-class="{'border-bottom-active button-energized': isActiveSection('more')}", ng-click="selectSection('more')") &#x66F4;&#x591A;
+    |     
+    div(ng-show="isActiveSection('myGroups')", ng-include="'modules/myGroups/templates/group-selection-tpl.html'", ng-controller='MyGroupsMainCtrl')
+    |     
+    div(ng-show="isActiveSection('profile')", ng-include="'modules/profile/profile-tpl.html'", ng-controller='ProfileMainCtrl')

@@ -1,0 +1,12 @@
+ion-list.has-left-blank.has-right-blank
+  ion-item.item-avatar.custom-rewrite(ng-repeat='group in createdGroups')
+    img(src='{{ group.img }}')
+    |     
+    h2 {{ group.title }}
+    |     
+    p
+      span &#x6210;&#x5458;: {{ group.memberCount }}
+      |       
+      span &#x6D3B;&#x52A8;: {{ group.activityCount }}
+    |     
+    p {{ group.slogan }}

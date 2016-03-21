@@ -1,0 +1,7 @@
+ion-view(view-title='星 座')
+  ion-content
+    ion-list
+      ion-item.item-divider.custom-rewrite
+      |       
+      ion-radio(ng-repeat='c in constellations', ng-model='user.constellation', ng-value='c.value', ng-change='onConstellationChange(c)')
+        | {{ c.title }}

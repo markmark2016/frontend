@@ -1,0 +1,92 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    |     
+    meta(name='viewport', content='initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width')
+    |     
+    title
+    // build:css src/css/vendor.css
+    // bower:css
+    link(href='../bower_components/ionic/release/css/ionic.css', rel='stylesheet')
+    // endbower
+    // endbuild
+    // build:css src/css/main.css
+    link(href='src/css/style.css', rel='stylesheet')
+    // endbuild
+  |   
+  body(ng-app='mark')
+    //
+      The nav bar that will be updated as we navigate between views.
+    ion-nav-bar.bar-stable
+      ion-nav-back-button
+    //
+      The views will be rendered in the <ion-nav-view> directive below
+      Templates are in the /templates folder (but you could also
+      have templates inline in this html file if you'd like).
+    ion-nav-view
+
+    // build:js src/js/vendor.js
+    // bower:js
+    script(src='../bower_components/ionic/release/js/ionic.bundle.js')
+    script(src='../bower_components/angular-local-storage/dist/angular-local-storage.js')
+    // endbower
+    // endbuild
+    // build:js src/js/scripts.js
+    // cordova script (this will be a 404 during development)  
+    script(src='src/js/app.js')
+    |     
+    script(src='src/js/services/services.module.js')
+    |     
+    script(src='src/js/services/account.srv.js')
+    |     
+    script(src='src/js/services/host.srv.js')
+    |     
+    script(src='src/js/services/api.srv.js')
+    |     
+    script(src='src/js/controllers.js')
+    |     
+    script(src='modules/userCenter/main.js')
+    |     
+    script(src='modules/userCenter/userCenter.ctrl.js')
+    |     
+    script(src='modules/page/main.js')
+    |     
+    script(src='modules/page/page.ctrl.js')
+    |     
+    script(src='modules/myGroups/main.js')
+    |     
+    script(src='modules/myGroups/myGroups.srv.js')
+    |     
+    script(src='modules/myGroups/myGroups.ctrl.js')
+    |     
+    script(src='modules/profile/main.js')
+    |     
+    script(src='modules/profile/profile.ctrl.js')
+    |     
+    script(src='modules/editProfile/main.js')
+    |     
+    script(src='modules/editProfile/editProfile.srv.js')
+    |     
+    script(src='modules/editProfile/controllers/editProfile.ctrl.js')
+    |     
+    script(src='modules/editProfile/controllers/selectBook.ctrl.js')
+    |     
+    script(src='modules/editProfile/controllers/editGender.ctrl.js')
+    |     
+    script(src='modules/editProfile/controllers/editInterests.ctrl.js')
+    |     
+    script(src='modules/editProfile/controllers/editDescription.ctrl.js')
+    |     
+    script(src='modules/editProfile/controllers/selectRegionCity.ctrl.js')
+    |     
+    script(src='modules/editProfile/controllers/editRegion.ctrl.js')
+    |     
+    script(src='modules/editProfile/controllers/editOccupation.ctrl.js')
+    |     
+    script(src='modules/editProfile/controllers/editCollege.ctrl.js')
+    |     
+    script(src='modules/editProfile/controllers/editConstellation.ctrl.js')
+    |     
+    script(src='modules/editProfile/controllers/editRelationship.ctrl.js')
+    // endbuild

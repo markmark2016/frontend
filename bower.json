@@ -1,0 +1,25 @@
+{
+  "name": "markweb",
+  "version": "0.1.0",
+  "description": "a mobile web app for iMark",
+  "authors": [
+    "JustinLeoYe"
+  ],
+  "license": "MIT",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ionic": "~1.2.4",
+    "angular": "~1.4.9",
+    "angular-local-storage": "~0.2.3"
+  },
+  "appPath": "./app/",
+  "moduleName": "markWebApp"
+}

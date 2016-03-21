@@ -1,0 +1,93 @@
+ion-view(view-title='{{ user.name }} - 个人中心')
+  ion-content#user_center
+    ion-list
+      ion-item.item-avatar.item-icon-right(href='#/tab/page')
+        img(src='{{ user.avatar }}')
+        |         
+        h2 {{ user.name }}
+        |         
+        p.normal-p {{ user.slogan }}
+        |         
+        i.icon.ion-chevron-right
+      |       
+      ion-item.item.no-top-padding.no-bottom-padding
+        .row
+          .col.text-center
+            .statistic
+              a(ng-href='#/tab/my-groups')
+                .value
+                  | {{ user.statistics.groupCount }}
+                .label
+                  | &#x5C0F;&#x7EC4;
+          |           
+          .col.text-center
+            .statistic
+              a(ng-href='#/tab/my-groups')
+                .value
+                  | {{ user.statistics.rank }}
+                .label
+                  | &#x6392;&#x540D;
+          |           
+          .col.text-center
+            .statistic
+              a(ng-href='#/tab/my-groups')
+                .value
+                  | {{ user.statistics.credits }}
+                .label
+                  | &#x79EF;&#x5206;
+      |       
+      ion-item.item-divider.custom-rewrite
+      |       
+      .card-table
+        .row.card-table-row
+          .col.no-padding
+            .card-table-cell
+              ion-item.item-avatar
+                img(src='src/img/icon_check_in.png')
+                |             
+                h2 连续打卡
+                |             
+                p {{ collections.continuousReviewBooks.count }} 天
+          |         
+          .col.no-padding
+            .card-table-cell
+              ion-item.item-avatar
+                img(src='src/img/icon_read_books.png')
+                |             
+                h2 累计读书
+                |             
+                p {{ collections.readBooks.count }} 本
+        |       
+        .row.card-table-row
+          .col.no-padding
+            .card-table-cell
+              ion-item.item-avatar
+                img(src='src/img/icon_book_reviews.png')
+                |             
+                h2 累计书评
+                |             
+                p {{  collections.bookReviews.count }} 条
+          |         
+          .col.no-padding
+            .card-table-cell
+              ion-item.item-avatar
+                img(src='src/img/icon_timeline.png')
+                |             
+                h2 个人轨迹
+                |             
+                p &nbsp;
+        |       
+        .row.card-table-row
+          .col.no-padding
+            .card-table-cell
+              ion-item.item-avatar
+                img(src='src/img/icon_medals.png')
+                |             
+                h2 获得勋章
+          |         
+          .col.no-padding
+            .card-table-cell
+              ion-item.item-avatar
+                img(src='src/img/icon_impression.png')
+                |             
+                h2 书友印象
