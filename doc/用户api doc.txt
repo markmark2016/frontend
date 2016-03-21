@@ -2,8 +2,24 @@
 	1）点击 下侧 “我” 菜单的页面信息：http://api.imark.com/mark-backend/users/{openId}
 		方法：GET
 		RequireParamater:openId（这里指微信对于每个公众号的openId，可以改为自己数据库的user表主 键id）
-		返回json：{"status":1,"data":{"id":15,"nickName":"杨某某","headImage":"http://wx.qlogo.cn/mmopen/GC8GWzs2iaicQqhZHSndC2gsic8czBgk1zrylefXribgjhSiazicSnicABe2lbBSVbYXTO9umFpfjrsS5IdvOu2TbNy0w/0","intro":"用户的描述","totalGroup":"加入小组数","totalRemark":"累计书评","totalRead":"累计读书","punch":"连续打卡（这个还没有实现，回头确定一下到底怎么算联系）","leader":"这个字段在这里不用使用"}}
-		返回json中还没有排名和积分数据，确定下来规则，会记入
+		返回json：
+		    {
+		        "status": 1,
+		        "data":
+		        {
+		            "num": 3,	//排名
+		            "id": 6,
+		            "nickName": "华蓉",
+		            "headImage": "http://wx.qlogo.cn/mmopen/lRyFfvqkHjArj3GiaD96605yVg3x8t4mwAskobTnPSJklvxK8xplk0ecQibAHjYvWrTSsWhNZlicNXPMnfI8PhoAm2UUbdkdV7a/0",
+		            "intro": null, //简介
+		            "totalGroup": "10",			//加入小组个数
+		            "totalRemark": null,		//累计书评
+		            "totalRead": null,			//累计读书
+		            "totalPunch": null,			//连续打卡
+		            "score": 12,				//积分
+		            "leader": false				//无用
+		        }
+		    }
 	2)用户详细信息 ： http://api.imark.com/mark-backend/users//details/{openId}
 		方法：GET
 		RequireParamater:openId
@@ -12,3 +28,302 @@
 	3）用户点击编辑资料后，在编辑页面：http://api.imark.com/mark-backend/users//details/{openId}
 		方法：PUT
 		RequireParamater:nickname(昵称)，gender（1 or 2），interests(兴趣领域)，intro（描述），city（城市），school（学校），occupation（职业），constellation（星座）,affectiveStatus（0 or 1 or 2,0单身，1恋爱，2已婚）
+	4）点击小组：http://api.imark.com/mark-backend/users/{openId}/group
+		方法：GET
+		RequireParamater:openId
+		返回json：{
+		  "status": 1,
+		  "data": {
+		    "associationList": [  //小组中的社群，groupList为用户加入该社区内的小组
+		      {
+		        "id": 1,
+		        "associationName": "读书社群",
+		        "associationDesc": "社群啊",
+		        "image": "adsfasdf",
+		        "groupList": [
+		          {
+		            "id": 1,
+		            "groupImage": "http://ec4.images-amazon.com/images/I/41W3OhqtirL._SX309_BO1,204,203,200_.jpg",
+		            "groupName": "马净净读书小组",
+		            "bookName": null,
+		            "author": null,
+		            "readSlogan": null,
+		            "groupDesc": "马净净读书小组",
+		            "beginDate": null,
+		            "endDate": null,
+		            "frequency": null,
+		            "guarantee": null,
+		            "latestDate": null,
+		            "associationId": 1,
+		            "userClass": null,
+		            "userStatus": null,
+		            "score": null,
+		            "userId": null,
+		            "groupRank": null,
+		            "totoalReader": null,
+		            "num": null,
+		            "bookSummary": null
+		          }
+		        ]
+		      }
+		    ],
+		    "groupList": [  //用户加入的小组不属于任何一个社群
+		      {
+		        "id": 8,
+		        "groupImage": "http://img6.douban.com/lpic/s3297116.jpg",
+		        "groupName": "和君9届备考团",
+		        "bookName": null,
+		        "author": null,
+		        "readSlogan": null,
+		        "groupDesc": "和君九届领读。教育产业班班长周宇带你读书！和君必考萨缪尔森《经济学》",
+		        "beginDate": null,
+		        "endDate": null,
+		        "frequency": null,
+		        "guarantee": null,
+		        "latestDate": null,
+		        "associationId": null,
+		        "userClass": null,
+		        "userStatus": null,
+		        "score": null,
+		        "userId": null,
+		        "groupRank": null,
+		        "totoalReader": null,
+		        "num": null,
+		        "bookSummary": null
+		      },
+		      {
+		        "id": 2,
+		        "groupImage": "http://img3.douban.com/lpic/s2673223.jpg",
+		        "groupName": "李兴读书小组",
+		        "bookName": null,
+		        "author": null,
+		        "readSlogan": null,
+		        "groupDesc": "杨林三小组",
+		        "beginDate": null,
+		        "endDate": null,
+		        "frequency": null,
+		        "guarantee": null,
+		        "latestDate": null,
+		        "associationId": null,
+		        "userClass": null,
+		        "userStatus": null,
+		        "score": null,
+		        "userId": null,
+		        "groupRank": null,
+		        "totoalReader": null,
+		        "num": null,
+		        "bookSummary": null
+		      },
+		      {
+		        "id": 3,
+		        "groupImage": "http://img4.douban.com/lpic/s27283266.jpg",
+		        "groupName": "杨林三读书小组",
+		        "bookName": null,
+		        "author": null,
+		        "readSlogan": null,
+		        "groupDesc": "杨林三小组",
+		        "beginDate": null,
+		        "endDate": null,
+		        "frequency": null,
+		        "guarantee": null,
+		        "latestDate": null,
+		        "associationId": null,
+		        "userClass": null,
+		        "userStatus": null,
+		        "score": null,
+		        "userId": null,
+		        "groupRank": null,
+		        "totoalReader": null,
+		        "num": null,
+		        "bookSummary": null
+		      },
+		      {
+		        "id": 29,
+		        "groupImage": "http://img3.doubanio.com/lpic/s24642086.jpg",
+		        "groupName": "幸福分享",
+		        "bookName": null,
+		        "author": null,
+		        "readSlogan": null,
+		        "groupDesc": "活动时间：2月17到5月4日（每周三、周六，共23节）\r\n分享视频学习感受：每周三、周六前提交笔记，200字以上，内容不限，重在坚持与分享。\r\n    \r\n    预收保证金：为保证参与质量，iMark小助手会预收保证金，每人50元人民币，完成打卡后如数退还，若三次及以上不能完成打卡则扣除所有保证金在活动结束时以红包形式发到群里。\r\n\r\n     3节体验期：如果在前3节的体验期中发现自己不喜欢这门课程或者这种方式，可以申请退出，保证金会退还（3节体验期之内需要按照规定打卡读书，否则要扣除10元保证金）",
+		        "beginDate": null,
+		        "endDate": null,
+		        "frequency": null,
+		        "guarantee": null,
+		        "latestDate": null,
+		        "associationId": null,
+		        "userClass": null,
+		        "userStatus": null,
+		        "score": null,
+		        "userId": null,
+		        "groupRank": null,
+		        "totoalReader": null,
+		        "num": null,
+		        "bookSummary": null
+		      }
+		    ]
+		  },
+		  "msg": "success"
+		}
+	5）点击排名：http://api.imark.com/mark-backend/users/{openId}/rank
+		方法：GET
+		RequireParamater:openId
+		返回json：
+		    {
+		        "status": 1,
+		        "data":
+		        {
+		            "rank": null,	//用户全站排名
+		            "totalranklist":	//全站排行榜
+		            [
+		                {
+		                    "num": 1,
+		                    "id": 6,
+		                    "nickName": "华蓉",
+		                    "headImage": null,
+		                    "intro": null,
+		                    "totalGroup": null,
+		                    "totalRemark": null,
+		                    "totalRead": null,
+		                    "totalPunch": null,
+		                    "score": 12,
+		                    "leader": false
+		                }
+		            ],
+		            "groupranklist":	//用户在小组内排名情况
+		            [
+		            ]
+		        },
+		        "msg": "sucess"
+		    }
+	6）点击积分：http://api.imark.com/mark-backend/users/{openId}/score
+		方法：GET
+		RequireParamater:openId
+		返回josn：
+		    {
+		        "status": 1,
+		        "data":
+		        {
+		            "totalScore": 12,	//用户总积分
+		            "scorelist":		//用户在各个小组的积分
+		            [
+		                {
+		                    "id": 1,
+		                    "groupImage": "http://ec4.images-amazon.com/images/I/41W3OhqtirL._SX309_BO1,204,203,200_.jpg",
+		                    "groupName": "马净净读书小组",
+		                    "bookName": null,
+		                    "author": null,
+		                    "readSlogan": null,
+		                    "groupDesc": null,
+		                    "beginDate": null,
+		                    "endDate": null,
+		                    "frequency": null,
+		                    "guarantee": null,
+		                    "latestDate": null,
+		                    "associationId": null,
+		                    "userClass": null,
+		                    "userStatus": null,
+		                    "score": 12,			//用户在该小组的积分数
+		                    "userId": null,
+		                    "groupRank": null,
+		                    "totoalReader": null,
+		                    "num": null,
+		                    "bookSummary": null
+		                }
+		            ]
+		        },
+		        "msg": "success"
+		    }
+	7）点击排名中的某个具体小组：http://api.imark.com/mark-backend/users/{openId}/rank/{groupId}
+		方法：GET
+		RequireParamater:openId
+		返回json：
+		    {
+		        "status": 1,
+		        "data":
+		        {
+		            "userlist":		//用户排名列表
+		            [
+		                {
+		                    "num": 1,	//用户排名
+		                    "id": 6,	//用户id
+		                    "nickName": "华蓉",
+		                    "headImage": null,
+		                    "intro": null,
+		                    "totalGroup": null,
+		                    "totalRemark": null,
+		                    "totalRead": null,
+		                    "totalPunch": null,
+		                    "score": 12,	//某一个用户的积分
+		                    "leader": false
+		                }
+		            ],
+		            "groupinfo":	//小组的相关信息
+		            {
+		                "id": 1,
+		                "groupImage": "http://ec4.images-amazon.com/images/I/41W3OhqtirL._SX309_BO1,204,203,200_.jpg",
+		                "groupName": "马净净读书小组",
+		                "bookName": "白夜行",
+		                "author": null,
+		                "readSlogan": null,
+		                "groupDesc": "马净净读书小组",
+		                "beginDate": null,
+		                "endDate": null,
+		                "frequency": null,
+		                "guarantee": null,
+		                "latestDate": null,
+		                "associationId": null,
+		                "userClass": null,
+		                "userStatus": null,
+		                "score": null,
+		                "userId": null,
+		                "groupRank": null,
+		                "totoalReader": "0",
+		                "num": null,
+		                "bookSummary": null
+		            }
+		        },
+		        "msg": "sucess"
+		    }
+	8) 点击累计读书：http://api.imark.com/mark-backend/users/{openId}/readed
+		方法：GET
+		RequireParamater:openId
+		返回json：
+		    {
+		        "status": 1,
+		        "data":
+		        {
+		            "groupList": //已读书籍列表
+		            [
+		                {
+		                    "id": 15,
+		                    "groupImage": "http://img3.douban.com/lpic/s9114855.jpg",
+		                    "groupName": "沙拉计划第一期·《数学之美》",
+		                    "bookName": null,
+		                    "author": null,
+		                    "readSlogan": null,
+		                    "groupDesc": "领读人田四是一个低调的南开数学人，曾经的梦想是证明黎曼假设。细读数学经典，尤为熟悉数学史及数学家的背景生平。在南开大学读大一时，曾效仿小平邦彦手抄希尔伯特的《几何基础》，借此领悟其公理化思想。最近在读数学王子高斯。个人格言：“有限是一种完成，无穷是一种启示。”",
+		                    "beginDate": null,
+		                    "endDate": null,
+		                    "frequency": null,
+		                    "guarantee": null,
+		                    "latestDate": null,
+		                    "associationId": null,
+		                    "userClass": "0",		//用户在小组内的地位，1为领读，0为普通
+		                    "userStatus": "2",
+		                    "score": null,
+		                    "userId": null,
+		                    "groupRank": null,
+		                    "totoalReader": null,
+		                    "num": null,
+		                    "bookSummary": null
+		                }
+		            ],
+		            "totalRead": 1 		//用户累计读书的数量
+		        },
+		        "msg": "success"
+		    }
+	9) 点击连续打卡（未实现）：http://api.imark.com/mark-backend/users/{openId}/punch
+	10) 点击累计书评（未实现）：http://api.imark.com/mark-backend/users/{openId}/reamrk
+
+
+
