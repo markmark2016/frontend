@@ -350,7 +350,128 @@
 		        "msg": "success"
 		    }
 	9) 点击连续打卡（未实现）：http://api.imark.com/mark-backend/users/{userId}/punch
-	10) 点击累计书评（未实现）：http://api.imark.com/mark-backend/users/{userId}/reamrk
+	10) 点击累计书评：http://api.imark.com/mark-backend/users/{userId}/reamrk
+		方法GET
+		参数：userId
+		返回json：
+		{
+		        "status": 1,
+		        "date":
+		        {
+		            "remarkList":
+		            [
+		                {
+		                    "userId": 6,
+		                    "userName": null,
+		                    "headImage": null,
+		                    "groupId": 2,	
+		                    "remarkId": null,
+		                    "groupName": "李兴读书小组",
+		                    "bookName": null,
+		                    "image": "http://img3.douban.com/lpic/s2673223.jpg",//小组图片
+		                    "author": null,
+		                    "todayPunch": null,
+		                    "continuePunch": null,
+		                    "groupTotalRemark": 1,		//用户在该小组的总书评
+		                    "isComplete": null,
+		                    "readCompleteDate": null,
+		                    "isPunch": false,
+		                    "totalLike": 0,
+		                    "totalReply": 0,
+		                    "createTime": null,
+		                    "title": null,
+		                    "comment": null
+		                },
+		                {
+		                    "userId": 6,
+		                    "userName": null,
+		                    "headImage": null,
+		                    "groupId": 1,
+		                    "remarkId": null,
+		                    "groupName": "马净净读书小组",
+		                    "bookName": null,
+		                    "image": "http://ec4.images-amazon.com/images/I/41W3OhqtirL._SX309_BO1,204,203,200_.jpg",
+		                    "author": null,
+		                    "todayPunch": null,
+		                    "continuePunch": null,
+		                    "groupTotalRemark": 1,
+		                    "isComplete": null,
+		                    "readCompleteDate": null,
+		                    "isPunch": false,
+		                    "totalLike": 0,
+		                    "totalReply": 0,
+		                    "createTime": null,
+		                    "title": null,
+		                    "comment": null
+		                }
+		            ],
+		            "totalRemark": 2  	//用户在全站的总书评
+		        },
+		        "msg": "更新成功"
+		    }
+	11）点击累计书评中的某小组：http://api.imark.com/mark-backend/users/{userId}/reamrk/{groupId}
+		方法：GET
+		参数：userId，groupId
+		返回json：
+		{
+		        "status": 1,
+		        "date":
+		        {
+		            "remarklist"://书评列表
+		            [
+		                {
+		                    "userId": 6,
+		                    "userName": "华蓉",
+		                    "headImage": "http://wx.qlogo.cn/mmopen/lRyFfvqkHjArj3GiaD96605yVg3x8t4mwAskobTnPSJklvxK8xplk0ecQibAHjYvWrTSsWhNZlicNXPMnfI8PhoAm2UUbdkdV7a/0",
+		                    "groupId": null,
+		                    "remarkId": 4,
+		                    "groupName": null,
+		                    "bookName": null,
+		                    "image": null,
+		                    "author": null,
+		                    "todayPunch": null,
+		                    "continuePunch": null,
+		                    "groupTotalRemark": null,
+		                    "isComplete": null,
+		                    "readCompleteDate": null,
+		                    "isPunch": false,
+		                    "totalLike": 2,
+		                    "totalReply": 1,
+		                    "createTime": 1458632766000,
+		                    "title": "没啥说的",
+		                    "comment": "都到我家喝酒去吧"
+		                }
+		            ],
+		            "groupInfo"://该小组的信息
+		            {
+		                "id": 1,
+		                "groupImage": "http://ec4.images-amazon.com/images/I/41W3OhqtirL._SX309_BO1,204,203,200_.jpg",
+		                "groupName": "马净净读书小组",
+		                "bookName": "白夜行",
+		                "author": "包政",
+		                "readSlogan": "跟着大师姐有肉吃",
+		                "groupDesc": "马净净读书小组",
+		                "beginDate": null,
+		                "endDate": null,
+		                "frequency": "一天1-此卡",
+		                "guarantee": "100",
+		                "latestDate": null,
+		                "associationId": null,
+		                "userClass": null,
+		                "userStatus": null,
+		                "score": null,
+		                "userId": null,
+		                "groupRank": null,
+		                "totoalReader": null,
+		                "num": null,
+		                "bookSummary": "十年磨一剑，颠覆科特勒营销思想。从大量销售方式，到深度分销方式，未来属于社区商务方式……",
+		                "readCompleteDate": null
+		            }
+		        },
+		        "msg": "更新成功"
+		    }
+
+
 
 
 
