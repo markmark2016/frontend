@@ -22,13 +22,16 @@ bower install
 ## Development
 
 ```bash
+cd <app root dir>
 nvm use node
-gulp serve 
+gulp develop
+gulp watch
 ```
 
 ## Build
 
 ```bash
+cd <app root dir>
 nvm use node
 gulp develop
 gulp prod
