@@ -1,0 +1,316 @@
+书评相关接口：
+	1）底部 “打卡” 菜单的页面信息：http://api.imark.com/mark-backend/remark/punch/{userId}
+		方法：GET
+		RequireParamater:userId(例如6)
+		返回json：
+		    {
+		        "status": 1,
+		        "data":
+		        [
+		            {
+		                "userId": 6,
+		                "userName": null,
+		                "headImage": null,
+		                "groupId": 2,
+		                "remarkId": null,
+		                "groupName": "李兴读书小组",
+		                "bookName": "童年的秘密",
+		                "image": "http://img3.douban.com/lpic/s2673223.jpg",
+		                "author": null,
+		                "todayPunch": 0,	//今日打卡人数
+		                "continuePunch": null,
+		                "groupTotalRemark": null,
+		                "isComplete": true,		//是否读完
+		                "readCompleteDate": 1458547573000,		//读完的话，读完日期
+		                "isPunch": false,	//今日是否打过卡
+		                "totalLike": 0,
+		                "totalReply": 0,
+		                "createTime": null,
+		                "title": null,
+		                "comment": null
+		            },
+		            {
+		                "userId": 6,
+		                "userName": null,
+		                "headImage": null,
+		                "groupId": 12,
+		                "remarkId": null,
+		                "groupName": "混沌和秩序读书小组",
+		                "bookName": "复杂 : 诞生于秩序与混沌边缘的科学",
+		                "image": "http://img3.douban.com/lpic/s1066661.jpg",
+		                "author": null,
+		                "todayPunch": 0,
+		                "continuePunch": null,
+		                "groupTotalRemark": null,
+		                "isComplete": false,
+		                "readCompleteDate": null,
+		                "isPunch": false,
+		                "totalLike": 0,
+		                "totalReply": 0,
+		                "createTime": null,
+		                "title": null,
+		                "comment": null
+		            },
+		        ],
+		        "msg": "sucess"
+		    }
+	
+	2）当用户在该小组的isPunch为false,点击"我要打卡"提交按钮  ：http://api.imark.com/mark-backend/remark/create/{groupId}/{userId}
+		方法：POST
+		url参数：userId，groupId，
+		post参数：startPage，endPage，title（可选），comment
+	
+	3）当用户在该小组的isComplete为true,点击"写书评"提交按钮  ：http://api.imark.com/mark-backend/remark/complete/{groupId}/{userId}
+		方法：POST
+		url参数：userId，groupId，
+		post参数：title（可选），comment
+	
+	4）当用户在该小组的isPunch为true，点击"查看今日书评"  ：http://api.imark.com/mark-backend/remark/today/{groupId}/{userId}
+		方法：GET
+		RequireParamater:groupId（1），userId(例如6)
+		返回json：	  
+			{
+		        "status": 1,
+		        "data":
+		        {
+		            "replylist":	//对该条书评的回复列表
+		            [
+		                {
+		                    "userId": 6,			//回复的用户id
+		                    "openid": "oPOUfwbl6xt6peXlnZb8BGuvAexM",
+		                    "nickName": "华蓉",
+		                    "headImage": "http://wx.qlogo.cn/mmopen/lRyFfvqkHjArj3GiaD96605yVg3x8t4mwAskobTnPSJklvxK8xplk0ecQibAHjYvWrTSsWhNZlicNXPMnfI8PhoAm2UUbdkdV7a/0",
+		                    "interactDate": 1458635309000,			//回复的时间
+		                    "content": "111"
+		                }
+		            ],
+		            "likelist"://点赞列表
+		            [
+		                {
+		                    "num": null,
+		                    "userId": 8,
+		                    "openid": "oPOUfwXyJUOSe8rN2WeIbHJ4rkOs",
+		                    "nickName": "龙龙",
+		                    "headImage": "http://wx.qlogo.cn/mmopen/Xmnun9Io49RYibPNl6QbMqYus5s7rWsSJcKRcSdoojVJ4Lprdfg8oHFMQUntcuv9gZ40sqYTgibckpHfubBCrJXoD1OLiakaD0s/0",
+		                    "intro": null,
+		                    "totalGroup": null,
+		                    "totalRemark": null,
+		                    "totalRead": null,
+		                    "totalPunch": null,
+		                    "score": null,
+		                    "leader": false
+		                },
+		                {
+		                    "num": null,
+		                    "userId": 11,
+		                    "openid": "oPOUfweUre13RBBHQ86h8FW-dwdE",
+		                    "nickName": "李兴",
+		                    "headImage": "http://wx.qlogo.cn/mmopen/Q3auHgzwzM7OrO6BoAr1EaVXWSIulaWj0dQZHvXvBcSDSGyngASmM8u4a9PKibxcic6ZAat4Np2MI1icXHJgndibFQ/0",
+		                    "intro": null,
+		                    "totalGroup": null,
+		                    "totalRemark": null,
+		                    "totalRead": null,
+		                    "totalPunch": null,
+		                    "score": null,
+		                    "leader": false
+		                }
+		            ],
+		            "remark":	//书评主体
+		            {
+		                "id": 4,
+		                "createTime": 1458632766000,
+		                "updateTime": 1458546366000,
+		                "groupIdFk": 1,
+		                "bookIdFk": null,
+		                "userIdFk": 6,
+		                "startPage": 1,
+		                "endPage": 1,
+		                "title": "zz",	//书评标题
+		                "comment": "33"	//书评内容
+		            },
+		            "totalLike": 2,		//该书评总点赞数
+		            "user":			//写这个书评的人的信息
+		            {
+		                "id": 6,
+		                "createTime": null,
+		                "updateTime": null,
+		                "userId": null,
+		                "openid": "oPOUfwbl6xt6peXlnZb8BGuvAexM",
+		                "nickname": "华蓉",
+		                "gender": "2",
+		                "interests": null,
+		                "intro": null,
+		                "city": "",
+		                "province": "北京",
+		                "school": null,
+		                "occupation": null,
+		                "constellation": null,
+		                "affectiveStatus": null,
+		                "headImgUrl": "http://wx.qlogo.cn/mmopen/lRyFfvqkHjArj3GiaD96605yVg3x8t4mwAskobTnPSJklvxK8xplk0ecQibAHjYvWrTSsWhNZlicNXPMnfI8PhoAm2UUbdkdV7a/0"
+		            }
+		        },
+		        "msg": "sucess"
+		    }
+	
+	5）点击小组内的书评：http://api.imark.com/mark-backend/remark/group/{groupId}
+		方法：GET
+		需要参数：groupId
+		返回json:
+		   {
+		        "status": 1,
+		        "data":
+		        {
+		            "hotlist":	//最热评论列表
+		            [
+		                {
+		                    "userId": 6,
+		                    "userName": "华蓉",
+		                    "headImage": "http://wx.qlogo.cn/mmopen/lRyFfvqkHjArj3GiaD96605yVg3x8t4mwAskobTnPSJklvxK8xplk0ecQibAHjYvWrTSsWhNZlicNXPMnfI8PhoAm2UUbdkdV7a/0",
+		                    "groupId": null,
+		                    "remarkId": 4,			//书评id
+		                    "groupName": null,
+		                    "bookName": null,
+		                    "image": null,
+		                    "author": null,
+		                    "todayPunch": null,
+		                    "continuePunch": null,
+		                    "groupTotalRemark": null,
+		                    "isComplete": null,
+		                    "readCompleteDate": null,
+		                    "isPunch": false,
+		                    "totalLike": 2,		//点赞数
+		                    "totalReply": 1,	//回复数
+		                    "createTime": 1458632766000,	//创建时间
+		                    "title": "zz",
+		                    "comment": "33"
+		                },
+		                {
+		                    "userId": 8,
+		                    "userName": "龙龙",
+		                    "headImage": "http://wx.qlogo.cn/mmopen/Xmnun9Io49RYibPNl6QbMqYus5s7rWsSJcKRcSdoojVJ4Lprdfg8oHFMQUntcuv9gZ40sqYTgibckpHfubBCrJXoD1OLiakaD0s/0",
+		                    "groupId": null,
+		                    "remarkId": 1,
+		                    "groupName": null,
+		                    "bookName": null,
+		                    "image": null,
+		                    "author": null,
+		                    "todayPunch": null,
+		                    "continuePunch": null,
+		                    "groupTotalRemark": null,
+		                    "isComplete": null,
+		                    "readCompleteDate": null,
+		                    "isPunch": false,
+		                    "totalLike": 0,
+		                    "totalReply": 1,
+		                    "createTime": 1458379569000,
+		                    "title": "sg",
+		                    "comment": "11"
+		                },
+		                {
+		                    "userId": 9,
+		                    "userName": "嘉业(Jason)",
+		                    "headImage": "http://wx.qlogo.cn/mmopen/Q3auHgzwzM7LGqsnCqwX57qEZOhPRU2EibnnfmPMXUDVLNHSCDuxxYo8cur8I3PBo7ScjTgYqMGdYFnoJ8icL4CQ/0",
+		                    "groupId": null,
+		                    "remarkId": 2,
+		                    "groupName": null,
+		                    "bookName": null,
+		                    "image": null,
+		                    "author": null,
+		                    "todayPunch": null,
+		                    "continuePunch": null,
+		                    "groupTotalRemark": null,
+		                    "isComplete": null,
+		                    "readCompleteDate": null,
+		                    "isPunch": false,
+		                    "totalLike": 0,
+		                    "totalReply": 0,
+		                    "createTime": 1458612945000,
+		                    "title": "sf",
+		                    "comment": "22"
+		                }
+		            ],
+		            "timeorderlist":	//按照时间排序
+		            [
+		                {
+		                    "userId": 6,
+		                    "userName": "华蓉",
+		                    "headImage": "http://wx.qlogo.cn/mmopen/lRyFfvqkHjArj3GiaD96605yVg3x8t4mwAskobTnPSJklvxK8xplk0ecQibAHjYvWrTSsWhNZlicNXPMnfI8PhoAm2UUbdkdV7a/0",
+		                    "groupId": null,
+		                    "remarkId": 4,
+		                    "groupName": null,
+		                    "bookName": null,
+		                    "image": null,
+		                    "author": null,
+		                    "todayPunch": null,
+		                    "continuePunch": null,
+		                    "groupTotalRemark": null,
+		                    "isComplete": null,
+		                    "readCompleteDate": null,
+		                    "isPunch": false,
+		                    "totalLike": 2,
+		                    "totalReply": 1,
+		                    "createTime": 1458632766000,
+		                    "title": "zz",
+		                    "comment": "33"
+		                },
+		                {
+		                    "userId": 9,
+		                    "userName": "嘉业(Jason)",
+		                    "headImage": "http://wx.qlogo.cn/mmopen/Q3auHgzwzM7LGqsnCqwX57qEZOhPRU2EibnnfmPMXUDVLNHSCDuxxYo8cur8I3PBo7ScjTgYqMGdYFnoJ8icL4CQ/0",
+		                    "groupId": null,
+		                    "remarkId": 2,
+		                    "groupName": null,
+		                    "bookName": null,
+		                    "image": null,
+		                    "author": null,
+		                    "todayPunch": null,
+		                    "continuePunch": null,
+		                    "groupTotalRemark": null,
+		                    "isComplete": null,
+		                    "readCompleteDate": null,
+		                    "isPunch": false,
+		                    "totalLike": 0,
+		                    "totalReply": 0,
+		                    "createTime": 1458612945000,
+		                    "title": "sf",
+		                    "comment": "22"
+		                },
+		                {
+		                    "userId": 8,
+		                    "userName": "龙龙",
+		                    "headImage": "http://wx.qlogo.cn/mmopen/Xmnun9Io49RYibPNl6QbMqYus5s7rWsSJcKRcSdoojVJ4Lprdfg8oHFMQUntcuv9gZ40sqYTgibckpHfubBCrJXoD1OLiakaD0s/0",
+		                    "groupId": null,
+		                    "remarkId": 1,
+		                    "groupName": null,
+		                    "bookName": null,
+		                    "image": null,
+		                    "author": null,
+		                    "todayPunch": null,
+		                    "continuePunch": null,
+		                    "groupTotalRemark": null,
+		                    "isComplete": null,
+		                    "readCompleteDate": null,
+		                    "isPunch": false,
+		                    "totalLike": 0,
+		                    "totalReply": 1,
+		                    "createTime": 1458379569000,
+		                    "title": "sg",
+		                    "comment": "11"
+		                }
+		            ]
+		        },
+		        "msg": "sucess"
+		    }
+	
+	6）点击小组内的某条书评：http://api.imark.com/mark-backend/remark、{remarkId}
+		方法：GET
+		参数：remarkId
+		返回json：同 4）当用户在该小组的isPunch为true
+
+	7）对书评点赞：http://api.imark.com/mark-backend/remark/like
+		方法：post
+		参数：remarkId（点赞的书评id），userId（点赞人id）
+
+	8）对书评回复：http://api.imark.com/mark-backend/remark/reply
+		方法：POST
+		参数：remarkId，userId，content（回复内容）
