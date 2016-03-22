@@ -1,14 +1,14 @@
 用户相关接口：
-	1）点击 下侧 “我” 菜单的页面信息：http://api.imark.com/mark-backend/users/{openId}
+	1）点击 下侧 “我” 菜单的页面信息：http://api.imark.com/mark-backend/users/{userId}
 		方法：GET
-		RequireParamater:openId（这里指微信对于每个公众号的openId，可以改为自己数据库的user表主 键id）
+		RequireParamater:userId 
 		返回json：
 		    {
 		        "status": 1,
 		        "data":
 		        {
 		            "num": 3,	//排名
-		            "id": 6,
+		            "id": 6,	//userId
 		            "nickName": "华蓉",
 		            "headImage": "http://wx.qlogo.cn/mmopen/lRyFfvqkHjArj3GiaD96605yVg3x8t4mwAskobTnPSJklvxK8xplk0ecQibAHjYvWrTSsWhNZlicNXPMnfI8PhoAm2UUbdkdV7a/0",
 		            "intro": null, //简介
@@ -20,17 +20,17 @@
 		            "leader": false				//无用
 		        }
 		    }
-	2)用户详细信息 ： http://api.imark.com/mark-backend/users//details/{openId}
+	2)用户详细信息 ： http://api.imark.com/mark-backend/users//details/{userId}
 		方法：GET
-		RequireParamater:openId
+		RequireParamater:userId
 		返回json：{"status":1,"data":{"bookList":{"likeList":[{"id":1,"title":"白夜行","image":"lsjdflsadjf","type":"1"}],"wantList":[{"id":1,"title":"白夜行","image":"lsjdflsadjf","type":"2"}]},"user":{"id":15,"createTime":null,"updateTime":1458445442000,"userId":null,"openid":"oNMD9w2tMr4ZnSnBfhGTFQe7SsNY","nickname":"杨某某","gender":"1","interests":null,"intro":null,"city":"海淀","province":"北京","school":null,"occupation":null,"constellation":null,"affectiveStatus":null,"headImgUrl":"http://wx.qlogo.cn/mmopen/GC8GWzs2iaicQqhZHSndC2gsic8czBgk1zrylefXribgjhSiazicSnicABe2lbBSVbYXTO9umFpfjrsS5IdvOu2TbNy0w/0"}}}
 		booklist中的likelist为用户最喜欢的书，wantlist为最想看的书，user为下面的显示内容。
-	3）用户点击编辑资料后，在编辑页面：http://api.imark.com/mark-backend/users//details/{openId}
+	3）用户点击编辑资料后，在编辑页面：http://api.imark.com/mark-backend/users//details/{userId}
 		方法：PUT
 		RequireParamater:nickname(昵称)，gender（1 or 2），interests(兴趣领域)，intro（描述），city（城市），school（学校），occupation（职业），constellation（星座）,affectiveStatus（0 or 1 or 2,0单身，1恋爱，2已婚）
-	4）点击小组：http://api.imark.com/mark-backend/users/{openId}/group
+	4）点击小组：http://api.imark.com/mark-backend/users/{userId}/group
 		方法：GET
-		RequireParamater:openId
+		RequireParamater:userId
 		返回json：{
 		  "status": 1,
 		  "data": {
@@ -164,20 +164,23 @@
 		  },
 		  "msg": "success"
 		}
-	5）点击排名：http://api.imark.com/mark-backend/users/{openId}/rank
+	5）点击排名：http://api.imark.com/mark-backend/users/{userId}/rank
 		方法：GET
-		RequireParamater:openId
+		RequireParamater:userId
 		返回json：
+		    
+
 		    {
 		        "status": 1,
 		        "data":
 		        {
-		            "rank": null,	//用户全站排名
-		            "totalranklist":	//全站排行榜
+		            "rank": 1,
+		            "totalranklist":	//总排名列表
 		            [
 		                {
 		                    "num": 1,
 		                    "id": 6,
+		                    "openid": null,
 		                    "nickName": "华蓉",
 		                    "headImage": null,
 		                    "intro": null,
@@ -189,15 +192,39 @@
 		                    "leader": false
 		                }
 		            ],
-		            "groupranklist":	//用户在小组内排名情况
+		            "groupranklist":		//小组内排名列表
 		            [
+		                {
+		                    "id": 1,
+			                "groupImage": "http://ec4.images-amazon.com/images/I/41W3OhqtirL._SX309_BO1,204,203,200_.jpg",
+			                "groupName": "马净净读书小组",
+			                "bookName": null,
+			                "author": null,
+			                "readSlogan": null,
+			                "groupDesc": null,
+			                "beginDate": null,
+			                "endDate": null,
+			                "frequency": null,
+			                "guarantee": null,
+			                "latestDate": null,
+			                "associationId": null,
+			                "userClass": null,
+			                "userStatus": null,
+			                "score": 12,
+			                "userId": 6,
+			                "groupRank": "1/1",	//小组内排名 */* 格式
+			                "totoalReader": null,
+			                "num": 1,
+			                "bookSummary": null,
+			                "readCompleteDate": null
+		                }
 		            ]
 		        },
 		        "msg": "sucess"
 		    }
-	6）点击积分：http://api.imark.com/mark-backend/users/{openId}/score
+	6）点击积分：http://api.imark.com/mark-backend/users/{userId}/score
 		方法：GET
-		RequireParamater:openId
+		RequireParamater:userId
 		返回josn：
 		    {
 		        "status": 1,
@@ -233,9 +260,9 @@
 		        },
 		        "msg": "success"
 		    }
-	7）点击排名中的某个具体小组：http://api.imark.com/mark-backend/users/{openId}/rank/{groupId}
+	7）点击排名中的某个具体小组：http://api.imark.com/mark-backend/users/{userId}/rank/{groupId}
 		方法：GET
-		RequireParamater:openId
+		RequireParamater:userId,groupId
 		返回json：
 		    {
 		        "status": 1,
@@ -284,9 +311,9 @@
 		        },
 		        "msg": "sucess"
 		    }
-	8) 点击累计读书：http://api.imark.com/mark-backend/users/{openId}/readed
+	8) 点击累计读书：http://api.imark.com/mark-backend/users/{userId}/readed
 		方法：GET
-		RequireParamater:openId
+		RequireParamater:userId
 		返回json：
 		    {
 		        "status": 1,
@@ -322,8 +349,8 @@
 		        },
 		        "msg": "success"
 		    }
-	9) 点击连续打卡（未实现）：http://api.imark.com/mark-backend/users/{openId}/punch
-	10) 点击累计书评（未实现）：http://api.imark.com/mark-backend/users/{openId}/reamrk
+	9) 点击连续打卡（未实现）：http://api.imark.com/mark-backend/users/{userId}/punch
+	10) 点击累计书评（未实现）：http://api.imark.com/mark-backend/users/{userId}/reamrk
 
 
 

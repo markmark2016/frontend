@@ -2,8 +2,8 @@
 	1）获取小组列表：http://api.imark.com/mark-backend/groups 
 		方法：GET
 		返回Json：{"status":1,"data":[{"id":1,"groupImage":"lsjdflsadjf","groupName":"一号小组","bookName":"白夜行","author":null,"readSlogan":null,"groupDesc":"读书人的事儿","beginDate":null,"endDate":null,"frequency":null,"guarantee":null,"latestDate":null,"bookSummary":null}],"msg":"成功"}
-	2）查看指定小组：http://api.imark.com/mark-backend/groups/{groupId}
-		方法GET
+	2）查看指定小组：http://api.imark.com/mark-backend/groups/{groupId}?userId=6
+		方法GET,需要参数userId（必须）
 		返回json：{"status":1,"data":{"id":1,"groupImage":"lsjdflsadjf","groupName":"一号小组","bookName":"白夜行","author":"东野圭吾","readSlogan":"读好书","groupDesc":"读书人的事儿","beginDate":1458039500000,"endDate":1458730702000,"frequency":"一天1-此卡","guarantee":"100","latestDate":1458039518000,"bookSummary":"jianjie le "},"msg":"成功"}
 	3）申请小组：http://api.imark.com/mark-backend/groups/apply
 		方法：POST 
@@ -21,8 +21,8 @@
 	7）社群列表：http://api.imark.com/mark-backend/associations
 		方法：GET
 		返回json：{"status":1,"data":[{"id":1,"associationName":"读书社群","associationDesc":"社群啊","image":"社群图片","groupList":null}],"msg":"成功"}
-	8）社群内信息：http://api.imark.com/mark-backend/associations/{associationId}
-		方法：GET
+	8）社群内信息：http://api.imark.com/mark-backend/associations/{associationId}?userId=6
+		方法：GET，需要参数userId（必须）
 		RequireParamter：associationId
 		返回Json：{"status":1,"data":{"id":1,"associationName":"读书社群","associationDesc":"社群啊","image":"adsfasdf","groupList":[{"id":1,"groupImage":"lsjdflsadjf","groupName":"一号小组","bookName":"白夜行","author":null,"readSlogan":null,"groupDesc":"读书人的事儿","beginDate":null,"endDate":null,"frequency":null,"guarantee":null,"latestDate":null,"bookSummary":null}]},"msg":"成功"}
 
