@@ -1,11 +1,11 @@
 ion-view(view-title='{{ user.name }} - 个人主页')
-  ion-content#page
-    ion-list.personal-abstract
+  ion-content#profile_page
+    ion-list
       ion-item.item.no-border
         .row
           .col.col-33.col-offset-33
             .avatar
-              img.circular(src='{{ user.avatar }}')
+              img.img-circular(src='{{ user.avatar }}')
         |         
         h2.text-center {{ user.name }}
         |         
