@@ -4,10 +4,10 @@ angular.module('mark.services')
   //var env = 'production';
   var env = 'staging';
   var productionHost = {
-    main: 'http://markmark.sinaapp.com'
+    main: 'http://markmark.sinaapp.com/'
   };
   var stagingHost = {
-    main: 'http://localhost/markmark'
+    main: 'http://101.200.158.160/mark-backend/'
   };
   if(env=='staging'){
     return stagingHost;

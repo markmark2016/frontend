@@ -11,6 +11,10 @@ var gulp = require('gulp');
 //加载gulp-load-plugins插件，并马上运行它
 var plugins = require('gulp-load-plugins')();
 
+var tinylr = require('tiny-lr');
+var server = tinylr(),
+    port = 35729;
+
 // 清空开发文件夹
 gulp.task('build-clean-dev', function(cb) {
   return gulp.src([appConfig.dev], {read: false})
@@ -26,6 +30,7 @@ gulp.task('build-clean-prod', function(cb) {
 gulp.task('build-jade', function(){
    return gulp.src(appConfig.app+'**/*.jade',{ base: appConfig.app })
     .pipe(plugins.jade({pretty: true}))
+    .pipe(plugins.livereload(server))
     .pipe(gulp.dest(appConfig.dev))
 });
 
@@ -33,18 +38,21 @@ gulp.task('build-jade', function(){
 gulp.task('build-less', function(){
    return gulp.src(appConfig.app+'**/*.less',{ base: appConfig.app })
     .pipe(plugins.less())
+    .pipe(plugins.livereload(server))
     .pipe(gulp.dest(appConfig.dev))
 });
 
 // img拷贝
 gulp.task('copy-img', function(){
    return gulp.src(appConfig.app+'**/*.+(png|jpg|gif|svg)',{ base: appConfig.app })
+    .pipe(plugins.livereload(server))
     .pipe(gulp.dest(appConfig.dev))
 });
 
 // js拷贝
 gulp.task('copy-js', function(){
    return gulp.src(appConfig.app+'**/*.js',{ base: appConfig.app })
+    .pipe(plugins.livereload(server))
     .pipe(gulp.dest(appConfig.dev))
 });
 
@@ -97,13 +105,19 @@ gulp.task('develop',['build-clean-dev'],function(){
   return gulp.start('build-jade','build-less','copy-img','copy-js');
 });
 
-gulp.task('webserver-dev', function(){
-
-      gulp.watch(appConfig.app+'**/*.jade', ['build-jade']);
-      gulp.watch(appConfig.app+'**/*.less', ['build-less']);
-      gulp.watch(appConfig.app+'**/*.+(png|jpg|gif|svg)', ['copy-img']);
-      gulp.watch(appConfig.app+'**/*.js', ['copy-js']);
+// 监听任务 运行语句 gulp watch
+gulp.task('watch',function(){
+    server.listen(port, function(err){
+        if (err) {
+            return console.log(err);
+        }
+        gulp.watch(appConfig.app+'**/*.jade', ['build-jade']);
+        gulp.watch(appConfig.app+'**/*.less', ['build-less']);
+        gulp.watch(appConfig.app+'**/*.+(png|jpg|gif|svg)', ['copy-img']);
+        gulp.watch(appConfig.app+'**/*.js', ['copy-js']);
+    });
 });
+
 
 // 定义prod任务
 gulp.task('prod',['build-clean-prod'],function(){

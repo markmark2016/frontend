@@ -1,5 +1,5 @@
 doctype html
-html
+html(ng-app='mark')
   head
     meta(charset='utf-8')
     |     
@@ -15,7 +15,7 @@ html
     link(href='src/css/style.css', rel='stylesheet')
     // endbuild
   |   
-  body(ng-app='mark')
+  body
     //
       The nav bar that will be updated as we navigate between views.
     ion-nav-bar.bar-stable
@@ -46,10 +46,12 @@ html
     |     
     script(src='src/js/controllers.js')
     |     
+    script(src='modules/groupsCenter/main.js')
+    |     
     script(src='modules/userCenter/main.js')
     |     
     script(src='modules/userCenter/userCenter.ctrl.js')
-    |     
+    | 
     script(src='modules/page/main.js')
     |     
     script(src='modules/page/page.ctrl.js')
