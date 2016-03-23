@@ -349,7 +349,63 @@
 		        },
 		        "msg": "success"
 		    }
-	9) 点击连续打卡（未实现）：http://api.imark.com/mark-backend/users/{userId}/punch
+	9) 点击连续打卡：http://api.imark.com/mark-backend/users/{userId}/punch?startDate=xxxxxx&endDate=xxxxxx
+		方法：GET
+		path参数：userId。请求参数：startDate和endDate，Long型，unix时间戳，不填写代表本月，填写的话按这个范围查询
+		返回json：
+				    {
+		        "status": 1,
+		        "data":
+		        {
+		            "monthtotalpunch": 4,	//该月连续打卡
+		            "userId": 6,
+		            "datearray":			//打卡的日期
+		            [
+		                1458576000000,
+		                1458489600000,
+		                1458316800000
+		            ]
+		        },
+		        "msg": "更新成功"
+		    }
+
+	12) 点击连续打卡的某个日子：http://api.imark.com/mark-backend/remark/users{userId}?date=xxx
+		方法：GET
+		path参数：userId。get参数：date（不填获取用户的所有书评），unix时间戳，Long，表示某天0时0分0秒，例如：1458576000000
+		返回json：
+		{
+		        "status": 1,
+		        "data":
+		        {
+		            "remarklist":		//用户在该天的书评
+		            [
+		                {
+		                    "userId": 6,
+		                    "userName": "华蓉",
+		                    "headImage": "http://wx.qlogo.cn/mmopen/lRyFfvqkHjArj3GiaD96605yVg3x8t4mwAskobTnPSJklvxK8xplk0ecQibAHjYvWrTSsWhNZlicNXPMnfI8PhoAm2UUbdkdV7a/0",
+		                    "groupId": 12,
+		                    "remarkId": 4,
+		                    "groupName": null,
+		                    "bookName": null,
+		                    "image": null,
+		                    "author": null,
+		                    "todayPunch": null,
+		                    "continuePunch": null,
+		                    "groupTotalRemark": null,
+		                    "isComplete": null,
+		                    "readCompleteDate": null,
+		                    "isPunch": false,
+		                    "totalLike": 2,
+		                    "totalReply": 1,
+		                    "createTime": 1458632766000,
+		                    "title": "没啥说的",
+		                    "comment": "都到我家喝酒去吧"
+		                }
+		            ],
+		            "userId": 6
+		        },
+		        "msg": "success"
+		    }
 	10) 点击累计书评：http://api.imark.com/mark-backend/users/{userId}/reamrk
 		方法GET
 		参数：userId
