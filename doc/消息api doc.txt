@@ -1,0 +1,40 @@
+消息相关接口
+	1）获取消息也列表：http://api.imark.com/mark-backend/msg/{userId}
+		方法：GET
+		需要参数： {userId}
+		返回json：
+			{
+			  "status": 1,
+			  "data": {
+			    "unreadsyscount": 0,//未读系统消息总数
+			    "unreadlikecount": 1,//未读赞消息总数
+			    "unreadreplycount": 0//未读回复消息总数
+			  },
+			  "msg": "success"
+			}
+	2）获取 赞  消息列表：http://api.imark.com/mark-backend/msg/like/{userId}	
+		方法：GET
+		需要参数：userId
+		返回json：
+		{
+		  "status": 1,
+		  "data": {
+		    "unreadlikecount": 1,	//未读赞总数
+		    "unreadlikelist": [		//未读赞列表
+		      {
+		        "userId": 6,
+		        "userName": "华蓉",
+		        "headImage": "http://wx.qlogo.cn/mmopen/lRyFfvqkHjArj3GiaD96605yVg3x8t4mwAskobTnPSJklvxK8xplk0ecQibAHjYvWrTSsWhNZlicNXPMnfI8PhoAm2UUbdkdV7a/0",
+		        "content": "攒了你的书评我是一条书评",//消息内容
+		        "remarkId": 1,	//被赞的书评id
+		        "url": null,
+		        "createTime": 1458719516000,
+		        "isCheck": "0"
+		      }
+		    ]
+		  },
+		  "msg": "success"
+		}
+	3）获取 系统  消息列表：http://api.imark.com/mark-backend/msg/like/{userId}	
+	4）获取 回复  消息列表：http://api.imark.com/mark-backend/msg/like/{userId}	
+	3和4同2返回json一样
