@@ -1,2 +1,13 @@
 ion-view(view-title='发现')
+  ion-header-bar.bar-light(align-title="center")
+    .buttons
+      button.button.button-icon.icon.ion-ios-search-strong
+    h1.title
+      .button-bar.circular-button-bar
+        a.button.active 小组
+        a.button(ui-sref="tab.ass-list") 社群
+    .buttons
+      button.button.button-icon.icon.ion-android-add
   ion-content.groups-center
+    div(ng-include="'tpl/group-list.html'" ng-controller='groupsListCtrl')
+    div(ng-include="'tpl/ass-list.html'" ng-controller='assListCtrl')

@@ -200,7 +200,7 @@ angular.module('mark', ['ionic', 'LocalStorageModule', 'mark.groupsCenter', 'mar
     //   location.href = path;
     // }
     //return ;
-     $location.path('/');
+     $location.path('/tab/groups-center');
   });
 
 }]);

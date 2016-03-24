@@ -101,12 +101,12 @@ gulp.task('build-fonts', function(){
 
 
 // 定义develop任务在日常开发中使用
-gulp.task('develop',['build-clean-dev'],function(){
+gulp.task('dev',['build-clean-dev'],function(){
   return gulp.start('build-jade','build-less','copy-img','copy-js');
 });
 
 // 监听任务 运行语句 gulp watch
-gulp.task('watch',function(){
+gulp.task('wc',function(){
     server.listen(port, function(err){
         if (err) {
             return console.log(err);
@@ -127,6 +127,6 @@ gulp.task('prod',['build-clean-prod'],function(){
 
 // default
 gulp.task('default', function() {
-  return gulp.start('develop');
+  return gulp.start('dev');
 });
 
