@@ -4,10 +4,10 @@ ion-view(view-title='发现')
       button.button.button-icon.icon.ion-ios-search-strong
     h1.title
       .button-bar.circular-button-bar
-        a.button.active 小组
-        a.button(ui-sref="tab.ass-list") 社群
+        a.button(ng-click="selectSection('groups-list')" ng-class="{'active': isActiveSection('groups-list')}")  小组
+        a.button(ng-click="selectSection('ass-list')" ng-class="{'active': isActiveSection('ass-list')}") 社群
     .buttons
       button.button.button-icon.icon.ion-android-add
   ion-content.groups-center
-    div(ng-include="'tpl/group-list.html'" ng-controller='groupsListCtrl')
-    div(ng-include="'tpl/ass-list.html'" ng-controller='assListCtrl')
+    div(ng-show="isActiveSection('groups-list')" ng-include="'modules/groupsCenter/groups-list.html'" ng-controller='GroupsListCtrl')
+    div(ng-show="isActiveSection('ass-list')" ng-include="'modules/groupsCenter/ass-list.html'" ng-controller='AssListCtrl')

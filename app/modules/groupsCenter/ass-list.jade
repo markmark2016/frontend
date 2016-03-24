@@ -1,0 +1,5 @@
+ion-list.ass-list
+  ion-item.item.item-thumbnail-left(href="#/tab/as/{{as.id}}"  ng-repeat='as in data')
+    img.img-circular(ng-src="{{as.image}}")
+    h2 {{as.associationName}}
+    p {{as.associationDesc}}

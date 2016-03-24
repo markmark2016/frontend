@@ -6,7 +6,7 @@
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
 //
-angular.module('mark', ['ionic', 'LocalStorageModule', 'mark.groupsCenter', 'mark.userCenter', 'mark.myGroups', 'mark.profile', 'mark.editProfile', 'mark.controllers', 'mark.services'])
+angular.module('mark', ['ionic','LocalStorageModule', 'mark.controllers', 'mark.services', 'mark.groupsCenter', 'mark.userCenter', 'mark.myGroups', 'mark.profile', 'mark.editProfile', ])
 
 .run(['$ionicPlatform', function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -54,12 +54,30 @@ angular.module('mark', ['ionic', 'LocalStorageModule', 'mark.groupsCenter', 'mar
       }
     }
   })
-  .state('tab.groups-center', { //小组列表
+  .state('tab.groups-center', {
     url: '/groups-center',
     views: {
       'tab-groups-center': {
         templateUrl: 'modules/groupsCenter/tab-groupsCenter-tpl.html',
         controller: 'GroupsCenterMainCtrl'
+      }
+    }
+  })
+  .state('tab.group-detail', {
+    url: '/group/:groupId',
+    views: {
+      'tab-groups-center': {
+        templateUrl: 'modules/groupsCenter/group-detail.html',
+        controller: 'GroupDetailCtrl'
+      }
+    }
+  })
+  .state('tab.as-detail', {
+    url: '/as/:asId',
+    views: {
+      'tab-groups-center': {
+        templateUrl: 'modules/groupsCenter/as-detail.html',
+        controller: 'AsDetailCtrl'
       }
     }
   })

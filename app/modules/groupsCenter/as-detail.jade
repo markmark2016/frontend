@@ -1,0 +1,41 @@
+ion-view(view-title='社群')
+  ion-content.as-detail
+    .center-header
+      .cover_warp(style="background-image:url({{data.image}})")
+      h2 {{data.associationName}}
+    .intr-list
+      ul.row.responsive-lg
+        li.col
+          h4 社群简介
+          p {{data.associationDesc}}
+    .books-list-grid
+      .note 建筑类
+      ul.row
+        li.col.col-33(ng-repeat='group in data.groupList' ui-sref="tab.group-detail({groupId: {{group.id}}})")
+          .img_warp(style="background-image:url({{group.groupImage}})")
+          h3 {{group.bookName}}
+    //.note 建构之美
+      ul.row
+        li.col.col-33
+          .img_warp(style="background-image:url(../test/pic/book.jpg)")
+          h3 西方建筑历
+        li.col.col-33
+          .img_warp(style="background-image:url(../test/pic/book.jpg)")
+          h3 西方建筑历
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

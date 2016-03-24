@@ -1,0 +1,39 @@
+{
+    "status": 1,
+    "userId": 56,
+    "data":
+    {
+        "id": 1,
+        "associationName": "读书社群",
+        "associationDesc": "社群啊",
+        "image": "../test/pic/book.jpg",
+        "groupList":
+        [
+            {
+                "id": 1,
+                "groupImage": "http://ec4.images-amazon.com/images/I/41W3OhqtirL._SX309_BO1,204,203,200_.jpg",
+                "groupName": "马净净读书小组",
+                "bookName": "白夜行",
+                "author": null,
+                "readSlogan": null,
+                "groupDesc": "马净净读书小组",
+                "beginDate": null,
+                "endDate": null,
+                "frequency": null,
+                "guarantee": null,
+                "latestDate": null,
+                "associationId": null,
+                "userClass": null,
+                "userStatus": "1",
+                "score": null,
+                "userId": null,
+                "groupRank": null,
+                "totoalReader": null,
+                "num": null,
+                "bookSummary": null,
+                "readCompleteDate": null
+            }
+        ]
+    },
+    "msg": "成功"
+}

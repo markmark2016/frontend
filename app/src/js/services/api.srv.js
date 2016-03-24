@@ -27,6 +27,35 @@ angular.module('mark.services')
         method: 'GET',
         url: '/?c=UserCenterAPI&a=get_my_groups'
       }
+    },
+    groupsCenter:{
+      get_groups: {
+        method: 'GET',
+        url: 'groups',
+        testUrl:'groups.json'
+      },
+      get_ass: {
+        method: 'GET',
+        url: 'associations',
+        testUrl:'associations.json'
+      },
+      get_group_detail: {
+        method: 'GET',
+        url: 'groups',
+        testUrl:'group.json'
+      },
+      get_as_detail: {
+        method: 'GET',
+        url: 'associations',
+        testUrl:'as.json'
+      },
+      get_group_users: {
+        method: 'GET',
+        url: 'groups',
+        testUrl:'group_users.json'
+      },
     }
+
+
   };
 }]);

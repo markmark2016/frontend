@@ -1,0 +1,6 @@
+ion-list.groups-list
+  ion-item.item.item-thumbnail-left(href="#/tab/group/{{group.id}}" ng-repeat='group in data')
+    img(ng-src="{{group.groupImage}}")
+    h2 {{group.groupName}}
+    h3 {{group.bookName}}
+    p {{group.groupDesc}}
