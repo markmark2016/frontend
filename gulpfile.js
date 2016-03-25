@@ -87,9 +87,9 @@ gulp.task('build-min', ['build-useref'], function(){
 // 拷贝压缩图片
 gulp.task('build-images', function(){
    return gulp.src(appConfig.dev+'**/*.+(png|jpg|gif|svg)',{ base: appConfig.dev })
-  .pipe(plugins.cache(plugins.imagemin({
-      interlaced: true
-    })))
+  // .pipe(plugins.cache(plugins.imagemin({
+  //     interlaced: true
+  //   })))
   .pipe(gulp.dest(appConfig.dist))
 });
 
