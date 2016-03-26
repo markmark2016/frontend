@@ -24,8 +24,8 @@ bower install
 ```bash
 cd <app root dir>
 nvm use node
-gulp develop
-gulp watch
+gulp dev
+gulp wc
 ```
 
 ## Build
@@ -33,7 +33,7 @@ gulp watch
 ```bash
 cd <app root dir>
 nvm use node
-gulp develop
+gulp dev
 gulp prod
 ```
 
