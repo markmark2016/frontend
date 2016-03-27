@@ -1,0 +1,15 @@
+ion-list.punches-list
+    ion-item.item.item-thumbnail-left(href="#/tab/group/{{punch.groupId}}" ng-repeat='punch in data')
+        img(ng-src="{{punch.image}}")
+        .punch-desc
+            h2 {{punch.groupName}}
+            h3 {{punch.bookName}}
+            p 今日打卡：
+                span.punch-people {{punch.todayPunch || 0}}
+                | 人
+            p 连续打卡：
+                span.punch-days {{punch.continuePunch || 0}}
+                | 天
+        a.button.button-circular.yellow(ng-show="{{!punch.isPunch && !punch.isComplete}}" ng-click="postPunch({{punch.groupId}})" href="javascript:;") 我要打卡
+        a.button.button-circular.yellow-bordered(ng-show="{{punch.isPunch || punch.isComplete}}" ng-click="showRemarks({{punch.groupId}})" href="javascript:;") 查看今日书评
+        a.button.button-circular.cyan(ng-show="{{punch.isComplete}}" ng-click="postRemark({{punch.groupId}})" href="javascript:;") 写书评

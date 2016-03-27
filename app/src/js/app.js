@@ -6,7 +6,7 @@
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
 //
-angular.module('mark', ['ionic','LocalStorageModule', 'mark.controllers', 'mark.services', 'mark.groupsCenter', 'mark.userCenter', 'mark.myGroups', 'mark.profile', 'mark.editProfile', ])
+angular.module('mark', ['ionic','LocalStorageModule', 'mark.controllers', 'mark.services', 'mark.groupsCenter', 'mark.userCenter', 'mark.myGroups', 'mark.profile', 'mark.editProfile', 'mark.punchCard'])
 
 .run(['$ionicPlatform', function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -204,6 +204,15 @@ angular.module('mark', ['ionic','LocalStorageModule', 'mark.controllers', 'mark.
       'tab-user-center': {
         templateUrl: 'modules/editProfile/templates/edit-relationship-tpl.html',
         controller: 'EditRelationshipMainCtrl'
+      }
+    }
+  })
+  .state('tab.punch-center', {
+    url: '/punch-center',
+    views: {
+      'tab-punch-center': {
+        templateUrl: 'modules/punchCardCenter/punch-list.html',
+        controller: 'PunchesListCtrl'
       }
     }
   })

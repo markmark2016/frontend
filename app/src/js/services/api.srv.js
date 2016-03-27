@@ -54,6 +54,41 @@ angular.module('mark.services')
         url: 'groups',
         testUrl:'group_users.json'
       },
+    },
+    remark: {
+      get_punch: {
+        method: 'GET',
+        url: 'remark/punch',
+        testUrl: 'remark/punch.json'
+      },
+      post_create: {
+        method: 'POST',
+        url: 'remark/create'
+      },
+      post_complete: {
+        method: 'POST',
+        url: 'remark/complete'
+      },
+      get_today: {
+        method: 'GET',
+        url: 'remark/today'
+      },
+      get_group: {
+        method: 'GET',
+        url: 'remark/group'
+      },
+      get_remark: {
+        method: 'GET',
+        url: 'remark'
+      },
+      post_like: {
+        method: 'GET',
+        url: 'remark/like'
+      },
+      post_reply: {
+        method: 'GET',
+        url: 'remark/reply'
+      }
     }
 
 
