@@ -188,6 +188,22 @@ img.img-circular {
   border: 1px @button-color-cyan solid;
 }
 
+/* 圆角数字标签 */
+
+.numbadge {
+  display: block;
+  padding: 3px 5px;
+  height: 16px;
+  min-width: 16px;
+  border-radius: 8px;
+  font-size: 10px;
+  line-height: 1;
+  white-space: nowrap;
+  text-align: center;
+  background-color: red;
+  color: white;
+}
+
 
 
 
@@ -694,6 +710,65 @@ padding: 5px 15px;
   height: 40px;
   resize: none;
   background-color: transparent;
+}
+
+/* message-list */
+
+.view-message-list {
+
+  overflow-y: scroll;
+  padding-bottom: 40px;
+
+  .item {
+    position: relative;
+    border: none;
+  }
+  .item-date {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: #666;
+    font-size: 12px;
+  }
+  .item p.content {
+    white-space: normal;
+    padding-bottom: 15px;
+    margin-bottom: -15px;
+    min-height: 35px;
+    border-bottom: 1px solid #ddd;
+  }
+  .item:last-child p.content {
+    border-bottom: none;
+  }
+}
+
+/* message-center */
+
+.view-message-center {
+
+  overflow-y: scroll;
+  padding-bottom: 40px;
+
+  .item {
+    position: relative;
+    border: none;
+  }
+
+  .item p {
+    padding-bottom: 15px;
+    margin-bottom: -15px;
+    min-height: 35px;
+    border-bottom: 1px solid #ddd;
+  }
+  .item:last-child p {
+    border-bottom: none;
+  }
+
+  .item .numbadge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+  }
 }
 
 

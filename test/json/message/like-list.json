@@ -1,0 +1,19 @@
+{
+    "status": 1,
+    "data": {
+        "unreadlikecount": 1,
+        "unreadlikelist": [
+            {
+                "userId": 6,
+                "userName": "华蓉",
+                "headImage": "http://wx.qlogo.cn/mmopen/lRyFfvqkHjArj3GiaD96605yVg3x8t4mwAskobTnPSJklvxK8xplk0ecQibAHjYvWrTSsWhNZlicNXPMnfI8PhoAm2UUbdkdV7a/0",
+                "content": "攒了你的书评我是一条书评",
+                "remarkId": 1,
+                "url": null,
+                "createTime": 1458719516000,
+                "isCheck": "0"
+            }
+        ]
+    },
+    "msg": "success"
+}

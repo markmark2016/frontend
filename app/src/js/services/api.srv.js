@@ -83,6 +83,24 @@ angular.module('mark.services')
         method: 'POST',
         url: 'remark/reply'
       }
+    },
+    message: {
+      get_summary: {
+        method: 'GET',
+        url: 'msg/:userId'
+      },
+      get_sys_list: {
+        method: 'GET',
+        url: 'msg/sys/:userId'
+      },
+      get_like_list: {
+        method: 'GET',
+        url: 'msg/like/:userId'
+      },
+      get_reply_list: {
+        method: 'GET',
+        url: 'msg/reply/:userId'
+      }
     }
   };
 
@@ -167,6 +185,24 @@ angular.module('mark.services')
       post_reply: {
         method: 'GET',
         url: 'none.json'
+      }
+    },
+    message: {
+      get_summary: {
+        method: 'GET',
+        url: 'message/summary.json'
+      },
+      get_sys_list: {
+        method: 'GET',
+        url: 'message/sys-list.json'
+      },
+      get_like_list: {
+        method: 'GET',
+        url: 'message/like-list.json'
+      },
+      get_reply_list: {
+        method: 'GET',
+        url: 'message/reply-list.json'
       }
     }
   };

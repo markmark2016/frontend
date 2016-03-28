@@ -1,0 +1,29 @@
+{
+    "status": 1,
+    "data": {
+        "unreadsyscount": 12,
+        "unreadsyslist": [
+            {
+                "userId": 6,
+                "userName": "iMark公告",
+                "headImage": "http://wx.qlogo.cn/mmopen/lRyFfvqkHjArj3GiaD96605yVg3x8t4mwAskobTnPSJklvxK8xplk0ecQibAHjYvWrTSsWhNZlicNXPMnfI8PhoAm2UUbdkdV7a/0",
+                "content": "新功能上线啦。建筑梦，看似容易追寻，实则容易追寻，看似容易追寻，实则容易追寻，看似容易追寻，实则容易追寻，看似容易追寻，实则容易追寻，看似容易追寻，实则容易追寻",
+                "remarkId": 1,
+                "url": null,
+                "createTime": 1458719516000,
+                "isCheck": "0"
+            },
+            {
+                "userId": 6,
+                "userName": "管理员通知",
+                "headImage": "http://wx.qlogo.cn/mmopen/lRyFfvqkHjArj3GiaD96605yVg3x8t4mwAskobTnPSJklvxK8xplk0ecQibAHjYvWrTSsWhNZlicNXPMnfI8PhoAm2UUbdkdV7a/0",
+                "content": "新功能上线啦。建筑梦，看似容易追寻，实则容易追寻，看似容易追寻，实则容易追寻，看似容易追寻，实则容易追寻，看似容易追寻，实则容易追寻，看似容易追寻，实则容易追寻",
+                "remarkId": 1,
+                "url": null,
+                "createTime": 1458719516000,
+                "isCheck": "0"
+            }
+        ]
+    },
+    "msg": "success"
+}
