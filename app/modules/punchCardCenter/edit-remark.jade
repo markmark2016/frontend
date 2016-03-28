@@ -1,0 +1,22 @@
+ion-view.view-edit-remark(view-title="{{group.isComplete ? '写书评' : '打卡'}}")
+    form(name="editRemarkForm" novalidate)
+        ion-list
+            .item 编辑《{{group.bookName}}》的书评
+            .item
+                div.page-and-pic
+                    input(type="number" name="remarkPageStart" ng-model="remarkPageStart" max="{{remarkPageEnd}}" required integer)
+                    span 页 － 
+                    input(type="number" name="remarkPageEnd" ng-model="remarkPageEnd" min="{{remarkPageStart}}" required integer)
+                    span 页
+                    a.button.button-icon.icon.ion-ios-camera-outline
+                div.error(ng-show="editRemarkForm.remarkPageStart.$error.max || editRemarkForm.remarkPageEnd.$error.min") 起始页码必须小于终止页码
+                div.error(ng-show="editRemarkForm.remarkPageStart.$error.integer") 起始页码必须为数字
+                div.error(ng-show="editRemarkForm.remarkPageEnd.$error.integer") 终止页码必须为数字
+            label.item.item-input.input-title
+                input(type="text", placeholder="标题（可选）" name="remarkTitle" ng-model="remarkTitle")
+            label.item.item-input.input-content
+                textarea(type="text", placeholder="书评内容" name="remarkContent" ng-model="remarkContent" required)
+            .item.button-line-group
+                a.button.button-circular.button-line.yellow(ng-show="{{!group.isPunch && !group.isComplete}}"  ng-disabled="editRemarkForm.remarkPageStart.$invalid || editRemarkForm.remarkPageEnd.$invalid || editRemarkForm.remarkContent.$invalid" ng-click="createRemark()") 我要打卡
+                a.button.button-circular.button-line.yellow-bordered(ng-show="{{!group.isPunch && !group.isComplete}}" ng-disabled="editRemarkForm.remarkContent.$invalid" ng-click="completeRemark()") 读完啦
+                a.button.button-circular.button-line.cyan(ng-show="{{group.isComplete}}" ng-disabled="editRemarkForm.remarkContent.$invalid" ng-click="completeRemark()") 写书评

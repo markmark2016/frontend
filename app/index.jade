@@ -31,19 +31,33 @@ html(ng-app='mark')
     script(src='../bower_components/ionic/release/js/ionic.bundle.js')
     script(src='../bower_components/angular-resource/angular-resource.js')
     script(src='../bower_components/angular-local-storage/dist/angular-local-storage.js')
+    script(src='../bower_components/jquery/dist/jquery.js')
     // endbower
     // endbuild
+    script(src='src/js/common/jquery.resize.min.js')
     // build:js src/js/scripts.js
     // cordova script (this will be a 404 during development)  
     script(src='src/js/app.js')
     |     
+    script(src='src/js/utils/directives.js')
+    |     
+    script(src='src/js/utils/filters.js')
+    |     
     script(src='src/js/services/services.module.js')
     |     
+    script(src='src/js/services/groups-center.srv.js')
+    |     
     script(src='src/js/services/account.srv.js')
+    |     
+    script(src='src/js/services/remark.srv.js')
     |     
     script(src='src/js/services/host.srv.js')
     |     
     script(src='src/js/services/api.srv.js')
+    |     
+    script(src='src/js/services/traditional-post.srv.js')
+    |     
+    script(src='src/js/utils/dialog.js')
     |     
     script(src='src/js/controllers.js')
     |     
@@ -94,6 +108,4 @@ html(ng-app='mark')
     script(src='modules/editProfile/controllers/editRelationship.ctrl.js')
     |     
     script(src='modules/punchCardCenter/main.js')
-    |     
-    script(src='modules/punchCardCenter/punchCard.svr.js')
     // endbuild
