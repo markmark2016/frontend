@@ -6,7 +6,7 @@
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
 //
-angular.module('mark', ['ionic','LocalStorageModule', 'mark.controllers', 'mark.services', 'mark.groupsCenter', 'mark.userCenter', 'mark.myGroups', 'mark.profile', 'mark.editProfile', 'mark.punchCard'])
+angular.module('mark', ['ionic','LocalStorageModule', 'mark.dialog', 'mark.filters', 'mark.controllers', 'mark.services', 'mark.groupsCenter', 'mark.userCenter', 'mark.myGroups', 'mark.profile', 'mark.editProfile', 'mark.remark'])
 
 .run(['$ionicPlatform', function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -22,6 +22,10 @@ angular.module('mark', ['ionic','LocalStorageModule', 'mark.controllers', 'mark.
       StatusBar.styleDefault();
     }
   });
+}])
+
+.config(['$ionicConfigProvider', function($ionicConfigProvider) {
+  $ionicConfigProvider.tabs.position('bottom');
 }])
 
 .config(['localStorageServiceProvider', function(localStorageServiceProvider){
@@ -240,6 +244,44 @@ angular.module('mark', ['ionic','LocalStorageModule', 'mark.controllers', 'mark.
       }
     }
   })
+  .state('tab.edit-remark', {
+    url: '/edit-remark/:groupId',
+    views: {
+      'tab-punch-center': {
+        templateUrl: 'modules/punchCardCenter/edit-remark.html',
+        controller: 'EditRemarkCtrl'
+      }
+    },
+    params: {
+      groupId: null
+    }
+  })
+  .state('tab.remark-today', {
+    url: '/remark-today/:groupId/:userId',
+    views: {
+      'tab-punch-center': {
+        templateUrl: 'modules/punchCardCenter/remark-detail.html',
+        controller: 'RemarkDetailController'
+      }
+    },
+    params: {
+      groupId: null,
+      userId: null
+    }
+  })
+  .state('tab.remark-detail', {
+    url: '/remark-detail/:groupId/:userId',
+    views: {
+      'tab-punch-center': {
+        templateUrl: 'modules/punchCardCenter/remark-detail.html',
+        controller: 'RemarkDetailController'
+      }
+    },
+    params: {
+      groupId: null,
+      userId: null
+    }
+  })
   ;
 
   // if none of the above states are matched, use this as the fallback
@@ -254,4 +296,5 @@ angular.module('mark', ['ionic','LocalStorageModule', 'mark.controllers', 'mark.
      $location.path('/tab/groups-center');
   });
 
-}]);
+}])
+;

@@ -1,0 +1,76 @@
+{
+    "status": 1,
+    "data": {
+        "replylist": [
+            {
+                "userId": 6,
+                "nickName": "华蓉",
+                "headImage": "http://wx.qlogo.cn/mmopen/lRyFfvqkHjArj3GiaD96605yVg3x8t4mwAskobTnPSJklvxK8xplk0ecQibAHjYvWrTSsWhNZlicNXPMnfI8PhoAm2UUbdkdV7a/0",
+                "interactDate": 1458635309000,
+                "content": "建筑的创造，多是依靠建筑师主观的感觉和观念。因此，将建筑方法从客观上理论化，可以说是非常困难的。但是，对建筑的评价"
+            }
+        ],
+        "likelist": [
+            {
+                "num": null,
+                "userId": 8,
+                "openid": "oPOUfwXyJUOSe8rN2WeIbHJ4rkOs",
+                "nickName": "龙龙",
+                "headImage": "http://wx.qlogo.cn/mmopen/Xmnun9Io49RYibPNl6QbMqYus5s7rWsSJcKRcSdoojVJ4Lprdfg8oHFMQUntcuv9gZ40sqYTgibckpHfubBCrJXoD1OLiakaD0s/0",
+                "intro": null,
+                "totalGroup": null,
+                "totalRemark": null,
+                "totalRead": null,
+                "totalPunch": null,
+                "score": null,
+                "leader": false
+            },
+            {
+                "num": null,
+                "userId": 11,
+                "openid": "oPOUfweUre13RBBHQ86h8FW-dwdE",
+                "nickName": "李兴",
+                "headImage": "http://wx.qlogo.cn/mmopen/Q3auHgzwzM7OrO6BoAr1EaVXWSIulaWj0dQZHvXvBcSDSGyngASmM8u4a9PKibxcic6ZAat4Np2MI1icXHJgndibFQ/0",
+                "intro": null,
+                "totalGroup": null,
+                "totalRemark": null,
+                "totalRead": null,
+                "totalPunch": null,
+                "score": null,
+                "leader": false
+            }
+        ],
+        "remark": {
+            "id": 4,
+            "createTime": 1458632766000,
+            "updateTime": 1458546366000,
+            "groupIdFk": 1,
+            "bookIdFk": null,
+            "userIdFk": 6,
+            "startPage": 1,
+            "endPage": 1,
+            "title": "建筑的原点",
+            "comment": "建筑的创造，多是依靠建筑师主观的感觉和观念。因此，将建筑方法从客观上理论化，可以说是非常困难的。但是，对建筑的评价，如果仅仅以建筑家个人的主观或喜好为依据，建筑就很难有质的发展。本书特别做了一种尝试，借助心理学（完形心理学、 精神分析学）的方法，探究建筑设计理论，阐明建筑美的原理（空间造型的基础）。\n本书分为形态、空间、心理和要素四个篇章，从人的身体、心理和建筑的基本要素等细节入手，探讨设计之前需要了解的，关于建筑的“本源”。"
+        },
+        "totalLike": 2,
+        "user": {
+            "id": 6,
+            "createTime": null,
+            "updateTime": null,
+            "userId": null,
+            "openid": "oPOUfwbl6xt6peXlnZb8BGuvAexM",
+            "nickname": "华蓉",
+            "gender": "2",
+            "interests": null,
+            "intro": null,
+            "city": "",
+            "province": "北京",
+            "school": null,
+            "occupation": null,
+            "constellation": null,
+            "affectiveStatus": null,
+            "headImgUrl": "http://wx.qlogo.cn/mmopen/lRyFfvqkHjArj3GiaD96605yVg3x8t4mwAskobTnPSJklvxK8xplk0ecQibAHjYvWrTSsWhNZlicNXPMnfI8PhoAm2UUbdkdV7a/0"
+        }
+    },
+    "msg": "sucess"
+}
