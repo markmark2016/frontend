@@ -32,9 +32,9 @@ html(ng-app='mark')
     script(src='../bower_components/angular-resource/angular-resource.js')
     script(src='../bower_components/angular-local-storage/dist/angular-local-storage.js')
     script(src='../bower_components/jquery/dist/jquery.js')
+    script(src='src/js/common/jquery.resize.min.js')
     // endbower
     // endbuild
-    script(src='src/js/common/jquery.resize.min.js')
     // build:js src/js/scripts.js
     // cordova script (this will be a 404 during development)  
     script(src='src/js/app.js')
@@ -50,6 +50,8 @@ html(ng-app='mark')
     script(src='src/js/services/account.srv.js')
     |     
     script(src='src/js/services/remark.srv.js')
+    |     
+    script(src='src/js/services/message.srv.js')
     |     
     script(src='src/js/services/host.srv.js')
     |     
@@ -108,4 +110,6 @@ html(ng-app='mark')
     script(src='modules/editProfile/controllers/editRelationship.ctrl.js')
     |     
     script(src='modules/punchCardCenter/main.js')
+    |     
+    script(src='modules/messageCenter/main.js')
     // endbuild

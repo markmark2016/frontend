@@ -1,0 +1,7 @@
+ion-view.view-message-list(view-title="{{viewTitle}}")
+    ion-list
+        a.item.item-avatar(ng-repeat="msg in messages" href="{{msg.url}}")
+            img(src="{{msg.headImage}}")
+            h2 {{msg.userName}}
+            p.content {{msg.content}}
+            span.item-date {{ msg.createTime | recentDate }}

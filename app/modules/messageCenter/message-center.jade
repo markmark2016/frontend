@@ -1,0 +1,17 @@
+ion-view.view-message-center(view-title="消息")
+    ion-list
+        a.item.item-avatar(href="#/tab/message/sys")
+            img(src="src/img/icon_msg_sys.png")
+            h2 系统消息
+            p {{summary.sys.message}}
+            span.numbadge(ng-show="summary.sys.unread")   {{summary.sys.unread}}
+        a.item.item-avatar(href="#/tab/message/reply")
+            img(src="src/img/icon_msg_reply.png")
+            h2 评论
+            p {{summary.reply.message}}
+            span.numbadge(ng-show="summary.reply.unread") {{summary.reply.unread}}
+        a.item.item-avatar(href="#/tab/message/like")
+            img(src="src/img/icon_msg_like.png")
+            h2 点赞
+            p {{summary.like.message}}
+            span.numbadge(ng-show="summary.like.unread")  {{summary.like.unread}}

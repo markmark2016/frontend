@@ -6,7 +6,7 @@
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
 //
-angular.module('mark', ['ionic','LocalStorageModule', 'mark.dialog', 'mark.filters', 'mark.controllers', 'mark.services', 'mark.groupsCenter', 'mark.userCenter', 'mark.myGroups', 'mark.profile', 'mark.editProfile', 'mark.remark'])
+angular.module('mark', ['ionic','LocalStorageModule', 'mark.dialog', 'mark.filters', 'mark.controllers', 'mark.services', 'mark.groupsCenter', 'mark.userCenter', 'mark.myGroups', 'mark.profile', 'mark.editProfile', 'mark.remark', 'mark.message'])
 
 .run(['$ionicPlatform', function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -258,7 +258,7 @@ angular.module('mark', ['ionic','LocalStorageModule', 'mark.dialog', 'mark.filte
     }
   })
   .state('tab.remark-today', {
-    url: '/remark-today/:groupId/:userId',
+    url: '/remark-today/:groupId',
     views: {
       'tab-punch-center': {
         templateUrl: 'modules/punchCardCenter/remark-detail.html',
@@ -266,12 +266,11 @@ angular.module('mark', ['ionic','LocalStorageModule', 'mark.dialog', 'mark.filte
       }
     },
     params: {
-      groupId: null,
-      userId: null
+      groupId: null
     }
   })
   .state('tab.remark-detail', {
-    url: '/remark-detail/:groupId/:userId',
+    url: '/remark-detail/:remarkId',
     views: {
       'tab-punch-center': {
         templateUrl: 'modules/punchCardCenter/remark-detail.html',
@@ -279,8 +278,43 @@ angular.module('mark', ['ionic','LocalStorageModule', 'mark.dialog', 'mark.filte
       }
     },
     params: {
-      groupId: null,
-      userId: null
+      remarkId: null
+    }
+  })
+  .state('tab.message-center', {
+    url: '/message-center',
+    views: {
+      'tab-message-center': {
+        templateUrl: 'modules/messageCenter/message-center.html',
+        controller: 'MessageCenterCtrl'
+      }
+    }
+  })
+  .state('tab.message-sys', {
+    url: '/message/sys',
+    views: {
+      'tab-message-center': {
+        templateUrl: 'modules/messageCenter/message-list.html',
+        controller: 'SysMsgListCtrl'
+      }
+    }
+  })
+  .state('tab.message-reply', {
+    url: '/message/reply',
+    views: {
+      'tab-message-center': {
+        templateUrl: 'modules/messageCenter/message-list.html',
+        controller: 'ReplyMsgListCtrl'
+      }
+    }
+  })
+  .state('tab.message-like', {
+    url: '/message/like',
+    views: {
+      'tab-message-center': {
+        templateUrl: 'modules/messageCenter/message-list.html',
+        controller: 'LikeMsgListCtrl'
+      }
     }
   })
   ;
