@@ -1,5 +1,5 @@
 ion-view(view-title='小组')
-  ion-content.group-detail
+  ion-content.group-detail(overflow-scroll='true')
     .center-header
       .cover_warp
         img(ng-src="{{data.groupImage}}")
@@ -8,35 +8,10 @@ ion-view(view-title='小组')
       h4 {{data.author}}
       .tabs-striped.tabs-background-light.custom-tabs
         .tabs
-          a.tab-item.active 介绍
-          a.tab-item 书评
-          a.tab-item 活动
-    .users-list-h-warp
-      h3 {{users.length}}位书友
-      .users-list-h(ui-sref="/tab")
-        .row
-          .col.col-90
-            ul
-              li(style="background-image:url({{user.headImage}})" ng-repeat='user in users')
-          .col
-            .ion-ios-arrow-right
-    .intr-list
-      ul.row.responsive-lg
-        li.col
-          h4 读书标语
-          p {{data.readSlogan}}
-        li.col
-          h4 小组简介
-          p {{data.groupDesc}}
-        li.col
-          h4 读书规则
-          p 读书周期：{{data.beginDate}} - {{data.endDate}}
-          p 打卡频率：{{data.frequency}}
-          p 保证金金额：{{data.num}}元
-          p 最晚加入时间：{{data.latestDate}}
-        li.col
-          h4 图书简介
-          p {{data.bookSummary}}
+          a.tab-item(ui-sref="tab.group-detail.intr" ui-sref-active="active") 介绍
+          a.tab-item(ui-sref="tab.group-detail.comment" ui-sref-active="active") 书评
+          a.tab-item(ui-sref="tab.group-detail.activity" ui-sref-active="active") 活动
+    ion-nav-view(name='tab-group-detail')
 
 
 

@@ -76,6 +76,31 @@ angular.module('mark', ['ionic','LocalStorageModule', 'mark.dialog', 'mark.filte
       }
     }
   })
+  .state('tab.group-detail.intr', {
+    url: '/intr',
+    views: {
+      'tab-group-detail': {
+        templateUrl: 'modules/groupsCenter/group-detail-intr.html'
+      }
+    }
+  })
+  .state('tab.group-detail.comment', {
+    url: '/comment',
+    views: {
+      'tab-group-detail': {
+        templateUrl: 'modules/groupsCenter/group-detail-comment.html',
+        controller: 'GroupDetailCommentCtrl'
+      }
+    }
+  })
+  .state('tab.group-detail.activity', {
+    url: '/activity',
+    views: {
+      'tab-group-detail': {
+        templateUrl: 'modules/groupsCenter/group-detail-activity.html'
+      }
+    }
+  })
   .state('tab.as-detail', {
     url: '/as/:asId',
     views: {
