@@ -1,5 +1,5 @@
-ion-view(title="小组")
-  ion-pane
+ion-view.pane-visible(title="小组")
+  ion-pane.pane-visible
     .users-list-h-warp
       h3 {{data_users.length}}位书友
       .users-list-h(ui-sref="/tab")
@@ -19,7 +19,7 @@ ion-view(title="小组")
           p {{data.groupDesc}}
         li.col
           h4 读书规则
-          p 读书周期：{{data.beginDate}} - {{data.endDate}}
+          p 读书周期：{{data.beginDate | date:'yyyy-MM-dd'}} - {{data.endDate | date:'yyyy-MM-dd'}}
           p 打卡频率：{{data.frequency}}
           p 保证金金额：{{data.num}}元
           p 最晚加入时间：{{data.latestDate}}
