@@ -88,7 +88,8 @@ angular.module('mark', ['ionic','LocalStorageModule', 'mark.dialog', 'mark.filte
     url: '/comment',
     views: {
       'tab-group-detail': {
-        templateUrl: 'modules/groupsCenter/group-detail-comment.html'
+        templateUrl: 'modules/groupsCenter/group-detail-comment.html',
+        controller: 'GroupDetailCommentCtrl'
       }
     }
   })

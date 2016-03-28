@@ -24,13 +24,17 @@ angular.module('mark.groupsCenter')
 	 	$scope.data = result.data;
 	});
 }])
-.controller('GroupDetailCtrl', ['$scope', 'ApiSrv','GroupsCenterSrv','$stateParams',function($scope, ApiSrv,GroupsCenterSrv,$stateParams) {
+.controller('GroupDetailCtrl', ['$scope', 'ApiSrv','GroupsCenterSrv','$stateParams','$state',function($scope, ApiSrv,GroupsCenterSrv,$stateParams,$state) {
 	GroupsCenterSrv.getGroupDetailSrv.action({id:$stateParams.groupId,userId:6},function(result){
 	 	$scope.data = result.data;
 	});
     GroupsCenterSrv.getGroupUsersSrv.action({id:$stateParams.groupId},function(result){
-	 	$scope.data = result.data;
+	 	$scope.data_users = result.data;
 	});
+	$state.go('tab.group-detail.intr');
+}])
+.controller('GroupDetailCommentCtrl', ['$scope', 'ApiSrv','GroupsCenterSrv','$stateParams',function($scope, ApiSrv,GroupsCenterSrv,$stateParams) {
+	//小组详情－书评列表控制器
 }])
 .controller('AsDetailCtrl', ['$scope', 'ApiSrv','GroupsCenterSrv','$stateParams', function($scope, ApiSrv,GroupsCenterSrv,$stateParams) {
 	GroupsCenterSrv.getAsDetailSrv.action({id:$stateParams.asId,userId:6},function(result){

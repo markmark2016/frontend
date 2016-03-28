@@ -1,7 +1,7 @@
 angular.module('mark.services')
 
 .factory('ApiSrv', ['HostSrv', function(HostSrv) {
-  productiveApis = {
+  var productiveApis = {
     basicAccount: {
       get_my_account: {
         method: 'GET',
@@ -48,7 +48,7 @@ angular.module('mark.services')
       get_group_users: {
         method: 'GET',
         url: 'groups/:id/users',
-      },
+      }
     },
     remark: {
       get_punch: {
@@ -86,7 +86,7 @@ angular.module('mark.services')
     }
   };
 
-  stagingApis = {
+  var stagingApis = {
     basicAccount: {
       get_my_account: {
         method: 'GET',
