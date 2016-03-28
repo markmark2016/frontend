@@ -9,5 +9,5 @@ ion-view(view-title='发现')
     .buttons
       button.button.button-icon.icon.ion-android-add
   ion-content.groups-center
-    div(ng-show="isActiveSection('groups-list')" ng-include="'modules/groupsCenter/groups-list.html'" ng-controller='GroupsListCtrl')
-    div(ng-show="isActiveSection('ass-list')" ng-include="'modules/groupsCenter/ass-list.html'" ng-controller='AssListCtrl')
+    div(ng-if="isActiveSection('groups-list')" ng-include="'modules/groupsCenter/groups-list.html'" ng-controller='GroupsListCtrl')
+    div(ng-if="isActiveSection('ass-list')" ng-include="'modules/groupsCenter/ass-list.html'" ng-controller='AssListCtrl')
