@@ -16,6 +16,7 @@ ion-view.view-as-detail(view-title='社群')
                         .book-item
                             img(src="{{book.groupImage}}")
                             p {{book.bookName}}
+                            .round-badge.lg(ng-show="book.userStatus" ng-class="{'red': (book.userStatus == 1), 'gray': (book.userStatus == 2)}") {{ ["", "正在读", "已读完"][book.userStatus] }}
                 .text-center
                     i.icon.icon-collapse(ng-show="cat.list.length > 6" ng-class="{'ion-ios-arrow-up': cat.uncollapsed, 'ion-ios-arrow-down': !cat.uncollapsed}" ng-click="cat.uncollapsed = !cat.uncollapsed")
 

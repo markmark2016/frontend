@@ -163,6 +163,7 @@ img.img-circular {
 
 @color-yellow: #fcd353;
 @color-cyan: #37b1ae;
+@color-gray: #999;
 
 .button.button-circular {
   height: 34px;
@@ -210,6 +211,7 @@ img.img-circular {
 .round-badge.red { background-color: red; }
 .round-badge.cyan { background-color: @color-cyan; }
 .round-badge.yellow { background-color: @color-yellow; }
+.round-badge.gray { background-color: @color-gray; }
 .round-badge.sm {}
 .round-badge.lg {
   padding: 4px 7px;
@@ -618,12 +620,21 @@ top: 25px;
   }
 
   .book-item-wrapper {
+    padding-top: 10px;
     display: inline-block;
     vertical-align: top;
     width: 33%;
     height: 166px;
   }
+  a.book-item-wrapper,
+  a.book-item-wrapper:active,
+  a.book-item-wrapper:link,
+  a.book-item-wrapper:visited,
+  a.book-item-wrapper:hover {
+    text-decoration: none;
+  }
   .book-item {
+    position: relative;
     display: block;
     margin: 0px auto;
     width: 70px;
@@ -643,6 +654,13 @@ top: 25px;
     margin-top: 10px;
     margin-bottom: 20px;
     color: #333;
+    text-decoration: none;
+  }
+  .book-item .round-badge {
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    box-shadow: 3px 3px 10px -5px black;
   }
 }
 
