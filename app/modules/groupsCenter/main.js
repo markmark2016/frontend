@@ -15,6 +15,12 @@ angular.module('mark.groupsCenter')
 	};
 }])
 .controller('GroupsListCtrl', ['$scope', 'ApiSrv','GroupsCenterSrv',function($scope, ApiSrv,GroupsCenterSrv) {
+	$scope.getGroupStatus = function(group) {
+		var now = new Date().getTime();
+		if (now > group.endDate) return 'end';
+		else if (now < group.beginDate) return 'ready';
+		else return 'pending';
+	};
 	GroupsCenterSrv.getGroupsSrv.action({}, function(result){
 	 	$scope.data = result.data;
 	});

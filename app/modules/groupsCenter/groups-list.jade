@@ -3,4 +3,7 @@ ion-list.groups-list
     img(ng-src="{{group.groupImage}}")
     h2 {{group.groupName}}
     h3 {{group.bookName}}
-    p {{group.groupDesc}}
+    //- p {{group.groupDesc}}
+    .round-badge.lg.cyan(ng-show="getGroupStatus(group) == 'ready'") 即将开始
+    .round-badge.lg.red(ng-show="getGroupStatus(group) == 'pending'") 正在进行
+    .round-badge.lg.gray(ng-show="getGroupStatus(group) == 'end'") 已结束
