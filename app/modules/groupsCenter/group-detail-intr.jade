@@ -1,15 +1,15 @@
-ion-view(title="小组")
+ion-view.view-group-detail-intr(title="小组")
   ion-pane
-    .users-list-h-warp
-      h3 {{data_users.length}}位书友
-      a.user-avatar-horizontal(href="#/tab/group/{{data.id}}/users")
-        .user-more
-          .icon.ion-ios-arrow-right
-        .user-avatars
-          .avatar(ng-repeat="user in data_users", href="javascript:;")
-              img(src="{{user.headImage}}")
     .intr-list
       ul.row.responsive-lg
+        li.col.users-list-h-warp
+          h3 {{data_users.length}}位书友
+          a.user-avatar-horizontal(href="#/tab/group/{{data.id}}/users")
+            .user-more
+              .icon.ion-ios-arrow-right
+            .user-avatars
+              .avatar(ng-repeat="user in data_users", href="javascript:;")
+                  img(src="{{user.headImage}}")
         li.col
           h4 读书标语
           p {{data.readSlogan}}
