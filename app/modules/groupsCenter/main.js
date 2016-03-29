@@ -33,12 +33,48 @@ angular.module('mark.groupsCenter')
 	});
 	$state.go('tab.group-detail.intr');
 }])
-.controller('GroupDetailCommentCtrl', ['$scope', 'ApiSrv','GroupsCenterSrv','$stateParams',function($scope, ApiSrv,GroupsCenterSrv,$stateParams) {
-	//小组详情－书评列表控制器
+.controller('GroupDetailCommentCtrl', ['$scope', 'ApiSrv','GroupsCenterSrv','RemarkSrv','$stateParams',function($scope, ApiSrv,GroupsCenterSrv,RemarkSrv,$stateParams) {
+	$scope.hotlist = [];
+	$scope.timeorderlist = [];
+
+	var activeSection = 'hot';
+	$scope.activeList = $scope.hotlist;
+	$scope.selectSection = function(section){
+	    activeSection = section;
+	    if (section == 'hot') $scope.activeList = $scope.hotlist;
+	    else if (section == 'recent') $scope.activeList = $scope.timeorderlist;
+	    else $scope.activeList = [];
+	};
+
+	$scope.isActiveSection = function(section){
+	    if(activeSection==section) return true;
+	    return false;
+	};
+
+	RemarkSrv.getGroupRemarksSrv.action({
+		groupId: $stateParams.groupId
+	}, function(result) {
+		$scope.hotlist = result.data.hotlist;
+		$scope.timeorderlist = result.data.timeorderlist;
+		$scope.selectSection(activeSection);
+	});
 }])
 .controller('AsDetailCtrl', ['$scope', 'ApiSrv','GroupsCenterSrv','$stateParams', function($scope, ApiSrv,GroupsCenterSrv,$stateParams) {
 	GroupsCenterSrv.getAsDetailSrv.action({id:$stateParams.asId,userId:6},function(result){
 	 	$scope.data = result.data;
+	 	$scope.categories = [];
+	 	for (var k in result.data.categoryMap) {
+	 		$scope.categories.push({
+	 			name: k,
+	 			list: result.data.categoryMap[k]
+	 		});
+	 	}
+	});
+}])
+.controller('GroupUserListCtrl', ['$scope','GroupsCenterSrv','$stateParams', function($scope,GroupsCenterSrv,$stateParams) {
+	$scope.users = [];
+	GroupsCenterSrv.getGroupUsersSrv.action({id:$stateParams.groupId},function(result){
+	 	$scope.users = result.data;
 	});
 }])
 ;

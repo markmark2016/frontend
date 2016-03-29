@@ -2,13 +2,12 @@ ion-view(title="小组")
   ion-pane
     .users-list-h-warp
       h3 {{data_users.length}}位书友
-      .users-list-h(ui-sref="/tab")
-        .row
-          .col.col-90
-            ul
-              li(style="background-image:url({{user.headImage}})" ng-repeat='user in data_users')
-          .col
-            .ion-ios-arrow-right
+      a.user-avatar-horizontal(href="#/tab/group/{{data.id}}/users")
+        .user-more
+          .icon.ion-ios-arrow-right
+        .user-avatars
+          .avatar(ng-repeat="user in data_users", href="javascript:;")
+              img(src="{{user.headImage}}")
     .intr-list
       ul.row.responsive-lg
         li.col

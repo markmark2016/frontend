@@ -172,11 +172,11 @@ angular.module('mark.services')
       },
       get_group: {
         method: 'GET',
-        url: 'remark/group/:groupId'
+        url: 'remark/group-remarks.json'
       },
       get_remark: {
         method: 'GET',
-        url: 'remark/:remarkId'
+        url: 'remark/remark-detail.json'
       },
       post_like: {
         method: 'GET',

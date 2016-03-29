@@ -1,1 +1,29 @@
-{"groupId":1,"status":"1","data":[{"id":1,"nickName":"aa","headImage":"../test/pic/photo.jpg","intro":null,"totalGroup":null,"totalRemark":null,"totalRead":null,"punch":null,"leader":true},{"id":2,"nickName":"ww","headImage":"../test/pic/photo.jpg","intro":null,"totalGroup":null,"totalRemark":null,"totalRead":null,"punch":null,"leader":false}],"msg":"sucess"}
+{
+    "groupId": 1,
+    "status": "1",
+    "data": [
+        {
+            "id": 1,
+            "nickName": "一条想飞的鱼",
+            "headImage": "http://wx.qlogo.cn/mmopen/Xmnun9Io49RYibPNl6QbMqYus5s7rWsSJcKRcSdoojVJ4Lprdfg8oHFMQUntcuv9gZ40sqYTgibckpHfubBCrJXoD1OLiakaD0s/0",
+            "intro": "多年以后，依然疯狂",
+            "totalGroup": null,
+            "totalRemark": null,
+            "totalRead": null,
+            "punch": null,
+            "leader": true
+        },
+        {
+            "id": 2,
+            "nickName": "龙龙",
+            "headImage": "http://wx.qlogo.cn/mmopen/Q3auHgzwzM7OrO6BoAr1EaVXWSIulaWj0dQZHvXvBcSDSGyngASmM8u4a9PKibxcic6ZAat4Np2MI1icXHJgndibFQ/0",
+            "intro": "多年以后，依然疯狂",
+            "totalGroup": null,
+            "totalRemark": null,
+            "totalRead": null,
+            "punch": null,
+            "leader": false
+        }
+    ],
+    "msg": "sucess"
+}

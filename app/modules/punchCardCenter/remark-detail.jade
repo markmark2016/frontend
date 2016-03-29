@@ -12,16 +12,19 @@ ion-view.view-remark-detail(view-title="书评")
             p(ng-repeat="para in remark.remark.comment.split('\n')") {{para}}
         .item.item-likes
             h1 点赞&nbsp;{{remark.totalLike}}
-            .like-avatars
-                a.avatar(ng-repeat="liker in remark.likelist", href="javascript:;")
-                    img(src="{{liker.headImage}}")
+            a.user-avatar-horizontal(href="#/tab/remark-detail-likes/{{remark.remark.id}}")
+                .user-more
+                    .icon.ion-ios-arrow-right
+                .user-avatars
+                    .avatar(ng-repeat="liker in remark.likelist", href="javascript:;")
+                        img(src="{{liker.headImage}}")
         .item.item-replies
             h1 书评回复
             ion-list
-                .item.item-avatar(ng-repeat="reply in remark.replylist")
+                .item.item-avatar.rbb(ng-repeat="reply in remark.replylist")
                     img(src="{{reply.headImage}}")
                     h2 {{reply.nickName}}
-                    p {{reply.interactDate | date:'y-MM-dd'}}
+                    p {{reply.interactDate | date:'yyyy-MM-dd'}}
                     p.content {{reply.content}}
 form.bar.item-input-inset.bar-remark-tools(name="remarkReplyForm" novalidate)
     .button-bar(ng-show="!toggleReply")

@@ -63,6 +63,14 @@ angular.module('mark.services')
         }
     });
 
+    var getGroupRemarksSrv = $resource(HostSrv.main + ApiSrv.remark.get_group.url, {}, {
+        action: {
+            method: ApiSrv.remark.get_group.method,
+            params: { groupId: "groupId" },
+            isArray: false
+        }
+    });
+
     // var groupSrv = $resource(HostSrv.main + ApiSrv.)
 
     return {
@@ -70,7 +78,9 @@ angular.module('mark.services')
         createRemarkSrv: createRemarkSrv,
         completeRemarkSrv: completeRemarkSrv,
         getTodayRemarkDetailSrv: getTodayRemarkDetailSrv,
+        getRemarkDetailSrv: getRemarkDetailSrv,
         postReplySrv: postReplySrv,
-        postLikeSrv: postLikeSrv
+        postLikeSrv: postLikeSrv,
+        getGroupRemarksSrv: getGroupRemarksSrv
     };
 }]);

@@ -56,7 +56,7 @@ angular.module('mark.remark')
             title: $scope.remarkTitle || "",
             comment: $scope.remarkContent || ""
         }, function(result) {
-            $location.path('/tab/remark-today/' + groupId + '/' + userId);
+            $location.path('/tab/remark-today/' + groupId);
         }, function(error) {
             alertDialog($scope, '提交失败', "服务器开小差了，请稍等一下");
         });
@@ -70,7 +70,7 @@ angular.module('mark.remark')
             title: $scope.remarkTitle || "",
             comment: $scope.remarkContent || ""
         }, function(result) {
-            $location.path('/tab/remark-today/' + groupId + '/' + userId);
+            $location.path('/tab/remark-today/' + groupId);
         }, function(error) {
             alertDialog($scope, '提交失败', "服务器开小差了，请稍等一下");
         });
@@ -86,44 +86,37 @@ angular.module('mark.remark')
 
     $scope.remarkLiked = false;
 
-    RemarkSrv.punchesSrv.action({userId: userId},function(result){
-        for (var i = 0; i < result.data.length; i++) {
-            if (result.data[i].groupId == groupId) {
-                $scope.group = result.data[i];
+    function getRemarkCallback(result) {
+        $scope.remark = result.data;
+        for (var i = 0; i < $scope.remark.likelist.length; i++) {
+            if ($scope.remark.likelist[i].userId == userId) {
+                remarkLiked = true;
                 break;
             }
         }
-    });
+        RemarkSrv.punchesSrv.action({userId: userId},function(result){
+            for (var i = 0; i < result.data.length; i++) {
+                if (result.data[i].groupId == $scope.remark.remark.groupIdFk) {
+                    $scope.group = result.data[i];
+                    break;
+                }
+            }
+        });
+    };
 
     var refreshRemark;
     if (remarkId) {
         refreshRemark = function () {
-            RemarkSrv.getTodayRemarkDetailSrv.action({
+            RemarkSrv.getRemarkDetailSrv.action({
                 remarkId: remarkId
-            }, function(result) {
-                $scope.remark = result.data;
-                for (var i = 0; i < $scope.remark.likelist.length; i++) {
-                    if ($scope.remark.likelist[i].userId == userId) {
-                        remarkLiked = true;
-                        break;
-                    }
-                }
-            });
+            }, getRemarkCallback);
         };
     } else {
         refreshRemark = function () {
             RemarkSrv.getTodayRemarkDetailSrv.action({
                 groupId: groupId,
                 userId: userId
-            }, function(result) {
-                $scope.remark = result.data;
-                for (var i = 0; i < $scope.remark.likelist.length; i++) {
-                    if ($scope.remark.likelist[i].userId == userId) {
-                        remarkLiked = true;
-                        break;
-                    }
-                }
-            });
+            }, getRemarkCallback);
         };
     }
 

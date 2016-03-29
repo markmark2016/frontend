@@ -101,6 +101,15 @@ angular.module('mark', ['ionic','LocalStorageModule', 'mark.dialog', 'mark.filte
       }
     }
   })
+  .state('tab.group-detail-users', {
+    url: '/group/:groupId/users',
+    views: {
+      'tab-groups-center': {
+        templateUrl: 'modules/groupsCenter/group-user-list.html',
+        controller: 'GroupUserListCtrl'
+      }
+    }
+  })
   .state('tab.as-detail', {
     url: '/as/:asId',
     views: {
@@ -274,6 +283,18 @@ angular.module('mark', ['ionic','LocalStorageModule', 'mark.dialog', 'mark.filte
     views: {
       'tab-punch-center': {
         templateUrl: 'modules/punchCardCenter/remark-detail.html',
+        controller: 'RemarkDetailController'
+      }
+    },
+    params: {
+      remarkId: null
+    }
+  })
+  .state('tab.remark-detail-likes', {
+    url: '/remark-detail-likes/:remarkId',
+    views: {
+      'tab-punch-center': {
+        templateUrl: 'modules/punchCardCenter/remark-like-list.html',
         controller: 'RemarkDetailController'
       }
     },
