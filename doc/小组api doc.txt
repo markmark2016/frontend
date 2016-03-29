@@ -54,46 +54,117 @@
 		方法：GET，需要参数userId（必须）
 		RequireParamter：associationId
 		返回Json：
-		    {
-		        "status": 1,
-		        "userId": 56,	//本次访问的用户id
-		        "data":
-		        {
-		            "id": 1,
-		            "associationName": "读书社群",
-		            "associationDesc": "社群啊",
-		            "image": "adsfasdf",
-		            "groupList":
-		            [
-		                {
-		                    "id": 1,
-		                    "groupImage": "http://ec4.images-amazon.com/images/I/41W3OhqtirL._SX309_BO1,204,203,200_.jpg",
-		                    "groupName": "马净净读书小组",
-		                    "bookName": "白夜行",
-		                    "author": null,
-		                    "readSlogan": null,
-		                    "groupDesc": "马净净读书小组",
-		                    "beginDate": null,
-		                    "endDate": null,
-		                    "frequency": null,
-		                    "guarantee": null,
-		                    "latestDate": null,
-		                    "associationId": null,
-		                    "userClass": null,
-		                    "userStatus": "1",
-		                    //当前用户在小组的状态，null或0为不在组内，1为在组内，2为已读完
-		                    "score": null,
-		                    "userId": null,
-		                    "groupRank": null,
-		                    "totoalReader": null,
-		                    "num": null,
-		                    "bookSummary": null,
-		                    "readCompleteDate": null
-		                }
-		            ]
-		        },
-		        "msg": "成功"
-		    }
+		{
+	        "msg": "成功",
+	        "data":
+	        {
+	            "id": 1,
+	            "associationName": "互联网读书社群",
+	            "associationDesc": "我是互联网读书社群的简介",
+	            "image": "http://7xsaxl.com1.z0.glb.clouddn.com/cod4.jpg1458991549149",
+	            "groupList":
+	            [
+	            ],
+	            "categoryMap":
+	            {
+	                "java"://类别名称，里面内容为该类别下的小组列表
+	                [
+	                    {
+	                        "id": 7,
+	                        "groupImage": "http://img3.douban.com/lpic/s28045542.jpg",
+	                        "groupName": "2016CPA备考团",
+	                        "bookName": "西湖将",
+	                        "author": null,
+	                        "readSlogan": null,
+	                        "groupDesc": "2016CPA备考团-包含《会计》《财务管理》《审计》《税法》《经济法》《战略与风险管理 》",
+	                        "beginDate": null,
+	                        "endDate": null,
+	                        "frequency": null,
+	                        "guarantee": null,
+	                        "latestDate": null,
+	                        "associationId": null,
+	                        "userClass": null,
+	                        "userStatus": null,
+	                        "score": null,
+	                        "userId": null,
+	                        "groupRank": null,
+	                        "totoalReader": null,
+	                        "num": null,
+	                        "bookSummary": null,
+	                        "readCompleteDate": null,
+	                        "categoryId": 1,
+	                        "remarkVisiable": "1",
+	                        "listVisiable": "1"
+	                    }
+	                ],
+	                "C语言":
+	                [
+	                    {
+	                        "id": 8,
+	                        "groupImage": "http://img6.douban.com/lpic/s2767118.jpg",
+	                        "groupName": "和君9届备考团",
+	                        "bookName": "西湖将",
+	                        "author": null,
+	                        "readSlogan": null,
+	                        "groupDesc": "和君九届领读。教育产业班班长周宇带你读书！和君必考萨缪尔森《经济学》",
+	                        "beginDate": null,
+	                        "endDate": null,
+	                        "frequency": null,
+	                        "guarantee": null,
+	                        "latestDate": null,
+	                        "associationId": null,
+	                        "userClass": null,
+	                        "userStatus": null,
+	                        "score": null,
+	                        "userId": null,
+	                        "groupRank": null,
+	                        "totoalReader": null,
+	                        "num": null,
+	                        "bookSummary": null,
+	                        "readCompleteDate": null,
+	                        "categoryId": 9,
+	                        "remarkVisiable": "1",
+	                        "listVisiable": "1"
+	                    }
+	                ],
+	                "js":
+	                [
+	                    {
+	                        "id": 9,
+	                        "groupImage": "http://ec4.images-amazon.com/images/I/61eE-2qwHJL.jpg",
+	                        "groupName": "新三板系列之阿米巴经营",
+	                        "bookName": "西湖将",
+	                        "author": null,
+	                        "readSlogan": null,
+	                        "groupDesc": "本读书小组围绕“产业+资本+管理+互联网”的综合纬度学习与实践。本期共读资本纬度的书籍：《阿米巴经营》。4个板块（“产业+资本+管理+互联网”）分享下来，相信又诞生一批“和君式”的实战与理论综合高手",
+	                        "beginDate": null,
+	                        "endDate": null,
+	                        "frequency": null,
+	                        "guarantee": null,
+	                        "latestDate": null,
+	                        "associationId": null,
+	                        "userClass": null,
+	                        "userStatus": null,
+	                        "score": null,
+	                        "userId": null,
+	                        "groupRank": null,
+	                        "totoalReader": null,
+	                        "num": null,
+	                        "bookSummary": null,
+	                        "readCompleteDate": null,
+	                        "categoryId": 10,
+	                        "remarkVisiable": "1",
+	                        "listVisiable": "1"
+	                    }
+	                ]
+	            }
+	        },
+	        "userId": 1,
+	        "status": 1
+	    }
+
+
+
 
 
 
