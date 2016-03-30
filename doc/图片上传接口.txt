@@ -1,0 +1,5 @@
+地址：http://api.imark.com/mark-backend/upload
+ 		方法：POST
+ 		后台接收类型：MultipartFile
+ 		返回json：{"pictureUrl":"http://7xsaxl.com1.z0.glb.clouddn.com/original_hDuI_432500000c2a125b.jpg1459305938360"
+		,"status":"true"}	
