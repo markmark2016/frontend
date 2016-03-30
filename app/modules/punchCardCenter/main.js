@@ -11,15 +11,12 @@ angular.module('mark.remark')
     });
 
     $scope.postPunch = function(groupId) {
-        // $state.go('tab.edit-remark', {groupId: groupId});
         $location.path('/tab/edit-remark/' + groupId);
     };
     $scope.showRemarks = function(groupId) {
-        // $state.go('tab.edit-remark', {groupId: groupId});
-        $location.path('/tab/edit-remark/' + groupId);
+        $location.path('/tab/remark-today/' + groupId);
     };
     $scope.postRemark = function(groupId) {
-        // $state.go('tab.edit-remark', {groupId: groupId});
         $location.path('/tab/edit-remark/' + groupId);
     };
 }])
