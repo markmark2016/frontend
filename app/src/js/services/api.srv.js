@@ -2,6 +2,12 @@ angular.module('mark.services')
 
 .factory('ApiSrv', ['HostSrv', function(HostSrv) {
   var productiveApis = {
+    common: {
+      upload: {
+        method: 'POST',
+        url: 'upload'
+      }
+    },
     basicAccount: {
       get_my_account: {
         method: 'GET',
@@ -113,6 +119,12 @@ angular.module('mark.services')
   };
 
   var stagingApis = {
+    common: {
+      upload: {
+        method: 'GET',
+        url: 'upload.json'
+      }
+    },
     basicAccount: {
       get_my_account: {
         method: 'GET',

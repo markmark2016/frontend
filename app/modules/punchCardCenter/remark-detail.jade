@@ -10,6 +10,7 @@ ion-view.view-remark-detail(view-title="书评")
             h1 {{remark.remark.title}}
         .item.item-content
             p(ng-repeat="para in remark.remark.comment.split('\n')") {{para}}
+            img(ng-repeat="img_src in remark.remark.pictureUrls" src="{{img_src}}")
         .item.item-likes
             h1 点赞&nbsp;{{remark.totalLike}}
             a.user-avatar-horizontal(href="#/tab/remark-detail-likes/{{remark.remark.id}}")

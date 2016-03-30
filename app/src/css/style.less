@@ -66,6 +66,35 @@ p.normal-p, span.normal-span {
   text-align: center;
 }
 
+/* rotation animation */
+@keyframes rotation-anim {
+  from { transform: rotate(0deg);   -ms-transform: rotate(0deg);   }
+  to   { transform: rotate(360deg); -ms-transform: rotate(360deg); }
+}
+@-moz-keyframes rotation-anim {
+  from { -moz-transform: rotate(0deg);   }
+  to   { -moz-transform: rotate(360deg); }
+}
+@-o-keyframes rotation-anim {
+  from { -o-transform: rotate(0deg);   }
+  to   { -o-transform: rotate(360deg); }
+}
+@-webkit-keyframes rotation-anim {
+  from { -webkit-transform: rotate(0deg);   }
+  to   { -webkit-transform: rotate(360deg); }
+}
+.rotating {
+  animation: rotation-anim 1s infinite;
+  -moz-animation: rotation-anim 1s infinite;
+  -o-animation: rotation-anim 1s infinite;
+  -webkit-animation: rotation-anim 1s infinite;
+  transform-origin: center center;
+  -ms-transform-origin: center center;
+  -moz-transform-origin: center center;
+  -o-transform-origin: center center;
+  -webkit-transform-origin: center center;
+}
+
 /* 底部导航 */
 ion-tabs.tabs-bottom.tabs-color-active-dark .tab-item{
   color: #444;
@@ -813,6 +842,66 @@ top: 25px;
     overflow-y: scroll;
   }
 
+  .button-take-photo {
+    position: relative;
+  }
+  .input-file {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    display: none;
+  }
+
+  .pic-list {
+    font-size: 0px;
+    white-space: normal;
+  }
+  .pic-list .thumbnail {
+    width: 80px;
+    height: 80px;
+    border: 1px #ddd solid;
+    position: relative;
+    display: inline-block;
+    margin: 2px;
+  }
+  .pic-list .thumbnail .thumbnail-pic {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+  }
+  .pic-list .thumbnail .thumbnail-pic img {
+    width: 100%;
+    height: 100%;
+  }
+  .pic-list .thumbnail .thumbnail-mask {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+  }
+  .pic-list .thumbnail .thumbnail-mask .icon {
+    position: absolute;
+    display: block;
+    line-height: 1;
+    font-size: 30px;
+    width: 30px;
+    height: 30px;
+    left: 25px;
+    top: 25px;
+    color: white;
+  }
+  .pic-list .thumbnail .thumbnail-mask .icon.ion-load-c {
+    width: 26px;
+    height: 28px;
+    left: 27px;
+    top: 26px;
+    .rotating;
+  }
+
   .item .button-line {
     display: block;
   }
@@ -856,6 +945,12 @@ top: 25px;
   }
   .item-content p {
     white-space: normal;
+  }
+  .item-content img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 5px auto;
   }
 
   .item-replies p.content {

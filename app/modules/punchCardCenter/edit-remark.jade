@@ -8,7 +8,8 @@ ion-view.view-edit-remark(view-title="{{group.isComplete ? '写书评' : '打卡
                     span 页 － 
                     input(type="number" name="remarkPageEnd" ng-model="remarkPageEnd" min="{{remarkPageStart}}" required integer)
                     span 页
-                    a.button.button-icon.icon.ion-ios-camera-outline
+                    a.button.button-icon.icon.ion-ios-camera-outline.button-take-photo(ng-click="takePhoto($event)")
+                    input.input-file(ng-show="false" type="file" accept="image/*")
                 div.error(ng-show="editRemarkForm.remarkPageStart.$error.max || editRemarkForm.remarkPageEnd.$error.min") 起始页码必须小于终止页码
                 div.error(ng-show="editRemarkForm.remarkPageStart.$error.integer") 起始页码必须为数字
                 div.error(ng-show="editRemarkForm.remarkPageEnd.$error.integer") 终止页码必须为数字
@@ -16,7 +17,15 @@ ion-view.view-edit-remark(view-title="{{group.isComplete ? '写书评' : '打卡
                 input(type="text", placeholder="标题（可选）" name="remarkTitle" ng-model="remarkTitle")
             label.item.item-input.input-content
                 textarea(type="text", placeholder="书评内容" name="remarkContent" ng-model="remarkContent" required)
+            .item.pic-list
+                .thumbnail(ng-repeat="photo in photos")
+                    .thumbnail-pic
+                        img(src="{{photo.src}}")
+                    .thumbnail-mask(ng-show="!photo.uploaded && !photo.error")
+                        i.icon.ion-load-c
+                    .thumbnail-mask(ng-show="photo.error")
+                        i.icon.ion-close-round
             .item.button-line-group
-                a.button.button-circular.button-line.yellow(ng-show="{{!group.isPunch && !group.isComplete}}"  ng-disabled="editRemarkForm.remarkPageStart.$invalid || editRemarkForm.remarkPageEnd.$invalid || editRemarkForm.remarkContent.$invalid" ng-click="createRemark()") 我要打卡
-                a.button.button-circular.button-line.yellow-bordered(ng-show="{{!group.isPunch && !group.isComplete}}" ng-disabled="editRemarkForm.remarkContent.$invalid" ng-click="completeRemark()") 读完啦
-                a.button.button-circular.button-line.cyan(ng-show="{{group.isComplete}}" ng-disabled="editRemarkForm.remarkContent.$invalid" ng-click="completeRemark()") 写书评
+                a.button.button-circular.button-line.yellow(ng-show="{{!group.isPunch && !group.isComplete}}"  ng-disabled="!isAllPhotoUploaded() || editRemarkForm.remarkPageStart.$invalid || editRemarkForm.remarkPageEnd.$invalid || editRemarkForm.remarkContent.$invalid" ng-click="createRemark()") 我要打卡
+                a.button.button-circular.button-line.yellow-bordered(ng-show="{{!group.isPunch && !group.isComplete}}" ng-disabled="!isAllPhotoUploaded() || editRemarkForm.remarkContent.$invalid" ng-click="completeRemark()") 读完啦
+                a.button.button-circular.button-line.cyan(ng-show="{{group.isComplete}}" ng-disabled="!isAllPhotoUploaded() || editRemarkForm.remarkContent.$invalid" ng-click="completeRemark()") 写书评
