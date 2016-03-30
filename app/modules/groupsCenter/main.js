@@ -1,6 +1,8 @@
 'use strict';
 
-angular.module('mark.groupsCenter', ['mark.services']);
+var userId = 6;
+
+angular.module('mark.groupsCenter', ['mark.services', 'mark.dialog']);
 
 angular.module('mark.groupsCenter')
 .controller('GroupsCenterMainCtrl', ['$scope', 'ApiSrv', function($scope, ApiSrv) {
@@ -30,7 +32,7 @@ angular.module('mark.groupsCenter')
 	 	$scope.data = result.data;
 	});
 }])
-.controller('GroupDetailCtrl', ['$scope', 'ApiSrv','GroupsCenterSrv','$stateParams','$state',function($scope, ApiSrv,GroupsCenterSrv,$stateParams,$state) {
+.controller('GroupDetailCtrl', ['$scope', 'ApiSrv','GroupsCenterSrv','alertDialog','$stateParams','$state', function($scope, ApiSrv,GroupsCenterSrv, alertDialog, $stateParams,$state) {
 	GroupsCenterSrv.getGroupDetailSrv.action({id:$stateParams.groupId,userId:6},function(result){
 	 	$scope.data = result.data;
 	});
@@ -38,6 +40,26 @@ angular.module('mark.groupsCenter')
 	 	$scope.data_users = result.data;
 	});
 	$state.go('tab.group-detail.intr');
+	$scope.joinGroup = function() {
+		GroupsCenterSrv.joinGroupSrv.action({}, {
+			groupIdFk: $stateParams.groupId,
+			userIdFk: userId
+		}, function(result) {
+			$scope.data.userStatus = 1;
+		}, function(error) {
+			alertDialog($scope, '加入小组失败', "服务器开小差了，请稍等一下");
+		});
+	};
+	$scope.quitGroup = function() {
+		GroupsCenterSrv.quitGroupSrv.action({}, {
+			groupIdFk: $stateParams.groupId,
+			userIdFk: userId
+		}, function(result) {
+			$scope.data.userStatus = 0;
+		}, function(error) {
+			alertDialog($scope, '退出小组失败', "服务器开小差了，请稍等一下");
+		});
+	};
 }])
 .controller('GroupDetailCommentCtrl', ['$scope', 'ApiSrv','GroupsCenterSrv','RemarkSrv','$stateParams',function($scope, ApiSrv,GroupsCenterSrv,RemarkSrv,$stateParams) {
 	$scope.hotlist = [];

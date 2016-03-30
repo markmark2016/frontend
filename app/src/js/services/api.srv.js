@@ -48,6 +48,14 @@ angular.module('mark.services')
       get_group_users: {
         method: 'GET',
         url: 'groups/:id/users',
+      },
+      post_join_group: {
+        method: 'POST',
+        url: 'groups/join'
+      },
+      post_quit_group: {
+        method: 'POST',
+        url: 'groups/quit'
       }
     },
     remark: {
@@ -152,6 +160,14 @@ angular.module('mark.services')
         method: 'GET',
         url: 'group_users.json'
       },
+      post_join_group: {
+        method: 'POST',
+        url: 'none.json'
+      },
+      post_quit_group: {
+        method: 'POST',
+        url: 'none.json'
+      }
     },
     remark: {
       get_punch: {

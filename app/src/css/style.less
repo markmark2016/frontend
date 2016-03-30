@@ -109,6 +109,7 @@ ion-tabs.tabs-bottom.tabs-color-active-dark .tab-item{
 }
 .pane.pane-visible{
   overflow: visible;
+  border-bottom: none;
 }
 
 /* image related css 书籍列表封面图 */
@@ -167,6 +168,7 @@ img.img-circular {
 @color-yellow: #fcd353;
 @color-cyan: #37b1ae;
 @color-gray: #999;
+@color-red: red;
 
 .button.button-circular {
   height: 34px;
@@ -195,6 +197,15 @@ img.img-circular {
   color: @color-cyan;
   border: 1px @color-cyan solid;
 }
+.button.button-circular.red {
+  background-color: @color-red;
+  color: white;
+}
+.button.button-circular.red-bordered {
+  background-color: white;
+  color: @color-red;
+  border: 1px @color-red solid;
+}
 
 /* 圆角标签 */
 
@@ -211,7 +222,7 @@ img.img-circular {
   background-color: white;
   color: white;
 }
-.round-badge.red { background-color: red; }
+.round-badge.red { background-color: @color-red; }
 .round-badge.cyan { background-color: @color-cyan; }
 .round-badge.yellow { background-color: @color-yellow; }
 .round-badge.gray { background-color: @color-gray; }
@@ -572,9 +583,12 @@ top: 25px;
 }
 
 .view-group-detail-intr {
-  padding-bottom: 40px;
-  .intr-list li {
-    border-bottom: 1px #ddd solid;
+  // padding-bottom: 40px;
+  .intr-list .item > h4 {
+    font-size: 16px;
+  }
+  .intr-list .item .button {
+    display: block;
   }
 }
 
@@ -736,7 +750,7 @@ top: 25px;
     color: #666;
   }
   .punches-list .item .punch-days {
-    color: red;
+    color: @color-red;
   }
   .punches-list .item .punch-desc {
     min-height: 97px;
