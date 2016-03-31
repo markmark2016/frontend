@@ -58,12 +58,12 @@
 	2）当用户在该小组的isPunch为false,点击"我要打卡"提交按钮  ：http://api.imark.com/mark-backend/remark/create/{groupId}/{userId}
 		方法：POST
 		url参数：userId，groupId，
-		post参数：startPage，endPage，title（可选），comment
+		post参数：startPage，endPage，title（可选），comment, picUrl（逗号分隔）
 	
 	3）当用户在该小组的isComplete为true,点击"写书评"提交按钮  ：http://api.imark.com/mark-backend/remark/complete/{groupId}/{userId}
 		方法：POST
 		url参数：userId，groupId，
-		post参数：title（可选），comment
+		post参数：title（可选），comment, picUrl（逗号分隔）
 	
 	4）当用户在该小组的isPunch为true，点击"查看今日书评"  ：http://api.imark.com/mark-backend/remark/today/{groupId}/{userId}
 		方法：GET

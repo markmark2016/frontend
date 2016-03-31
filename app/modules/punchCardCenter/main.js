@@ -1,31 +1,29 @@
 'use strict';
 
-var userId = 6;
-
 angular.module('mark.remark', ['mark.services', 'mark.dialog', 'mark.filters']);
 
 angular.module('mark.remark')
-.controller('PunchesListCtrl', ['$scope','$location','$state','RemarkSrv',function($scope,$location,$state,RemarkSrv) {
+.controller('PunchesListCtrl', ['$scope','$location','$state','RemarkSrv','AccountSrv',function($scope,$location,$state,RemarkSrv,AccountSrv) {
+    var userId = AccountSrv.getUserId();
     RemarkSrv.punchesSrv.action({userId: userId},function(result){
         $scope.data = result.data;
     });
 
     $scope.postPunch = function(groupId) {
-        // $state.go('tab.edit-remark', {groupId: groupId});
         $location.path('/tab/edit-remark/' + groupId);
     };
     $scope.showRemarks = function(groupId) {
-        // $state.go('tab.edit-remark', {groupId: groupId});
-        $location.path('/tab/edit-remark/' + groupId);
+        $location.path('/tab/remark-today/' + groupId);
     };
     $scope.postRemark = function(groupId) {
-        // $state.go('tab.edit-remark', {groupId: groupId});
         $location.path('/tab/edit-remark/' + groupId);
     };
 }])
-.controller('EditRemarkCtrl', ['$scope', 'RemarkSrv', '$stateParams', '$location', 'alertDialog', function($scope, RemarkSrv, $stateParams, $location, alertDialog) {
+.controller('EditRemarkCtrl', ['$scope', 'RemarkSrv', 'CommonSrv', '$stateParams', '$location', 'alertDialog', 'AccountSrv', function($scope, RemarkSrv, CommonSrv, $stateParams, $location, alertDialog, AccountSrv) {
+    var userId = AccountSrv.getUserId();
     var groupId = $stateParams.groupId;
     $scope.group = {};
+    $scope.photos = [];
 
     RemarkSrv.punchesSrv.action({userId: userId},function(result){
         for (var i = 0; i < result.data.length; i++) {
@@ -46,6 +44,70 @@ angular.module('mark.remark')
     });
     $('.view-edit-remark').resize();
 
+    $scope.takePhoto = function($event) {
+        setTimeout(function() {
+            var fileEl = $($event.target).siblings('.input-file');
+            fileEl.off('change.photo');
+            fileEl.one('change.photo', function() {
+                photoSelected(this);
+            });
+            fileEl.click();
+        }, 1);
+    };
+
+    function photoSelected (fileEl) {
+        for (var i = 0; i < fileEl.files.length; i++) {
+            var fileObj = fileEl.files[i];
+            uploadPhoto(fileObj);
+        }
+    };
+
+    function uploadPhoto (fileObj) {
+        if (fileObj.type.split('/')[0] !== "image") return;
+        var fileReader = new FileReader();
+        var fileStruct = {
+            fileObj: fileObj,
+            uploaded: false,
+            error: false,
+            src: ""
+        };
+        $scope.photos.push(fileStruct);
+        $scope.$apply();
+        fileReader.onload = function(data) {
+            fileStruct.src = fileReader.result;
+            $scope.$apply();
+            CommonSrv.upload(fileStruct.fileObj, function(data) {
+                console.log(fileStruct);
+                fileStruct.error = false;
+                fileStruct.uploaded = true;
+                fileStruct.src = data.pictureUrl;
+                $scope.$apply();
+            }, function(error) {
+                fileStruct.error = true;
+                fileStruct.uploaded = true;
+                $scope.$apply();
+            });
+        };
+        fileReader.readAsDataURL(fileStruct.fileObj);
+    };
+
+    function getPhotoUrls () {
+        var urls = [];
+        for (var i = 0; i < $scope.photos.length; i++) {
+            if ($scope.photos[i].uploaded && !$scope.photos[i].error) urls.push($scope.photos[i].src);
+        }
+        return urls;
+    };
+
+    $scope.isAllPhotoUploaded = function() {
+        for (var i = 0; i < $scope.photos.length; i++) {
+            if (!$scope.photos[i].uploaded) {
+                return false;
+            }
+        }
+        return true;
+    };
+
     $scope.createRemark = function() {
         RemarkSrv.createRemarkSrv.action({
             groupId: groupId,
@@ -54,7 +116,8 @@ angular.module('mark.remark')
             startPage: $scope.remarkPageStart || "",
             endPage: $scope.remarkPageEnd || "",
             title: $scope.remarkTitle || "",
-            comment: $scope.remarkContent || ""
+            comment: $scope.remarkContent || "",
+            pictureUrl: getPhotoUrls().join(',')
         }, function(result) {
             $location.path('/tab/remark-today/' + groupId);
         }, function(error) {
@@ -68,7 +131,8 @@ angular.module('mark.remark')
             userId: userId
         }, {
             title: $scope.remarkTitle || "",
-            comment: $scope.remarkContent || ""
+            comment: $scope.remarkContent || "",
+            pictureUrl: getPhotoUrls().join(',')
         }, function(result) {
             $location.path('/tab/remark-today/' + groupId);
         }, function(error) {
@@ -76,9 +140,9 @@ angular.module('mark.remark')
         });
     };
 }])
-.controller('RemarkDetailController', ['$scope', 'RemarkSrv', '$stateParams', 'alertDialog', function($scope, RemarkSrv, $stateParams, alertDialog) {
+.controller('RemarkDetailController', ['$scope', 'RemarkSrv', 'AccountSrv', '$stateParams', 'alertDialog', function($scope, RemarkSrv, AccountSrv, $stateParams, alertDialog) {
     var groupId = $stateParams.groupId;
-    // var userId = $stateParams.userId || userId;
+    var userId = AccountSrv.getUserId();
     var remarkId = $stateParams.remarkId;
 
     $scope.group = {};
@@ -88,6 +152,19 @@ angular.module('mark.remark')
 
     function getRemarkCallback(result) {
         $scope.remark = result.data;
+        var pictureUrlSplit = $scope.remark.pictureUrl.split(',');
+        var pictureUrls = [];
+        for (var i = 0; i < pictureUrlSplit.length; i++) {
+            var canPushUrl = true;
+            for (var j = 0; j < pictureUrls.length; j++) {
+                if (pictureUrlSplit[i] == pictureUrls[j]) {
+                    canPushUrl = false;
+                    break;
+                }
+            }
+            if (canPushUrl) pictureUrls.push(pictureUrlSplit[i]);
+        }
+        $scope.remark.remark.pictureUrls = pictureUrls;
         for (var i = 0; i < $scope.remark.likelist.length; i++) {
             if ($scope.remark.likelist[i].userId == userId) {
                 remarkLiked = true;

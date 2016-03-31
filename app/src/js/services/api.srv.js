@@ -2,6 +2,12 @@ angular.module('mark.services')
 
 .factory('ApiSrv', ['HostSrv', function(HostSrv) {
   var productiveApis = {
+    common: {
+      upload: {
+        method: 'POST',
+        url: 'upload'
+      }
+    },
     basicAccount: {
       get_my_account: {
         method: 'GET',
@@ -48,6 +54,14 @@ angular.module('mark.services')
       get_group_users: {
         method: 'GET',
         url: 'groups/:id/users',
+      },
+      post_join_group: {
+        method: 'POST',
+        url: 'groups/join'
+      },
+      post_quit_group: {
+        method: 'POST',
+        url: 'groups/quit'
       }
     },
     remark: {
@@ -105,6 +119,12 @@ angular.module('mark.services')
   };
 
   var stagingApis = {
+    common: {
+      upload: {
+        method: 'GET',
+        url: 'upload.json'
+      }
+    },
     basicAccount: {
       get_my_account: {
         method: 'GET',
@@ -152,6 +172,14 @@ angular.module('mark.services')
         method: 'GET',
         url: 'group_users.json'
       },
+      post_join_group: {
+        method: 'POST',
+        url: 'none.json'
+      },
+      post_quit_group: {
+        method: 'POST',
+        url: 'none.json'
+      }
     },
     remark: {
       get_punch: {

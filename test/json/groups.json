@@ -1,1 +1,36 @@
-{"status":1,"data":[{"id":1,"groupImage":"../test/pic/book.jpg","groupName":"一号小组","bookName":"白夜行","author":null,"readSlogan":null,"groupDesc":"读书人的事儿","beginDate":null,"endDate":null,"frequency":null,"guarantee":null,"latestDate":null,"bookSummary":null},{"id":2,"groupImage":"../test/pic/book.jpg","groupName":"2号小组","bookName":"白夜行","author":null,"readSlogan":null,"groupDesc":"读书人的事儿","beginDate":null,"endDate":null,"frequency":null,"guarantee":null,"latestDate":null,"bookSummary":null}],"msg":"成功"}
+{
+    "status": 1,
+    "data": [
+        {
+            "id": 1,
+            "groupImage": "../test/pic/book.jpg",
+            "groupName": "一号小组",
+            "bookName": "白夜行",
+            "author": null,
+            "readSlogan": null,
+            "groupDesc": "读书人的事儿",
+            "beginDate": null,
+            "endDate": null,
+            "frequency": null,
+            "guarantee": null,
+            "latestDate": null,
+            "bookSummary": null
+        },
+        {
+            "id": 2,
+            "groupImage": "../test/pic/book.jpg",
+            "groupName": "2号小组",
+            "bookName": "白夜行",
+            "author": null,
+            "readSlogan": null,
+            "groupDesc": "读书人的事儿",
+            "beginDate": null,
+            "endDate": null,
+            "frequency": null,
+            "guarantee": null,
+            "latestDate": null,
+            "bookSummary": null
+        }
+    ],
+    "msg": "成功"
+}

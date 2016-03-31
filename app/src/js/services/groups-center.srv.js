@@ -1,5 +1,5 @@
 angular.module('mark.services')
-.factory('GroupsCenterSrv', ['$resource','HostSrv','ApiSrv', function($resource,HostSrv,ApiSrv){
+.factory('GroupsCenterSrv', ['$resource','HostSrv','ApiSrv', 'TraditionalPostSrv', function($resource,HostSrv,ApiSrv,$tpost){
     var getGroupsSrv = $resource(HostSrv.main + ApiSrv.groupsCenter.get_groups.url , {}, { //一层请求
         action: {
             method:'GET', params:{}, isArray:false
@@ -25,11 +25,25 @@ angular.module('mark.services')
             method:'GET', params:{id:"id"}, isArray:false
         }
     });
+    var joinGroupSrv = $tpost(HostSrv.main + ApiSrv.groupsCenter.post_join_group.url, {}, {
+        action: {
+            method: ApiSrv.groupsCenter.post_join_group.method,
+            params: { }
+        }
+    });
+    var quitGroupSrv = $tpost(HostSrv.main + ApiSrv.groupsCenter.post_quit_group.url, {}, {
+        action: {
+            method: ApiSrv.groupsCenter.post_quit_group.method,
+            params: { }
+        }
+    });
     return {
         getGroupsSrv: getGroupsSrv,
         getAssSrv: getAssSrv,
         getGroupDetailSrv: getGroupDetailSrv,
         getAsDetailSrv: getAsDetailSrv,
-        getGroupUsersSrv: getGroupUsersSrv
+        getGroupUsersSrv: getGroupUsersSrv,
+        joinGroupSrv: joinGroupSrv,
+        quitGroupSrv: quitGroupSrv
     };
 }]);
