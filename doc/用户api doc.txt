@@ -527,7 +527,12 @@
 		        "msg": "更新成功"
 		    }
 
-
+	12）删除某本书：http://api.imark.com/mark-backend/users/book/delete
+		方法：post
+		参数：userId，bookId,type
+	13）保存某本书：http://api.imark.com/mark-backend/users/book/save
+		方法：post
+		参数：userId，title,image,type,
 
 
 
