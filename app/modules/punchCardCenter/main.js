@@ -1,11 +1,10 @@
 'use strict';
 
-var userId = 6;
-
 angular.module('mark.remark', ['mark.services', 'mark.dialog', 'mark.filters']);
 
 angular.module('mark.remark')
-.controller('PunchesListCtrl', ['$scope','$location','$state','RemarkSrv',function($scope,$location,$state,RemarkSrv) {
+.controller('PunchesListCtrl', ['$scope','$location','$state','RemarkSrv','AccountSrv',function($scope,$location,$state,RemarkSrv,AccountSrv) {
+    var userId = AccountSrv.getUserId();
     RemarkSrv.punchesSrv.action({userId: userId},function(result){
         $scope.data = result.data;
     });
@@ -20,7 +19,8 @@ angular.module('mark.remark')
         $location.path('/tab/edit-remark/' + groupId);
     };
 }])
-.controller('EditRemarkCtrl', ['$scope', 'RemarkSrv', 'CommonSrv', '$stateParams', '$location', 'alertDialog', function($scope, RemarkSrv, CommonSrv, $stateParams, $location, alertDialog) {
+.controller('EditRemarkCtrl', ['$scope', 'RemarkSrv', 'CommonSrv', '$stateParams', '$location', 'alertDialog', 'AccountSrv', function($scope, RemarkSrv, CommonSrv, $stateParams, $location, alertDialog, AccountSrv) {
+    var userId = AccountSrv.getUserId();
     var groupId = $stateParams.groupId;
     $scope.group = {};
     $scope.photos = [];
@@ -140,9 +140,9 @@ angular.module('mark.remark')
         });
     };
 }])
-.controller('RemarkDetailController', ['$scope', 'RemarkSrv', '$stateParams', 'alertDialog', function($scope, RemarkSrv, $stateParams, alertDialog) {
+.controller('RemarkDetailController', ['$scope', 'RemarkSrv', 'AccountSrv', '$stateParams', 'alertDialog', function($scope, RemarkSrv, AccountSrv, $stateParams, alertDialog) {
     var groupId = $stateParams.groupId;
-    // var userId = $stateParams.userId || userId;
+    var userId = AccountSrv.getUserId();
     var remarkId = $stateParams.remarkId;
 
     $scope.group = {};
@@ -152,13 +152,14 @@ angular.module('mark.remark')
 
     function getRemarkCallback(result) {
         $scope.remark = result.data;
-        var pictureUrlSplit = $scope.remark.remark.pictureUrl.split(',');
+        var pictureUrlSplit = $scope.remark.pictureUrl.split(',');
         var pictureUrls = [];
         for (var i = 0; i < pictureUrlSplit.length; i++) {
             var canPushUrl = true;
             for (var j = 0; j < pictureUrls.length; j++) {
                 if (pictureUrlSplit[i] == pictureUrls[j]) {
                     canPushUrl = false;
+                    break;
                 }
             }
             if (canPushUrl) pictureUrls.push(pictureUrlSplit[i]);
