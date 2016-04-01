@@ -198,8 +198,8 @@ angular.module('mark.user', ['mark.services', 'mark.dialog'])
         $scope.data = result.data;
         for (var i = 0; i < result.data.datearray.length; i++) {
             var date = new Date(result.data.datearray[i]);
-            if ((date.getFullYear() == $scope.currentDate.year) && (date.getMonth() == $scope.currentDate.month - 1) && $scope.days[date.getDate()]) {
-                $scope.days[date.getDate()].isPunched = true;
+            if ((date.getFullYear() == $scope.currentDate.year) && (date.getMonth() == $scope.currentDate.month - 1) && $scope.days[date.getDate() - 1]) {
+                $scope.days[date.getDate() - 1].isPunched = true;
             }
         }
     }

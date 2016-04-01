@@ -234,7 +234,7 @@ angular.module('mark.remark')
         $scope.remark.remark.pictureUrls = pictureUrls;
         for (var i = 0; i < $scope.remark.likelist.length; i++) {
             if ($scope.remark.likelist[i].userId == userId) {
-                remarkLiked = true;
+                $scope.remarkLiked = true;
                 break;
             }
         }
