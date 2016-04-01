@@ -1,7 +1,7 @@
 ion-view.view-user-center(view-title='{{ user.nickName }} - 个人中心')
   ion-content#user_center
     ion-list
-      ion-item.item-avatar.item-icon-right(href='#/tab/user-detail/{{user.id}}')
+      ion-item.item-avatar.item-icon-right(href='#/tab/user-detail/{{user.userId}}')
         img(src='{{ user.headImage }}')
         |         
         h2 {{ user.nickName }}
@@ -14,7 +14,7 @@ ion-view.view-user-center(view-title='{{ user.nickName }} - 个人中心')
         .row
           .col.text-center
             .statistic
-              a(ng-href='#/tab/user-groups/{{user.id}}')
+              a(ng-href='#/tab/user-groups/{{user.userId}}')
                 .value
                   | {{ user.totalGroup }}
                 .label
@@ -22,7 +22,7 @@ ion-view.view-user-center(view-title='{{ user.nickName }} - 个人中心')
           |           
           .col.text-center
             .statistic
-              a(ng-href='#/tab/user-rank/{{user.id}}')
+              a(ng-href='#/tab/user-rank/{{user.userId}}')
                 .value
                   | {{ user.num }}
                 .label
@@ -30,7 +30,7 @@ ion-view.view-user-center(view-title='{{ user.nickName }} - 个人中心')
           |           
           .col.text-center
             .statistic
-              a(ng-href='#/tab/user-score/{{user.id}}')
+              a(ng-href='#/tab/user-score/{{user.userId}}')
                 .value
                   | {{ user.score }}
                 .label
@@ -42,7 +42,7 @@ ion-view.view-user-center(view-title='{{ user.nickName }} - 个人中心')
         .row.card-table-row.no-padding
           .col.no-padding
             .card-table-cell
-              a.item.item-thumbnail(href="#/tab/user-punch/{{user.id}}")
+              a.item.item-thumbnail(href="#/tab/user-punch/{{user.userId}}")
                 img(src='src/img/icon_check_in.png')
                 |             
                 h2 连续打卡
@@ -51,7 +51,7 @@ ion-view.view-user-center(view-title='{{ user.nickName }} - 个人中心')
           |         
           .col.no-padding
             .card-table-cell
-              a.item.item-thumbnail(href="#/tab/user-read/{{user.id}}")
+              a.item.item-thumbnail(href="#/tab/user-read/{{user.userId}}")
                 img(src='src/img/icon_read_books.png')
                 |             
                 h2 累计读书
@@ -61,7 +61,7 @@ ion-view.view-user-center(view-title='{{ user.nickName }} - 个人中心')
         .row.card-table-row.no-padding
           .col.no-padding
             .card-table-cell
-              a.item.item-thumbnail(href="#/tab/user-remark/{{user.id}}")
+              a.item.item-thumbnail(href="#/tab/user-remark/{{user.userId}}")
                 img(src='src/img/icon_book_reviews.png')
                 |             
                 h2 累计书评
@@ -70,7 +70,7 @@ ion-view.view-user-center(view-title='{{ user.nickName }} - 个人中心')
           |         
           .col.no-padding
             .card-table-cell
-              a.item.item-thumbnail(href="#/tab/user-coming/{{user.id}}")
+              a.item.item-thumbnail(href="#/tab/user-coming/{{user.userId}}")
                 img(src='src/img/icon_timeline.png')
                 |             
                 h2 个人轨迹
@@ -80,14 +80,14 @@ ion-view.view-user-center(view-title='{{ user.nickName }} - 个人中心')
         .row.card-table-row.no-padding
           .col.no-padding
             .card-table-cell
-              a.item.item-thumbnail(href="#/tab/user-coming/{{user.id}}")
+              a.item.item-thumbnail(href="#/tab/user-coming/{{user.userId}}")
                 img(src='src/img/icon_medals.png')
                 |             
                 h2 获得勋章
           |         
           .col.no-padding
             .card-table-cell
-              a.item.item-thumbnail(href="#/tab/user-coming/{{user.id}}")
+              a.item.item-thumbnail(href="#/tab/user-coming/{{user.userId}}")
                 img(src='src/img/icon_impression.png')
                 |             
                 h2 书友印象

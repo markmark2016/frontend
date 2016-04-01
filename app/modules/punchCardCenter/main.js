@@ -203,6 +203,7 @@ angular.module('mark.remark')
         RemarkSrv.postReplySrv.action({}, {
             remarkId: $scope.remark.remark.id,
             userId: userId,
+            authorId: $scope.remark.remark.userIdFk,
             content: $scope.remarkReplyContent
         }, function() {
             refreshRemark();
@@ -217,7 +218,8 @@ angular.module('mark.remark')
         if (!$scope.remarkLiked) {
             RemarkSrv.postLikeSrv.action({}, {
                 remarkId: $scope.remark.remark.id,
-                userId: userId
+                userId: userId,
+                authorId: $scope.remark.remark.userIdFk
             }, function() {
                 refreshRemark();
             }, function() {
