@@ -208,6 +208,8 @@ angular.module('mark.remark')
     var groupId = $stateParams.groupId;
     var userId = AccountSrv.getUserId();
     var remarkId = $stateParams.remarkId;
+    $scope.userId = userId;
+    $scope.remarkId = remarkId;
 
     $scope.group = {};
     $scope.remark = {};
