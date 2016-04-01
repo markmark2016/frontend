@@ -32,14 +32,13 @@ angular.module('mark.groupsCenter')
 	 	$scope.data = result.data;
 	});
 }])
-.controller('GroupDetailCtrl', ['$scope', 'ApiSrv','GroupsCenterSrv','alertDialog','$stateParams','$state', function($scope, ApiSrv,GroupsCenterSrv, alertDialog, $stateParams,$state) {
+.controller('GroupDetailCtrl', ['$scope', 'ApiSrv','GroupsCenterSrv', 'RemarkSrv', 'alertDialog','$stateParams','$state', function($scope, ApiSrv,GroupsCenterSrv,  RemarkSrv, alertDialog, $stateParams,$state) {
 	GroupsCenterSrv.getGroupDetailSrv.action({id:$stateParams.groupId,userId:6},function(result){
 	 	$scope.data = result.data;
 	});
     GroupsCenterSrv.getGroupUsersSrv.action({id:$stateParams.groupId},function(result){
 	 	$scope.data_users = result.data;
 	});
-	$state.go('tab.group-detail.intr');
 	$scope.joinGroup = function() {
 		GroupsCenterSrv.joinGroupSrv.action({}, {
 			groupIdFk: $stateParams.groupId,
@@ -60,6 +59,50 @@ angular.module('mark.groupsCenter')
 			alertDialog($scope, '退出小组失败', "服务器开小差了，请稍等一下");
 		});
 	};
+
+	var activeSection = 'intr';
+	$scope.activeList = $scope.hotlist;
+	$scope.selectSection = function(section){
+	    activeSection = section;
+	};
+
+	$scope.isActiveSection = function(section){
+	    if(activeSection==section) return true;
+	    return false;
+	};
+
+	RemarkSrv.getGroupRemarksSrv.action({
+		groupId: $stateParams.groupId
+	}, function(result) {
+		$scope.hotlist = result.data.hotlist;
+		$scope.timeorderlist = result.data.timeorderlist;
+		$scope.selectSection(activeSection);
+	});
+
+	$scope.hotlist = [];
+	$scope.timeorderlist = [];
+
+	var activeRemarkSection = 'hot';
+	$scope.activeList = $scope.hotlist;
+	$scope.selectRemarkSection = function(section){
+	    activeRemarkSection = section;
+	    if (section == 'hot') $scope.activeList = $scope.hotlist;
+	    else if (section == 'recent') $scope.activeList = $scope.timeorderlist;
+	    else $scope.activeList = [];
+	};
+
+	$scope.isActiveRemarkSection = function(section){
+	    if(activeRemarkSection==section) return true;
+	    return false;
+	};
+
+	RemarkSrv.getGroupRemarksSrv.action({
+		groupId: $stateParams.groupId
+	}, function(result) {
+		$scope.hotlist = result.data.hotlist;
+		$scope.timeorderlist = result.data.timeorderlist;
+		$scope.selectRemarkSection(activeRemarkSection);
+	});
 }])
 .controller('GroupDetailCommentCtrl', ['$scope', 'ApiSrv','GroupsCenterSrv','RemarkSrv','$stateParams',function($scope, ApiSrv,GroupsCenterSrv,RemarkSrv,$stateParams) {
 	$scope.hotlist = [];

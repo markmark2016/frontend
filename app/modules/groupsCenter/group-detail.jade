@@ -8,10 +8,67 @@ ion-view(view-title='小组')
       h4 {{data.author}}
       .tabs-striped.tabs-background-light.custom-tabs
         .tabs
-          a.tab-item(ui-sref="tab.group-detail.intr" ui-sref-active="active") 介绍
-          a.tab-item(ui-sref="tab.group-detail.comment" ui-sref-active="active") 书评
-          a.tab-item(ui-sref="tab.group-detail.activity" ui-sref-active="active") 活动
-    ion-nav-view(name='tab-group-detail')
+          a.tab-item(ng-click="selectSection('intr')" ng-class="{'active': isActiveSection('intr')}") 介绍
+          a.tab-item(ng-click="selectSection('comment')" ng-class="{'active': isActiveSection('comment')}") 书评
+          a.tab-item(ng-click="selectSection('activity')" ng-class="{'active': isActiveSection('activity')}") 活动
+    //- ion-nav-view(name='tab-group-detail')
+    .view-group-detail-intr.pane-visible(title="小组" ng-show="isActiveSection('intr')")
+      .pane-visible
+        ion-list.intr-list
+          .item.users-list-h-warp
+            h3 {{data_users.length}}位书友
+            a.user-avatar-horizontal(href="#/tab/group/{{data.id}}/users")
+              .user-more
+                .icon.ion-ios-arrow-right
+              .user-avatars
+                .avatar(ng-repeat="user in data_users", href="javascript:;")
+                    img(src="{{user.headImage}}")
+          .item
+            h4 读书标语
+            p {{data.readSlogan}}
+          .item(ng-show="data.groupDesc")
+            h4 小组简介
+            p.desc {{data.groupDesc}}
+          .item
+            h4 读书规则
+            p 读书周期：{{data.beginDate | date:'yyyy.MM.dd'}} - {{data.endDate | date:'yyyy.MM.dd'}}
+            p 打卡频率：{{data.frequency}}
+            //- p 保证金金额：{{data.num}}元
+            p 最晚加入时间：{{data.latestDate | date:'yyyy.MM.dd'}}
+          .item(ng-show="data.bookSummary")
+            h4 图书简介
+            p.desc {{data.bookSummary}}
+          .item
+            a.button.button-circular.yellow(ng-show="data.userStatus == 0" ng-click="joinGroup()") 我要加入
+            a.button.button-circular.red(ng-show="data.userStatus != 0" ng-click="quitGroup()") 退出小组
+    .view-group-detail-comment.pane-visible(title="书评" ng-show="isActiveSection('comment')")
+      .pane-visible
+        .bar-light
+          .button-bar.circular-button-bar
+            a.button(ng-click="selectRemarkSection('hot')" ng-class="{'active': isActiveRemarkSection('hot')}") 热门
+            a.button(ng-click="selectRemarkSection('recent')" ng-class="{'active': isActiveRemarkSection('recent')}") 时间
+        ion-list
+          a.item.item-avatar.item-remark(ng-repeat="remark in activeList" href="#/tab/remark-detail/{{remark.remarkId}}")
+            img(src="{{remark.headImage}}")
+            h2 {{remark.userName}}
+            p {{remark.createTime | date: 'yyyy-MM-dd  hh:mm'}}
+            h1.title {{remark.title}}
+            p.content {{remark.comment}}
+            .meta
+              span.meta-item
+                i.icon.ion-thumbsup
+                span.number {{remark.totalLike}}
+              span.meta-item
+                i.icon.ion-android-chat
+                span.number {{remark.totalReply}}
+    .view-group-detail-activity(title="活动" ng-show="isActiveSection('activity')")
+      .pane-visible
+        .card
+          .item.item-text-wrapper
+            i.icon.ion-ios-information-outline
+            |    
+            span
+              | 敬请期待更多惊喜.
 
 
 

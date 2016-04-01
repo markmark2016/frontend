@@ -13,7 +13,7 @@ angular.module('mark.remark')
         $location.path('/tab/create-remark/' + groupId);
     };
     $scope.showRemarks = function(groupId) {
-        $location.path('/tab/remark-today/' + groupId);
+        $location.path('/tab/remark-today/' + groupId + '/' + userId);
     };
     $scope.postRemark = function(groupId) {
         $location.path('/tab/create-remark/' + groupId);
@@ -171,7 +171,7 @@ angular.module('mark.remark')
             comment: $scope.edit.remarkContent || "",
             pictureUrl: getPhotoUrls().join(',')
         }, function(result) {
-            $location.path('/tab/remark-today/' + groupId);
+            $location.path('/tab/remark-today/' + groupId + '/' + userId);
         }, function(error) {
             alertDialog($scope, '提交失败', "服务器开小差了，请稍等一下");
         });
@@ -186,7 +186,7 @@ angular.module('mark.remark')
             comment: $scope.edit.remarkContent || "",
             pictureUrl: getPhotoUrls().join(',')
         }, function(result) {
-            $location.path('/tab/remark-today/' + groupId);
+            $location.path('/tab/remark-today/' + groupId + '/' + userId);
         }, function(error) {
             alertDialog($scope, '提交失败', "服务器开小差了，请稍等一下");
         });
@@ -199,7 +199,7 @@ angular.module('mark.remark')
             comment: $scope.edit.remarkContent || "",
             pictureUrl: getPhotoUrls().join(',')
         }, function(result) {
-            $location.path('/tab/remark-today/' + groupId);
+            $location.path('/tab/remark-today/' + groupId + '/' + userId);
         }, function(error) {
             alertDialog($scope, '提交失败', "服务器开小差了，请稍等一下");
         });
@@ -259,7 +259,7 @@ angular.module('mark.remark')
         refreshRemark = function () {
             RemarkSrv.getTodayRemarkDetailSrv.action({
                 groupId: groupId,
-                userId: userId
+                userId: $stateParams.userId
             }, getRemarkCallback);
         };
     }

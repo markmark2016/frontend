@@ -351,7 +351,7 @@ angular.module('mark', ['ionic','LocalStorageModule', 'mark.dialog', 'mark.filte
     }
   })
   .state('tab.remark-today', {
-    url: '/remark-today/:groupId',
+    url: '/remark-today/:groupId/:userId',
     views: {
       'tab-punch-center': {
         templateUrl: 'modules/punchCardCenter/remark-detail.html',
