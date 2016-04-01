@@ -220,13 +220,17 @@ angular.module('mark.user', ['mark.services', 'mark.dialog'])
     var userId = $stateParams.userId;
     var timestamp = parseInt($stateParams.day);
     if (isNaN(timestamp)) timestamp = 0;
+    $scope.timestamp = timestamp;
 
     $scope.date = new Date(timestamp);
 
     AccountSrv.getUserDetail.action({ userId: userId }, function(result) {
         $scope.user = result.data.user;
     });
-    AccountSrv.getUserPunchDay.action({ userId: userId }, function(result) {
+    AccountSrv.getUserPunchDay.action({
+        userId: userId,
+        date: timestamp
+    }, function(result) {
         $scope.data = result.data;
     });
 }])

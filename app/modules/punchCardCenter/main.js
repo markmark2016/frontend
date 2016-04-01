@@ -33,6 +33,7 @@ angular.module('mark.remark')
             for (var i = 0; i < result.data.length; i++) {
                 if (result.data[i].groupId == groupId) {
                     $scope.group = result.data[i];
+                    $scope.edit.remarkPageStart = $scope.group.lastPage;
                     break;
                 }
             }
