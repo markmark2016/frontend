@@ -1,7 +1,5 @@
 'use strict';
 
-var userId = 6;
-
 angular.module('mark.groupsCenter', ['mark.services', 'mark.dialog']);
 
 angular.module('mark.groupsCenter')
@@ -32,8 +30,10 @@ angular.module('mark.groupsCenter')
 	 	$scope.data = result.data;
 	});
 }])
-.controller('GroupDetailCtrl', ['$scope', 'ApiSrv','GroupsCenterSrv', 'RemarkSrv', 'alertDialog','$stateParams','$state', function($scope, ApiSrv,GroupsCenterSrv,  RemarkSrv, alertDialog, $stateParams,$state) {
-	GroupsCenterSrv.getGroupDetailSrv.action({id:$stateParams.groupId,userId:6},function(result){
+.controller('GroupDetailCtrl', ['$scope', 'ApiSrv','GroupsCenterSrv', 'RemarkSrv', 'alertDialog','$stateParams','$state', 'AccountSrv', function($scope, ApiSrv,GroupsCenterSrv,  RemarkSrv, alertDialog, $stateParams,$state, AccountSrv) {
+	var userId = AccountSrv.getUserId();
+	$scope.userId = userId;
+	GroupsCenterSrv.getGroupDetailSrv.action({id:$stateParams.groupId,userId:userId},function(result){
 	 	$scope.data = result.data;
 	});
     GroupsCenterSrv.getGroupUsersSrv.action({id:$stateParams.groupId},function(result){
@@ -130,8 +130,10 @@ angular.module('mark.groupsCenter')
 		$scope.selectSection(activeSection);
 	});
 }])
-.controller('AsDetailCtrl', ['$scope', 'ApiSrv','GroupsCenterSrv','$stateParams', function($scope, ApiSrv,GroupsCenterSrv,$stateParams) {
-	GroupsCenterSrv.getAsDetailSrv.action({id:$stateParams.asId,userId:6},function(result){
+.controller('AsDetailCtrl', ['$scope', 'ApiSrv','GroupsCenterSrv','$stateParams', 'AccountSrv', function($scope, ApiSrv,GroupsCenterSrv,$stateParams,AccountSrv) {
+	var userId = AccountSrv.getUserId();
+	$scope.userId = userId;
+	GroupsCenterSrv.getAsDetailSrv.action({id:$stateParams.asId,userId:userId},function(result){
 	 	$scope.data = result.data;
 	 	$scope.categories = [];
 	 	for (var k in result.data.categoryMap) {
