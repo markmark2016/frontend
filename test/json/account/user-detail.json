@@ -1,0 +1,53 @@
+{
+    "status": 1,
+    "data": {
+        "bookList": {
+            "likeList": [
+                {
+                    "id": 1,
+                    "title": "白夜行",
+                    "image": "http://ec4.images-amazon.com/images/I/41W3OhqtirL._SX309_BO1,204,203,200_.jpg",
+                    "type": "1"
+                },
+                {
+                    "id": 1,
+                    "title": "古希腊中的梦与醉史",
+                    "image": "http://ec4.images-amazon.com/images/I/41W3OhqtirL._SX309_BO1,204,203,200_.jpg",
+                    "type": "1"
+                },
+                {
+                    "id": 1,
+                    "title": "白夜行",
+                    "image": "http://ec4.images-amazon.com/images/I/41W3OhqtirL._SX309_BO1,204,203,200_.jpg",
+                    "type": "1"
+                }
+            ],
+            "wantList": [
+                {
+                    "id": 1,
+                    "title": "白夜行",
+                    "image": "http://ec4.images-amazon.com/images/I/41W3OhqtirL._SX309_BO1,204,203,200_.jpg",
+                    "type": "2"
+                }
+            ]
+        },
+        "user": {
+            "id": 6,
+            "createTime": null,
+            "updateTime": 1458445442000,
+            "userId": null,
+            "openid": "oNMD9w2tMr4ZnSnBfhGTFQe7SsNY",
+            "nickname": "杨某某",
+            "gender": 1,
+            "interests": "军事、科技、艺术",
+            "intro": "走自己的路，让别人无路可走。走自己的路，让别人下地狱去吧。",
+            "city": "海淀",
+            "province": "北京",
+            "school": "中国矿业大学",
+            "occupation": "程序员",
+            "constellation": "天枰座",
+            "affectiveStatus": 1,
+            "headImgUrl": "http://wx.qlogo.cn/mmopen/GC8GWzs2iaicQqhZHSndC2gsic8czBgk1zrylefXribgjhSiazicSnicABe2lbBSVbYXTO9umFpfjrsS5IdvOu2TbNy0w/0"
+        }
+    }
+}

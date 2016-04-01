@@ -1,151 +1,158 @@
 ion-list.profile_list
-  ion-item.item-divider.custom-rewrite(ng-if='!readOnly')
+  ion-item.item-divider.custom-rewrite(ng-if='!readOnly.common')
   |   
-  ion-item#user_label.item-avatar(ng-if='!readOnly')
-    img(src='{{ user.avatar }}')
+  ion-item#user_label.item-avatar(ng-if='readOnly.head')
+    img(src='{{ user.headImgUrl }}')
     |     
     .table
       .table-cell.text-middle
-        h2 {{ user.name }}
+        h2 {{ user.nickname }}
   |   
-  ion-item.item-divider.custom-rewrite(ng-if='!readOnly')
+  ion-item.item-divider.custom-rewrite(ng-if='!readOnly.common')
   |   
-  ion-item.item.no-padding.bookshelf
-    |     
-    h2.small-title
-      | 喜欢的书
-    |     
-    ul.book-container
-      li.book-card(ng-repeat='book in favoriteBooks')
-        .book-figure
-          a(ng-if='!readOnly', href='#/tab/select/favorite/book/{{ book.id }}')
-            img.img-responsive(src='{{ book.img }}')
-            .book-label
-              span
-                | 修改
-          a(ng-if='readOnly')
-            img.img-responsive(src='{{ book.img }}')
-        |         
-        p.title {{ book.title }}
-  |   
-  ion-item.item.no-padding.bookshelf
-    h2.small-title
-      | 想看的书
-    |     
-    ul.book-container
-      li.book-card(ng-repeat='book in bookList')
-        .book-figure
-          a(ng-if='!readOnly', href='#/tab/select/bookList/book/{{ book.id }}')
-            img.img-responsive(src='{{ book.img }}')
-            .book-label
-              span
-                | 修改
-          a(ng-if='readOnly')
-            img.img-responsive(src='{{ book.img }}')
-        |         
-        p.title {{ book.title }}
-  |   
+  ion-item.item.bookshelf
+    .book-list
+      h2 喜欢的书
+      .book-item-wrapper(ng-repeat='book in bookList.likeList')
+        .book-item
+          img(src='{{ book.image }}')
+          p.title {{ book.title }}
+          .round-badge.red.lg.book-delete(ng-show="!readOnly.common" ng-click="deleteBook('like', book)")
+            i.icon.ion-minus
+      .book-item-wrapper(ng-show="!readOnly.common")
+        a.book-item(href='#/tab/select/like/book')
+          .book-add
+            i.icon.ion-ios-plus-outline
+      .book-item-wrapper(ng-show="!readOnly.common")
+        a.book-item(href='#/tab/select/like/book')
+          .book-add
+            i.icon.ion-ios-plus-outline
+      .book-item-wrapper(ng-show="!readOnly.common")
+        a.book-item(href='#/tab/select/like/book')
+          .book-add
+            i.icon.ion-ios-plus-outline
+  ion-item.item.bookshelf
+    .book-list
+      h2 想看的书
+      .book-item-wrapper(ng-repeat='book in bookList.wantList')
+        .book-item
+          img(src='{{ book.image }}')
+          p.title {{ book.title }}
+          .round-badge.red.lg.book-delete(ng-show="!readOnly.common" ng-click="deleteBook('want', book)")
+            i.icon.ion-minus
+      .book-item-wrapper(ng-show="!readOnly.common")
+        a.book-item(href='#/tab/select/want/book')
+          .book-add
+            i.icon.ion-ios-plus-outline
+      .book-item-wrapper(ng-show="!readOnly.common")
+        a.book-item(href='#/tab/select/want/book')
+          .book-add
+            i.icon.ion-ios-plus-outline
+      .book-item-wrapper(ng-show="!readOnly.common")
+        a.book-item(href='#/tab/select/want/book')
+          .book-add
+            i.icon.ion-ios-plus-outline
   ion-item.item-divider.custom-rewrite
   |   
-  .item.item-complex.item-icon-right(ng-if='!readOnly')
+  .item.item-complex.item-icon-right(ng-if='!readOnly.gender')
     a.item-content(href='#/tab/edit-gender')
-      | &#x6027;&#x522B;
+      | 性别
       span.item-note
-        | {{ user.gender }}
+        | {{ genderMap[user.gender] }}
       |       
       i.icon.ion-chevron-right
   |   
-  .item(ng-if='readOnly')
-    | &#x6027;&#x522B;
+  .item(ng-if='readOnly.gender')
+    | 性别
     span.item-note
-      | {{ user.gender }}
+      | {{ genderMap[user.gender] }}
   |   
-  ion-item.item.item-icon-right(ng-if='!readOnly', href='#/tab/edit-interests')
-    | &#x5174;&#x8DA3;&#x9886;&#x57DF;
+  ion-item.item.item-icon-right(ng-if='!readOnly.common', href='#/tab/edit-interests')
+    | 兴趣领域
     span.item-note
       | {{ user.interests }}
     |     
     i.icon.ion-chevron-right
   |   
-  ion-item.item(ng-if='readOnly')
-    | &#x5174;&#x8DA3;&#x9886;&#x57DF;
+  ion-item.item(ng-if='readOnly.common')
+    | 兴趣领域
     span.item-note
       | {{ user.interests }}
   |   
-  ion-item.item.item-icon-right(ng-if='!readOnly', href='#/tab/edit-description')
-    | &#x63CF;&#x8FF0;
+  ion-item.item.item-icon-right(ng-if='!readOnly.common', href='#/tab/edit-description')
+    | 描述
     span.item-note.normal-span
       | {{ user.description }}
     |     
     i.icon.ion-chevron-right
   |   
-  ion-item.item(ng-if='readOnly')
-    | &#x63CF;&#x8FF0;
+  ion-item.item(ng-if='readOnly.common')
+    | 描述
     span.item-note.normal-span
       | {{ user.description }}
   |   
   ion-item.item-divider.custom-rewrite
   |   
-  ion-item.item.item-icon-right(ng-if='!readOnly', href='#/tab/select-region-city')
-    | &#x57CE;&#x5E02;
+  ion-item.item.item-icon-right(ng-if='!readOnly.region', href='#/tab/select-region-city')
+    | 城市
     span.item-note
-      | {{ user.region }}
+      | {{ user.city || user.province }}
     |     
     i.icon.ion-chevron-right
   |   
-  ion-item.item(ng-if='readOnly')
-    | &#x57CE;&#x5E02;
+  ion-item.item(ng-if='readOnly.region')
+    | 城市
     span.item-note
-      | {{ user.region }}
+      | {{ user.city || user.province }}
   |   
-  ion-item.item.item-icon-right(ng-if='!readOnly', href='#/tab/edit-occupation')
-    | &#x804C;&#x4E1A;
+  ion-item.item.item-icon-right(ng-if='!readOnly.common', href='#/tab/edit-occupation')
+    | 职业
     span.item-note
       | {{ user.occupation }}
     |     
     i.icon.ion-chevron-right
   |   
-  ion-item.item(ng-if='readOnly')
-    | &#x804C;&#x4E1A;
+  ion-item.item(ng-if='readOnly.common')
+    | 职业
     span.item-note
       | {{ user.occupation }}
   |   
-  ion-item.item.item-icon-right(ng-if='!readOnly', href='#/tab/edit-college')
-    | &#x5B66;&#x6821;
+  ion-item.item.item-icon-right(ng-if='!readOnly.common', href='#/tab/edit-college')
+    | 学校
     span.item-note
-      | {{ user.college }}
+      | {{ user.school }}
     |     
     i.icon.ion-chevron-right
   |   
-  ion-item.item(ng-if='readOnly')
-    | &#x5B66;&#x6821;
+  ion-item.item(ng-if='readOnly.common')
+    | 学校
     span.item-note
-      | {{ user.college }}
+      | {{ user.school }}
   |   
   ion-item.item-divider.custom-rewrite
   |   
-  ion-item.item.item-icon-right(ng-if='!readOnly', href='#/tab/edit-constellation')
-    | &#x661F;&#x5EA7;
+  ion-item.item.item-icon-right(ng-if='!readOnly.common', href='#/tab/edit-constellation')
+    | 星座
     span.item-note
       | {{ user.constellation }}
     |     
     i.icon.ion-chevron-right
   |   
-  ion-item.item(ng-if='readOnly')
-    | &#x661F;&#x5EA7;
+  ion-item.item(ng-if='readOnly.common')
+    | 星座
     span.item-note
       | {{ user.constellation }}
   |   
-  ion-item.item.item-icon-right(ng-if='!readOnly', href='#/tab/edit-relationship')
-    | &#x60C5;&#x611F;&#x72B6;&#x6001;
+  ion-item.item.item-icon-right(ng-if='!readOnly.common', href='#/tab/edit-relationship')
+    | 情感状态
     span.item-note
-      | {{ user.relationship }}
+      | {{ affectiveMap[user.affectiveStatus] }}
     |     
     i.icon.ion-chevron-right
   |   
-  ion-item.item(ng-if='readOnly')
-    | &#x60C5;&#x611F;&#x72B6;&#x6001;
+  ion-item.item(ng-if='readOnly.common')
+    | 情感状态
     span.item-note
-      | {{ user.relationship }}
+      | {{ affectiveMap[user.affectiveStatus] }}
   |   
   ion-item.item-divider

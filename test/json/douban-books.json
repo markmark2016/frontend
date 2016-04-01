@@ -1,0 +1,1495 @@
+{
+  "count": 20,
+  "start": 0,
+  "total": 7627,
+  "books": [
+    {
+      "rating": {
+        "max": 10,
+        "numRaters": 429,
+        "average": "7.7",
+        "min": 0
+      },
+      "subtitle": "",
+      "author": [
+        "\n      "
+      ],
+      "pubdate": "1900-01-01",
+      "tags": [
+        {
+          "count": 72,
+          "name": "CLAMP",
+          "title": "CLAMP"
+        },
+        {
+          "count": 66,
+          "name": "漫画",
+          "title": "漫画"
+        },
+        {
+          "count": 37,
+          "name": "日本漫画",
+          "title": "日本漫画"
+        },
+        {
+          "count": 26,
+          "name": "人形电脑天使心",
+          "title": "人形电脑天使心"
+        },
+        {
+          "count": 22,
+          "name": "日本",
+          "title": "日本"
+        },
+        {
+          "count": 14,
+          "name": "小叽",
+          "title": "小叽"
+        },
+        {
+          "count": 13,
+          "name": "少女漫画",
+          "title": "少女漫画"
+        },
+        {
+          "count": 11,
+          "name": "萌",
+          "title": "萌"
+        }
+      ],
+      "origin_title": "",
+      "image": "https://img3.doubanio.com/mpic/s3048326.jpg",
+      "binding": "",
+      "translator": [],
+      "catalog": "\n      ",
+      "pages": "",
+      "images": {
+        "small": "https://img3.doubanio.com/spic/s3048326.jpg",
+        "large": "https://img3.doubanio.com/lpic/s3048326.jpg",
+        "medium": "https://img3.doubanio.com/mpic/s3048326.jpg"
+      },
+      "alt": "https://book.douban.com/subject/1565500/",
+      "id": "1565500",
+      "publisher": "山东电子音像",
+      "isbn10": "7888571743",
+      "isbn13": "9787888571747",
+      "title": "CD-R人形电脑天使心",
+      "url": "http://api.douban.com/v2/book/1565500",
+      "alt_title": "",
+      "author_intro": "",
+      "summary": "\n      ",
+      "price": "28.0"
+    },
+    {
+      "rating": {
+        "max": 10,
+        "numRaters": 12,
+        "average": "7.1",
+        "min": 0
+      },
+      "subtitle": "",
+      "author": [
+        "于路"
+      ],
+      "pubdate": "2001-06",
+      "tags": [
+        {
+          "count": 4,
+          "name": "电脑制作",
+          "title": "电脑制作"
+        },
+        {
+          "count": 3,
+          "name": "漫画",
+          "title": "漫画"
+        },
+        {
+          "count": 2,
+          "name": "日本漫画电脑制作秘籍-新漫画速递",
+          "title": "日本漫画电脑制作秘籍-新漫画速递"
+        }
+      ],
+      "origin_title": "",
+      "image": "https://img1.doubanio.com/mpic/s1255978.jpg",
+      "binding": "平装",
+      "translator": [],
+      "catalog": "\n      ",
+      "pages": "108",
+      "images": {
+        "small": "https://img1.doubanio.com/spic/s1255978.jpg",
+        "large": "https://img1.doubanio.com/lpic/s1255978.jpg",
+        "medium": "https://img1.doubanio.com/mpic/s1255978.jpg"
+      },
+      "alt": "https://book.douban.com/subject/1049979/",
+      "id": "1049979",
+      "publisher": "知识出版社",
+      "isbn10": "7501529396",
+      "isbn13": "9787501529391",
+      "title": "日本漫画大师电脑制作秘籍-新漫画速递",
+      "url": "http://api.douban.com/v2/book/1049979",
+      "alt_title": "",
+      "author_intro": "",
+      "summary": "\n      ",
+      "price": "24.8"
+    },
+    {
+      "rating": {
+        "max": 10,
+        "numRaters": 64,
+        "average": "7.3",
+        "min": 0
+      },
+      "subtitle": "电子社会与当代心理学名著译丛",
+      "author": [
+        "(美)本·施奈德曼"
+      ],
+      "pubdate": "2006-3",
+      "tags": [
+        {
+          "count": 29,
+          "name": "互联网",
+          "title": "互联网"
+        },
+        {
+          "count": 23,
+          "name": "心理学",
+          "title": "心理学"
+        },
+        {
+          "count": 20,
+          "name": "交互设计",
+          "title": "交互设计"
+        },
+        {
+          "count": 19,
+          "name": "设计",
+          "title": "设计"
+        },
+        {
+          "count": 12,
+          "name": "计算机",
+          "title": "计算机"
+        },
+        {
+          "count": 11,
+          "name": "科技",
+          "title": "科技"
+        },
+        {
+          "count": 10,
+          "name": "科普",
+          "title": "科普"
+        },
+        {
+          "count": 6,
+          "name": "网络",
+          "title": "网络"
+        }
+      ],
+      "origin_title": "",
+      "image": "https://img1.doubanio.com/mpic/s1639378.jpg",
+      "binding": "",
+      "translator": [
+        "李晓明",
+        "冉恬"
+      ],
+      "catalog": "",
+      "pages": "328",
+      "images": {
+        "small": "https://img1.doubanio.com/spic/s1639378.jpg",
+        "large": "https://img1.doubanio.com/lpic/s1639378.jpg",
+        "medium": "https://img1.doubanio.com/mpic/s1639378.jpg"
+      },
+      "alt": "https://book.douban.com/subject/1768152/",
+      "id": "1768152",
+      "publisher": "商务印书馆",
+      "isbn10": "7100046572",
+      "isbn13": "9787100046572",
+      "title": "达·芬奇的便携式电脑",
+      "url": "http://api.douban.com/v2/book/1768152",
+      "alt_title": "",
+      "author_intro": "",
+      "summary": "本书通俗易懂，充满热情，并插入大量达·芬奇的作品，增加了本书的趣味性，使得该书既可为专业人员的产品设计拓展新的视野，又可激发普通读者对未来计算机用途产生更多的联想和思考，从而使设计者和使用者能够共同推进新的计算技术的发展。值得一提的是，本书获得了2003年度国际电气和电子工程师协会(IEEE)颁发的“推进公共意识卓越成就奖”，并被很多大学指定为研究生教材。本书对于那些关心未来信息技术发展趋向的人们是很有价值的。\r\n\r\n\r\n中文版序\r\n前言\r\n致谢\r\n第一章 激发新计算技术的灵感\r\n达·芬奇的平凡出身\r\n展望新的计算技术\r\n由旧计算技术产生新计算技术\r\n关于本书\r\n怀疑者的观点\r\n第二章 任何带宽下的不可用性\r\n提升公众意识\r\n不可用的界面\r\n着手于新的计算技术\r\n怀疑者的观点\r\n第三章 寻求普遍可用性\r\n界定普遍可用性\r\n应对技术多样化\r\n适应形形色色的用户\r\n在“用户知道什么”和“用户需要知道什么”\r\n之间搭建一座桥梁\r\n怀疑者的观点\r\n第四章 新方法，新目标\r\n转向新的计算技术\r\n实现“以用户为中心”设计的方法\r\n被再次检验的摩尔定律\r\n从AI到UI——从人工智能到用户界面\r\n“以用户为中心”设计的原则\r\n为何要关注人机交互?\r\n怀疑者的观点\r\n第五章 理解人类的活动和关系\r\n我们为何使用计算机?\r\n四个关系圈\r\n活动的四个阶段\r\n一个活动与关系表格\r\n眼睛获取它!视觉信息\r\n移动性和无处不在性：掌上电脑、微型遥控器、\r\n信息门、网络树“\r\n怀疑者的观点“\r\n第六章 新教育——电子学习\r\n为何并非每个学生都能得A?\r\n教学和技术\r\n应用“收集一联系一创造一贡献”链\r\n收集：搜集信息和可获得的资源\r\n联系：在合作性团队中工作\r\n创造：开发雄心勃勃的项目\r\n贡献：产生对课堂外的人们有意义的结果\r\n未来的一个科技节场景\r\n怀疑者的观点\r\n第七章 新商业——电子商务\r\n为何你做不成你想做的生意?\r\n\r\n商家的机会\r\n消费者的优势\r\n个性化和用户化\r\n信任还是不信任\r\n是否存在一个激发信任的历史?\r\n怀疑者的观点\r\n第八章 新医学——电子保健\r\n为何你曾经患病?\r\n给予医生能力\r\n给病人授权\r\n未来的一个医疗场景\r\n怀疑者的观点\r\n第九章 新政治——电子政务\r\n你为何从政府那儿得不到你想要的东西?\r\n从政府那儿得到你想要的东西\r\n得到你想要的政府\r\n开放式议政\r\n怀疑者的观点\r\n第十章 超级创造力\r\n达·芬奇的创造力\r\n灵感主义者、结构主义者和环境主义者\r\n创造力的三种水平：日常的、演化的、革新的\r\n超级创造力的框架\r\n整合创造性活动\r\n通过协商期望进行咨询\r\n未来的一个建筑场景\r\n怀疑者的观点\r\n第十一章 更为宏大的目标\r\n旧计算技术与新计算技术\r\n下一位达·芬奇\r\n怀疑者的观点\r\n注释\r\n参考文献\r\n索引\r\n译后记",
+      "price": "20.00元"
+    },
+    {
+      "rating": {
+        "max": 10,
+        "numRaters": 235,
+        "average": "7.8",
+        "min": 0
+      },
+      "subtitle": "",
+      "author": [
+        "天树征丸"
+      ],
+      "pubdate": "1900-01-01",
+      "tags": [
+        {
+          "count": 64,
+          "name": "推理",
+          "title": "推理"
+        },
+        {
+          "count": 46,
+          "name": "天树征丸",
+          "title": "天树征丸"
+        },
+        {
+          "count": 36,
+          "name": "日本",
+          "title": "日本"
+        },
+        {
+          "count": 35,
+          "name": "金田一",
+          "title": "金田一"
+        },
+        {
+          "count": 18,
+          "name": "小说",
+          "title": "小说"
+        },
+        {
+          "count": 18,
+          "name": "推理小说",
+          "title": "推理小说"
+        },
+        {
+          "count": 14,
+          "name": "金田一一",
+          "title": "金田一一"
+        },
+        {
+          "count": 10,
+          "name": "金田一少年事件簿",
+          "title": "金田一少年事件簿"
+        }
+      ],
+      "origin_title": "",
+      "image": "https://img1.doubanio.com/mpic/s9785134.jpg",
+      "binding": "平装",
+      "translator": [
+        "张佶"
+      ],
+      "catalog": "序章\n第一章：七位关键人物\n第二章：不速之客\n第三章：特洛伊的木马\n第四章：不在场证明\n第五章：死亡留言\n第六章：真相",
+      "pages": "0",
+      "images": {
+        "small": "https://img1.doubanio.com/spic/s9785134.jpg",
+        "large": "https://img1.doubanio.com/lpic/s9785134.jpg",
+        "medium": "https://img1.doubanio.com/mpic/s9785134.jpg"
+      },
+      "alt": "https://book.douban.com/subject/1105343/",
+      "id": "1105343",
+      "publisher": "海天出版社",
+      "isbn10": "7806548580",
+      "isbn13": "9787806548585",
+      "title": "电脑山庄魅影/少年神探金田一",
+      "url": "http://api.douban.com/v2/book/1105343",
+      "alt_title": "",
+      "author_intro": "天树征丸，又名安童夕马，本名树林伸，1962年7月22日出生于东京都。兴趣是收藏葡萄酒，水彩画。1987年进入讲谈社，在周刊少年Magazine担任漫画编辑。为漫画《MMR神秘调查班》的主人公“纪林队长”的原型人物。编辑时担当的作品有《足球风云》、《麻辣教师GTO》。\n担任过《金田一少年之事件簿》的责任编辑，原案，现为该作品原作者。\n1999年从讲谈社辞职。独立为原作者。",
+      "summary": "金田一约美雪去长野县滑雪胜地度假，不料迷路进入一处高原山庄，在那儿碰上了一伙以网络ID互相称呼的度假者。仅仅两天内，连环杀手杀死了四个年轻人，由于大雪封山，人人自危，相互猜疑。这一伙网络ID怀有什么不可告人的秘密，凶手究竟是谁？金田一开始行动……",
+      "series": {
+        "id": "21318",
+        "title": "少年神探金田一"
+      },
+      "price": "15.0"
+    },
+    {
+      "rating": {
+        "max": 10,
+        "numRaters": 1,
+        "average": "0.0",
+        "min": 0
+      },
+      "subtitle": "",
+      "author": [
+        "陈其",
+        "陈其"
+      ],
+      "pubdate": "2005-4-1",
+      "tags": [],
+      "origin_title": "",
+      "image": "https://img1.doubanio.com/mpic/s1401802.jpg",
+      "binding": "平装(无盘)",
+      "translator": [],
+      "catalog": "\n      ",
+      "pages": "256",
+      "images": {
+        "small": "https://img1.doubanio.com/spic/s1401802.jpg",
+        "large": "https://img1.doubanio.com/lpic/s1401802.jpg",
+        "medium": "https://img1.doubanio.com/mpic/s1401802.jpg"
+      },
+      "alt": "https://book.douban.com/subject/1291935/",
+      "id": "1291935",
+      "publisher": "电子科技大学出版社",
+      "isbn10": "7810947915",
+      "isbn13": "9787810947916",
+      "title": "电脑组装与维护特训班",
+      "url": "http://api.douban.com/v2/book/1291935",
+      "alt_title": "",
+      "author_intro": "",
+      "summary": "\n      ",
+      "price": "20.00"
+    },
+    {
+      "rating": {
+        "max": 10,
+        "numRaters": 34,
+        "average": "7.2",
+        "min": 0
+      },
+      "subtitle": "在挫折中成长",
+      "author": [
+        "（美）库鲁圣"
+      ],
+      "pubdate": "2007-1-1",
+      "tags": [
+        {
+          "count": 36,
+          "name": "apple",
+          "title": "apple"
+        },
+        {
+          "count": 28,
+          "name": "品牌",
+          "title": "品牌"
+        },
+        {
+          "count": 18,
+          "name": "苹果",
+          "title": "苹果"
+        },
+        {
+          "count": 17,
+          "name": "管理",
+          "title": "管理"
+        },
+        {
+          "count": 14,
+          "name": "商业案例",
+          "title": "商业案例"
+        },
+        {
+          "count": 13,
+          "name": "营销",
+          "title": "营销"
+        },
+        {
+          "count": 5,
+          "name": "设计",
+          "title": "设计"
+        },
+        {
+          "count": 4,
+          "name": "传记",
+          "title": "传记"
+        }
+      ],
+      "origin_title": "",
+      "image": "https://img1.doubanio.com/mpic/s2157163.jpg",
+      "binding": "",
+      "translator": [
+        "李芳龄"
+      ],
+      "catalog": "",
+      "pages": "237",
+      "images": {
+        "small": "https://img1.doubanio.com/spic/s2157163.jpg",
+        "large": "https://img1.doubanio.com/lpic/s2157163.jpg",
+        "medium": "https://img1.doubanio.com/mpic/s2157163.jpg"
+      },
+      "alt": "https://book.douban.com/subject/1996649/",
+      "id": "1996649",
+      "publisher": "中国财政经济出版社",
+      "isbn10": "7500595794",
+      "isbn13": "9787500595793",
+      "title": "苹果电脑案例",
+      "url": "http://api.douban.com/v2/book/1996649",
+      "alt_title": "",
+      "author_intro": "杰弗瑞·库鲁圣（Jeffrey L.Cruikshank）波士顿KC顾问公司（the Cruikshank Company,Inc.）合伙人。1980年起担任《哈佛商学院学院》（Harvard Business School Bulletin）编辑，在教育界和企业界都有相当广泛的联系。库鲁圣的著作颇丰，曾为多家企业和机构编写历史研究著述，包括哈佛商学院，新英格兰电力公司、康明斯引擎公司，气象频道以及宝雕肉食制品公司等。",
+      "summary": "目录\n导言 两项产品问世的故事\nLisa问世\nLisa退场\n截至目前结局比较好的故事\n重新发明一个产业\n如火箭般急速上升\n苹果模式\n第一章 惊奇与赚头\n当阿拉丁遇上小精灵\n一致性与连贯性\n追求毛利率\n从惊奇与赚头中获得的启示\n第二章 寻找未来\n例子\n一次命中，两次挥空\n投入研发经费\n少可能代表多\n睡好觉\n在寻找未来中获得的启示\n第三章 令他们瞠目结舌\n设计：从赤裸到规范\n乔布斯的美学\n没有乔布斯当家时的设计\n再度回到未来\n圆滑优雅者将征服世界\n从令他们瞠目结舌获得启示\n第四章 保护家中瑰宝\n无变化的改变\n黑色内核\n不使用WIMP：菲尔和鲍伯\n让仿制品加入市场\n从救星到流水软件\nNeXT解决方案\n逐步地修正：从“狂想曲”到OS X\n从保护家中瑰宝所获得的启示\n第五章 让朋友贴近，但不要贴得太近\n这机器能做什么\n大象坐在它想坐的任何地方\n宣讲福音101\n在困境中的发展\n问题的程度\n亲吻与挽救\n与朋友保持合理程度的关系中得到的启示\n第六章 信守承诺\n第七章 建立教派\n第八章 营销学问大\n第九章 保持你的酷风格\n第十章 咎责坏家伙\n第十一章 调整你的领导人\n第十二章 矫正你的计划",
+      "price": "39.80元"
+    },
+    {
+      "rating": {
+        "max": 10,
+        "numRaters": 5,
+        "average": "0.0",
+        "min": 0
+      },
+      "subtitle": "",
+      "author": [
+        "杰创文化"
+      ],
+      "pubdate": "2010-5",
+      "tags": [
+        {
+          "count": 41,
+          "name": "电脑",
+          "title": "电脑"
+        },
+        {
+          "count": 36,
+          "name": "电脑入门",
+          "title": "电脑入门"
+        },
+        {
+          "count": 30,
+          "name": "开始",
+          "title": "开始"
+        },
+        {
+          "count": 29,
+          "name": "豆瓣网",
+          "title": "豆瓣网"
+        },
+        {
+          "count": 21,
+          "name": "读书",
+          "title": "读书"
+        },
+        {
+          "count": 17,
+          "name": "书",
+          "title": "书"
+        },
+        {
+          "count": 10,
+          "name": "科技",
+          "title": "科技"
+        },
+        {
+          "count": 7,
+          "name": "风格大方",
+          "title": "风格大方"
+        }
+      ],
+      "origin_title": "",
+      "image": "https://img1.doubanio.com/mpic/s6157073.jpg",
+      "binding": "",
+      "translator": [],
+      "catalog": "",
+      "pages": "270",
+      "images": {
+        "small": "https://img1.doubanio.com/spic/s6157073.jpg",
+        "large": "https://img1.doubanio.com/lpic/s6157073.jpg",
+        "medium": "https://img1.doubanio.com/mpic/s6157073.jpg"
+      },
+      "alt": "https://book.douban.com/subject/4748826/",
+      "id": "4748826",
+      "publisher": "北京科海电子出版社",
+      "isbn10": "7030269225",
+      "isbn13": "9787030269225",
+      "title": "电脑入门完全自学手册",
+      "url": "http://api.douban.com/v2/book/4748826",
+      "alt_title": "",
+      "author_intro": "",
+      "summary": "《一看即会:电脑入门完全自学手册(全彩)》内容简介：电脑已经深入我们生活的方方面面，在办公、学习和娱乐等多个领域发挥着作用。掌握电脑的操作方法，不仅能提高你的办事效率、开拓视野、丰富知识，还是现代人应具备的职业技能。电脑需要有操作系统才能完成和我们的人机交互；需要安装多种专业软件，才能完成特定的工作项目。《一看即会:电脑入门完全自学手册(全彩)》根据初学电脑读者的实际需求，从基础操作讲起，逐步深入应用。全书以目前应用最为广泛的Windows XP中文版系统为例，采用通俗易懂的语言、丰富的图例和具体的操作步骤，详细介绍了该系统的常用操作方法、系统自带小程序和常用工具软件的使用、网络的连接与应用，以及系统维护与优化等。\n全书共13章。第1章介绍电脑的用途，内容包括电脑的组成，启动与关闭电脑等基础知识。第2章介绍Windows的桌面，启动程序，创建和管理账户等基础知识，先轻松入门学会使用Windows XP。第3章介绍键盘指法，拼音、五笔输入法的使用，让您能学会用电脑打字。第4章介绍文件夹和文件的管理，让您归整好自己电脑中的资源。第5～6章介绍如何使用Windows XP自带的小工具，如实用附件程序(记事本、通讯簿、画图工具和计算器等)，以及娱乐工具(如Windows Media Player、Windows Movie Maker、录音机和电脑自带的游戏等)；此外还介绍了常用的辅助软件，如音乐播放软件、视频播放软件、看图软件和照片处理软件等的用法。第7～8章介绍文档处理软件Word2007和专业表格制作软件Excel2007的用法。第9～12章介绍上网冲浪的相关知识，包括浏览网页，搜索、下载资源，用QQ聊天、传送文件，用网络电话通信，收发电子邮件，在网上读书、看报，查询天气、公交情况，网上理财与交易，在网上看电视、看电影、听歌、玩游戏等，让您学会上网并掌握网络的常用功能。第13章介绍电脑的维护、优化，以及网络安全的防范方法，加强您的电脑使用安全。\n《一看即会:电脑入门完全自学手册(全彩)》配套的1DVD光盘内容极其丰富，含书中实例的原始文件和最终文件，以及播放时间长达302分钟的183个重点操作实例的视频教学录像，还加赠4本畅销书的视频，分别是《新手学系统安装和重装》、《新手学上网(应用篇)》、《新手学Office2007办公应用》和《新手学Photoshopcs3数码照片处理》，以及五笔编码查询词典和打字练习软件。\n《一看即会:电脑入门完全自学手册(全彩)》适合电脑初学者快速提高电脑的使用与维护的能力，也可作为各类电脑培训学校、大中专院校的教学辅导用书。",
+      "price": "33.00元"
+    },
+    {
+      "rating": {
+        "max": 10,
+        "numRaters": 52,
+        "average": "7.7",
+        "min": 0
+      },
+      "subtitle": "",
+      "author": [
+        "电脑报社 编"
+      ],
+      "pubdate": "2008-1",
+      "tags": [
+        {
+          "count": 19,
+          "name": "电脑报",
+          "title": "电脑报"
+        },
+        {
+          "count": 13,
+          "name": "工具书",
+          "title": "工具书"
+        },
+        {
+          "count": 12,
+          "name": "计算机",
+          "title": "计算机"
+        },
+        {
+          "count": 10,
+          "name": "电脑",
+          "title": "电脑"
+        },
+        {
+          "count": 7,
+          "name": "实用",
+          "title": "实用"
+        },
+        {
+          "count": 5,
+          "name": "电脑报2007",
+          "title": "电脑报2007"
+        },
+        {
+          "count": 5,
+          "name": "123",
+          "title": "123"
+        },
+        {
+          "count": 3,
+          "name": "信息技术",
+          "title": "信息技术"
+        }
+      ],
+      "origin_title": "",
+      "image": "https://img1.doubanio.com/mpic/s2836038.jpg",
+      "binding": "",
+      "translator": [],
+      "catalog": "",
+      "pages": "829",
+      "images": {
+        "small": "https://img1.doubanio.com/spic/s2836038.jpg",
+        "large": "https://img1.doubanio.com/lpic/s2836038.jpg",
+        "medium": "https://img1.doubanio.com/mpic/s2836038.jpg"
+      },
+      "alt": "https://book.douban.com/subject/2368652/",
+      "id": "2368652",
+      "publisher": "汕头大学出版社",
+      "isbn10": "7811201526",
+      "isbn13": "9787811201529",
+      "title": "电脑报",
+      "url": "http://api.douban.com/v2/book/2368652",
+      "alt_title": "",
+      "author_intro": "",
+      "summary": "权威文库：实用工具手册+《电脑报》全文检索系统\n特别盘点：2007IT业办风云 《见证IT15年》行业变迁\n正版软件：16款价值超过1800元的厂商授权正版软件\n倾情奉献：赠送价值1000元热门装机工具软件\n特别附赠：《环球科学》2007年电子版（《科学美国人》独家授权）\n在线服务：VIP会员可获软件注册码、专家答疑、团购特惠\n特别享用：\n价值48元《中国电子地图2007》300余个城市详细地图\n价值60元《瑞星杀毒防火墙组合版2008》\n价值128元影子系统2008》电脑病毒终身免疫\n价值138元 《家财通（M3）》家庭财富管理软件\n价值180元 《同花顺小财神》炒股&理财实用工具\n价值476元 智能手机软件(13款精品炒股、办公、娱乐软件)\n价值500元 新锐装机软件（10大类108款最新版软件即装即用\n特别赠送：\n微软、Google、百度等著名IT厂商2007-2008年度超值资源礼包\n《QQ飞车》限量版海军套装和1000游戏酷币\n《劲舞世界》价值50元温馨礼包（含限定版非卖服饰一套）\n12款灵动原创经典FLASH游戏\n价值30元《新浪读书频道》尊贵白金会员（只需5元即可在线申请）",
+      "price": "45.00元"
+    },
+    {
+      "rating": {
+        "max": 10,
+        "numRaters": 59,
+        "average": "7.6",
+        "min": 0
+      },
+      "subtitle": "",
+      "author": [
+        "电脑报社"
+      ],
+      "pubdate": "2006-12-01",
+      "tags": [
+        {
+          "count": 20,
+          "name": "电脑报",
+          "title": "电脑报"
+        },
+        {
+          "count": 11,
+          "name": "合订",
+          "title": "合订"
+        },
+        {
+          "count": 10,
+          "name": "电脑",
+          "title": "电脑"
+        },
+        {
+          "count": 8,
+          "name": "计算机",
+          "title": "计算机"
+        },
+        {
+          "count": 7,
+          "name": "IT",
+          "title": "IT"
+        },
+        {
+          "count": 4,
+          "name": "Programming",
+          "title": "Programming"
+        },
+        {
+          "count": 4,
+          "name": "程序",
+          "title": "程序"
+        },
+        {
+          "count": 3,
+          "name": "meidu",
+          "title": "meidu"
+        }
+      ],
+      "origin_title": "",
+      "image": "https://img3.doubanio.com/mpic/s2176416.jpg",
+      "binding": "简裝本",
+      "translator": [],
+      "catalog": "",
+      "pages": "864",
+      "images": {
+        "small": "https://img3.doubanio.com/spic/s2176416.jpg",
+        "large": "https://img3.doubanio.com/lpic/s2176416.jpg",
+        "medium": "https://img3.doubanio.com/mpic/s2176416.jpg"
+      },
+      "alt": "https://book.douban.com/subject/1950173/",
+      "id": "1950173",
+      "publisher": "西南师范大学出版社",
+      "isbn10": "7562137323",
+      "isbn13": "9787562137320",
+      "title": "电脑报（上下册）",
+      "url": "http://api.douban.com/v2/book/1950173",
+      "alt_title": "",
+      "author_intro": "",
+      "summary": "全套上、下两册，浓缩2006年电脑报精华文章。附录包含70余篇简明IT应用指南，覆盖软件、硬盘、数码、网络四大领域。配赠权威实用的2006-2007中国计算机年鉴DVD光盘，近1.4GB海量信息与资源超值奉献。8大正版超值软件，涵盖系统维护、系统安全、办公应用、多媒体娱乐等四大领域。微软、腾讯、友立等知名厂商，新年献礼。提供2006-2007全系列硬件、数码产品资讯，兼具知识性与资料性。官方网站全新改版出击，《电脑报合订本》会员福利多多，优惠多多。连续购买《电脑报合订本》，你将拥有一套完整的实用大型电脑文库。",
+      "price": "45.00元"
+    },
+    {
+      "rating": {
+        "max": 10,
+        "numRaters": 56,
+        "average": "7.8",
+        "min": 0
+      },
+      "subtitle": "随书赠送价值38元数码产品AG保护膜及价值524元正版软件",
+      "author": [
+        "电脑报编辑部"
+      ],
+      "pubdate": "2010-12",
+      "tags": [
+        {
+          "count": 22,
+          "name": "电脑报",
+          "title": "电脑报"
+        },
+        {
+          "count": 9,
+          "name": "IT",
+          "title": "IT"
+        },
+        {
+          "count": 7,
+          "name": "计算机",
+          "title": "计算机"
+        },
+        {
+          "count": 6,
+          "name": "资料书",
+          "title": "资料书"
+        },
+        {
+          "count": 6,
+          "name": "互联网",
+          "title": "互联网"
+        },
+        {
+          "count": 3,
+          "name": "杂志",
+          "title": "杂志"
+        },
+        {
+          "count": 3,
+          "name": "电脑",
+          "title": "电脑"
+        },
+        {
+          "count": 2,
+          "name": "科普",
+          "title": "科普"
+        }
+      ],
+      "origin_title": "",
+      "image": "https://img1.doubanio.com/mpic/s6250848.jpg",
+      "binding": "",
+      "translator": [],
+      "catalog": "",
+      "pages": "880",
+      "images": {
+        "small": "https://img1.doubanio.com/spic/s6250848.jpg",
+        "large": "https://img1.doubanio.com/lpic/s6250848.jpg",
+        "medium": "https://img1.doubanio.com/mpic/s6250848.jpg"
+      },
+      "alt": "https://book.douban.com/subject/5378344/",
+      "id": "5378344",
+      "publisher": "",
+      "isbn10": "7229030803",
+      "isbn13": "9787229030803",
+      "title": "电脑报2010合订本（上、下）",
+      "url": "http://api.douban.com/v2/book/5378344",
+      "alt_title": "",
+      "author_intro": "",
+      "summary": "《电脑报2010合订本》是一套实用双目录工具手册，完整收录2010年《电脑报》全年文章,资源囊括2010-2011年度最新资讯、软件与服务,全新热门资源软件&火爆游戏光盘，给你时尚极乐享受。报纸6大周刊结集编排，原样呈现2010电脑报——更易于阅读与收藏，满足阅读体验新需求。4种内文检索方式，更方便海量信息检索——可按期、按栏目、按关键字、按文章结构检索。2010热点新闻事件回顾，全面盘点最新IT技术与应用——揭露天价网站后的重重迷雾、360与QQ隐私大战始末、天价话费单的背后、深入揭露中国IT培训真相、ipad用户到底在HIGH什么……全新热门资源软件&火爆游戏光盘，给你时尚极乐享受！",
+      "price": "50.00元"
+    },
+    {
+      "rating": {
+        "max": 10,
+        "numRaters": 32,
+        "average": "7.9",
+        "min": 0
+      },
+      "subtitle": "电脑革命史",
+      "author": [
+        "（美）杰弗里·扬"
+      ],
+      "pubdate": "1999-06",
+      "tags": [
+        {
+          "count": 12,
+          "name": "计算机",
+          "title": "计算机"
+        },
+        {
+          "count": 11,
+          "name": "历史",
+          "title": "历史"
+        },
+        {
+          "count": 6,
+          "name": "电脑",
+          "title": "电脑"
+        },
+        {
+          "count": 4,
+          "name": "IT历史",
+          "title": "IT历史"
+        },
+        {
+          "count": 2,
+          "name": "纪实",
+          "title": "纪实"
+        },
+        {
+          "count": 2,
+          "name": "经济",
+          "title": "经济"
+        },
+        {
+          "count": 1,
+          "name": "百科",
+          "title": "百科"
+        },
+        {
+          "count": 1,
+          "name": "科技环境",
+          "title": "科技环境"
+        }
+      ],
+      "origin_title": "",
+      "image": "https://img1.doubanio.com/mpic/s3062914.jpg",
+      "binding": "平装",
+      "translator": [
+        "尹灿等"
+      ],
+      "catalog": "\n      ",
+      "pages": "",
+      "images": {
+        "small": "https://img1.doubanio.com/spic/s3062914.jpg",
+        "large": "https://img1.doubanio.com/lpic/s3062914.jpg",
+        "medium": "https://img1.doubanio.com/mpic/s3062914.jpg"
+      },
+      "alt": "https://book.douban.com/subject/1228538/",
+      "id": "1228538",
+      "publisher": "海南出版社",
+      "isbn10": "7806454438",
+      "isbn13": "9787806454435",
+      "title": "福布斯电脑革命史",
+      "url": "http://api.douban.com/v2/book/1228538",
+      "alt_title": "",
+      "author_intro": "",
+      "summary": "本书描写的是高技术商业革命的发展过程和数字时代的诞生历史的迷人故事以及一系列富有魅力的革新人物的业绩，这些人包括：浪子回头的百万富翁、爱幻想的总裁小托马斯沃森——他怎样在20世纪50年代初帮助开拓商务计算产业并使IBM成为以后三十年无可争议的霸主。一直有争议的威廉·肖克莱——他在贝尔实验室开发晶体管的完整故事以有为他试图利用自己的发明的不光彩举动。爱德华·罗伯茨——这位海军工程师出身的富有革新精神的邮购企业家，在其阿尔伯克基的车库里占燃了微电脑革命，后来却错失统治该行业的良机。能言善辩的嬉皮企业家史蒂夫·乔布斯和工程天才史蒂夫·沃兹尼亚克——他们如何一夜间从身无分文的“线路天才”变成高技术的百万富翁。比尔·盖茨——其才能在于将他人的创造性革新转为成自己的市场成功，这种才能是微软公司英明战略的核心——而这种战术盖茨早在年轻时就已用得完美无缺了。一群幻想家如何将冷战中的通讯系统变成所谓“因特网”的全球奇迹。",
+      "price": "27.8"
+    },
+    {
+      "rating": {
+        "max": 10,
+        "numRaters": 20,
+        "average": "7.6",
+        "min": 0
+      },
+      "subtitle": "",
+      "author": [
+        "熊鹰"
+      ],
+      "pubdate": "2010-3",
+      "tags": [
+        {
+          "count": 11,
+          "name": "cubase5",
+          "title": "cubase5"
+        },
+        {
+          "count": 8,
+          "name": "音乐",
+          "title": "音乐"
+        },
+        {
+          "count": 6,
+          "name": "音频",
+          "title": "音频"
+        },
+        {
+          "count": 4,
+          "name": "midi",
+          "title": "midi"
+        },
+        {
+          "count": 3,
+          "name": "解释很清晰",
+          "title": "解释很清晰"
+        },
+        {
+          "count": 3,
+          "name": "迷笛制作",
+          "title": "迷笛制作"
+        },
+        {
+          "count": 2,
+          "name": "音乐制作",
+          "title": "音乐制作"
+        },
+        {
+          "count": 2,
+          "name": "非常好的书",
+          "title": "非常好的书"
+        }
+      ],
+      "origin_title": "",
+      "image": "https://img1.doubanio.com/mpic/s4301187.jpg",
+      "binding": "",
+      "translator": [],
+      "catalog": "第1章 准备篇  1.1 建立工程  1.2 建立工作音轨  1.3 建立辅助音轨  1.4 使用节拍器第2章 MMIDI篇  2.1 传输MIDI文件  2.2 编辑乐曲拍速  2.3 输入MIDI信息  2.4 细致编辑MIDI  2.5 全局编辑MIDI  2.6 MIDI效果控制  2.7 虚拟乐器技术  2.8 表情控制系统  2.9 乐曲辅助音轨第3章 音频篇  3.1 导入音频素材  3.2 录制声音波形  2.3 音频波形编辑  3.4 音频乐曲编辑  3.5 音频素材对位  3.6 音频波形处理  3.7 实时效果处理  3.8 参数自动控制  3.9 音轨路由编组第4章 完成篇  4.1 操作调音台  4.2 导出音频文件  4.3 内录获取分轨第5章 设置篇  5.1 软件驱动设置  5.2 使用偏好设置  5.3 音频通道设置  5.4 插件信息设置  5.5 快捷按键设置  5.6 工程精度设置  5.7 工程界面设置  5.8 钢琴卷帘设置  5.9 控制设备设置附录A 自带VST3音频效果器概述附录B 自带VSTi虚拟乐器概述附录C 软件菜单中英文对照表附录D 软件常用快捷键附录E GM音色表附录F GM打击乐键位表附录G MIDI控制器功能一览表附录H 安装虚拟乐器／效果器插件附录I 丰富的网络资源",
+      "pages": "293",
+      "images": {
+        "small": "https://img1.doubanio.com/spic/s4301187.jpg",
+        "large": "https://img1.doubanio.com/lpic/s4301187.jpg",
+        "medium": "https://img1.doubanio.com/mpic/s4301187.jpg"
+      },
+      "alt": "https://book.douban.com/subject/4704644/",
+      "id": "4704644",
+      "publisher": "清华大学",
+      "isbn10": "7302220611",
+      "isbn13": "9787302220619",
+      "title": "电脑音乐工作站Cubase/Nuendo使用速成教程",
+      "url": "http://api.douban.com/v2/book/4704644",
+      "alt_title": "",
+      "author_intro": "熊鹰 网名“飞来音”。 \n\n    中国音乐家协会数字化音乐教育学会会员。德国Native Instruments公司教学服务中心VIP会员。“MIDI爱好者（MIDIFAN）”网站论坛总版主，同时担任“吉他中国”，“华东数码”等国内诸多专业音乐制作论坛的版主职务。对数字音频理论，合成器理论颇有探究，擅长电脑音乐制作技术，专业从事电脑音乐制作的教学与技术工作。先后任教于小旭电脑音乐教室、爱音电子音乐培训中心等著名音乐制作教学机构、Native Instruments公司中国代理授权软件合成器教师。在国内数家艺术院校，地方音乐家协会组织过多次音乐制作主题讲座，曾通过国际MIDI检定认证考试，并在《MIDI音乐制作》、《MIDIFAN月刊》、MIDI爱好者等国内专业音乐制作杂志以及网站上发表过多篇技术文章、教程和评测专题，汉化过虚拟吉他手等主流音乐制作软件，广受网友和读者的好评。",
+      "summary": "《电脑音乐工作站Cubase/Nuendo使用速成教程》是著名音乐制作软件Cubase/Nuendo的最新版本教材，书中主要讲解了该软件用户从初学到提高等各个阶段所需要掌握的常用操作以及相关知识。《电脑音乐工作站Cubase/Nuendo使用速成教程》以帮助读者快速上手、实际操作运用为目标，摒弃了传统教材长篇累牍、理论连篇的写作方式，用一步一图的方式指导读者对软件进行操作，并在每个知识点中都总结出相应操作的常见问题和解决方案，还提供了作者长期使用该软件所积累的经验和技巧。\n由于讲述了音乐制作以及音频处理两方面的知识，因此《电脑音乐工作站Cubase/Nuendo使用速成教程》适合于各个水平的读者，无论是进行音乐创作的专业人士，还是业余的音乐爱好者，均可从《电脑音乐工作站Cubase/Nuendo使用速成教程》获取相关的知识。另外，《电脑音乐工作站Cubase/Nuendo使用速成教程》尤其适合需要短时间快速学会电脑音乐软件操作的读者学习。",
+      "price": "39.00元"
+    },
+    {
+      "rating": {
+        "max": 10,
+        "numRaters": 50,
+        "average": "7.6",
+        "min": 0
+      },
+      "subtitle": "",
+      "author": [
+        "电脑报社 主编"
+      ],
+      "pubdate": "2009年1月第1版 2009年1月第1次印刷",
+      "tags": [
+        {
+          "count": 8,
+          "name": "电脑报",
+          "title": "电脑报"
+        },
+        {
+          "count": 7,
+          "name": "计算机",
+          "title": "计算机"
+        },
+        {
+          "count": 7,
+          "name": "电脑报2008年合订本",
+          "title": "电脑报2008年合订本"
+        },
+        {
+          "count": 4,
+          "name": "IT",
+          "title": "IT"
+        },
+        {
+          "count": 3,
+          "name": "电脑",
+          "title": "电脑"
+        },
+        {
+          "count": 2,
+          "name": "资料书",
+          "title": "资料书"
+        },
+        {
+          "count": 2,
+          "name": "光盘软件不错",
+          "title": "光盘软件不错"
+        },
+        {
+          "count": 2,
+          "name": "网络",
+          "title": "网络"
+        }
+      ],
+      "origin_title": "",
+      "image": "https://img3.doubanio.com/mpic/s5965076.jpg",
+      "binding": "平装",
+      "translator": [],
+      "catalog": "",
+      "pages": "864",
+      "images": {
+        "small": "https://img3.doubanio.com/spic/s5965076.jpg",
+        "large": "https://img3.doubanio.com/lpic/s5965076.jpg",
+        "medium": "https://img3.doubanio.com/mpic/s5965076.jpg"
+      },
+      "alt": "https://book.douban.com/subject/3339836/",
+      "id": "3339836",
+      "publisher": "汕头大学出版社",
+      "isbn10": "7811205076",
+      "isbn13": "9787811205077",
+      "title": "电脑报2008年合订本（2书+1DVD）",
+      "url": "http://api.douban.com/v2/book/3339836",
+      "alt_title": "",
+      "author_intro": "",
+      "summary": "全国发行量遥遥领先的计算机报，连续13年全国最畅销科技图书之一，该书作为最畅销IT图书、大型电脑文库，累计销量已超过2000万册。\n·全套上、下两册，浓缩2008年电脑报精华文章。\n·“2008-2009年度热点应用专稿”包含40余篇热点应用指南，涵盖软/硬件、数码应用等。\n·“2008年度IT大盘点”包含30余篇年终精彩盘点，涵盖IT技术、厂商、产品等方面。\n· 配赠权威实用2007～2008中国计算机年鉴DVD光盘，近4.7GB海量信息与资源超值奉献。\n·10大正版超值软件，价值超过3000余元，涵盖系统维护、炒股理财、GPS地图导航、多媒体娱乐等四大领域。\n·100余款装机必备工具软件，电脑应用从此无忧。\n·提供2008～2009全系列硬件、数码产品资讯，兼具知识性与资料性。\n·10大电脑入门多媒体演示教程，电脑学习好帮手。\n·随书赠送《2008年中国计算机年鉴》DVD，百余款授权正版软件、资源超值特供。\n《电脑报2008年合订本》\n正文分类目录\n·2008IT热点风云聚焦\n·2008消费电子大巡礼\n·玩转系统应用\n·电脑应用加油站\n·数字办公\n·网络应用大百科\n·网络安全与防黑防范\n·电脑攒机与导购\n·电脑应用专家坐堂\n年度热门应用专稿目录：\n·系统安全应用\n·数码高清应用\n·笔记本应用\n·时尚生活IT秀\n光盘要目：\n·2008IT纪事\n·2008《电脑报》电子文库\n·2008IT产品参数速查\n·《环球科学》精缩版\n·多媒体视听资源\n·最新正版软件专供\n·主流机软件速递\n·年度优秀共享软件推荐\n·热门网络游戏道具派送\n·读者特惠专区\n上册正文\n年度热门应用专稿\n下册正文\n年度IT大盘点目录：\n·聚焦2008\n·语录2008\n·风云榜2008",
+      "price": "45.00元"
+    },
+    {
+      "rating": {
+        "max": 10,
+        "numRaters": 1,
+        "average": "0.0",
+        "min": 0
+      },
+      "subtitle": "",
+      "author": [
+        "晶辰创作室"
+      ],
+      "pubdate": "2009-1",
+      "tags": [
+        {
+          "count": 33,
+          "name": "表格制作",
+          "title": "表格制作"
+        },
+        {
+          "count": 11,
+          "name": "EXCEL",
+          "title": "EXCEL"
+        },
+        {
+          "count": 7,
+          "name": "电脑",
+          "title": "电脑"
+        },
+        {
+          "count": 4,
+          "name": "电脑书",
+          "title": "电脑书"
+        },
+        {
+          "count": 3,
+          "name": ".....",
+          "title": "....."
+        },
+        {
+          "count": 2,
+          "name": "1",
+          "title": "1"
+        },
+        {
+          "count": 1,
+          "name": "5",
+          "title": "5"
+        },
+        {
+          "count": 1,
+          "name": "job",
+          "title": "job"
+        }
+      ],
+      "origin_title": "",
+      "image": "https://img1.doubanio.com/mpic/s6005654.jpg",
+      "binding": "",
+      "translator": [],
+      "catalog": "第1章 用Word制作文字表格\n认识Word表格\n创建表格\n修改表格\n设置表格格式\n文本与表格\n表格多样化\n第2章 用Excel制作数据表格\n认识Excel 2003\n工作簿管理\n录入数据\n修改工作表\n美化工作表\n制作复杂表格\n添加图形对象\n第3章 组织表格数据\n公式和函数的使用\n单元格的引用\n使用清单输入表格数据\n让表格井然有序\n筛选显示数据表格\n分类汇总数据表格\n工作表列表\n透视数据表\n变换数据透视表\n第4章 用图表表现数据\n认识图表\n用柱形图比较数据大小\n使用图表向导\n转换图表，一图多变\n用条形图比较数值大小\n用饼图比较总量与分量\n制作数学图表\n组合图表\n制作动态图表\n项目进度甘特图",
+      "pages": "140",
+      "images": {
+        "small": "https://img1.doubanio.com/spic/s6005654.jpg",
+        "large": "https://img1.doubanio.com/lpic/s6005654.jpg",
+        "medium": "https://img1.doubanio.com/mpic/s6005654.jpg"
+      },
+      "alt": "https://book.douban.com/subject/3629663/",
+      "id": "3629663",
+      "publisher": "科学普及出版社",
+      "isbn10": "7110068625",
+      "isbn13": "9787110068625",
+      "title": "如何用电脑制作表格与图表",
+      "url": "http://api.douban.com/v2/book/3629663",
+      "alt_title": "",
+      "author_intro": "",
+      "summary": "《如何用电脑制作表格与图表》是一本面向具体应用的电脑书籍，它不是笼统抽象地说电脑能干些什么，也不是洋洋洒洒地去一一罗列电脑软件的具体功能，而是教会你如何运用电脑去完成实际工作，解决具体问题，让电脑真正地使你能够以一当十，成倍提高工作效率，让你的梦想成真，涉足过去只能想而难以做的事。\n《如何用电脑制作表格与图表》以实用工作中人们经常需要用表格组织数据，用图表展现数据为背景，深入浅出地介绍了利用Word和Excel制作表格和图表的方法，内容涉及如何用Word制作各类文字表格，如：普通有线表，带复杂斜线表头的有线表、省线表以及它们的编辑美化方法；如何用Excel制作各类数字型表格，如：有序电子表格、筛选显示表、分类汇总表和数据透视表，以及利用Excel的图表向导制作条形图、饼图等类型的图表等诸多方面，并给出了翔实有效的应用范例。\n通过《如何用电脑制作表格与图表》的学习，你会看到用表格组织数据是那么的条理清晰，用图表展现数据是那么的一目了然。",
+      "price": "19.00元"
+    },
+    {
+      "rating": {
+        "max": 10,
+        "numRaters": 25,
+        "average": "7.6",
+        "min": 0
+      },
+      "subtitle": "",
+      "author": [
+        "卢小旭,汤楠,张火"
+      ],
+      "pubdate": "2007-3",
+      "tags": [
+        {
+          "count": 7,
+          "name": "Nuendo",
+          "title": "Nuendo"
+        },
+        {
+          "count": 7,
+          "name": "音乐",
+          "title": "音乐"
+        },
+        {
+          "count": 5,
+          "name": "电脑",
+          "title": "电脑"
+        },
+        {
+          "count": 4,
+          "name": "教程",
+          "title": "教程"
+        },
+        {
+          "count": 2,
+          "name": "这书也就是还行吧，介绍CUBAE操作的",
+          "title": "这书也就是还行吧，介绍CUBAE操作的"
+        },
+        {
+          "count": 2,
+          "name": "音乐编辑",
+          "title": "音乐编辑"
+        },
+        {
+          "count": 1,
+          "name": "软件",
+          "title": "软件"
+        },
+        {
+          "count": 1,
+          "name": "声学与数字音频",
+          "title": "声学与数字音频"
+        }
+      ],
+      "origin_title": "",
+      "image": "https://img1.doubanio.com/mpic/s5817323.jpg",
+      "binding": "简裝本",
+      "translator": [],
+      "catalog": "",
+      "pages": "315",
+      "images": {
+        "small": "https://img1.doubanio.com/spic/s5817323.jpg",
+        "large": "https://img1.doubanio.com/lpic/s5817323.jpg",
+        "medium": "https://img1.doubanio.com/mpic/s5817323.jpg"
+      },
+      "alt": "https://book.douban.com/subject/2035549/",
+      "id": "2035549",
+      "publisher": "清华大学出版社",
+      "isbn10": "7302146160",
+      "isbn13": "9787302146162",
+      "title": "Cubase SX与Nuendo电脑音乐精华技巧",
+      "url": "http://api.douban.com/v2/book/2035549",
+      "alt_title": "",
+      "author_intro": "",
+      "summary": "《Cubase SX与Nuendo电脑音乐精华技巧》为《Cubase SX与Nuendo电脑音乐制作》的姊妹篇，主要讲解了Cubase SX与Nuendo电脑音乐在实际电脑音乐制作中的一些进阶窍门和高级技巧。《Cubase SX与Nuendo电脑音乐精华技巧》内容包括：软件操作基础知识、MIDI制作类实用技巧、软音源插件使用、音频编辑类实用技巧、音频效果器、缩混与调音台使用等，并专门介绍了Cubase 4的最新功能。《Cubase SX与Nuendo电脑音乐精华技巧》以Cubase SX与Nuendo电脑音乐的各种使用技巧和小窍门为脉络，用图文并茂的形式与通俗易懂的语言进行讲述。通过对《Cubase SX与Nuendo电脑音乐精华技巧》的阅读，读者可以在学会Cubase SX与Nuendo电脑音乐的基本使用方法后，更快地掌握软件操作的一些“独门”技巧，获得软件使用的小窍门，提高电脑音乐制作的效率，加快电脑音乐学习的步伐。",
+      "price": "49.00元"
+    },
+    {
+      "rating": {
+        "max": 10,
+        "numRaters": 31,
+        "average": "7.7",
+        "min": 0
+      },
+      "subtitle": "",
+      "author": [
+        "Benjamin"
+      ],
+      "pubdate": "2002-1",
+      "tags": [
+        {
+          "count": 6,
+          "name": "漫画技法",
+          "title": "漫画技法"
+        },
+        {
+          "count": 6,
+          "name": "Benjamin",
+          "title": "Benjamin"
+        },
+        {
+          "count": 3,
+          "name": "CG教学",
+          "title": "CG教学"
+        },
+        {
+          "count": 3,
+          "name": "教材",
+          "title": "教材"
+        },
+        {
+          "count": 2,
+          "name": "很棒的漫画,",
+          "title": "很棒的漫画,"
+        },
+        {
+          "count": 2,
+          "name": "photoshop",
+          "title": "photoshop"
+        },
+        {
+          "count": 2,
+          "name": "漫画",
+          "title": "漫画"
+        },
+        {
+          "count": 2,
+          "name": "教程",
+          "title": "教程"
+        }
+      ],
+      "origin_title": "",
+      "image": "https://img1.doubanio.com/mpic/s10206424.jpg",
+      "binding": "平装",
+      "translator": [],
+      "catalog": "第一章 绪论 第二章 初步处理漫画原稿 第三章 电脑制作网点纸 第一节 初步制作网点纸 第二节 贴网技术 第三节 制作渐变网及气氛网 第四节 使用滤镜制作特殊效果网和材质网 第五节 自定义“即时贴”式网点仓库 第六节 运用PAINTER6制网 第七节 电脑刮网技术 第四章 漫画背景 第一节 花朵背景 第二节 楼房背景\n",
+      "pages": "",
+      "images": {
+        "small": "https://img1.doubanio.com/spic/s10206424.jpg",
+        "large": "https://img1.doubanio.com/lpic/s10206424.jpg",
+        "medium": "https://img1.doubanio.com/mpic/s10206424.jpg"
+      },
+      "alt": "https://book.douban.com/subject/1520198/",
+      "id": "1520198",
+      "publisher": "北方妇女儿童出版社",
+      "isbn10": "7538520627",
+      "isbn13": "9787538520620",
+      "title": "BENJAMIN电脑漫画技法 下 技法篇",
+      "url": "http://api.douban.com/v2/book/1520198",
+      "alt_title": "",
+      "author_intro": "",
+      "summary": "用电脑制作漫画",
+      "price": "22.80元"
+    },
+    {
+      "rating": {
+        "max": 10,
+        "numRaters": 25,
+        "average": "7.2",
+        "min": 0
+      },
+      "subtitle": "",
+      "author": [],
+      "pubdate": "2009-6",
+      "tags": [
+        {
+          "count": 11,
+          "name": "音乐",
+          "title": "音乐"
+        },
+        {
+          "count": 7,
+          "name": "电脑音乐",
+          "title": "电脑音乐"
+        },
+        {
+          "count": 3,
+          "name": "midi",
+          "title": "midi"
+        },
+        {
+          "count": 1,
+          "name": "一般般的书",
+          "title": "一般般的书"
+        },
+        {
+          "count": 1,
+          "name": "中国",
+          "title": "中国"
+        },
+        {
+          "count": 1,
+          "name": "技术",
+          "title": "技术"
+        },
+        {
+          "count": 1,
+          "name": "教材",
+          "title": "教材"
+        },
+        {
+          "count": 1,
+          "name": "音乐方向",
+          "title": "音乐方向"
+        }
+      ],
+      "origin_title": "",
+      "image": "https://img1.doubanio.com/mpic/s4001887.jpg",
+      "binding": "",
+      "translator": [],
+      "catalog": "",
+      "pages": "471",
+      "images": {
+        "small": "https://img1.doubanio.com/spic/s4001887.jpg",
+        "large": "https://img1.doubanio.com/lpic/s4001887.jpg",
+        "medium": "https://img1.doubanio.com/mpic/s4001887.jpg"
+      },
+      "alt": "https://book.douban.com/subject/3773277/",
+      "id": "3773277",
+      "publisher": "",
+      "isbn10": "7302198993",
+      "isbn13": "9787302198994",
+      "title": "电脑音乐制作",
+      "url": "http://api.douban.com/v2/book/3773277",
+      "alt_title": "",
+      "author_intro": "",
+      "summary": "《电脑音乐制作:软音源使用大全》讲解在电脑音乐制作中各类VSTi、Dxi等格式软件音源插件的使用方法，并结合音乐制作的实际应用讲解软音源的各种应用技巧和窍门。《电脑音乐制作:软音源使用大全》内容包括：软音源的概念、分类、使用、安装、管理、冻结等基础知识，并以电声乐器类、管弦乐器类、综合音源类、民族乐器类以及电子合成器类等不同的乐器类别为顺序，结合电脑音乐的配器技巧，全面讲解当今最流行的各种软音源插件的使用。《电脑音乐制作:软音源使用大全》适合作为有一定电脑音乐制作基础的专业读者在编曲工作中的参考工具书，对于刚刚接触软件音源的初学者来说，《电脑音乐制作:软音源使用大全》更是一本不可多得的好教程。",
+      "price": "59.00元"
+    },
+    {
+      "rating": {
+        "max": 10,
+        "numRaters": 19,
+        "average": "7.9",
+        "min": 0
+      },
+      "subtitle": "",
+      "author": [
+        "51nb.com专门网"
+      ],
+      "pubdate": "2009",
+      "tags": [
+        {
+          "count": 7,
+          "name": "工具书",
+          "title": "工具书"
+        },
+        {
+          "count": 6,
+          "name": "Thinkpad",
+          "title": "Thinkpad"
+        },
+        {
+          "count": 4,
+          "name": "ThinkPad笔记本电脑应用技术精粹",
+          "title": "ThinkPad笔记本电脑应用技术精粹"
+        },
+        {
+          "count": 4,
+          "name": "计算机",
+          "title": "计算机"
+        },
+        {
+          "count": 2,
+          "name": "中国",
+          "title": "中国"
+        },
+        {
+          "count": 2,
+          "name": "联想",
+          "title": "联想"
+        },
+        {
+          "count": 2,
+          "name": "技术",
+          "title": "技术"
+        },
+        {
+          "count": 1,
+          "name": "PD",
+          "title": "PD"
+        }
+      ],
+      "origin_title": "",
+      "image": "https://img3.doubanio.com/mpic/s3384781.jpg",
+      "binding": "16开",
+      "translator": [],
+      "catalog": "",
+      "pages": "340",
+      "images": {
+        "small": "https://img3.doubanio.com/spic/s3384781.jpg",
+        "large": "https://img3.doubanio.com/lpic/s3384781.jpg",
+        "medium": "https://img3.doubanio.com/mpic/s3384781.jpg"
+      },
+      "alt": "https://book.douban.com/subject/3318871/",
+      "id": "3318871",
+      "publisher": "人民邮电出版社",
+      "isbn10": "7115193622",
+      "isbn13": "9787115193629",
+      "title": "ThinkPad笔记本电脑应用技术精粹",
+      "url": "http://api.douban.com/v2/book/3318871",
+      "alt_title": "",
+      "author_intro": "",
+      "summary": "在众多版主及网友的热心支持下，《ThinkPad笔记本电脑应用技术精粹》走过了漫长的策划、撰稿、审稿等过程，本书前期出版工作已全部完成，目前正处于“杀青”阶段，预计2009年1月中旬上市。\n这本书的出版标志着我们51nb.com专门网在新的领域迈出了新的一步，进一步注重笔记本电脑技术的交流和传播。本书倾注了众多版主、网友的心血，在此对您们表示衷心的感谢，封面的征集活动也得到了众多网友的大力支持，最终我们精选了方案中的设计元素（在书中会找到这些网友的名字），个人感觉封面的归属非常强，这就是我们51nb.com专门网自己的书。当然“人无完人，书无完书”，疏漏在所难免，稍后我们将设立一个专题网页，倾听网友的建议和反馈，帮助我们进步，为我们的下一本书积累经验。\n本书由人民邮电出版社出版，全书16开340页，定价39元，书号：978-7-115-19362-9。\n为了答谢51nb.com专门网的网友，本书现已在专门网商城预售。目前预定可享受免邮费优惠，只需39元--就可以让你足不出户在第一时间拿到这本“热气腾腾”的《ThinkPad笔记本电脑应用技术精粹》。\n●        站长HOPE亲笔签名作序，并在扉页实际签名；\n●        体现专门网自己的特色；\n●        众多版主参与编审；\n●        各种知识竞赛的赛前参考；\n●        随书赠送51nb.com贴纸；\n你还等什么？快来订购吧……\n请点击预售连接：\nhttp://www.thinkpad.com.cn/goods-95.html\n注：本书原价39元，预定价格已包含挂号邮寄费用，如需快递另加10元快递费。预计1月中旬寄出（如时间提前，不另行通知）。\n本书目录：\n第1章        笔记本电脑概述\n第2章        全面认识ThinkPad笔记本电脑\n第3章        ThinkPad笔记本电脑BIOS的设置及刷新\n第4章        ThinkPad预装软件的应用技巧\n第5章        ThinkPad笔记本电脑的保养及故障排除\n第6章        ThinkPad笔记本电脑的拆解与安装\n第7章        ThinkPad笔记本电脑的升级\n第8章        ThinkPad笔记本电脑高级应用技巧\n附录：ThinkPad笔记本电脑错误代码表",
+      "price": "39.00元"
+    },
+    {
+      "rating": {
+        "max": 10,
+        "numRaters": 34,
+        "average": "8.9",
+        "min": 0
+      },
+      "subtitle": "",
+      "author": [
+        "瓦拉里·托马斯|译者:童梦|绘画:科奇·保罗"
+      ],
+      "pubdate": "2008-12",
+      "tags": [
+        {
+          "count": 19,
+          "name": "绘本",
+          "title": "绘本"
+        },
+        {
+          "count": 9,
+          "name": "女巫温妮系列",
+          "title": "女巫温妮系列"
+        },
+        {
+          "count": 3,
+          "name": "科奇·保罗",
+          "title": "科奇·保罗"
+        },
+        {
+          "count": 3,
+          "name": "儿童文学",
+          "title": "儿童文学"
+        },
+        {
+          "count": 2,
+          "name": "儿童插画",
+          "title": "儿童插画"
+        },
+        {
+          "count": 1,
+          "name": "2012年",
+          "title": "2012年"
+        },
+        {
+          "count": 1,
+          "name": "妞的",
+          "title": "妞的"
+        },
+        {
+          "count": 1,
+          "name": "平装绘本",
+          "title": "平装绘本"
+        }
+      ],
+      "origin_title": "",
+      "image": "https://img3.doubanio.com/mpic/s3476966.jpg",
+      "binding": "",
+      "translator": [
+        "童梦"
+      ],
+      "catalog": "",
+      "pages": "26",
+      "images": {
+        "small": "https://img3.doubanio.com/spic/s3476966.jpg",
+        "large": "https://img3.doubanio.com/lpic/s3476966.jpg",
+        "medium": "https://img3.doubanio.com/mpic/s3476966.jpg"
+      },
+      "alt": "https://book.douban.com/subject/3354276/",
+      "id": "3354276",
+      "publisher": "广西师大",
+      "isbn10": "7563378510",
+      "isbn13": "9787563378517",
+      "title": "温妮的新电脑",
+      "url": "http://api.douban.com/v2/book/3354276",
+      "alt_title": "",
+      "author_intro": "",
+      "summary": "《温妮系列:温妮的新电脑》中温妮非常喜欢她的新电脑。只要她轻轻一点鼠标，就能变出魔法。所以，温妮把她的魔法书和魔法棒扔得远远的。一天半夜，威尔伯趁温妮在呼呼大睡的时候，重重地扑到鼠标上，糟糕的事情发生了。温妮本来可以用一点点小魔法，把一切恢复正常。可是，温妮已终忘记怎样展魔法了。",
+      "price": "14.80元"
+    },
+    {
+      "rating": {
+        "max": 10,
+        "numRaters": 32,
+        "average": "7.6",
+        "min": 0
+      },
+      "subtitle": "",
+      "author": [
+        "电脑报社"
+      ],
+      "pubdate": "2005-1-1",
+      "tags": [
+        {
+          "count": 14,
+          "name": "电脑报",
+          "title": "电脑报"
+        },
+        {
+          "count": 8,
+          "name": "计算机",
+          "title": "计算机"
+        },
+        {
+          "count": 8,
+          "name": "合订本",
+          "title": "合订本"
+        },
+        {
+          "count": 6,
+          "name": "IT",
+          "title": "IT"
+        },
+        {
+          "count": 5,
+          "name": "电脑报<2004年合订本上下",
+          "title": "电脑报<2004年合订本上下"
+        },
+        {
+          "count": 5,
+          "name": "电脑",
+          "title": "电脑"
+        },
+        {
+          "count": 3,
+          "name": "杂志",
+          "title": "杂志"
+        },
+        {
+          "count": 2,
+          "name": "520",
+          "title": "520"
+        }
+      ],
+      "origin_title": "",
+      "image": "https://img1.doubanio.com/mpic/s1218984.jpg",
+      "binding": "平装（带盘）",
+      "translator": [],
+      "catalog": "",
+      "pages": "432",
+      "images": {
+        "small": "https://img1.doubanio.com/spic/s1218984.jpg",
+        "large": "https://img1.doubanio.com/lpic/s1218984.jpg",
+        "medium": "https://img1.doubanio.com/mpic/s1218984.jpg"
+      },
+      "alt": "https://book.douban.com/subject/1220116/",
+      "id": "1220116",
+      "publisher": "西南师范大学出版社",
+      "isbn10": "7562132003",
+      "isbn13": "9787562132004",
+      "title": "电脑报<2004年合订本上下>(附光盘)",
+      "url": "http://api.douban.com/v2/book/1220116",
+      "alt_title": "",
+      "author_intro": "",
+      "summary": "电脑报，ISBN：9787562132004，作者：邱玉辉总编；电脑报编辑部编著",
+      "price": "45.00"
+    }
+  ]
+}

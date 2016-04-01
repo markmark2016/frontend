@@ -6,7 +6,7 @@
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
 //
-angular.module('mark', ['ionic','LocalStorageModule', 'mark.dialog', 'mark.filters', 'mark.controllers', 'mark.services', 'mark.groupsCenter', 'mark.userCenter', 'mark.myGroups', 'mark.profile', 'mark.editProfile', 'mark.remark', 'mark.message'])
+angular.module('mark', ['ionic','LocalStorageModule', 'mark.dialog', 'mark.filters', 'mark.controllers', 'mark.services', 'mark.groupsCenter', 'mark.user', 'mark.remark', 'mark.message', 'mark.editProfile'])
 
 .run(['$ionicPlatform', function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -128,21 +128,93 @@ angular.module('mark', ['ionic','LocalStorageModule', 'mark.dialog', 'mark.filte
       }
     }
   })
-  .state('tab.my-groups', {
-    url: '/my-groups',
+  .state('tab.user-detail', {
+    url: '/user-detail/:userId',
     views: {
       'tab-user-center': {
-        templateUrl: 'modules/myGroups/templates/my-groups-tpl.html',
-        controller: 'MyGroupsMainCtrl'
+        templateUrl: 'modules/userCenter/user-page.html',
+        controller: 'UserDetailCtrl'
       }
     }
   })
-  .state('tab.page', {
-    url: '/page',
+  .state('tab.user-groups', {
+    url: '/user-groups/:userId',
     views: {
       'tab-user-center': {
-        templateUrl: 'modules/page/page-tpl.html',
-        controller: 'PageMainCtrl'
+        templateUrl: 'modules/userCenter/user-groups.html',
+        controller: 'UserGroupsCtrl'
+      }
+    }
+  })
+  .state('tab.user-rank', {
+    url: '/user-rank/:userId',
+    views: {
+      'tab-user-center': {
+        templateUrl: 'modules/userCenter/user-rank.html',
+        controller: 'UserRankCtrl'
+      }
+    }
+  })
+  .state('tab.user-rank-in-group', {
+    url: '/user-rank/:userId/group/:groupId',
+    views: {
+      'tab-user-center': {
+        templateUrl: 'modules/userCenter/user-rank-in-group.html',
+        controller: 'UserRankInGroupCtrl'
+      }
+    }
+  })
+  .state('tab.user-score', {
+    url: '/user-score/:userId',
+    views: {
+      'tab-user-center': {
+        templateUrl: 'modules/userCenter/user-score.html',
+        controller: 'UserScoreCtrl'
+      }
+    }
+  })
+  .state('tab.user-read', {
+    url: '/user-read/:userId',
+    views: {
+      'tab-user-center': {
+        templateUrl: 'modules/userCenter/user-read.html',
+        controller: 'UserReadCtrl'
+      }
+    }
+  })
+  .state('tab.user-punch', {
+    url: '/user-punch/:userId',
+    views: {
+      'tab-user-center': {
+        templateUrl: 'modules/userCenter/user-punch.html',
+        controller: 'UserPunchCtrl'
+      }
+    }
+  })
+  .state('tab.user-punch-day', {
+    url: '/user-punch/:userId/day/:day',
+    views: {
+      'tab-user-center': {
+        templateUrl: 'modules/userCenter/user-punch-day.html',
+        controller: 'UserPunchDayCtrl'
+      }
+    }
+  })
+  .state('tab.user-remark', {
+    url: '/user-remark/:userId',
+    views: {
+      'tab-user-center': {
+        templateUrl: 'modules/userCenter/user-remark.html',
+        controller: 'UserRemarkCtrl'
+      }
+    }
+  })
+  .state('tab.user-remark-in-group', {
+    url: '/user-remark/:userId/group/:groupId',
+    views: {
+      'tab-user-center': {
+        templateUrl: 'modules/userCenter/user-remark-in-group.html',
+        controller: 'UserRemarkDayCtrl'
       }
     }
   })
@@ -156,7 +228,7 @@ angular.module('mark', ['ionic','LocalStorageModule', 'mark.dialog', 'mark.filte
     }
   })
   .state('tab.select-book', {
-    url: '/select/:selectType/book/:bookId',
+    url: '/select/:selectType/book',
     views: {
       'tab-user-center': {
         templateUrl: 'modules/editProfile/templates/select-book-tpl.html',

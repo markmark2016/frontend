@@ -1,25 +1,21 @@
 'use strict';
 
 angular.module('mark.editProfile')
-.controller('EditDescriptionMainCtrl', ['$scope', 'AccountSrv', function($scope, AccountSrv) {
+.controller('EditDescriptionMainCtrl', ['$scope', 'AccountSrv', '$location', function($scope, AccountSrv, $location) {
+  var userId = AccountSrv.getUserId();
+  AccountSrv.getUserDetail.action({ userId: userId }, function(result) {
+    $scope.user = result.data.user;
+    $scope.bookList = result.data.bookList;
+    $scope.intro = $scope.user.intro;
+  });
 
-  AccountSrv.getMyAccount().then(succ, fail);
-
-  function succ(account){
-    $scope.user = account;
-    $scope.description = $scope.user.description;
-  }
-
-  function fail(err){
-    alert(err);
-  }
-
-  $scope.onSubmit = function(desc){
-    console.log(desc);
-    AccountSrv.updateBasicAccount({
-      update_field: 'description',
-      update_value: desc
-    });
+  $scope.onSubmit = function(intro){
+    AccountSrv.updateAccount.action({
+      userId: userId
+    }, {
+      intro: intro
+    }, function() { $location.path('/tab/edit-profile'); },
+    function() { $location.path('/tab/edit-profile'); });
   };
 
 }]);

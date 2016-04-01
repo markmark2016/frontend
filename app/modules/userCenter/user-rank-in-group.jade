@@ -1,0 +1,17 @@
+ion-view.view-user-rank-in-group(view-title="{{user.nickname}} - 排名")
+    ion-list
+        .item.item-group-info
+            img(src="{{group.groupImage}}")
+            h2 {{group.groupName}}
+            h3 《{{group.bookName}}》
+            p 在读书友： {{group.totoalReader}} 人
+        .item.item-rank.self
+            span.rank-num {{myRank.num}}
+            img(src="{{myRank.headImage}}")
+            h2.rank-nickname {{myRank.nickName}}
+            span.rank-score {{myRank.score}} 积分
+        .item.item-rank(ng-repeat="user in rank")
+            span.rank-num {{user.num}}
+            img(src="{{user.headImage}}")
+            h2.rank-nickname {{user.nickName}}
+            span.rank-score {{user.score}} 积分

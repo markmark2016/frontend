@@ -1,29 +1,25 @@
 'use strict';
 
 angular.module('mark.editProfile')
-.controller('EditInterestsMainCtrl', ['$scope', 'AccountSrv', function($scope, AccountSrv) {
+.controller('EditInterestsMainCtrl', ['$scope', 'AccountSrv', '$location', function($scope, AccountSrv,$location) {
 
-  AccountSrv.getMyAccount().then(succ, fail);
-
-  function succ(account){
-    $scope.user = account;
+  var userId = AccountSrv.getUserId();
+  AccountSrv.getUserDetail.action({ userId: userId }, function(result) {
+    $scope.user = result.data.user;
+    $scope.bookList = result.data.bookList;
     $scope.infoField = $scope.user.interests;
-  }
-
-  function fail(err){
-    alert(err);
-  }
+  });
 
   $scope.pageTitle = "兴趣领域";
   $scope.placeholder = "经济，艺术，哲学...？";
 
-
   $scope.onSubmit = function(infoField){
-    console.log(infoField);
-    AccountSrv.updateBasicAccount({
-      update_field: 'interests',
-      update_value: infoField
-    });
+    AccountSrv.updateAccount.action({
+      userId: userId
+    }, {
+      interests: infoField
+    }, function() { $location.path('/tab/edit-profile'); },
+    function() { $location.path('/tab/edit-profile'); });
   };
 
 }]);

@@ -1,0 +1,10 @@
+ion-view.view-user-remark(view-title="{{user.nickname}} - 累计书评")
+    ion-list
+        .item.item-total
+            h2 累计书评
+            .remark {{data.totalRemark}}
+        a.item.item-group(ng-repeat="group in data.remarkList" href="#/tab/user-remark/{{user.id}}/group/{{group.groupId}}")
+            img(src="{{group.image}}")
+            .group-name
+                h2 {{group.groupName}}
+            .remark {{group.groupTotalRemark}} 书评

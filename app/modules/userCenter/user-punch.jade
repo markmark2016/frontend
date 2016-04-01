@@ -1,0 +1,24 @@
+ion-view.view-user-punch(view-title="{{user.nickname}} - 连续打卡")
+    ion-list
+        .item.item-total
+            h2 连续打卡
+            .punch {{data.monthtotalpunch}} 天
+    .item.no-padding
+        .calender
+            .calender-yearmonth
+                a.yearmonth-left(ng-click="decreaseMonth()")
+                    i.icon.ion-chevron-left
+                a.yearmonth-right(ng-click="increaseMonth()")
+                    i.icon.ion-chevron-right
+                h2 {{currentDate.year}}年{{currentDate.month}}月
+            .calender-day-header
+                .day 一
+                .day 二
+                .day 三
+                .day 四
+                .day 五
+                .day 六
+                .day 日
+            .calender-days
+                .day(ng-repeat="i in blankDays")
+                a.day(ng-repeat="day in days" ng-class="{'today': day.isToday, 'punched': day.isPunched}" href="#/tab/user-punch/{{user.id}}/day/{{day.timestamp}}") {{day.day}}

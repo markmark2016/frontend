@@ -3,15 +3,11 @@
 angular.module('mark.editProfile')
 .controller('EditRegionMainCtrl', ['$scope', '$stateParams', 'AccountSrv', function($scope, $stateParams, AccountSrv) {
 
-  AccountSrv.getMyAccount().then(succ, fail);
-
-  function succ(account){
-    $scope.user = account;
-  }
-
-  function fail(err){
-    alert(err);
-  }
+  var userId = AccountSrv.getUserId();
+  AccountSrv.getUserDetail.action({ userId: userId }, function(result) {
+    $scope.user = result.data.user;
+    $scope.bookList = result.data.bookList;
+  });
 
   var regionsByCity = {
     'Beijing': [

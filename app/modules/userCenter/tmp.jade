@@ -1,0 +1,15 @@
+ion-list.list-profile
+  a.item.profile-item
+    .profile-prop 性别
+    .profile-value {{user.gender ? '男' : '女'}}
+  form.item.profile-item(name="editProfileInterests" novalidate ng-class="{'dirty': editProfileInterests.$dirty}")
+    .profile-prop 兴趣领域
+    button.button.button-small.button-positive.profile-submit 修改
+    .profile-value
+      input(ng-model="user.interests")
+ion-list.list-profile
+  form.item.profile-item(name="editProfileInterests" novalidate ng-class="{'dirty': editProfileInterests.$dirty}")
+    .profile-prop 兴趣领域
+    button.button.button-small.button-positive.profile-submit 修改
+    .profile-value
+      input(ng-model="user.interests")

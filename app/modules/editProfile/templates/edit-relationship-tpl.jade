@@ -3,5 +3,4 @@ ion-view(view-title='情感状态')
     ion-list
       ion-item.item-divider.custom-rewrite
       |       
-      ion-radio(ng-repeat='r in relationships', ng-model='user.relationship', ng-value='r.value', ng-change='onRelationshipChange(r)')
-        | {{ r.title }}
+      ion-radio(ng-repeat='r in relationships', ng-model='user.affectiveStatus', ng-value='r.value', ng-change='onRelationshipChange(r.value)') {{ r.title }}

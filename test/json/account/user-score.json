@@ -1,0 +1,55 @@
+{
+    "status": 1,
+    "data": {
+        "totalScore": 12,
+        "scorelist": [
+            {
+                "id": 1,
+                "groupImage": "http://ec4.images-amazon.com/images/I/41W3OhqtirL._SX309_BO1,204,203,200_.jpg",
+                "groupName": "马净净读书小组",
+                "bookName": "双城记",
+                "author": null,
+                "readSlogan": "读书好啊读书秒，读书好啊读书秒，读书好啊读书秒，读书好啊读书秒，读书好啊读书秒，读书好啊读书秒",
+                "groupDesc": null,
+                "beginDate": null,
+                "endDate": null,
+                "frequency": null,
+                "guarantee": null,
+                "latestDate": null,
+                "associationId": null,
+                "userClass": null,
+                "userStatus": null,
+                "score": 12,
+                "userId": null,
+                "groupRank": null,
+                "totoalReader": null,
+                "num": null,
+                "bookSummary": null
+            },
+            {
+                "id": 1,
+                "groupImage": "http://ec4.images-amazon.com/images/I/41W3OhqtirL._SX309_BO1,204,203,200_.jpg",
+                "groupName": "马净净读书小组马净净读书小组马净净读书小组",
+                "bookName": "双城记",
+                "author": null,
+                "readSlogan": "读书好啊读书秒，读书好啊读书秒，读书好啊读书秒，读书好啊读书秒，读书好啊读书秒，读书好啊读书秒",
+                "groupDesc": null,
+                "beginDate": null,
+                "endDate": null,
+                "frequency": null,
+                "guarantee": null,
+                "latestDate": null,
+                "associationId": null,
+                "userClass": null,
+                "userStatus": null,
+                "score": 12,
+                "userId": null,
+                "groupRank": null,
+                "totoalReader": null,
+                "num": null,
+                "bookSummary": null
+            }
+        ]
+    },
+    "msg": "success"
+}

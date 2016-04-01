@@ -1,0 +1,53 @@
+{
+    "status": 1,
+    "data": {
+        "remarkList": [
+            {
+                "userId": 6,
+                "userName": null,
+                "headImage": null,
+                "groupId": 2,
+                "remarkId": null,
+                "groupName": "李兴读书小组",
+                "bookName": null,
+                "image": "http://img3.douban.com/lpic/s2673223.jpg",
+                "author": null,
+                "todayPunch": null,
+                "continuePunch": null,
+                "groupTotalRemark": 1,
+                "isComplete": null,
+                "readCompleteDate": null,
+                "isPunch": false,
+                "totalLike": 0,
+                "totalReply": 0,
+                "createTime": null,
+                "title": null,
+                "comment": null
+            },
+            {
+                "userId": 6,
+                "userName": null,
+                "headImage": null,
+                "groupId": 1,
+                "remarkId": null,
+                "groupName": "马净净读书小组",
+                "bookName": null,
+                "image": "http://ec4.images-amazon.com/images/I/41W3OhqtirL._SX309_BO1,204,203,200_.jpg",
+                "author": null,
+                "todayPunch": null,
+                "continuePunch": null,
+                "groupTotalRemark": 1,
+                "isComplete": null,
+                "readCompleteDate": null,
+                "isPunch": false,
+                "totalLike": 0,
+                "totalReply": 0,
+                "createTime": null,
+                "title": null,
+                "comment": null
+            }
+        ],
+        "totalRemark": 2
+    },
+    "msg": "更新成功"
+}

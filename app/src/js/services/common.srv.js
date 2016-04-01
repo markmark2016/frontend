@@ -31,5 +31,14 @@ angular.module('mark.services')
         });
     };
 
+    var doubanBookSearchUrl = "https://api.douban.com/v2/book/search";
+    if (HostSrv.env == 'staging') doubanBookSearchUrl = "/test/json/douban-books.json";
+    srv.getDoubanBooks = $resource(doubanBookSearchUrl, {}, {
+        action: {
+            method: 'GET',
+            params: { q: "q" } // q, tag, start, end. Doc see: https://developers.douban.com/wiki/?title=book_v2#get_book_search
+        }
+    });
+
     return srv;
 }]);

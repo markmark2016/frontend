@@ -1,89 +1,148 @@
 angular.module('mark.services')
 
-.factory('AccountSrv', ['$q', '$http', 'localStorageService', 'HostSrv', 'ApiSrv', function($q, $http, localStorageService, HostSrv, ApiSrv) {
-  var S = {
-  };
+.factory('AccountSrv', ['$resource','HostSrv','ApiSrv', 'TraditionalPostSrv', function($resource,HostSrv,ApiSrv,$tpost) {
+    var srv = {};
 
-  function transAccountFields(data){
-    data.name = data.nickname;
-    data.avatar = data.headimgurl;
-    console.log(data.avatar);
-    console.log(data.gender);
-    data.gender = data.gender || (function(sex){
-      if(sex=='1'){
-        return 'male';
-      }else{
-        return 'female';
-      }
-    })(data.sex);
-    //data.interests = '军事、数学、历史';
-    //data.description = '掀开扉页，这天地文章的第一章便写着：春之情。这情该如何读的透？元好问这惊人的一句“问世间情为何物”。';
-    //data.region = 'Beijing,Haidian';
-    //data.occupation = '精算师';
-    //data.college = '中国传媒大学';
-    //data.constellation = 'gemini';
-    //data.relationship = 'secrecy';
-    data.slogan = "饭可以一日不吃，觉可以一日不睡，书不可一日不读。";
+    var locSearchUserId = window.location.search.match(/userId=(\d+)/);
+    if (locSearchUserId) locSearchUserId = parseInt(locSearchUserId[1]);
+    if (isNaN(locSearchUserId)) locSearchUserId = null;
 
-    return data;
-  }
+    srv.getUserId = function() {
+        if (HostSrv.env == 'staging') return 6;
+        else return locSearchUserId;
+    };
 
-  S.getMyAccount = function() {
-    var url = HostSrv.main + ApiSrv.basicAccount.get_my_account.url;
+    srv.genderMap = {1: '男', 2: '女'};
+    srv.affectiveMap = {0: '单身', 1: '恋爱', 2: '已婚', 3: '保密'};
 
-    return $http.get(url).then(function(resp){
-      var data = resp.data;
-      console.log('myAccount:', data);
-      var account = transAccountFields(data)
-
-      //localStorageService.set('account', account);
-
-      return $q.when(account);
-    },function(err){
-      console.log('error:',err);
-      return $q.reject(err);
-    });
-  };
-
-  S.getAccountLocally = function() {
-    return  localStorageService.get('account'); 
-  };
-
-  S.getBasicAccout = function(userId) {
-    var url = HostSrv.main + ApiSrv.basicAccount.get_basic_account.url + '&user_id=' + userId;
-
-    return $http.get(url).then(function(resp){
-      var data = resp.data;
-      console.log('myAccount:', data);
-      var account = transAccountFields(data)
-      return $q.when(account);
-    },function(err){
-      console.log('error:',err);
-      return $q.reject(err);
-    });
-  };
-
-  S.updateBasicAccount = function(formData){
-    var url = HostSrv.main + ApiSrv.basicAccount.update_basic_account.url;
-
-    return $http({
-      method: 'POST',
-      url: url,
-      headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-      transformRequest: function(obj) {
-        var str = [];
-        for(var p in obj)
-        str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
-        return str.join("&");
-      },
-      data: formData
-    }).then(function(resp){
-      var data = resp.data;
-      console.log('update resp data:',data);
-    },function(err){
+    srv.getUserInfo = $resource(HostSrv.main + ApiSrv.account.userInfo.url , {}, {
+        action: {
+            method: ApiSrv.account.userInfo.method,
+            params: { userId: "userId" },
+            isArray: false
+        }
     });
 
-  };
+    srv.getUserDetail = $resource(HostSrv.main + ApiSrv.account.userDetail.url, {}, {
+        action: {
+            method: ApiSrv.account.userDetail.method,
+            params: { userId: "userId" },
+            isArray: false
+        }
+    });
 
-  return S;
+    srv.bookTypeMap = { "like": "1", "want": "2" };
+
+    srv.addBook = $tpost(HostSrv.main + ApiSrv.account.userAddBook.url, {}, {
+        action: {
+            method: ApiSrv.account.userAddBook.method,
+            params: {
+                userId: "userId",
+                title: "title",
+                image: "image",
+                type: "type"
+            }
+        }
+    });
+
+    srv.deleteBook = $tpost(HostSrv.main + ApiSrv.account.userDeleteBook.url, {}, {
+        action: {
+            method: ApiSrv.account.userDeleteBook.method,
+            params: {}
+        }
+    });
+
+    srv.updateAccount = $tpost(HostSrv.main + ApiSrv.account.userUpdate.url, {}, {
+        action: {
+            method: ApiSrv.account.userUpdate.method,
+            params: { userId: "userId" }
+        }
+    });
+
+    srv.getUserGroups = $resource(HostSrv.main + ApiSrv.account.userGroups.url, {}, {
+        action: {
+            method: ApiSrv.account.userGroups.method,
+            params: { userId: "userId" },
+            isArray: false
+        }
+    });
+
+    srv.getUserRank = $resource(HostSrv.main + ApiSrv.account.userRank.url, {}, {
+        action: {
+            method: ApiSrv.account.userRank.method,
+            params: { userId: "userId" },
+            isArray: false
+        }
+    });
+
+    srv.getUserRankInGroup = $resource(HostSrv.main + ApiSrv.account.userRankInGroup.url, {}, {
+        action: {
+            method: ApiSrv.account.userRankInGroup.method,
+            params: {
+                userId: "userId",
+                groupId: "groupId"
+            },
+            isArray: false
+        }
+    });
+
+    srv.getUserScore = $resource(HostSrv.main + ApiSrv.account.userScore.url, {}, {
+        action: {
+            method: ApiSrv.account.userScore.method,
+            params: { userId: "userId" },
+            isArray: false
+        }
+    });
+
+    srv.getUserReaded = $resource(HostSrv.main + ApiSrv.account.userReaded.url, {}, {
+        action: {
+            method: ApiSrv.account.userReaded.method,
+            params: { userId: "userId" },
+            isArray: false
+        }
+    });
+
+    srv.getUserPunches = $resource(HostSrv.main + ApiSrv.account.userPunches.url, {}, {
+        action: {
+            method: ApiSrv.account.userPunches.method,
+            params: {
+                userId: "userId"
+                // startDate
+                // endDate
+            },
+            isArray: false
+        }
+    });
+
+    srv.getUserPunchDay = $resource(HostSrv.main + ApiSrv.account.userPunchDetail.url, {}, {
+        action: {
+            method: ApiSrv.account.userPunchDetail.method,
+            params: {
+                userId: "userId"
+                // date
+            },
+            isArray: false
+        }
+    });
+
+    srv.getUserRemarks = $resource(HostSrv.main + ApiSrv.account.userRemarks.url, {}, {
+        action: {
+            method: ApiSrv.account.userRemarks.method,
+            params: { userId: "userId" },
+            isArray: false
+        }
+    });
+
+    srv.getUserRemarksInGroup = $resource(HostSrv.main + ApiSrv.account.userRemarkOfGroup.url, {}, {
+        action: {
+            method: ApiSrv.account.userRemarkOfGroup.method,
+            params: {
+                userId: "userId",
+                groupId: "groupId"
+            },
+            isArray: false
+        }
+    });
+
+    return srv;
 }]);

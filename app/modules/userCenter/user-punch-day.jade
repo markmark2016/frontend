@@ -1,0 +1,17 @@
+ion-view.view-user-punch-day(view-title="{{user.nickname}} - 连续打卡")
+    ion-list
+        .item.day-head
+            h2 {{date | date:'yyyy年M月d日书评'}}
+        a.item.item-avatar.item-remark(ng-repeat="remark in data.remarklist" href="#/tab/remark-detail/{{remark.remarkId}}")
+            img(src="{{remark.headImage}}")
+            h2 {{remark.userName}}
+            p {{remark.createTime | date: 'yyyy-MM-dd  hh:mm'}}
+            h2.title {{remark.title}}
+            p.content {{remark.comment}}
+            .meta
+                span.meta-item
+                    i.icon.ion-thumbsup
+                    span.number {{remark.totalLike}}
+                span.meta-item
+                    i.icon.ion-android-chat
+                    span.number {{remark.totalReply}}

@@ -1,27 +1,39 @@
 'use strict';
 
 angular.module('mark.editProfile')
-.controller('EditProfileMainCtrl', ['$scope', 'AccountSrv', function($scope, AccountSrv) {
+.controller('EditProfileMainCtrl', ['$scope', 'AccountSrv', 'alertDialog', function($scope, AccountSrv, alertDialog) {
+  var userId = AccountSrv.getUserId();
+  $scope.genderMap = AccountSrv.genderMap;
+  $scope.affectiveMap = AccountSrv.affectiveMap;
+  AccountSrv.getUserDetail.action({ userId: userId }, function(result) {
+    $scope.user = result.data.user;
+    $scope.bookList = result.data.bookList;
+  });
 
-  AccountSrv.getMyAccount().then(succ, fail);
+  $scope.readOnly = {
+    common: false,
+    head: true,
+    gender: true,
+    region: true
+  };
 
-  function succ(account){
-    $scope.user = account;
+  $scope.deleteBook = function (type, book) {
+    AccountSrv.deleteBook.action({}, {
+      userId: userId,
+      bookId: book.id,
+      type: AccountSrv.bookTypeMap[type]
+    }, function() {
+      var bookList;
+      if (type == 'like') bookList = $scope.bookList.likeList;
+      if (type == 'want') bookList = $scope.bookList.wantList;
+      for (var i = 0; i < bookList.length; i++) {
+        if (bookList[i].id == book.id) {
+          bookList.splice(i,1);
+          break;
+        }
+      }
+    }, function() {
+      alertDialog($scope, '删除失败', "服务器开小差了，请稍等一下");
+    });
   }
-
-  function fail(err){
-    alert(err);
-  }
-
-  $scope.favoriteBooks = [
-    {id: '1', title: '一个人的朝圣', img: 'https://img3.doubanio.com/spic/s1113106.jpg'},
-    {id: '2', title: '人间词话', img: 'https://img3.doubanio.com/spic/s1113106.jpg'},
-    {id: '3', title: '当你的才华还撑不起你的野心', img: 'https://img3.doubanio.com/spic/s1113106.jpg'},
-  ];
-
-  $scope.bookList = [
-    {id: '1', title: '当你的才华还撑不起你的野心', img: 'https://img3.doubanio.com/spic/s1113106.jpg'},
-    {id: '2', title: '一个人的朝圣', img: 'https://img3.doubanio.com/spic/s1113106.jpg'},
-    {id: '3', title: '人间词话', img: 'https://img3.doubanio.com/spic/s1113106.jpg'},
-  ];
 }]);

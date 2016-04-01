@@ -1,4 +1,4 @@
-ion-view(view-title='{{ selectTypeTitle }}')
+ion-view.view-select-book(view-title='{{ selectTypeTitle }}')
   ion-content
     ion-list
       ion-item.item-divider.custom-rewrite
@@ -7,11 +7,11 @@ ion-view(view-title='{{ selectTypeTitle }}')
         label.item-input-wrapper
           i.icon.ion-search.placeholder-icon
           |           
-          input(type='text', ng-model='searchText', ng-change='onSearch(searchText)', placeholder='Search')
+          input.search-book-input(type='text', ng-model='search.text', ng-change="onSearchTextChanged()", placeholder='Search')
       |       
-      ion-item.item-thumbnail-left(ng-repeat='book in searchResults', ng-click='onBookSelect(book)')
-        img(src='{{ book.img }}')
+      ion-item.item-thumbnail-left.book-item(ng-repeat='book in search.results', ng-click='onBookSelect(book)')
+        img(src='{{ book.images.small || book.images.medium || book.images.large }}')
         |         
         h2 {{ book.title }}
         |         
-        p {{ book.desc }}
+        p {{ book.summary }}

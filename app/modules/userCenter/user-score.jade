@@ -1,0 +1,10 @@
+ion-view.view-user-score(view-title="{{user.nickname}} - 积分")
+    ion-list
+        .item.item-total
+            h2 累计积分
+            .score {{data.totalScore}}
+        a.item.item-group(ng-repeat="group in data.scorelist" href="#/tab/group/{{group.id}}")
+            img(src="{{group.groupImage}}")
+            .group-name
+                h2 {{group.groupName}}
+            .score {{group.score}} 积分

@@ -1,26 +1,32 @@
 'use strict';
 
 angular.module('mark.editProfile')
-.controller('EditRelationshipMainCtrl', ['$scope', 'AccountSrv', 'RelationshipSrv', function($scope, AccountSrv, RelationshipSrv) {
+.controller('EditRelationshipMainCtrl', ['$scope', 'AccountSrv', '$location', function($scope, AccountSrv, $location) {
 
-  AccountSrv.getMyAccount().then(succ, fail);
+  var userId = AccountSrv.getUserId();
+  AccountSrv.getUserDetail.action({ userId: userId }, function(result) {
+    $scope.user = result.data.user;
+    $scope.bookList = result.data.bookList;
+  });
 
-  function succ(account){
-    $scope.user = account;
-  }
+  $scope.relationships = (function(affectiveMap) {
+    var arr = [];
+    for (var k in affectiveMap) {
+      arr.push({
+        value: "" + k, 
+        title: "" + affectiveMap[k]
+      });
+    }
+    return arr;
+  })(AccountSrv.affectiveMap);
 
-  function fail(err){
-    alert(err);
-  }
-
-  $scope.relationships = RelationshipSrv.getRelationships();
-
-  $scope.onRelationshipChange = function(r){
-    console.log(r);
-    AccountSrv.updateBasicAccount({
-      update_field: 'relationship',
-      update_value: r.value
-    });
+  $scope.onRelationshipChange = function(affectiveStatus){
+    AccountSrv.updateAccount.action({
+      userId: userId
+    }, {
+      affectiveStatus: affectiveStatus
+    }, function() { $location.path('/tab/edit-profile'); },
+    function() { $location.path('/tab/edit-profile'); });
   };
 
 }]);

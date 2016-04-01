@@ -1,24 +1,20 @@
 'use strict';
 
 angular.module('mark.editProfile')
-.controller('SelectBookMainCtrl', ['$scope', '$stateParams', '$location', 'AccountSrv', function($scope, $stateParams, $location, AccountSrv) {
+.controller('SelectBookMainCtrl', ['$scope', '$stateParams', '$location', 'AccountSrv', 'CommonSrv', function($scope, $stateParams, $location, AccountSrv, CommonSrv) {
 
-  AccountSrv.getMyAccount().then(succ, fail);
-
-  function succ(account){
-    $scope.user = account;
-  }
-
-  function fail(err){
-    alert(err);
-  }
+  var userId = AccountSrv.getUserId();
+  AccountSrv.getUserDetail.action({ userId: userId }, function(result) {
+    $scope.user = result.data.user;
+    $scope.bookList = result.data.bookList;
+  });
 
   $scope.selectType = $stateParams.selectType;
   $scope.selectTypeTitle = (function(type){
     switch(type){
-      case 'favorite':
+      case 'like':
         return '喜欢的书';
-      case 'bookList':
+      case 'want':
         return '想看的书';
       default:
         return '搜索图书';
@@ -27,22 +23,64 @@ angular.module('mark.editProfile')
 
   $scope.bookId = $stateParams.selectType;
 
-  $scope.searchText = "";
-  $scope.searchResults = [];
-  $scope.onSearch = function(text){
-    console.log('searching:', text);
-    if(text=="") return;
-    console.log('search done');
-    $scope.searchResults = [
-      {id: '', title: '一个人的朝圣', desc: '一个人的朝圣一个人的朝圣一个人的朝圣一个人的朝圣一个人的朝圣一个人的朝圣', img: 'https://img3.doubanio.com/spic/s1113106.jpg'},
-      {id: '', title: '人间词话', desc: '人间词话人间词话人间词话人间词话人间词话人间词话人间词话人间词话人间词话人间词话人间词话人间词话人间词话', img: 'https://img3.doubanio.com/spic/s1113106.jpg'},
-      {id: '', title: '当你的才华还撑不起你的野心', desc: '当你的才华还撑不起你的野心当你的才华还撑不起你的野心当你的才华还撑不起你的野心当你的才华还撑不起你的野心当你的才华还撑不起你的野心', img: 'https://img3.doubanio.com/spic/s1113106.jpg'},
-    ];
+  $scope.search = {};
+  $scope.search.text = "";
+  $scope.search.results = [];
+
+  var lastSearchText = "";
+  var lastSearchTime = 0;
+  var SEARCH_INTERVAL = 1000;
+  // if (!window.selectBookTimer) {
+  //   window.selectBookTimer = setInterval(function() {
+  //     if ($scope.search.text != lastSearchText) {
+  //       if ($scope.search.text) {
+  //         var timestamp = new Date().getTime();
+  //         CommonSrv.getDoubanBooks.action({
+  //           q: $scope.search.text,
+  //         }, function(result) {
+  //           if (lastSearchTime < timestamp) {
+  //             $scope.search.results = result.books;
+  //             lastSearchTime = timestamp;
+  //           }
+  //         });
+  //       } else {
+  //         $scope.search.results = [];
+  //         $scope.$apply();
+  //       }
+  //       lastSearchText = $scope.search.text;
+  //     }
+  //   }, SEARCH_INTERVAL);
+  // }
+  $scope.onSearchTextChanged = function() {
+    if ($scope.search.text != lastSearchText) {
+      if ($scope.search.text) {
+        var timestamp = new Date().getTime();
+        CommonSrv.getDoubanBooks.action({
+          q: $scope.search.text,
+        }, function(result) {
+          if (lastSearchTime < timestamp) {
+            $scope.search.results = result.books;
+            lastSearchTime = timestamp;
+          }
+        });
+      } else {
+        $scope.search.results = [];
+      }
+      lastSearchText = $scope.search.text;
+    }
   };
 
   $scope.onBookSelect = function(book){
-    console.log(book);
-    $location.url('/tab/profile');
+    AccountSrv.addBook.action({
+      userId: userId,
+      title: book.title,
+      image: (book.images.large || book.images.medium || book.images.small),
+      type: AccountSrv.bookTypeMap[$stateParams.selectType]
+    }, function() {
+      $location.path('/tab/edit-profile');
+    }, function() {
+      $location.path('/tab/edit-profile');
+    });
   };
 
 }]);

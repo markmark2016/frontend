@@ -1,0 +1,80 @@
+ion-view.view-user-detail(view-title='{{ user.nickname }} - 个人主页')
+  ion-content.profile_page
+    ion-list
+      ion-item.item.no-border
+        .row
+          .col.col-33.col-offset-33
+            .avatar
+              img.img-circular(src='{{ user.headImgUrl }}')
+        h2.text-center {{ user.nickname }}
+        .row
+          .col.col-70.col-offset-15
+            p.normal-p.text-center {{ user.intro }}
+        p.info.text-center
+          i.icon.icon-gender.ion-male(ng-if="user.gender==1")
+          i.icon.icon-gender.ion-female(ng-if="user.gender==2")
+          span(ng-if='user.city || user.province') {{ user.city || user.province }}
+          span(ng-if='user.occupation') {{ user.occupation }}
+          span(ng-if='user.school') {{ user.school }}
+      ion-item.item.text-center.no-border
+        a.button.button-circular.cyan-bordered.button-edit-profile(href='#/tab/edit-profile') 编辑资料
+      ion-item.item.no-top-padding.no-bottom-padding
+        .button-bar.no-border-radius
+          a.button.button-clear.button-stable(ng-class="{'border-bottom-active button-energized': isActiveSection('profile')}", ng-click="selectSection('profile')") 资料
+          a.button.button-clear.button-stable(ng-class="{'border-bottom-active button-energized': isActiveSection('more')}", ng-click="selectSection('more')") 更多
+      ion-item.item.item-user-profile(ng-show="isActiveSection('profile')")
+        ion-list
+          .item.book-list
+            h2 最喜欢的书
+            .book-item-wrapper(ng-repeat="book in bookList.likeList")
+              .book-item
+                img(src="{{book.image}}")
+                p {{book.title}}
+        ion-list
+          .item.book-list
+            h2 最想看的书
+            .book-item-wrapper(ng-repeat="book in bookList.wantList")
+              .book-item
+                img(src="{{book.image}}")
+                p {{book.title}}
+        ion-list.list-profile
+          .item.profile-item
+            .profile-prop 性别
+            .profile-value {{user.gender ? '男' : '女'}}
+          .item.profile-item
+            .profile-prop 兴趣领域
+            .profile-value {{user.interests}}
+        ion-list.list-profile
+          .item.profile-item
+            .profile-prop 城市
+            .profile-value {{user.city || user.province}}
+          .item.profile-item
+            .profile-prop 学校
+            .profile-value {{user.school}}
+          .item.profile-item
+            .profile-prop 职业
+            .profile-value {{user.occupation}}
+        ion-list.list-profile
+          .item.profile-item
+            .profile-prop 星座
+            .profile-value {{user.constellation}}
+          .item.profile-item
+            .profile-prop 情感状态
+            .profile-value {{affectStatusMap[user.affectiveStatus]}}
+      ion-item.item.item-user-more(ng-show="isActiveSection('more')")
+        .user-more-item
+          img(src="src/img/icon_book_reviews.png")
+          p 累计书评
+        .user-more-item
+          img(src="src/img/icon_book_reviews.png")
+          p 小组
+        .user-more-item
+          img(src="src/img/icon_timeline.png")
+          p 个人轨迹
+        .user-more-item
+          img(src="src/img/icon_impression.png")
+          p 书友印象
+
+
+
+

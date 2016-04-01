@@ -1,29 +1,26 @@
 'use strict';
 
 angular.module('mark.editProfile')
-.controller('EditGenderMainCtrl', ['$scope', 'AccountSrv', function($scope, AccountSrv) {
+.controller('EditGenderMainCtrl', ['$scope', 'AccountSrv', '$location', function($scope, AccountSrv, $location) {
 
-  AccountSrv.getMyAccount().then(succ, fail);
-
-  function succ(account){
-    $scope.user = account;
-  }
-
-  function fail(err){
-    alert(err);
-  }
+  var userId = AccountSrv.getUserId();
+  AccountSrv.getUserDetail.action({ userId: userId }, function(result) {
+    $scope.user = result.data.user;
+    $scope.bookList = result.data.bookList;
+  });
 
   $scope.genders = [
-    {value: 'male', title: '男'},
-    {value: 'female', title: '女'}
+    {value: '1', title: '男'},
+    {value: '2', title: '女'}
   ];
 
   $scope.onGenderChange = function(gender){
-    console.log(gender);
-    AccountSrv.updateBasicAccount({
-      update_field: 'gender',
-      update_value: gender.value
-    });
+    AccountSrv.updateAccount.action({
+      userId: userId
+    }, {
+      gender: gender.value
+    }, function() { $location.path('/tab/edit-profile'); },
+    function() { $location.path('/tab/edit-profile'); });
   };
 
 }]);

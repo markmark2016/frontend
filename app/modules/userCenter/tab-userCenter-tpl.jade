@@ -1,12 +1,12 @@
-ion-view(view-title='{{ user.name }} - 个人中心')
+ion-view.view-user-center(view-title='{{ user.nickName }} - 个人中心')
   ion-content#user_center
     ion-list
-      ion-item.item-avatar.item-icon-right(href='#/tab/page')
-        img(src='{{ user.avatar }}')
+      ion-item.item-avatar.item-icon-right(href='#/tab/user-detail/{{user.id}}')
+        img(src='{{ user.headImage }}')
         |         
-        h2 {{ user.name }}
+        h2 {{ user.nickName }}
         |         
-        p.normal-p {{ user.slogan }}
+        p.normal-p {{ user.intro }}
         |         
         i.icon.ion-chevron-right
       |       
@@ -14,80 +14,80 @@ ion-view(view-title='{{ user.name }} - 个人中心')
         .row
           .col.text-center
             .statistic
-              a(ng-href='#/tab/my-groups')
+              a(ng-href='#/tab/user-groups/{{user.id}}')
                 .value
-                  | {{ user.statistics.groupCount }}
+                  | {{ user.totalGroup }}
                 .label
-                  | &#x5C0F;&#x7EC4;
+                  | 小组
           |           
           .col.text-center
             .statistic
-              a(ng-href='#/tab/my-groups')
+              a(ng-href='#/tab/user-rank/{{user.id}}')
                 .value
-                  | {{ user.statistics.rank }}
+                  | {{ user.num }}
                 .label
-                  | &#x6392;&#x540D;
+                  | 排名
           |           
           .col.text-center
             .statistic
-              a(ng-href='#/tab/my-groups')
+              a(ng-href='#/tab/user-score/{{user.id}}')
                 .value
-                  | {{ user.statistics.credits }}
+                  | {{ user.score }}
                 .label
-                  | &#x79EF;&#x5206;
+                  | 积分
       |       
       ion-item.item-divider.custom-rewrite
       |       
       .card-table
-        .row.card-table-row
+        .row.card-table-row.no-padding
           .col.no-padding
             .card-table-cell
-              ion-item.item-avatar
+              a.item.item-thumbnail(href="#/tab/user-punch/{{user.id}}")
                 img(src='src/img/icon_check_in.png')
                 |             
                 h2 连续打卡
                 |             
-                p {{ collections.continuousReviewBooks.count }} 天
+                p {{ user.totalPunch }} 天
           |         
           .col.no-padding
             .card-table-cell
-              ion-item.item-avatar
+              a.item.item-thumbnail(href="#/tab/user-read/{{user.id}}")
                 img(src='src/img/icon_read_books.png')
                 |             
                 h2 累计读书
                 |             
-                p {{ collections.readBooks.count }} 本
+                p {{ user.totalRead }} 本
         |       
-        .row.card-table-row
+        .row.card-table-row.no-padding
           .col.no-padding
             .card-table-cell
-              ion-item.item-avatar
+              a.item.item-thumbnail(href="#/tab/user-remark/{{user.id}}")
                 img(src='src/img/icon_book_reviews.png')
                 |             
                 h2 累计书评
                 |             
-                p {{  collections.bookReviews.count }} 条
+                p {{  user.totalRemark }} 条
           |         
           .col.no-padding
             .card-table-cell
-              ion-item.item-avatar
+              a.item.item-thumbnail(href="#/tab/user-coming/{{user.id}}")
                 img(src='src/img/icon_timeline.png')
                 |             
                 h2 个人轨迹
                 |             
                 p &nbsp;
         |       
-        .row.card-table-row
+        .row.card-table-row.no-padding
           .col.no-padding
             .card-table-cell
-              ion-item.item-avatar
+              a.item.item-thumbnail(href="#/tab/user-coming/{{user.id}}")
                 img(src='src/img/icon_medals.png')
                 |             
                 h2 获得勋章
           |         
           .col.no-padding
             .card-table-cell
-              ion-item.item-avatar
+              a.item.item-thumbnail(href="#/tab/user-coming/{{user.id}}")
                 img(src='src/img/icon_impression.png')
                 |             
                 h2 书友印象

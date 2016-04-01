@@ -1,0 +1,22 @@
+ion-view.view-user-groups(view-title="{{user.nickname}} - 小组")
+    ion-list
+        a.item.item-thumbnail-left(ng-repeat="group in groups" href="#/tab/group/{{group.id}}")
+            img(src="{{ group.groupImage }}")
+            h2 {{ group.groupName }}
+            h3 {{ group.bookName }}
+            p {{ group.groupDesc }}
+        .as-list(ng-repeat="association in associations")
+            .item.item-avatar
+                a(href="#/tab/as/{{association.id}}")
+                    img(src="{{association.image}}")
+                    h2 {{ association.associationName }}
+                    p {{ association.associationDesc }}
+                .icon-collapse(ng-click="association.collapsed = !association.collapsed")
+                    i.icon.ion-chevron-down(ng-show="!association.collapsed")
+                    i.icon.ion-chevron-up(ng-show="association.collapsed")
+            .item.in-as-list(ng-show="association.collapsed")
+                a.item.item-thumbnail-left.item-in-as-group(ng-repeat="group in association.groupList" href="#/tab/group/{{group.id}}")
+                    img(src="{{ group.groupImage }}")
+                    h2 {{ group.groupName }}
+                    h3 {{ group.bookName }}
+                    p {{ group.groupDesc }}

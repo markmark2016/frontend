@@ -8,30 +8,62 @@ angular.module('mark.services')
         url: 'upload'
       }
     },
-    basicAccount: {
-      get_my_account: {
-        method: 'GET',
-        url: '/?c=UserCenterAPI&a=get_my_account'
-      },
-      get_basic_account: {
-        method: 'GET',
-        url: '/?c=UserCenterAPI&a=get_basic_account'
-      },
-      update_basic_account: {
-        method: 'POST',
-        url: '/?c=UserCenterAPI&a=update_basic_account'
-      }
-    },
     account: {
-      get_account: {
+      userInfo: {
         method: 'GET',
-        url: '/?c=UserCenterAPI&a=get_account'
-      }
-    },
-    myGroups: {
-      get_my_groups: {
+        url: 'users/:userId'
+      },
+      userDetail: {
         method: 'GET',
-        url: '/?c=UserCenterAPI&a=get_my_groups'
+        url: 'users/details/:userId'
+      },
+      userUpdate: {
+        method: 'PUT',
+        url: 'users/details/:userId'
+      },
+      userGroups: {
+        method: 'GET',
+        url: 'users/:userId/group'
+      },
+      userRank: {
+        method: 'GET',
+        url: 'users/:userId/rank'
+      },
+      userScore: {
+        method: 'GET',
+        url: 'users/:userId/score'
+      },
+      userRankInGroup: {
+        method: 'GET',
+        url: 'users/:userId/rank/:groupId'
+      },
+      userReaded: {
+        method: 'GET',
+        url: 'users/:userId/readed'
+      },
+      userPunches: {
+        method: 'GET',
+        url: 'users/:userId/punch'
+      },
+      userPunchDetail: {
+        method: 'GET',
+        url: 'remark/users/:userId'
+      },
+      userRemarks: {
+        method: 'GET',
+        url: 'users/:userId/remark'
+      },
+      userRemarkOfGroup: {
+        method: 'GET',
+        url: 'users/:userId/reamrk/:groupId'
+      },
+      userAddBook: {
+        method: 'POST',
+        url: 'users/book/save'
+      },
+      userDeleteBook: {
+        method: 'POST',
+        url: 'users/book/delete'
       }
     },
     groupsCenter:{
@@ -125,30 +157,62 @@ angular.module('mark.services')
         url: 'upload.json'
       }
     },
-    basicAccount: {
-      get_my_account: {
-        method: 'GET',
-        url: '/?c=UserCenterAPI&a=get_my_account'
-      },
-      get_basic_account: {
-        method: 'GET',
-        url: '/?c=UserCenterAPI&a=get_basic_account'
-      },
-      update_basic_account: {
-        method: 'POST',
-        url: '/?c=UserCenterAPI&a=update_basic_account'
-      }
-    },
     account: {
-      get_account: {
+      userInfo: {
         method: 'GET',
-        url: '/?c=UserCenterAPI&a=get_account'
-      }
-    },
-    myGroups: {
-      get_my_groups: {
+        url: 'account/user-info.json'
+      },
+      userDetail: {
         method: 'GET',
-        url: '/?c=UserCenterAPI&a=get_my_groups'
+        url: 'account/user-detail.json'
+      },
+      userUpdate: {
+        method: 'PUT',
+        url: 'users/details/:userId'
+      },
+      userGroups: {
+        method: 'GET',
+        url: 'account/user-group.json'
+      },
+      userRank: {
+        method: 'GET',
+        url: 'account/user-rank.json'
+      },
+      userScore: {
+        method: 'GET',
+        url: 'account/user-score.json'
+      },
+      userRankInGroup: {
+        method: 'GET',
+        url: 'account/user-rank-ingroup.json'
+      },
+      userReaded: {
+        method: 'GET',
+        url: 'account/user-read.json'
+      },
+      userPunches: {
+        method: 'GET',
+        url: 'account/user-punch.json'
+      },
+      userPunchDetail: {
+        method: 'GET',
+        url: 'account/user-punch-day.json'
+      },
+      userRemarks: {
+        method: 'GET',
+        url: 'account/user-remark.json'
+      },
+      userRemarkOfGroup: {
+        method: 'GET',
+        url: 'account/user-remark-ingroup.json'
+      },
+      userAddBook: {
+        method: 'GET',
+        url: 'none.json'
+      },
+      userDeleteBook: {
+        method: 'GET',
+        url: 'none.json'
       }
     },
     groupsCenter:{

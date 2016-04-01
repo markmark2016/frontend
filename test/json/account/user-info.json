@@ -1,0 +1,16 @@
+{
+    "status": 1,
+    "data": {
+        "num": 3,
+        "id": 6,
+        "nickName": "华蓉",
+        "headImage": "http://wx.qlogo.cn/mmopen/lRyFfvqkHjArj3GiaD96605yVg3x8t4mwAskobTnPSJklvxK8xplk0ecQibAHjYvWrTSsWhNZlicNXPMnfI8PhoAm2UUbdkdV7a/0",
+        "intro": "走自己的路，让别人无路可走",
+        "totalGroup": "10",
+        "totalRemark": 12,
+        "totalRead": 5,
+        "totalPunch": 7,
+        "score": 12,
+        "leader": false
+    }
+}
