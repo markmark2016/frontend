@@ -33,12 +33,26 @@ angular.module('mark.services')
 
     var doubanBookSearchUrl = "https://api.douban.com/v2/book/search";
     if (HostSrv.env == 'staging') doubanBookSearchUrl = "/test/json/douban-books.json";
-    srv.getDoubanBooks = $resource(doubanBookSearchUrl, {}, {
-        action: {
-            method: 'GET',
-            params: { q: "q" } // q, tag, start, end. Doc see: https://developers.douban.com/wiki/?title=book_v2#get_book_search
-        }
-    });
+    // Doc see: https://developers.douban.com/wiki/?title=book_v2#get_book_search
+    // params: q, tag, start, count
+    srv.getDoubanBooks = function(params, success, failed, completed) {
+        params = $.extend({
+            q: "",
+            start: 0,
+            count: 20
+        }, params);
+        
+        $.ajax({
+            url: doubanBookSearchUrl,
+            type: 'GET',
+            dataType: 'jsonp',
+            data: params,
+            crossDomain: true
+        })
+        .done(success)
+        .fail(failed)
+        .always(completed);
+    };
 
     return srv;
 }]);

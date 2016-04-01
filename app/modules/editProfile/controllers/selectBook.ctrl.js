@@ -55,7 +55,7 @@ angular.module('mark.editProfile')
     if ($scope.search.text != lastSearchText) {
       if ($scope.search.text) {
         var timestamp = new Date().getTime();
-        CommonSrv.getDoubanBooks.action({
+        CommonSrv.getDoubanBooks({
           q: $scope.search.text,
         }, function(result) {
           if (lastSearchTime < timestamp) {
