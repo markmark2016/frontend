@@ -28,6 +28,13 @@ angular.module('mark.services')
         }
     });
 
+    var updateRemarkSrv = $tpost(HostSrv.main + ApiSrv.remark.post_update.url, {}, {
+        action: {
+            method: ApiSrv.remark.post_update.method,
+            params: {}
+        }
+    });
+
     var getTodayRemarkDetailSrv = $resource(HostSrv.main + ApiSrv.remark.get_today.url, {}, {
         action: {
             method: ApiSrv.remark.get_today.method,
@@ -77,6 +84,7 @@ angular.module('mark.services')
         punchesSrv: punchesSrv,
         createRemarkSrv: createRemarkSrv,
         completeRemarkSrv: completeRemarkSrv,
+        updateRemarkSrv: updateRemarkSrv,
         getTodayRemarkDetailSrv: getTodayRemarkDetailSrv,
         getRemarkDetailSrv: getRemarkDetailSrv,
         postReplySrv: postReplySrv,

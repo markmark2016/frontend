@@ -109,6 +109,10 @@ angular.module('mark.services')
         method: 'POST',
         url: 'remark/complete/:groupId/:userId'
       },
+      post_update: {
+        method: 'POST',
+        url: 'remark/update'
+      },
       get_today: {
         method: 'GET',
         url: 'remark/today/:groupId/:userId'
@@ -251,12 +255,16 @@ angular.module('mark.services')
         url: 'remark/punch.json'
       },
       post_create: {
-        method: 'GET',
+        method: 'POST',
         url: 'none.json'
       },
       post_complete: {
-        method: 'GET',
+        method: 'POST',
         url: 'none.json'
+      },
+      post_update: {
+        method: 'POST',
+        url: 'remark/update'
       },
       get_today: {
         method: 'GET',

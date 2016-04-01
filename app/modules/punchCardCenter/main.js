@@ -10,29 +10,73 @@ angular.module('mark.remark')
     });
 
     $scope.postPunch = function(groupId) {
-        $location.path('/tab/edit-remark/' + groupId);
+        $location.path('/tab/create-remark/' + groupId);
     };
     $scope.showRemarks = function(groupId) {
         $location.path('/tab/remark-today/' + groupId);
     };
     $scope.postRemark = function(groupId) {
-        $location.path('/tab/edit-remark/' + groupId);
+        $location.path('/tab/create-remark/' + groupId);
     };
 }])
 .controller('EditRemarkCtrl', ['$scope', 'RemarkSrv', 'CommonSrv', '$stateParams', '$location', 'alertDialog', 'AccountSrv', function($scope, RemarkSrv, CommonSrv, $stateParams, $location, alertDialog, AccountSrv) {
     var userId = AccountSrv.getUserId();
     var groupId = $stateParams.groupId;
+    var remarkId = $stateParams.remarkId;
     $scope.group = {};
-    $scope.photos = [];
+    $scope.edit = {};
+    $scope.edit.photos = [];
+    $scope.createNew = (remarkId ? false : true);
 
-    RemarkSrv.punchesSrv.action({userId: userId},function(result){
-        for (var i = 0; i < result.data.length; i++) {
-            if (result.data[i].groupId == groupId) {
-                $scope.group = result.data[i];
-                break;
+    if ($scope.createNew) {
+        RemarkSrv.punchesSrv.action({userId: userId},function(result){
+            for (var i = 0; i < result.data.length; i++) {
+                if (result.data[i].groupId == groupId) {
+                    $scope.group = result.data[i];
+                    break;
+                }
             }
-        }
-    });
+        });
+    } else {
+        RemarkSrv.getRemarkDetailSrv.action({
+            remarkId: remarkId
+        }, function getRemarkCallback(result) {
+            $scope.remark = result.data;
+            $scope.edit.remarkPageStart = result.data.remark.startPage;
+            $scope.edit.remarkPageEnd = result.data.remark.endPage;
+            $scope.edit.remarkTitle = result.data.remark.title;
+            $scope.edit.remarkContent = result.data.remark.comment;
+            var pictureUrlSplit = $scope.remark.pictureUrl.split(',');
+            var pictureUrls = [];
+            for (var i = 0; i < pictureUrlSplit.length; i++) {
+                var canPushUrl = true;
+                for (var j = 0; j < pictureUrls.length; j++) {
+                    if (pictureUrlSplit[i] == pictureUrls[j]) {
+                        canPushUrl = false;
+                        break;
+                    }
+                }
+                if (canPushUrl) pictureUrls.push(pictureUrlSplit[i]);
+            }
+            $scope.remark.remark.pictureUrls = pictureUrls;
+            for (var i = 0; i < pictureUrls.length; i++) {
+                $scope.edit.photos.push({
+                    fileObj: null,
+                    uploaded: true,
+                    error: false,
+                    src: pictureUrls[i]
+                });
+            }
+            RemarkSrv.punchesSrv.action({userId: userId},function(result){
+                for (var i = 0; i < result.data.length; i++) {
+                    if (result.data[i].groupId == $scope.remark.remark.groupIdFk) {
+                        $scope.group = result.data[i];
+                        break;
+                    }
+                }
+            });
+        });
+    }
 
     $('.view-edit-remark').resize(function() {
         var viewHeight = $(this).height();
@@ -71,13 +115,12 @@ angular.module('mark.remark')
             error: false,
             src: ""
         };
-        $scope.photos.push(fileStruct);
+        $scope.edit.photos.push(fileStruct);
         $scope.$apply();
         fileReader.onload = function(data) {
             fileStruct.src = fileReader.result;
             $scope.$apply();
             CommonSrv.upload(fileStruct.fileObj, function(data) {
-                console.log(fileStruct);
                 fileStruct.error = false;
                 fileStruct.uploaded = true;
                 fileStruct.src = data.pictureUrl;
@@ -91,17 +134,25 @@ angular.module('mark.remark')
         fileReader.readAsDataURL(fileStruct.fileObj);
     };
 
+    $scope.deletePhoto = function (photoStruct) {
+        for (var i = 0; i < $scope.edit.photos.length; i++) {
+            if ($scope.edit.photos[i] == photoStruct) {
+                $scope.edit.photos.splice(i,1);
+            }
+        }
+    };
+
     function getPhotoUrls () {
         var urls = [];
-        for (var i = 0; i < $scope.photos.length; i++) {
-            if ($scope.photos[i].uploaded && !$scope.photos[i].error) urls.push($scope.photos[i].src);
+        for (var i = 0; i < $scope.edit.photos.length; i++) {
+            if ($scope.edit.photos[i].uploaded && !$scope.edit.photos[i].error) urls.push($scope.edit.photos[i].src);
         }
         return urls;
     };
 
     $scope.isAllPhotoUploaded = function() {
-        for (var i = 0; i < $scope.photos.length; i++) {
-            if (!$scope.photos[i].uploaded) {
+        for (var i = 0; i < $scope.edit.photos.length; i++) {
+            if (!$scope.edit.photos[i].uploaded) {
                 return false;
             }
         }
@@ -113,10 +164,10 @@ angular.module('mark.remark')
             groupId: groupId,
             userId: userId
         }, {
-            startPage: $scope.remarkPageStart || "",
-            endPage: $scope.remarkPageEnd || "",
-            title: $scope.remarkTitle || "",
-            comment: $scope.remarkContent || "",
+            startPage: $scope.edit.remarkPageStart || "",
+            endPage: $scope.edit.remarkPageEnd || "",
+            title: $scope.edit.remarkTitle || "",
+            comment: $scope.edit.remarkContent || "",
             pictureUrl: getPhotoUrls().join(',')
         }, function(result) {
             $location.path('/tab/remark-today/' + groupId);
@@ -130,8 +181,21 @@ angular.module('mark.remark')
             groupId: groupId,
             userId: userId
         }, {
-            title: $scope.remarkTitle || "",
-            comment: $scope.remarkContent || "",
+            title: $scope.edit.remarkTitle || "",
+            comment: $scope.edit.remarkContent || "",
+            pictureUrl: getPhotoUrls().join(',')
+        }, function(result) {
+            $location.path('/tab/remark-today/' + groupId);
+        }, function(error) {
+            alertDialog($scope, '提交失败', "服务器开小差了，请稍等一下");
+        });
+    };
+
+    $scope.updateRemark = function() {
+        RemarkSrv.updateRemarkSrv.action({}, {
+            remarkId: $stateParams.remarkId,
+            title: $scope.edit.remarkTitle || "",
+            comment: $scope.edit.remarkContent || "",
             pictureUrl: getPhotoUrls().join(',')
         }, function(result) {
             $location.path('/tab/remark-today/' + groupId);

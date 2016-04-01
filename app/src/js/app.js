@@ -326,8 +326,20 @@ angular.module('mark', ['ionic','LocalStorageModule', 'mark.dialog', 'mark.filte
       }
     }
   })
+  .state('tab.create-remark', {
+    url: '/create-remark/:groupId',
+    views: {
+      'tab-punch-center': {
+        templateUrl: 'modules/punchCardCenter/edit-remark.html',
+        controller: 'EditRemarkCtrl'
+      }
+    },
+    params: {
+      groupId: null
+    }
+  })
   .state('tab.edit-remark', {
-    url: '/edit-remark/:groupId',
+    url: '/edit-remark/:remarkId',
     views: {
       'tab-punch-center': {
         templateUrl: 'modules/punchCardCenter/edit-remark.html',
