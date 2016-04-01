@@ -12,18 +12,18 @@ ion-view.view-group-detail-intr.pane-visible(title="小组")
       .item
         h4 读书标语
         p {{data.readSlogan}}
-      .item
+      .item(ng-show="data.groupDesc")
         h4 小组简介
-        p {{data.groupDesc}}
+        p.desc {{data.groupDesc}}
       .item
         h4 读书规则
-        p 读书周期：{{data.beginDate | date:'yyyy-MM-dd'}} - {{data.endDate | date:'yyyy-MM-dd'}}
+        p 读书周期：{{data.beginDate | date:'yyyy.MM.dd'}} - {{data.endDate | date:'yyyy.MM.dd'}}
         p 打卡频率：{{data.frequency}}
-        p 保证金金额：{{data.num}}元
-        p 最晚加入时间：{{data.latestDate}}
-      .item
+        //- p 保证金金额：{{data.num}}元
+        p 最晚加入时间：{{data.latestDate | date:'yyyy.MM.dd'}}
+      .item(ng-show="data.bookSummary")
         h4 图书简介
-        p {{data.bookSummary}}
+        p.desc {{data.bookSummary}}
       .item
         a.button.button-circular.yellow(ng-show="data.userStatus == 0" ng-click="joinGroup()") 我要加入
         a.button.button-circular.red(ng-show="data.userStatus != 0" ng-click="quitGroup()") 退出小组
