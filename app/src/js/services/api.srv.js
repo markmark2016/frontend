@@ -6,6 +6,10 @@ angular.module('mark.services')
       upload: {
         method: 'POST',
         url: 'upload'
+      },
+      wechat_jsapi: {
+        method: 'GET',
+        url: 'wechat/js'
       }
     },
     account: {
@@ -159,6 +163,10 @@ angular.module('mark.services')
       upload: {
         method: 'GET',
         url: 'upload.json'
+      },
+      wechat_jsapi: {
+        method: 'GET',
+        url: 'weixin_jsapi.json'
       }
     },
     account: {

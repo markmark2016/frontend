@@ -8,7 +8,7 @@
 //
 angular.module('mark', ['ionic','LocalStorageModule', 'mark.dialog', 'mark.filters', 'mark.controllers', 'mark.services', 'mark.groupsCenter', 'mark.user', 'mark.remark', 'mark.message', 'mark.editProfile'])
 
-.run(['$ionicPlatform', function($ionicPlatform) {
+.run(['$ionicPlatform', 'WechatSrv', function($ionicPlatform, WechatSrv) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -21,6 +21,13 @@ angular.module('mark', ['ionic','LocalStorageModule', 'mark.dialog', 'mark.filte
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
+  });
+
+  WechatSrv.init(function() {
+      WechatSrv.onMenuShareTimeline();
+      WechatSrv.onMenuShareAppMessage();
+  }, function(err) {
+      console.error("An error occured when initialize wechat JS API", err);
   });
 }])
 

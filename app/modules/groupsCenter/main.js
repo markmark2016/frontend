@@ -30,11 +30,22 @@ angular.module('mark.groupsCenter')
 	 	$scope.data = result.data;
 	});
 }])
-.controller('GroupDetailCtrl', ['$scope', 'ApiSrv','GroupsCenterSrv', 'RemarkSrv', 'alertDialog','$stateParams','$state', 'AccountSrv', function($scope, ApiSrv,GroupsCenterSrv,  RemarkSrv, alertDialog, $stateParams,$state, AccountSrv) {
+.controller('GroupDetailCtrl', ['$scope', 'ApiSrv','GroupsCenterSrv', 'RemarkSrv', 'WechatSrv', 'alertDialog','$stateParams','$state', 'AccountSrv', function($scope, ApiSrv,GroupsCenterSrv, RemarkSrv, WechatSrv, alertDialog, $stateParams,$state, AccountSrv) {
 	var userId = AccountSrv.getUserId();
 	$scope.userId = userId;
 	GroupsCenterSrv.getGroupDetailSrv.action({id:$stateParams.groupId,userId:userId},function(result){
 	 	$scope.data = result.data;
+
+	    AccountSrv.getUserDetail.action({ userId: userId }, function (result){
+	        $scope.user = result.data.user;
+	        var shareParams = {
+	            title: ($scope.user.nickname || "我") + "邀请你一起加入" + ($scope.data.groupName || "iMark"),
+	            desc: ($scope.data.groupDesc || "品味书香，分享时光，一起“悦”读"),
+	            imgUrl: $scope.data.groupImage
+	        };
+	        WechatSrv.onMenuShareTimeline(shareParams);
+	        WechatSrv.onMenuShareAppMessage(shareParams);
+	    });
 	});
     GroupsCenterSrv.getGroupUsersSrv.action({id:$stateParams.groupId},function(result){
 	 	$scope.data_users = result.data;
@@ -130,9 +141,10 @@ angular.module('mark.groupsCenter')
 		$scope.selectSection(activeSection);
 	});
 }])
-.controller('AsDetailCtrl', ['$scope', 'ApiSrv','GroupsCenterSrv','$stateParams', 'AccountSrv', function($scope, ApiSrv,GroupsCenterSrv,$stateParams,AccountSrv) {
+.controller('AsDetailCtrl', ['$scope', 'ApiSrv','GroupsCenterSrv','WechatSrv','$stateParams', 'AccountSrv', function($scope, ApiSrv,GroupsCenterSrv,WechatSrv,$stateParams,AccountSrv) {
 	var userId = AccountSrv.getUserId();
 	$scope.userId = userId;
+	$scope.user = {};
 	GroupsCenterSrv.getAsDetailSrv.action({id:$stateParams.asId,userId:userId},function(result){
 	 	$scope.data = result.data;
 	 	$scope.categories = [];
@@ -142,6 +154,17 @@ angular.module('mark.groupsCenter')
 	 			list: result.data.categoryMap[k]
 	 		});
 	 	}
+
+	    AccountSrv.getUserDetail.action({ userId: userId }, function (result){
+	        $scope.user = result.data.user;
+	        var shareParams = {
+	            title: ($scope.user.nickname || "我") + "邀请你一起加入" + ($scope.data.associationName || "iMark"),
+	            desc: ($scope.data.associationDesc || "品味书香，分享时光，一起“悦”读"),
+	            imgUrl: $scope.data.image
+	        };
+	        WechatSrv.onMenuShareTimeline(shareParams);
+	        WechatSrv.onMenuShareAppMessage(shareParams);
+	    });
 	});
 }])
 .controller('GroupUserListCtrl', ['$scope','GroupsCenterSrv','$stateParams', function($scope,GroupsCenterSrv,$stateParams) {

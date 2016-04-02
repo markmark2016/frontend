@@ -205,7 +205,7 @@ angular.module('mark.remark')
         });
     };
 }])
-.controller('RemarkDetailController', ['$scope', 'RemarkSrv', 'AccountSrv', '$stateParams', 'alertDialog', function($scope, RemarkSrv, AccountSrv, $stateParams, alertDialog) {
+.controller('RemarkDetailController', ['$scope', 'RemarkSrv', 'AccountSrv', 'WechatSrv', '$stateParams', 'alertDialog', function($scope, RemarkSrv, AccountSrv, WechatSrv, $stateParams, alertDialog) {
     var groupId = $stateParams.groupId;
     var userId = AccountSrv.getUserId();
     var remarkId = $stateParams.remarkId;
@@ -219,6 +219,7 @@ angular.module('mark.remark')
 
     function getRemarkCallback(result) {
         $scope.remark = result.data;
+
         var pictureUrlSplit = $scope.remark.pictureUrl.split(',');
         var pictureUrls = [];
         for (var i = 0; i < pictureUrlSplit.length; i++) {
@@ -232,20 +233,23 @@ angular.module('mark.remark')
             if (canPushUrl) pictureUrls.push(pictureUrlSplit[i]);
         }
         $scope.remark.remark.pictureUrls = pictureUrls;
+        console.log(pictureUrls);
         for (var i = 0; i < $scope.remark.likelist.length; i++) {
             if ($scope.remark.likelist[i].userId == userId) {
                 $scope.remarkLiked = true;
                 break;
             }
         }
-        RemarkSrv.punchesSrv.action({userId: userId},function(result){
-            for (var i = 0; i < result.data.length; i++) {
-                if (result.data[i].groupId == $scope.remark.remark.groupIdFk) {
-                    $scope.group = result.data[i];
-                    break;
-                }
-            }
-        });
+
+        var bookname = $scope.remark.bookname ? ('《' + $scope.remark.bookname + '》') : "";
+        var dayname = $scope.remark.continuepunch ? ('第' + $scope.remark.continuepunch + '天') : ""
+        var shareParams = {
+            title: "今天我在iMark坚持阅读" + bookname + dayname + "。品味书香，分享时光，一起“悦”读！",
+            desc: $scope.remark.remark.comment,
+            imgUrl: (pictureUrls[0] || $scope.remark.image)
+        };
+        WechatSrv.onMenuShareTimeline(shareParams);
+        WechatSrv.onMenuShareAppMessage(shareParams);
     };
 
     var refreshRemark;

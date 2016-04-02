@@ -26,6 +26,8 @@ html(ng-app='mark')
       have templates inline in this html file if you'd like).
     ion-nav-view(animation="slide-left-right")
 
+    script(src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js")
+
     // build:js src/js/vendor.js
     // bower:js
     script(src='../bower_components/ionic/release/js/ionic.bundle.js')
@@ -46,6 +48,8 @@ html(ng-app='mark')
     script(src='src/js/services/services.module.js')
     |     
     script(src='src/js/services/common.srv.js')
+    |     
+    script(src='src/js/services/wechat.srv.js')
     |     
     script(src='src/js/services/groups-center.srv.js')
     |     
