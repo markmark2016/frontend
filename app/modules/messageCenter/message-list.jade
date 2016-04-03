@@ -1,7 +1,16 @@
-ion-view.view-message-list(view-title="{{viewTitle}}")
+ion-view.view-message-list(view-title="{{viewTitle}}" ng-show="userId")
     ion-list
         a.item.item-avatar(ng-repeat="msg in messages" href="{{msg.url}}")
             img(src="{{msg.headImage}}")
             h2 {{msg.userName}}
             p.content {{msg.content}}
             span.item-date {{ msg.createTime | recentDate }}
+ion-view.view-need-focus(view-title='请关注 MarkMark' ng-show="!userId")
+    ion-content
+        .card
+            .item.item-text-wrapper
+                p
+                    | 请先关注
+                    em MarkMark
+                    | 公众号，开启“悦”读模式
+                img(src="./src/img/qr_code.jpg")

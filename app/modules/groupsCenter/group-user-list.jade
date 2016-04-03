@@ -1,6 +1,6 @@
 ion-view.view-group-user-list(view-title='在读书友')
     ion-list
-        a.item.item-avatar.rbb(ng-repeat="user in users")
+        a.item.item-avatar.rbb(ng-repeat="user in users" href="#/tab/user-detail/{{user.id}}")
             img(src="{{user.headImage}}")
             h2 {{user.nickName}}
             p {{user.intro}}

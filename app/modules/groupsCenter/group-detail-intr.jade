@@ -25,5 +25,5 @@ ion-view.view-group-detail-intr.pane-visible(title="小组")
         h4 图书简介
         p.desc {{data.bookSummary}}
       .item
-        a.button.button-circular.yellow(ng-show="(data.userStatus == 0) && (userId >= 0)" ng-click="joinGroup()") 我要加入
-        a.button.button-circular.red(ng-show="(data.userStatus != 0) && (userId >= 0)" ng-click="quitGroup()") 退出小组
+        a.button.button-circular.yellow(ng-show="!data.userStatus" ng-click="joinGroup()") 我要加入
+        a.button.button-circular.red(ng-show="data.userStatus" ng-click="quitGroup()") 退出小组

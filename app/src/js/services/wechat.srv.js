@@ -2,6 +2,7 @@
 angular.module('mark.services')
 .factory('WechatSrv', ['$resource','HostSrv','ApiSrv','TraditionalPostSrv', function($resource,HostSrv,ApiSrv,$tpost) {
     var srv = {};
+    var isInitialized = false;
 
     srv.jsapi_params = {
         debug: HostSrv.wechat_debug,
@@ -17,18 +18,21 @@ angular.module('mark.services')
     });
 
     srv.init = function(success, failed) {
+        if (isInitialized) {
+            success();
+            return;
+        }
         srv.getWechatJSAPIParams.action({ url: window.location.href.replace(/\#.*$/g, '') }, function(result) {
-            console.log('result', result);
             $.extend(srv.jsapi_params, {
                 appId: result.appId,
                 nonceStr: result.nonceStr,
                 signature: result.signature,
                 timestamp: result.timestamp,
             });
-            console.log('params', srv.jsapi_params);
             wx.ready(success);
             wx.error(failed);
             wx.config(srv.jsapi_params);
+            isInitialized = true;
         }, failed);
     };
 
@@ -43,15 +47,15 @@ angular.module('mark.services')
             imgUrl: defaultImg, // 分享图标
             type: 'link', // 分享类型,music、video或link，不填默认为link
             dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
-            success: function () { 
-                console.log('[cosmo] share success');
+            success: function () {
+                console.info('[cosmo] share success');
             },
-            cancel: function () { 
-                console.log('[cosmo] share failed');
+            cancel: function () {
+                console.info('[cosmo] share canceled');
             }
         }, params);
         if (!params.imgUrl) params.imgUrl = defaultImg;
-        console.info("share on timeline params:", params);
+        console.info("[cosmo] share on timeline params:", params);
         wx.onMenuShareTimeline(params);
     };
 
@@ -66,15 +70,15 @@ angular.module('mark.services')
             imgUrl: defaultImg, // 分享图标
             type: 'link', // 分享类型,music、video或link，不填默认为link
             dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
-            success: function () { 
-                console.log('[cosmo] share success');
+            success: function () {
+                console.info('[cosmo] share success');
             },
-            cancel: function () { 
-                console.log('[cosmo] share failed');
+            cancel: function () {
+                console.info('[cosmo] share canceled');
             }
         }, params);
         if (!params.imgUrl) params.imgUrl = defaultImg;
-        console.info("share on app params:", params);
+        console.info("[cosmo] share on app params:", params);
         wx.onMenuShareAppMessage(params);
     };
 

@@ -4,7 +4,7 @@ angular.module('mark.services')
   var env = 'production';
   // var env = 'staging';
   var wechat_debug = false;
-  var wechat_debug = true;
+  // var wechat_debug = true;
   var productionHost = {
     env: 'production',
     wechat_debug: wechat_debug,

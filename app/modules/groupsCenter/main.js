@@ -30,7 +30,7 @@ angular.module('mark.groupsCenter')
 	 	$scope.data = result.data;
 	});
 }])
-.controller('GroupDetailCtrl', ['$scope', 'ApiSrv','GroupsCenterSrv', 'RemarkSrv', 'WechatSrv', 'alertDialog','$stateParams','$state', 'AccountSrv', function($scope, ApiSrv,GroupsCenterSrv, RemarkSrv, WechatSrv, alertDialog, $stateParams,$state, AccountSrv) {
+.controller('GroupDetailCtrl', ['$scope', 'ApiSrv','GroupsCenterSrv', 'RemarkSrv', 'WechatSrv', 'alertDialog','needFocusDialog','$stateParams','$state', 'AccountSrv', function($scope, ApiSrv,GroupsCenterSrv, RemarkSrv, WechatSrv, alertDialog, needFocusDialog, $stateParams,$state, AccountSrv) {
 	var userId = AccountSrv.getUserId();
 	$scope.userId = userId;
 	GroupsCenterSrv.getGroupDetailSrv.action({id:$stateParams.groupId,userId:userId},function(result){
@@ -38,13 +38,37 @@ angular.module('mark.groupsCenter')
 
 	    AccountSrv.getUserDetail.action({ userId: userId }, function (result){
 	        $scope.user = result.data.user;
+	        var shareUserName = (($scope.user && $scope.user.nickname) ? $scope.user.nickname : "我");
+	        var shareAsName = (($scope.data && $scope.data.groupName) ? $scope.data.groupName : "iMark");
+	        var shareDesc = (($scope.data && $scope.data.groupDesc) ? $scope.data.groupDesc : "品味书香，分享时光，一起“悦”读");
+	        var shareImg = (($scope.data && $scope.data.groupImage) ? $scope.data.groupImage : null);
 	        var shareParams = {
-	            title: ($scope.user.nickname || "我") + "邀请你一起加入" + ($scope.data.groupName || "iMark"),
-	            desc: ($scope.data.groupDesc || "品味书香，分享时光，一起“悦”读"),
-	            imgUrl: $scope.data.groupImage
+	            title: shareUserName + "邀请你一起加入" + shareAsName,
+	            desc: shareDesc,
+	            imgUrl: shareImg
 	        };
-	        WechatSrv.onMenuShareTimeline(shareParams);
-	        WechatSrv.onMenuShareAppMessage(shareParams);
+	        WechatSrv.init(function() {
+	            WechatSrv.onMenuShareTimeline(shareParams);
+	            WechatSrv.onMenuShareAppMessage(shareParams);
+	        }, function(err) {
+	            console.error("An error occured when initialize wechat JS API", err);
+	        });
+	    }, function() {
+	        var shareUserName = (($scope.user && $scope.user.nickname) ? $scope.user.nickname : "我");
+	        var shareAsName = (($scope.data && $scope.data.groupName) ? $scope.data.groupName : "iMark");
+	        var shareDesc = (($scope.data && $scope.data.groupDesc) ? $scope.data.groupDesc : "品味书香，分享时光，一起“悦”读");
+	        var shareImg = (($scope.data && $scope.data.groupImage) ? $scope.data.groupImage : null);
+	        var shareParams = {
+	            title: shareUserName + "邀请你一起加入" + shareAsName,
+	            desc: shareDesc,
+	            imgUrl: shareImg
+	        };
+	        WechatSrv.init(function() {
+	            WechatSrv.onMenuShareTimeline(shareParams);
+	            WechatSrv.onMenuShareAppMessage(shareParams);
+	        }, function(err) {
+	            console.error("An error occured when initialize wechat JS API", err);
+	        });
 	    });
 	});
     GroupsCenterSrv.getGroupUsersSrv.action({id:$stateParams.groupId},function(result){
@@ -69,6 +93,9 @@ angular.module('mark.groupsCenter')
 		}, function(error) {
 			alertDialog($scope, '退出小组失败', "服务器开小差了，请稍等一下");
 		});
+	};
+	$scope.joinGroupNeedFocus = function() {
+		needFocusDialog();
 	};
 
 	var activeSection = 'intr';
@@ -157,13 +184,37 @@ angular.module('mark.groupsCenter')
 
 	    AccountSrv.getUserDetail.action({ userId: userId }, function (result){
 	        $scope.user = result.data.user;
+	        var shareUserName = (($scope.user && $scope.user.nickname) ? $scope.user.nickname : "我");
+	        var shareAsName = (($scope.data && $scope.data.associationName) ? $scope.data.associationName : "iMark");
+	        var shareDesc = (($scope.data && $scope.data.associationDesc) ? $scope.data.associationDesc : "品味书香，分享时光，一起“悦”读");
+	        var shareImg = (($scope.data && $scope.data.image) ? $scope.data.image : null);
 	        var shareParams = {
-	            title: ($scope.user.nickname || "我") + "邀请你一起加入" + ($scope.data.associationName || "iMark"),
-	            desc: ($scope.data.associationDesc || "品味书香，分享时光，一起“悦”读"),
-	            imgUrl: $scope.data.image
+	            title: shareUserName + "邀请你一起加入" + shareAsName,
+	            desc: shareDesc,
+	            imgUrl: shareImg
 	        };
-	        WechatSrv.onMenuShareTimeline(shareParams);
-	        WechatSrv.onMenuShareAppMessage(shareParams);
+	        WechatSrv.init(function() {
+	            WechatSrv.onMenuShareTimeline(shareParams);
+	            WechatSrv.onMenuShareAppMessage(shareParams);
+	        }, function(err) {
+	            console.error("An error occured when initialize wechat JS API", err);
+	        });
+	    }, function (){
+	        var shareUserName = (($scope.user && $scope.user.nickname) ? $scope.user.nickname : "我");
+	        var shareAsName = (($scope.data && $scope.data.associationName) ? $scope.data.associationName : "iMark");
+	        var shareDesc = (($scope.data && $scope.data.associationDesc) ? $scope.data.associationDesc : "品味书香，分享时光，一起“悦”读");
+	        var shareImg = (($scope.data && $scope.data.image) ? $scope.data.image : null);
+	        var shareParams = {
+	            title: shareUserName + "邀请你一起加入" + shareAsName,
+	            desc: shareDesc,
+	            imgUrl: shareImg
+	        };
+	        WechatSrv.init(function() {
+	            WechatSrv.onMenuShareTimeline(shareParams);
+	            WechatSrv.onMenuShareAppMessage(shareParams);
+	        }, function(err) {
+	            console.error("An error occured when initialize wechat JS API", err);
+	        });
 	    });
 	});
 }])

@@ -5,6 +5,7 @@ angular.module('mark.remark', ['mark.services', 'mark.dialog', 'mark.filters']);
 angular.module('mark.remark')
 .controller('PunchesListCtrl', ['$scope','$location','$state','RemarkSrv','AccountSrv',function($scope,$location,$state,RemarkSrv,AccountSrv) {
     var userId = AccountSrv.getUserId();
+    $scope.userId = userId;
     RemarkSrv.punchesSrv.action({userId: userId},function(result){
         $scope.data = result.data;
     });
@@ -21,6 +22,7 @@ angular.module('mark.remark')
 }])
 .controller('EditRemarkCtrl', ['$scope', 'RemarkSrv', 'CommonSrv', '$stateParams', '$location', 'alertDialog', 'AccountSrv', function($scope, RemarkSrv, CommonSrv, $stateParams, $location, alertDialog, AccountSrv) {
     var userId = AccountSrv.getUserId();
+    $scope.userId = userId;
     var groupId = $stateParams.groupId;
     var remarkId = $stateParams.remarkId;
     $scope.group = {};
@@ -205,9 +207,10 @@ angular.module('mark.remark')
         });
     };
 }])
-.controller('RemarkDetailController', ['$scope', 'RemarkSrv', 'AccountSrv', 'WechatSrv', '$stateParams', 'alertDialog', function($scope, RemarkSrv, AccountSrv, WechatSrv, $stateParams, alertDialog) {
+.controller('RemarkDetailController', ['$scope', 'RemarkSrv', 'AccountSrv', 'WechatSrv', '$stateParams', 'alertDialog', 'needFocusDialog', function($scope, RemarkSrv, AccountSrv, WechatSrv, $stateParams, alertDialog, needFocusDialog) {
     var groupId = $stateParams.groupId;
     var userId = AccountSrv.getUserId();
+    $scope.userId = userId;
     var remarkId = $stateParams.remarkId;
     $scope.userId = userId;
     $scope.remarkId = remarkId;
@@ -248,8 +251,12 @@ angular.module('mark.remark')
             desc: $scope.remark.remark.comment,
             imgUrl: (pictureUrls[0] || $scope.remark.image)
         };
-        WechatSrv.onMenuShareTimeline(shareParams);
-        WechatSrv.onMenuShareAppMessage(shareParams);
+        WechatSrv.init(function() {
+            WechatSrv.onMenuShareTimeline(shareParams);
+            WechatSrv.onMenuShareAppMessage(shareParams);
+        }, function(err) {
+            console.error("An error occured when initialize wechat JS API", err);
+        });
     };
 
     var refreshRemark;
@@ -271,6 +278,10 @@ angular.module('mark.remark')
     refreshRemark();
 
     $scope.doReply = function() {
+        if (!userId) {
+            needFocusDialog($scope);
+            return;
+        }
         RemarkSrv.postReplySrv.action({}, {
             remarkId: $scope.remark.remark.id,
             userId: userId,
@@ -286,6 +297,10 @@ angular.module('mark.remark')
     };
 
     $scope.doLike = function() {
+        if (!userId) {
+            needFocusDialog($scope);
+            return;
+        }
         if (!$scope.remarkLiked) {
             RemarkSrv.postLikeSrv.action({}, {
                 remarkId: $scope.remark.remark.id,

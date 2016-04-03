@@ -1,5 +1,5 @@
 ion-view.view-remark-like-list(view-title="点赞的人")
     ion-list
-        a.item.item-avatar(ng-repeat="liker in remark.likelist")
+        a.item.item-avatar(ng-repeat="liker in remark.likelist" href="#/tab/user-detail/{{liker.userId}}")
             img(src="{{liker.headImage}}")
             h2 {{liker.nickName}}

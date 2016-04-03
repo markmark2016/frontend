@@ -8,6 +8,7 @@ angular.module('mark.services')
     if (isNaN(locSearchUserId)) locSearchUserId = null;
 
     srv.getUserId = function() {
+        if (HostSrv.env == 'staging') return false;
         if (HostSrv.env == 'staging') return 6;
         else return locSearchUserId;
     };

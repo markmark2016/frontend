@@ -1,4 +1,4 @@
-ion-view.view-user-center(view-title='{{ user.nickName }} - 个人中心')
+ion-view.view-user-center(view-title='{{ user.nickName }} - 个人中心' ng-show="userId")
   ion-content#user_center
     ion-list
       ion-item.item-avatar.item-icon-right(href='#/tab/user-detail/{{user.userId}}')
@@ -91,3 +91,12 @@ ion-view.view-user-center(view-title='{{ user.nickName }} - 个人中心')
                 img(src='src/img/icon_impression.png')
                 |             
                 h2 书友印象
+ion-view.view-need-focus(view-title='请关注 MarkMark' ng-show="!userId")
+    ion-content
+        .card
+            .item.item-text-wrapper
+                p
+                    | 请先关注
+                    em MarkMark
+                    | 公众号，然后由公众号查看自己的主页
+                img(src="./src/img/qr_code.jpg")

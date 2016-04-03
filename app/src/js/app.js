@@ -22,13 +22,6 @@ angular.module('mark', ['ionic','LocalStorageModule', 'mark.dialog', 'mark.filte
       StatusBar.styleDefault();
     }
   });
-
-  WechatSrv.init(function() {
-      WechatSrv.onMenuShareTimeline();
-      WechatSrv.onMenuShareAppMessage();
-  }, function(err) {
-      console.error("An error occured when initialize wechat JS API", err);
-  });
 }])
 
 .config(['$ionicConfigProvider', function($ionicConfigProvider) {
@@ -62,6 +55,15 @@ angular.module('mark', ['ionic','LocalStorageModule', 'mark.dialog', 'mark.filte
       'tab-404': {
         templateUrl: 'tpl/404.html',
         controller: '404MainCtrl'
+      }
+    }
+  })
+  .state('tab.need-focus', {
+    url: '/need-focus',
+    views: {
+      'tab-need-focus': {
+        templateUrl: 'tpl/need-focus.html',
+        controller: 'NeedFocusCtrl'
       }
     }
   })

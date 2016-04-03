@@ -41,6 +41,7 @@ ion-view(view-title='小组')
           .item
             a.button.button-circular.yellow(ng-show="(data.userStatus == 0) && userId" ng-click="joinGroup()") 我要加入
             a.button.button-circular.red(ng-show="(data.userStatus != 0) && userId" ng-click="quitGroup()") 退出小组
+            a.button.button-circular.yellow(ng-show="!userId" ng-click="joinGroupNeedFocus()") 我也要加入
     .view-group-detail-comment.pane-visible(title="书评" ng-show="isActiveSection('comment')")
       .pane-visible
         .bar-light

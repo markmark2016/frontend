@@ -16,3 +16,17 @@ angular.module('mark.dialog')
         });
     };
 }])
+.factory('needFocusDialog', ['$ionicPopup', function($ionicPopup) {
+    return function($scope) {
+        var popup = $ionicPopup.show({
+            template: '<div class="need-focus-dialog"><p>请先关注<em>MarkMark</em>公众号，然后从公众号点击小组进入</p><img src="./src/img/qr_code.jpg"/></div>',
+            // title: 'Enter Wi-Fi Password',
+            // subTitle: 'Please use normal things',
+            scope: $scope,
+            buttons: [
+                { text: '好的' }
+            ]
+        });
+    };
+}])
+;

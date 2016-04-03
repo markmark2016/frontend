@@ -15,7 +15,7 @@
     "latestDate": null,
     "associationId": null,
     "userClass": null,
-    "userStatus": "1",
+    "userStatus": 1,
     "score": null,
     "userId": null,
     "groupRank": null,
