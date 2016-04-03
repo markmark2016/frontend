@@ -33,7 +33,7 @@ ion-view.view-edit-remark(view-title="{{group.isComplete ? '写书评' : '打卡
                 a.button.button-circular.button-line.yellow-bordered(ng-show="{{createNew && !group.isPunch && !group.isComplete}}" ng-disabled="!isAllPhotoUploaded() || editRemarkForm.remarkContent.$invalid" ng-click="completeRemark()") 读完啦
                 a.button.button-circular.button-line.cyan(ng-show="{{createNew && group.isComplete}}" ng-disabled="!isAllPhotoUploaded() || editRemarkForm.remarkContent.$invalid" ng-click="completeRemark()") 写书评
                 a.button.button-circular.button-line.cyan(ng-show="{{!createNew}}" ng-disabled="!isAllPhotoUploaded() || editRemarkForm.remarkContent.$invalid" ng-click="updateRemark()") 更改书评
-ion-view.view-need-focus(view-title='请关注 MarkMark' ng-show="!userId")
+ion-view.view-need-focus(view-title='请关注 MarkMark' ng-show="!userId && userIdLoaded")
     ion-content
         .card
             .item.item-text-wrapper

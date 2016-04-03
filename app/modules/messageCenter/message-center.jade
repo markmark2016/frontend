@@ -15,7 +15,7 @@ ion-view.view-message-center(view-title="消息" ng-show="userId")
             h2 点赞
             p {{summary.like.message}}
             span.round-badge.red(ng-show="summary.like.unread")  {{summary.like.unread}}
-ion-view.view-need-focus(view-title='请关注 MarkMark' ng-show="!userId")
+ion-view.view-need-focus(view-title='请关注 MarkMark' ng-show="!userId && userIdLoaded")
     ion-content
         .card
             .item.item-text-wrapper

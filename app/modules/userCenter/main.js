@@ -4,6 +4,7 @@ angular.module('mark.user', ['mark.services', 'mark.dialog'])
 .controller('UserCenterMainCtrl', ['$scope','AccountSrv',function($scope,AccountSrv) {
     var userId = AccountSrv.getUserId();
     $scope.userId = userId;
+    $scope.userIdLoaded = true;
     AccountSrv.getUserInfo.action({ userId: userId }, function (result) {
         $scope.user = result.data;
     });

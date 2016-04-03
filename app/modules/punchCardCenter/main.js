@@ -6,6 +6,7 @@ angular.module('mark.remark')
 .controller('PunchesListCtrl', ['$scope','$location','$state','RemarkSrv','AccountSrv',function($scope,$location,$state,RemarkSrv,AccountSrv) {
     var userId = AccountSrv.getUserId();
     $scope.userId = userId;
+    $scope.userIdLoaded = true;
     RemarkSrv.punchesSrv.action({userId: userId},function(result){
         $scope.data = result.data;
     });
@@ -23,6 +24,7 @@ angular.module('mark.remark')
 .controller('EditRemarkCtrl', ['$scope', 'RemarkSrv', 'CommonSrv', '$stateParams', '$location', 'alertDialog', 'AccountSrv', function($scope, RemarkSrv, CommonSrv, $stateParams, $location, alertDialog, AccountSrv) {
     var userId = AccountSrv.getUserId();
     $scope.userId = userId;
+    $scope.userIdLoaded = true;
     var groupId = $stateParams.groupId;
     var remarkId = $stateParams.remarkId;
     $scope.group = {};

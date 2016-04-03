@@ -7,6 +7,7 @@ angular.module('mark.message')
 .controller('MessageCenterCtrl', ['$scope', 'MessageSrv', 'AccountSrv', function($scope, MessageSrv, AccountSrv) {
     var userId = AccountSrv.getUserId();
     $scope.userId = userId;
+    $scope.userIdLoaded = true;
     $scope.summary = {
         sys: {
             unread: 0,
@@ -43,6 +44,7 @@ angular.module('mark.message')
 .controller('SysMsgListCtrl', ['$scope', 'MessageSrv', 'AccountSrv', function($scope, MessageSrv, AccountSrv) {
     var userId = AccountSrv.getUserId();
     $scope.userId = userId;
+    $scope.userIdLoaded = true;
     $scope.viewTitle = "系统消息";
     $scope.messages = [];
     MessageSrv.getSysMsgsSrv.action({userId: userId}, function(result) {
@@ -53,6 +55,7 @@ angular.module('mark.message')
 .controller('ReplyMsgListCtrl', ['$scope', 'MessageSrv', 'AccountSrv', function($scope, MessageSrv, AccountSrv) {
     var userId = AccountSrv.getUserId();
     $scope.userId = userId;
+    $scope.userIdLoaded = true;
     $scope.viewTitle = "评论";
     $scope.messages = [];
     MessageSrv.getReplyMsgsSrv.action({userId: userId}, function(result) {
@@ -63,6 +66,7 @@ angular.module('mark.message')
 .controller('LikeMsgListCtrl', ['$scope', 'MessageSrv', 'AccountSrv', function($scope, MessageSrv, AccountSrv) {
     var userId = AccountSrv.getUserId();
     $scope.userId = userId;
+    $scope.userIdLoaded = true;
     $scope.viewTitle = "点赞";
     $scope.messages = [];
     MessageSrv.getLikeMsgsSrv.action({userId: userId}, function(result) {
