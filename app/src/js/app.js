@@ -119,6 +119,15 @@ angular.module('mark', ['ionic','LocalStorageModule', 'mark.dialog', 'mark.filte
       }
     }
   })
+  .state('tab.group-apply', {
+    url: '/group-apply',
+    views: {
+      'tab-groups-center': {
+        templateUrl: 'modules/groupsCenter/group-apply.html',
+        controller: 'GroupApplyCtrl'
+      }
+    }
+  })
   .state('tab.as-detail', {
     url: '/as/:asId',
     views: {

@@ -37,6 +37,12 @@ angular.module('mark.services')
             params: { }
         }
     });
+    var applyGroupSrv = $tpost(HostSrv.main + ApiSrv.groupsCenter.post_apply_group.url, {}, {
+        action: {
+            method: ApiSrv.groupsCenter.post_apply_group.method,
+            params: { }
+        }
+    });
     return {
         getGroupsSrv: getGroupsSrv,
         getAssSrv: getAssSrv,
@@ -44,6 +50,7 @@ angular.module('mark.services')
         getAsDetailSrv: getAsDetailSrv,
         getGroupUsersSrv: getGroupUsersSrv,
         joinGroupSrv: joinGroupSrv,
-        quitGroupSrv: quitGroupSrv
+        quitGroupSrv: quitGroupSrv,
+        applyGroupSrv: applyGroupSrv
     };
 }]);

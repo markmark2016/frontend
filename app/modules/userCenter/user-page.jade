@@ -40,7 +40,7 @@ ion-view.view-user-detail(view-title='{{ user.nickname }} - 个人主页')
         ion-list.list-profile
           .item.profile-item
             .profile-prop 性别
-            .profile-value {{user.gender ? '男' : '女'}}
+            .profile-value {{(user.gender == 1) ? '男' : '女'}}
           .item.profile-item
             .profile-prop 兴趣领域
             .profile-value {{user.interests}}

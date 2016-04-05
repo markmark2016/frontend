@@ -2,7 +2,7 @@ angular.module('mark.dialog', []);
 
 angular.module('mark.dialog')
 .factory('alertDialog', ['$ionicPopup', function($ionicPopup) {
-    return function($scope, msgTitle, msgContent) {
+    return function($scope, msgTitle, msgContent, callback) {
         $scope.popup = $scope.popup || {};
         // $scope.popup.params = $scope.popup.params || {};
         // $scope.popup.params.alert = $scope.popup.params.alert || {};
@@ -11,6 +11,7 @@ angular.module('mark.dialog')
             subTitle: msgContent,
             okText: "好的"
         });
+        $scope.popup.alert.then(callback);
         $scope.$on('$destroy', function() {
             $scope.popup.alert.remove();
         });

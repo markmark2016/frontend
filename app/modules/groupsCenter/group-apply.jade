@@ -1,0 +1,46 @@
+ion-view.view-group-apply(view-title="申请小组" ng-show="userId")
+    ion-list
+        .item.item-header
+            h2 申请小组
+    form(name="applyGroupForm" novalidate)
+        ion-list
+            label.item.item-input.item-stacked-label
+                span.input-label 图书名称
+                input(type="text" name="bookName" ng-model="form.bookName" required)
+            label.item.item-input.item-stacked-label
+                span.input-label 小组名称
+                input(type="text" name="groupName" ng-model="form.groupName" required)
+            label.item.item-input.item-stacked-label
+                span.input-label 读书标语
+                input(type="text" name="readSlogan" ng-model="form.readSlogan" required)
+            label.item.item-input.item-stacked-label
+                span.input-label 小组简介
+                textarea(name="groupDesc" ng-model="form.groupDesc" required)
+        ion-list
+            label.item.item-input.item-stacked-label
+                span.input-label 申请人姓名
+                input(type="text" name="captainName" ng-model="form.captainName" required)
+            label.item.item-input.item-stacked-label
+                span.input-label 申请人简介
+                textarea(name="captainBrief" ng-model="form.captainBrief" required)
+            label.item.item-input.item-stacked-label
+                span.input-label 邮箱
+                input(type="email" name="captainEmail" ng-model="form.captainEmail" required)
+            label.item.item-input.item-stacked-label
+                span.input-label 微信号
+                input(type="text" name="captainWecode" ng-model="form.captainWecode" required)
+            label.item.item-input.item-stacked-label
+                span.input-label 电话
+                input(type="tel" name="captainPhone" ng-model="form.captainPhone" required)
+        ion-list
+            .item
+                button.button.button-circular.yellow(ng-disabled="applyGroupForm.$invalid" ng-click="applyGroup()") 提交申请
+ion-view.view-need-focus(view-title='请关注 MarkMark' ng-show="!userId && userIdLoaded")
+    ion-content
+        .card
+            .item.item-text-wrapper
+                p
+                    | 请先关注
+                    em MarkMark
+                    | 公众号，然后由公众号来申请小组
+                img(src="./src/img/qr_code.jpg")

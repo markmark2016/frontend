@@ -224,4 +224,29 @@ angular.module('mark.groupsCenter')
 	 	$scope.users = result.data;
 	});
 }])
+.controller('GroupApplyCtrl', ['$scope','GroupsCenterSrv','$stateParams','alertDialog','$location','AccountSrv', function($scope,GroupsCenterSrv,$stateParams,alertDialog,$location,AccountSrv) {
+	$scope.form = {};
+	$scope.userId = AccountSrv.getUserId();
+	$scope.userIdLoaded = true;
+	$scope.applyGroup = function() {
+		GroupsCenterSrv.applyGroupSrv.action({}, {
+			userIdFk: $scope.userId,
+			groupName: $scope.form.groupName,
+			bookName: $scope.form.bookName,
+			readSlogan: $scope.form.readSlogan,
+			groupDesc: $scope.form.groupDesc,
+			captainName: $scope.form.captainName,
+			captainBrief: $scope.form.captainBrief,
+			captainEmail: $scope.form.captainEmail,
+			captainWecode: $scope.form.captainWecode,
+			captainPhone: $scope.form.captainPhone
+		}, function() {
+			alertDialog($scope, '申请成功', "管理员会尽快受理", function() {
+				$location.path('/tab/groups-center');
+			});
+		}, function(error) {
+			alertDialog($scope, '申请小组失败', "服务器开小差了，请稍等一下");
+		});
+	};
+}])
 ;

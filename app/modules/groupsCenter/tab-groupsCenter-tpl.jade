@@ -7,7 +7,7 @@ ion-view(view-title='发现')
         a.button(ng-click="selectSection('groups-list')" ng-class="{'active': isActiveSection('groups-list')}")  小组
         a.button(ng-click="selectSection('ass-list')" ng-class="{'active': isActiveSection('ass-list')}") 社群
     .buttons
-      button.button.button-icon.icon.ion-android-add
+      a.button.button-icon.icon.ion-android-add(href="#/tab/group-apply")
   ion-content.groups-center
     div(ng-if="isActiveSection('groups-list')" ng-include="'modules/groupsCenter/groups-list.html'" ng-controller='GroupsListCtrl')
     div(ng-if="isActiveSection('ass-list')" ng-include="'modules/groupsCenter/ass-list.html'" ng-controller='AssListCtrl')

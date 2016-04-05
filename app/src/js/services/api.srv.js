@@ -98,6 +98,10 @@ angular.module('mark.services')
       post_quit_group: {
         method: 'POST',
         url: 'groups/quit'
+      },
+      post_apply_group: {
+        method: 'POST',
+        url: 'groups/apply'
       }
     },
     remark: {
@@ -253,6 +257,10 @@ angular.module('mark.services')
         url: 'none.json'
       },
       post_quit_group: {
+        method: 'POST',
+        url: 'none.json'
+      },
+      post_apply_group: {
         method: 'POST',
         url: 'none.json'
       }
