@@ -70,6 +70,7 @@ angular.module('mark', ['ionic','LocalStorageModule', 'mark.dialog', 'mark.filte
   })
   .state('tab.groups-center', {
     url: '/groups-center',
+    cache: false,
     views: {
       'tab-groups-center': {
         templateUrl: 'modules/groupsCenter/tab-groupsCenter-tpl.html',
@@ -79,6 +80,7 @@ angular.module('mark', ['ionic','LocalStorageModule', 'mark.dialog', 'mark.filte
   })
   .state('tab.group-detail', {
     url: '/group/:groupId',
+    cache: false,
     views: {
       'tab-groups-center': {
         templateUrl: 'modules/groupsCenter/group-detail.html',
@@ -88,6 +90,7 @@ angular.module('mark', ['ionic','LocalStorageModule', 'mark.dialog', 'mark.filte
   })
   .state('tab.group-detail.intr', {
     url: '/intr',
+    cache: false,
     views: {
       'tab-group-detail': {
         templateUrl: 'modules/groupsCenter/group-detail-intr.html'
@@ -96,6 +99,7 @@ angular.module('mark', ['ionic','LocalStorageModule', 'mark.dialog', 'mark.filte
   })
   .state('tab.group-detail.comment', {
     url: '/comment',
+    cache: false,
     views: {
       'tab-group-detail': {
         templateUrl: 'modules/groupsCenter/group-detail-comment.html',
@@ -105,6 +109,7 @@ angular.module('mark', ['ionic','LocalStorageModule', 'mark.dialog', 'mark.filte
   })
   .state('tab.group-detail.activity', {
     url: '/activity',
+    cache: false,
     views: {
       'tab-group-detail': {
         templateUrl: 'modules/groupsCenter/group-detail-activity.html'
@@ -113,6 +118,7 @@ angular.module('mark', ['ionic','LocalStorageModule', 'mark.dialog', 'mark.filte
   })
   .state('tab.group-detail-users', {
     url: '/group/:groupId/users',
+    cache: false,
     views: {
       'tab-groups-center': {
         templateUrl: 'modules/groupsCenter/group-user-list.html',
@@ -122,6 +128,7 @@ angular.module('mark', ['ionic','LocalStorageModule', 'mark.dialog', 'mark.filte
   })
   .state('tab.group-apply', {
     url: '/group-apply',
+    cache: false,
     views: {
       'tab-groups-center': {
         templateUrl: 'modules/groupsCenter/group-apply.html',
@@ -131,6 +138,7 @@ angular.module('mark', ['ionic','LocalStorageModule', 'mark.dialog', 'mark.filte
   })
   .state('tab.as-detail', {
     url: '/as/:asId',
+    cache: false,
     views: {
       'tab-groups-center': {
         templateUrl: 'modules/groupsCenter/as-detail.html',
@@ -140,6 +148,7 @@ angular.module('mark', ['ionic','LocalStorageModule', 'mark.dialog', 'mark.filte
   })
   .state('tab.user-center', {
     url: '/user-center',
+    cache: false,
     views: {
       'tab-user-center': {
         templateUrl: 'modules/userCenter/tab-userCenter-tpl.html',
@@ -149,6 +158,7 @@ angular.module('mark', ['ionic','LocalStorageModule', 'mark.dialog', 'mark.filte
   })
   .state('tab.user-detail', {
     url: '/user-detail/:userId',
+    cache: false,
     views: {
       'tab-user-center': {
         templateUrl: 'modules/userCenter/user-page.html',
@@ -158,6 +168,7 @@ angular.module('mark', ['ionic','LocalStorageModule', 'mark.dialog', 'mark.filte
   })
   .state('tab.user-groups', {
     url: '/user-groups/:userId',
+    cache: false,
     views: {
       'tab-user-center': {
         templateUrl: 'modules/userCenter/user-groups.html',
@@ -167,6 +178,7 @@ angular.module('mark', ['ionic','LocalStorageModule', 'mark.dialog', 'mark.filte
   })
   .state('tab.user-rank', {
     url: '/user-rank/:userId',
+    cache: false,
     views: {
       'tab-user-center': {
         templateUrl: 'modules/userCenter/user-rank.html',
@@ -176,6 +188,7 @@ angular.module('mark', ['ionic','LocalStorageModule', 'mark.dialog', 'mark.filte
   })
   .state('tab.user-rank-in-group', {
     url: '/user-rank/:userId/group/:groupId',
+    cache: false,
     views: {
       'tab-user-center': {
         templateUrl: 'modules/userCenter/user-rank-in-group.html',
@@ -185,6 +198,7 @@ angular.module('mark', ['ionic','LocalStorageModule', 'mark.dialog', 'mark.filte
   })
   .state('tab.user-score', {
     url: '/user-score/:userId',
+    cache: false,
     views: {
       'tab-user-center': {
         templateUrl: 'modules/userCenter/user-score.html',
@@ -194,6 +208,7 @@ angular.module('mark', ['ionic','LocalStorageModule', 'mark.dialog', 'mark.filte
   })
   .state('tab.user-read', {
     url: '/user-read/:userId',
+    cache: false,
     views: {
       'tab-user-center': {
         templateUrl: 'modules/userCenter/user-read.html',
@@ -203,6 +218,7 @@ angular.module('mark', ['ionic','LocalStorageModule', 'mark.dialog', 'mark.filte
   })
   .state('tab.user-punch', {
     url: '/user-punch/:userId',
+    cache: false,
     views: {
       'tab-user-center': {
         templateUrl: 'modules/userCenter/user-punch.html',
@@ -212,6 +228,7 @@ angular.module('mark', ['ionic','LocalStorageModule', 'mark.dialog', 'mark.filte
   })
   .state('tab.user-punch-day', {
     url: '/user-punch/:userId/day/:day',
+    cache: false,
     views: {
       'tab-user-center': {
         templateUrl: 'modules/userCenter/user-punch-day.html',
@@ -221,6 +238,7 @@ angular.module('mark', ['ionic','LocalStorageModule', 'mark.dialog', 'mark.filte
   })
   .state('tab.user-remark', {
     url: '/user-remark/:userId',
+    cache: false,
     views: {
       'tab-user-center': {
         templateUrl: 'modules/userCenter/user-remark.html',
@@ -230,6 +248,7 @@ angular.module('mark', ['ionic','LocalStorageModule', 'mark.dialog', 'mark.filte
   })
   .state('tab.user-remark-in-group', {
     url: '/user-remark/:userId/group/:groupId',
+    cache: false,
     views: {
       'tab-user-center': {
         templateUrl: 'modules/userCenter/user-remark-in-group.html',
@@ -239,6 +258,7 @@ angular.module('mark', ['ionic','LocalStorageModule', 'mark.dialog', 'mark.filte
   })
   .state('tab.edit-profile', {
     url: '/edit-profile',
+    cache: false,
     views: {
       'tab-user-center': {
         templateUrl: 'modules/editProfile/templates/edit-profile-tpl.html',
@@ -248,6 +268,7 @@ angular.module('mark', ['ionic','LocalStorageModule', 'mark.dialog', 'mark.filte
   })
   .state('tab.select-book', {
     url: '/select/:selectType/book',
+    cache: false,
     views: {
       'tab-user-center': {
         templateUrl: 'modules/editProfile/templates/select-book-tpl.html',
@@ -257,6 +278,7 @@ angular.module('mark', ['ionic','LocalStorageModule', 'mark.dialog', 'mark.filte
   })
   .state('tab.edit-gender', {
     url: '/edit-gender',
+    cache: false,
     views: {
       'tab-user-center': {
         templateUrl: 'modules/editProfile/templates/edit-gender-tpl.html',
@@ -266,6 +288,7 @@ angular.module('mark', ['ionic','LocalStorageModule', 'mark.dialog', 'mark.filte
   })
   .state('tab.edit-interests', {
     url: '/edit-interests',
+    cache: false,
     views: {
       'tab-user-center': {
         templateUrl: 'modules/editProfile/templates/edit-one-line-info-tpl.html',
@@ -275,6 +298,7 @@ angular.module('mark', ['ionic','LocalStorageModule', 'mark.dialog', 'mark.filte
   })
   .state('tab.edit-description', {
     url: '/edit-description',
+    cache: false,
     views: {
       'tab-user-center': {
         templateUrl: 'modules/editProfile/templates/edit-description-tpl.html',
@@ -284,6 +308,7 @@ angular.module('mark', ['ionic','LocalStorageModule', 'mark.dialog', 'mark.filte
   })
   .state('tab.select-region-city', {
     url: '/select-region-city',
+    cache: false,
     views: {
       'tab-user-center': {
         templateUrl: 'modules/editProfile/templates/select-region-city-tpl.html',
@@ -293,6 +318,7 @@ angular.module('mark', ['ionic','LocalStorageModule', 'mark.dialog', 'mark.filte
   })
   .state('tab.edit-region', {
     url: '/edit-region/:regionCity',
+    cache: false,
     views: {
       'tab-user-center': {
         templateUrl: 'modules/editProfile/templates/edit-region-tpl.html',
@@ -302,6 +328,7 @@ angular.module('mark', ['ionic','LocalStorageModule', 'mark.dialog', 'mark.filte
   })
   .state('tab.edit-occupation', {
     url: '/edit-occupation',
+    cache: false,
     views: {
       'tab-user-center': {
         templateUrl: 'modules/editProfile/templates/edit-one-line-info-tpl.html',
@@ -311,6 +338,7 @@ angular.module('mark', ['ionic','LocalStorageModule', 'mark.dialog', 'mark.filte
   })
   .state('tab.edit-college', {
     url: '/edit-college',
+    cache: false,
     views: {
       'tab-user-center': {
         templateUrl: 'modules/editProfile/templates/edit-one-line-info-tpl.html',
@@ -320,6 +348,7 @@ angular.module('mark', ['ionic','LocalStorageModule', 'mark.dialog', 'mark.filte
   })
   .state('tab.edit-constellation', {
     url: '/edit-constellation',
+    cache: false,
     views: {
       'tab-user-center': {
         templateUrl: 'modules/editProfile/templates/edit-constellation-tpl.html',
@@ -329,6 +358,7 @@ angular.module('mark', ['ionic','LocalStorageModule', 'mark.dialog', 'mark.filte
   })
   .state('tab.edit-relationship', {
     url: '/edit-relationship',
+    cache: false,
     views: {
       'tab-user-center': {
         templateUrl: 'modules/editProfile/templates/edit-relationship-tpl.html',
@@ -338,6 +368,7 @@ angular.module('mark', ['ionic','LocalStorageModule', 'mark.dialog', 'mark.filte
   })
   .state('tab.punch-center', {
     url: '/punch-center',
+    cache: false,
     views: {
       'tab-punch-center': {
         templateUrl: 'modules/punchCardCenter/punch-list.html',
@@ -347,6 +378,7 @@ angular.module('mark', ['ionic','LocalStorageModule', 'mark.dialog', 'mark.filte
   })
   .state('tab.create-remark', {
     url: '/create-remark/:groupId',
+    cache: false,
     views: {
       'tab-punch-center': {
         templateUrl: 'modules/punchCardCenter/edit-remark.html',
@@ -359,6 +391,7 @@ angular.module('mark', ['ionic','LocalStorageModule', 'mark.dialog', 'mark.filte
   })
   .state('tab.edit-remark', {
     url: '/edit-remark/:remarkId',
+    cache: false,
     views: {
       'tab-punch-center': {
         templateUrl: 'modules/punchCardCenter/edit-remark.html',
@@ -371,6 +404,7 @@ angular.module('mark', ['ionic','LocalStorageModule', 'mark.dialog', 'mark.filte
   })
   .state('tab.remark-today', {
     url: '/remark-today/:groupId/:userId',
+    cache: false,
     views: {
       'tab-punch-center': {
         templateUrl: 'modules/punchCardCenter/remark-detail.html',
@@ -383,6 +417,7 @@ angular.module('mark', ['ionic','LocalStorageModule', 'mark.dialog', 'mark.filte
   })
   .state('tab.remark-detail', {
     url: '/remark-detail/:remarkId',
+    cache: false,
     views: {
       'tab-punch-center': {
         templateUrl: 'modules/punchCardCenter/remark-detail.html',
@@ -395,6 +430,7 @@ angular.module('mark', ['ionic','LocalStorageModule', 'mark.dialog', 'mark.filte
   })
   .state('tab.remark-detail-likes', {
     url: '/remark-detail-likes/:remarkId',
+    cache: false,
     views: {
       'tab-punch-center': {
         templateUrl: 'modules/punchCardCenter/remark-like-list.html',
@@ -407,6 +443,7 @@ angular.module('mark', ['ionic','LocalStorageModule', 'mark.dialog', 'mark.filte
   })
   .state('tab.message-center', {
     url: '/message-center',
+    cache: false,
     views: {
       'tab-message-center': {
         templateUrl: 'modules/messageCenter/message-center.html',
@@ -416,6 +453,7 @@ angular.module('mark', ['ionic','LocalStorageModule', 'mark.dialog', 'mark.filte
   })
   .state('tab.message-sys', {
     url: '/message/sys',
+    cache: false,
     views: {
       'tab-message-center': {
         templateUrl: 'modules/messageCenter/message-list.html',
@@ -425,6 +463,7 @@ angular.module('mark', ['ionic','LocalStorageModule', 'mark.dialog', 'mark.filte
   })
   .state('tab.message-reply', {
     url: '/message/reply',
+    cache: false,
     views: {
       'tab-message-center': {
         templateUrl: 'modules/messageCenter/message-list.html',
@@ -434,6 +473,7 @@ angular.module('mark', ['ionic','LocalStorageModule', 'mark.dialog', 'mark.filte
   })
   .state('tab.message-like', {
     url: '/message/like',
+    cache: false,
     views: {
       'tab-message-center': {
         templateUrl: 'modules/messageCenter/message-list.html',
