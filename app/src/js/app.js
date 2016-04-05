@@ -44,7 +44,8 @@ angular.module('mark', ['ionic','LocalStorageModule', 'mark.dialog', 'mark.filte
     .state('tab', {
     url: '/tab',
     abstract: true,
-    templateUrl: 'tpl/tabs.html'
+    templateUrl: 'tpl/tabs.html',
+    controller: 'TabController'
   })
 
   // Each tab has its own nav history stack:

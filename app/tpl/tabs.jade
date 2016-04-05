@@ -4,14 +4,14 @@
   navigation history that also transitions its views in and out.
 ion-tabs.tabs-icon-top.tabs-color-active-dark
   // Discovery Tab
-  ion-tab(title='发现', icon-off='ion-ios-discovery-outline', icon-on='ion-ios-discovery', href='#/tab/groups-center')
+  ion-tab(title='发现', icon-off='ion-ios-discovery-outline', icon-on='ion-ios-discovery', href='#/tab/groups-center', ng-click="$location.path('/tab/groups-center')")
     ion-nav-view(name='tab-groups-center')
   // ClockIn Tab
-  ion-tab(title='打卡', icon-off='ion-ios-clockin-outline', icon-on='ion-ios-clockin', href='#/tab/punch-center')
+  ion-tab(title='打卡', icon-off='ion-ios-clockin-outline', icon-on='ion-ios-clockin', href='#/tab/punch-center', ng-click="$location.path('/tab/punch-center')")
     ion-nav-view(name='tab-punch-center')
   // Chats Tab
-  ion-tab(title='消息', icon-off='ion-ios-chats-outline', icon-on='ion-ios-chats', href='#/tab/message-center')
+  ion-tab(title='消息', icon-off='ion-ios-chats-outline', icon-on='ion-ios-chats', href='#/tab/message-center', ng-click="$location.path('/tab/message-center')")
     ion-nav-view(name='tab-message-center')
   // Account Tab
-  ion-tab(title='我', icon-off='ion-ios-account-outline', icon-on='ion-ios-account', href='#/tab/user-center')
+  ion-tab(title='我', icon-off='ion-ios-account-outline', icon-on='ion-ios-account', href='#/tab/user-center', ng-click="$location.path('/tab/user-center')")
     ion-nav-view(name='tab-user-center')

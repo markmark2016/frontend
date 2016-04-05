@@ -19,5 +19,10 @@ angular.module('mark.controllers', [])
   $scope.remove = function(chat) {
     Chats.remove(chat);
   };
-}]);
+}])
+
+.controller('TabController', ['$scope', '$location', function($scope, $location) {
+  $scope.$location = $location;
+}])
+;
 
