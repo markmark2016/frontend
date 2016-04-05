@@ -186,6 +186,8 @@ angular.module('mark.remark')
             groupId: groupId,
             userId: userId
         }, {
+            startPage: $scope.edit.remarkPageStart || "",
+            endPage: $scope.edit.remarkPageEnd || "",
             title: $scope.edit.remarkTitle || "",
             comment: $scope.edit.remarkContent || "",
             pictureUrl: getPhotoUrls().join(',')

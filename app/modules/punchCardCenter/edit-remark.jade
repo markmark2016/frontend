@@ -5,9 +5,9 @@ ion-view.view-edit-remark(view-title="{{group.isComplete ? '写书评' : '打卡
             .item(ng-show="!createNew") 修改书评
             .item
                 div.page-and-pic
-                    input(type="number" ng-disabled="!createNew" name="remarkPageStart" ng-model="edit.remarkPageStart" max="{{remarkPageEnd}}" required integer)
+                    input(type="number" ng-disabled="!createNew" name="remarkPageStart" ng-model="edit.remarkPageStart" max="{{edit.remarkPageEnd}}" required integer)
                     span 页 － 
-                    input(type="number" ng-disabled="!createNew" name="remarkPageEnd" ng-model="edit.remarkPageEnd" min="{{remarkPageStart}}" required integer)
+                    input(type="number" ng-disabled="!createNew" name="remarkPageEnd" ng-model="edit.remarkPageEnd" min="{{edit.remarkPageStart}}" required integer)
                     span 页
                     a.button.button-icon.icon.ion-ios-camera-outline.button-take-photo(ng-click="takePhoto($event)")
                     input.input-file(ng-show="false" type="file" accept="image/*")
@@ -18,7 +18,7 @@ ion-view.view-edit-remark(view-title="{{group.isComplete ? '写书评' : '打卡
                 input(type="text", placeholder="标题（可选）" name="remarkTitle" ng-model="edit.remarkTitle")
             label.item.item-input.input-content
                 textarea(type="text", placeholder="书评内容" name="remarkContent" ng-model="edit.remarkContent" required)
-            .item.pic-list
+            .item.pic-list(ng-show="edit.photos.length")
                 .thumbnail(ng-repeat="photo in edit.photos")
                     .thumbnail-pic
                         img(src="{{photo.src}}")
@@ -29,10 +29,10 @@ ion-view.view-edit-remark(view-title="{{group.isComplete ? '写书评' : '打卡
                     .thumbnail-delete.round-badge.lg.red(ng-click="deletePhoto(photo)")
                         i.icon.ion-minus
             .item.button-line-group
-                a.button.button-circular.button-line.yellow(ng-show="{{createNew && !group.isPunch && !group.isComplete}}"  ng-disabled="!isAllPhotoUploaded() || editRemarkForm.remarkPageStart.$invalid || editRemarkForm.remarkPageEnd.$invalid || editRemarkForm.remarkContent.$invalid" ng-click="createRemark()") 我要打卡
-                a.button.button-circular.button-line.yellow-bordered(ng-show="{{createNew && !group.isPunch && !group.isComplete}}" ng-disabled="!isAllPhotoUploaded() || editRemarkForm.remarkContent.$invalid" ng-click="completeRemark()") 读完啦
-                a.button.button-circular.button-line.cyan(ng-show="{{createNew && group.isComplete}}" ng-disabled="!isAllPhotoUploaded() || editRemarkForm.remarkContent.$invalid" ng-click="completeRemark()") 写书评
-                a.button.button-circular.button-line.cyan(ng-show="{{!createNew}}" ng-disabled="!isAllPhotoUploaded() || editRemarkForm.remarkContent.$invalid" ng-click="updateRemark()") 更改书评
+                a.button.button-circular.button-line.yellow(ng-show="{{createNew && !group.isPunch && !group.isComplete}}"  ng-disabled="!isAllPhotoUploaded() || editRemarkForm.$invalid" ng-click="createRemark()") 我要打卡
+                a.button.button-circular.button-line.yellow-bordered(ng-show="{{createNew && !group.isPunch && !group.isComplete}}" ng-disabled="!isAllPhotoUploaded() || editRemarkForm.$invalid" ng-click="completeRemark()") 读完啦
+                a.button.button-circular.button-line.cyan(ng-show="{{createNew && group.isComplete}}" ng-disabled="!isAllPhotoUploaded() || editRemarkForm.$invalid" ng-click="completeRemark()") 写书评
+                a.button.button-circular.button-line.cyan(ng-show="{{!createNew}}" ng-disabled="!isAllPhotoUploaded() || editRemarkForm.$invalid" ng-click="updateRemark()") 更改书评
 ion-view.view-need-focus(view-title='请关注 MarkMark' ng-show="!userId && userIdLoaded")
     ion-content
         .card
