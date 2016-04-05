@@ -36,6 +36,8 @@ angular.module('mark.groupsCenter')
 	GroupsCenterSrv.getGroupDetailSrv.action({id:$stateParams.groupId,userId:userId},function(result){
 	 	$scope.data = result.data;
 
+	 	if (!isNaN(parseInt($scope.data.frequency))) $scope.data.frequency = "每" + $scope.data.frequency + "天一次";
+
 	    AccountSrv.getUserDetail.action({ userId: userId }, function (result){
 	        $scope.user = result.data.user;
 	        var shareUserName = (($scope.user && $scope.user.nickname) ? $scope.user.nickname : "我");
