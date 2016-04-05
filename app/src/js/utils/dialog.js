@@ -3,17 +3,31 @@ angular.module('mark.dialog', []);
 angular.module('mark.dialog')
 .factory('alertDialog', ['$ionicPopup', function($ionicPopup) {
     return function($scope, msgTitle, msgContent, callback) {
-        $scope.popup = $scope.popup || {};
-        // $scope.popup.params = $scope.popup.params || {};
-        // $scope.popup.params.alert = $scope.popup.params.alert || {};
-        $scope.popup.alert = $ionicPopup.alert({
+        var popup = $ionicPopup.alert({
             title: msgTitle,
             subTitle: msgContent,
             okText: "好的"
         });
-        $scope.popup.alert.then(callback);
+        popup.then(callback);
         $scope.$on('$destroy', function() {
-            $scope.popup.alert.remove();
+            // popup.remove();
+        });
+    };
+}])
+.factory('confirmDialog', ['$ionicPopup', function($ionicPopup) {
+    return function($scope, msgTitle, msgContent, confirmedCallback, canceledCallback) {
+        var popup = $ionicPopup.confirm({
+            title: msgTitle,
+            subTitle: msgContent,
+            okText: "确定",
+            cancelText: "取消"
+        });
+        popup.then(function(res) {
+            if (res && confirmedCallback) confirmedCallback();
+            if (!res && canceledCallback) canceledCallback();
+        });
+        $scope.$on('$destroy', function() {
+            // popup.remove();
         });
     };
 }])

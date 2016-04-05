@@ -30,7 +30,7 @@ angular.module('mark.groupsCenter')
 	 	$scope.data = result.data;
 	});
 }])
-.controller('GroupDetailCtrl', ['$scope', 'ApiSrv','GroupsCenterSrv', 'RemarkSrv', 'WechatSrv', 'alertDialog','needFocusDialog','$stateParams','$state', 'AccountSrv', function($scope, ApiSrv,GroupsCenterSrv, RemarkSrv, WechatSrv, alertDialog, needFocusDialog, $stateParams,$state, AccountSrv) {
+.controller('GroupDetailCtrl', ['$scope', 'ApiSrv','GroupsCenterSrv', 'RemarkSrv', 'WechatSrv', 'alertDialog','confirmDialog','needFocusDialog','$stateParams','$state', 'AccountSrv', function($scope, ApiSrv,GroupsCenterSrv, RemarkSrv, WechatSrv, alertDialog, confirmDialog, needFocusDialog, $stateParams,$state, AccountSrv) {
 	var userId = AccountSrv.getUserId();
 	$scope.userId = userId;
 	GroupsCenterSrv.getGroupDetailSrv.action({id:$stateParams.groupId,userId:userId},function(result){
@@ -87,13 +87,15 @@ angular.module('mark.groupsCenter')
 		});
 	};
 	$scope.quitGroup = function() {
-		GroupsCenterSrv.quitGroupSrv.action({}, {
-			groupIdFk: $stateParams.groupId,
-			userIdFk: userId
-		}, function(result) {
-			$scope.data.userStatus = 0;
-		}, function(error) {
-			alertDialog($scope, '退出小组失败', "服务器开小差了，请稍等一下");
+		confirmDialog($scope, '退出小组', '你确定要退出这个小组吗？', function() {
+			GroupsCenterSrv.quitGroupSrv.action({}, {
+				groupIdFk: $stateParams.groupId,
+				userIdFk: userId
+			}, function(result) {
+				$scope.data.userStatus = 0;
+			}, function(error) {
+				alertDialog($scope, '退出小组失败', "服务器开小差了，请稍等一下");
+			});
 		});
 	};
 	$scope.joinGroupNeedFocus = function() {
