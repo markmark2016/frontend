@@ -82,14 +82,14 @@ ion-list.profile_list
   ion-item.item.item-icon-right(ng-if='!readOnly.common', href='#/tab/edit-description')
     | 描述
     span.item-note.normal-span
-      | {{ user.description }}
+      | {{ user.intro }}
     |     
     i.icon.ion-chevron-right
   |   
   ion-item.item(ng-if='readOnly.common')
     | 描述
     span.item-note.normal-span
-      | {{ user.description }}
+      | {{ user.intro }}
   |   
   ion-item.item-divider.custom-rewrite
   |   

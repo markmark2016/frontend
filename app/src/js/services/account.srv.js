@@ -37,12 +37,7 @@ angular.module('mark.services')
     srv.addBook = $tpost(HostSrv.main + ApiSrv.account.userAddBook.url, {}, {
         action: {
             method: ApiSrv.account.userAddBook.method,
-            params: {
-                userId: "userId",
-                title: "title",
-                image: "image",
-                type: "type"
-            }
+            params: {}
         }
     });
 
