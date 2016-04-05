@@ -200,7 +200,9 @@ angular.module('mark.remark')
 
     $scope.updateRemark = function() {
         RemarkSrv.updateRemarkSrv.action({}, {
-            remarkId: $stateParams.remarkId,
+            idFk: $stateParams.remarkId,
+            startPage: $scope.edit.remarkPageStart || "",
+            endPage: $scope.edit.remarkPageEnd || "",
             title: $scope.edit.remarkTitle || "",
             comment: $scope.edit.remarkContent || "",
             pictureUrl: getPhotoUrls().join(',')

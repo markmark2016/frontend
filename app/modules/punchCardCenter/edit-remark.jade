@@ -5,9 +5,9 @@ ion-view.view-edit-remark(view-title="{{group.isComplete ? '写书评' : '打卡
             .item(ng-show="!createNew") 修改书评
             .item
                 div.page-and-pic
-                    input(type="number" ng-disabled="!createNew" name="remarkPageStart" ng-model="edit.remarkPageStart" max="{{edit.remarkPageEnd}}" required integer)
+                    input(type="number" name="remarkPageStart" ng-model="edit.remarkPageStart" max="{{edit.remarkPageEnd}}" required integer)
                     span 页 － 
-                    input(type="number" ng-disabled="!createNew" name="remarkPageEnd" ng-model="edit.remarkPageEnd" min="{{edit.remarkPageStart}}" required integer)
+                    input(type="number" name="remarkPageEnd" ng-model="edit.remarkPageEnd" min="{{edit.remarkPageStart}}" required integer)
                     span 页
                     a.button.button-icon.icon.ion-ios-camera-outline.button-take-photo(ng-click="takePhoto($event)")
                     input.input-file(ng-show="false" type="file" accept="image/*")
