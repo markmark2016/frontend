@@ -60,7 +60,7 @@ ion-view.view-user-detail(view-title='{{ user.nickname }} - 个人主页')
             .profile-value {{user.constellation}}
           .item.profile-item
             .profile-prop 情感状态
-            .profile-value {{affectStatusMap[user.affectiveStatus]}}
+            .profile-value {{affectiveStatusMap[user.affectiveStatus]}}
       ion-item.item.item-user-more(ng-show="isActiveSection('more')")
         .user-more-item
           img(src="src/img/icon_book_reviews.png")
