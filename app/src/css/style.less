@@ -2120,11 +2120,18 @@ top: 25px;
     background-color: #eee;
     border-radius: 4px;
   }
+  input.error,
+  textarea.error {
+    border: 1px @color-red solid;
+  }
   textarea {
     height: 80px;
     max-height: 80px;
     overflow-y: scroll;
     resize: none;
+  }
+  .error-msg {
+    color: @color-red;
   }
   .button {
     display: block;

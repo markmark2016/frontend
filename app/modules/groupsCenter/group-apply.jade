@@ -6,32 +6,33 @@ ion-view.view-group-apply(view-title="申请小组" ng-show="userId")
         ion-list
             label.item.item-input.item-stacked-label
                 span.input-label 图书名称
-                input(type="text" name="bookName" ng-model="form.bookName" required)
+                input(ng-class="{error: applyGroupForm.bookName.$dirty && applyGroupForm.bookName.$invalid}" type="text" name="bookName" ng-model="form.bookName" required)
             label.item.item-input.item-stacked-label
                 span.input-label 小组名称
-                input(type="text" name="groupName" ng-model="form.groupName" required)
+                input(ng-class="{error: applyGroupForm.groupName.$dirty && applyGroupForm.groupName.$invalid}" type="text" name="groupName" ng-model="form.groupName" required)
             label.item.item-input.item-stacked-label
                 span.input-label 读书标语
-                input(type="text" name="readSlogan" ng-model="form.readSlogan" required)
+                input(ng-class="{error: applyGroupForm.readSlogan.$dirty && applyGroupForm.readSlogan.$invalid}" type="text" name="readSlogan" ng-model="form.readSlogan" required)
             label.item.item-input.item-stacked-label
                 span.input-label 小组简介
-                textarea(name="groupDesc" ng-model="form.groupDesc" required)
+                textarea(ng-class="{error: applyGroupForm.groupDesc.$dirty && applyGroupForm.groupDesc.$invalid}" name="groupDesc" ng-model="form.groupDesc" required)
         ion-list
             label.item.item-input.item-stacked-label
                 span.input-label 申请人姓名
-                input(type="text" name="captainName" ng-model="form.captainName" required)
+                input(ng-class="{error: applyGroupForm.captainName.$dirty && applyGroupForm.captainName.$invalid}" type="text" name="captainName" ng-model="form.captainName" required)
             label.item.item-input.item-stacked-label
                 span.input-label 申请人简介
-                textarea(name="captainBrief" ng-model="form.captainBrief" required)
+                textarea(ng-class="{error: applyGroupForm.captainBrief.$dirty && applyGroupForm.captainBrief.$invalid}" name="captainBrief" ng-model="form.captainBrief" required)
             label.item.item-input.item-stacked-label
                 span.input-label 邮箱
-                input(type="email" name="captainEmail" ng-model="form.captainEmail" required)
+                input(ng-class="{error: applyGroupForm.captainEmail.$dirty && applyGroupForm.captainEmail.$invalid}" type="email" name="captainEmail" ng-model="form.captainEmail" required)
+                span.error-msg(ng-show="applyGroupForm.captainEmail.$dirty && applyGroupForm.captainEmail.$invalid") 必须填入合法的邮箱（如：me@mark.com）
             label.item.item-input.item-stacked-label
                 span.input-label 微信号
-                input(type="text" name="captainWecode" ng-model="form.captainWecode" required)
+                input(ng-class="{error: applyGroupForm.captainWecode.$dirty && applyGroupForm.captainWecode.$invalid}" type="text" name="captainWecode" ng-model="form.captainWecode" required)
             label.item.item-input.item-stacked-label
                 span.input-label 电话
-                input(type="tel" name="captainPhone" ng-model="form.captainPhone" required)
+                input(ng-class="{error: applyGroupForm.captainPhone.$dirty && applyGroupForm.captainPhone.$invalid}" type="tel" name="captainPhone" ng-model="form.captainPhone" required)
         ion-list
             .item
                 button.button.button-circular.yellow(ng-disabled="applyGroupForm.$invalid" ng-click="applyGroup()") 提交申请
