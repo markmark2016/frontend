@@ -1,4 +1,4 @@
-ion-view.view-user-score(view-title="{{user.nickname}} - 积分")
+ion-view.view-user-score(view-title='{{user.nickname}}{{(user.nickname ? " - " : "")}}积分')
     ion-list
         .item.item-total
             h2 累计积分

@@ -1,4 +1,4 @@
-ion-view.view-user-rank-in-group(view-title="{{user.nickname}} - 排名")
+ion-view.view-user-rank-in-group(view-title='{{user.nickname}}{{(user.nickname ? " - " : "")}}排名')
     ion-list
         .item.item-group-info
             img(src="{{group.groupImage}}")

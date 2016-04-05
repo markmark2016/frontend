@@ -1,4 +1,4 @@
-ion-view.view-user-punch(view-title="{{user.nickname}} - 连续打卡")
+ion-view.view-user-punch(view-title='{{user.nickname}}{{(user.nickname ? " - " : "")}}连续打卡')
     ion-list
         .item.item-total
             h2 连续打卡

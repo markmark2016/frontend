@@ -1,4 +1,4 @@
-ion-view.view-user-groups(view-title="{{user.nickname}} - 小组")
+ion-view.view-user-groups(view-title='{{user.nickname}}{{(user.nickname ? " - " : "")}}小组')
     ion-list
         a.item.item-thumbnail-left(ng-repeat="group in groups" href="#/tab/group/{{group.id}}")
             img(src="{{ group.groupImage }}")

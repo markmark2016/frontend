@@ -1,4 +1,4 @@
-ion-view.view-user-punch-day(view-title="{{user.nickname}} - 连续打卡")
+ion-view.view-user-punch-day(view-title='{{user.nickname}}{{(user.nickname ? " - " : "")}}连续打卡')
     ion-list
         .item.day-head
             h2 {{date | date:'yyyy年M月d日书评'}}

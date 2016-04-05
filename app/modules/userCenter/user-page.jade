@@ -1,4 +1,4 @@
-ion-view.view-user-detail(view-title='{{ user.nickname }} - 个人主页')
+ion-view.view-user-detail(view-title='{{user.nickname}}{{(user.nickname ? " - " : "")}}个人主页')
   ion-content.profile_page
     ion-list
       ion-item.item.no-border

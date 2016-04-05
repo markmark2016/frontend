@@ -1,4 +1,4 @@
-ion-view.view-user-remark(view-title="{{user.nickname}} - 累计书评")
+ion-view.view-user-remark(view-title='{{user.nickname}}{{(user.nickname ? " - " : "")}}累计书评')
     ion-list
         .item.item-total
             h2 累计书评

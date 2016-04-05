@@ -1,4 +1,4 @@
-ion-view.view-user-remark-in-group(view-title="{{user.nickname}} - 累计书评")
+ion-view.view-user-remark-in-group(view-title='{{user.nickname}}{{(user.nickname ? " - " : "")}}累计书评')
     ion-list
         .item.item-group-info
             img(src="{{data.groupInfo.groupImage}}")

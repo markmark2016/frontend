@@ -1,4 +1,4 @@
-ion-view.view-user-rank(view-title="{{user.nickname}} - 排名")
+ion-view.view-user-rank(view-title='{{user.nickname}}{{(user.nickname ? " - " : "")}}排名')
     .bar-light
         .button-bar.circular-button-bar
             a.button(ng-class="{'active': isActiveSection('total')}", ng-click="selectSection('total')") 总排名

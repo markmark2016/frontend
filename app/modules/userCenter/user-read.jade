@@ -1,4 +1,4 @@
-ion-view.view-user-read(view-title="{{user.nickname}} - 累计读书")
+ion-view.view-user-read(view-title='{{user.nickname}}{{(user.nickname ? " - " : "")}}累计读书')
     ion-list
         .item.item-total
             h2 累计读书
