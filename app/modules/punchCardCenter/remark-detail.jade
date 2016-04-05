@@ -6,10 +6,10 @@ ion-view.view-remark-detail(view-title="书评")
             img(src="{{remark.user.headImgUrl}}")
             h2 {{remark.user.nickname}}
             p {{remark.remark.createTime | date:'y-MM-dd'}}
-        .item.item-title
+        .item.item-title(ng-show="remark.remark.title")
             h1 {{remark.remark.title}}
         .item.item-content
-            p(ng-repeat="para in remark.remark.comment.split('\n')") {{para}}
+            p(ng-repeat="para in remark.remark.paragraphes") {{para.content}}
             img(ng-repeat="img_src in remark.remark.pictureUrls" src="{{img_src}}")
         .item.item-likes
             h1 点赞&nbsp;{{remark.totalLike}}

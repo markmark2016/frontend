@@ -13,7 +13,7 @@ ion-view.view-punch-center(view-title="打卡" ng-show="userId")
                     | 天
             a.button.button-circular.yellow(ng-show="{{!punch.isPunch && !punch.isComplete}}" ng-click="postPunch({{punch.groupId}})") 我要打卡
             a.button.button-circular.yellow-bordered(ng-show="{{punch.isPunch}}" ng-click="showRemarks({{punch.groupId}})") 查看今日书评
-            a.button.button-circular.cyan(ng-show="{{punch.isComplete}}" ng-click="postRemark({{punch.groupId}})") 写书评
+            a.button.button-circular.cyan(ng-show="{{!punch.isPunch && punch.isComplete}}" ng-click="postRemark({{punch.groupId}})") 写书评
 ion-view.view-need-focus(view-title='请关注 MarkMark' ng-show="!userId")
     ion-content
         .card

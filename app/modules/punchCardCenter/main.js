@@ -238,13 +238,13 @@ angular.module('mark.remark')
             if (canPushUrl) pictureUrls.push(pictureUrlSplit[i]);
         }
         $scope.remark.remark.pictureUrls = pictureUrls;
-        console.log(pictureUrls);
         for (var i = 0; i < $scope.remark.likelist.length; i++) {
             if ($scope.remark.likelist[i].userId == userId) {
                 $scope.remarkLiked = true;
                 break;
             }
         }
+        $scope.remark.remark.paragraphes = $scope.remark.remark.comment.split('\n').map(function(text) {return {content: text};});
 
         var bookname = $scope.remark.bookname ? ('《' + $scope.remark.bookname + '》') : "";
         var dayname = $scope.remark.continuepunch ? ('第' + $scope.remark.continuepunch + '天') : ""
