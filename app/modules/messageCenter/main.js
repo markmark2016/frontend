@@ -49,6 +49,10 @@ angular.module('mark.message')
     $scope.messages = [];
     MessageSrv.getSysMsgsSrv.action({userId: userId}, function(result) {
         $scope.messages = result.data.unreadsyslist;
+        for (var i = 0; i < $scope.messages.length; i++) {
+            if ($scope.messages[i].remarkId) $scope.messages[i].url = '#/tab/remark-detail/' + $scope.messages[i].remarkId;
+            else $scope.messages[i].url = 'javascript:;';
+        }
     });
 }])
 
@@ -60,6 +64,10 @@ angular.module('mark.message')
     $scope.messages = [];
     MessageSrv.getReplyMsgsSrv.action({userId: userId}, function(result) {
         $scope.messages = result.data.unreadreplylist;
+        for (var i = 0; i < $scope.messages.length; i++) {
+            if ($scope.messages[i].remarkId) $scope.messages[i].url = '#/tab/remark-detail/' + $scope.messages[i].remarkId;
+            else $scope.messages[i].url = 'javascript:;';
+        }
     });
 }])
 
@@ -71,6 +79,10 @@ angular.module('mark.message')
     $scope.messages = [];
     MessageSrv.getLikeMsgsSrv.action({userId: userId}, function(result) {
         $scope.messages = result.data.unreadlikelist;
+        for (var i = 0; i < $scope.messages.length; i++) {
+            if ($scope.messages[i].remarkId) $scope.messages[i].url = '#/tab/remark-detail/' + $scope.messages[i].remarkId;
+            else $scope.messages[i].url = 'javascript:;';
+        }
     });
 }])
 ;
