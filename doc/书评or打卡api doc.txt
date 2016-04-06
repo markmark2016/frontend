@@ -316,5 +316,5 @@
 		参数：remarkId，userId，content（回复内容）
 	9）对书评更新：http://api.imark.com/mark-backend/remark/update
 		方法：POST
-		参数：remarkId，userId，content（回复内容）,pictureUrl
+		参数：id，userId，content（回复内容）,pictureUrl
 
