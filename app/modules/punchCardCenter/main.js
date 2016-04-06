@@ -200,14 +200,14 @@ angular.module('mark.remark')
 
     $scope.updateRemark = function() {
         RemarkSrv.updateRemarkSrv.action({}, {
-            idFk: $stateParams.remarkId,
+            id: $stateParams.remarkId,
             startPage: $scope.edit.remarkPageStart || "",
             endPage: $scope.edit.remarkPageEnd || "",
             title: $scope.edit.remarkTitle || "",
             comment: $scope.edit.remarkContent || "",
             pictureUrl: getPhotoUrls().join(',')
         }, function(result) {
-            $location.path('/tab/remark-today/' + groupId + '/' + userId);
+            $location.path('/tab/remark-detail/' + $stateParams.remarkId);
         }, function(error) {
             alertDialog($scope, '提交失败', "服务器开小差了，请稍等一下");
         });
