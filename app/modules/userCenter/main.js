@@ -250,7 +250,7 @@ angular.module('mark.user', ['mark.services', 'mark.dialog'])
     AccountSrv.getUserDetail.action({ userId: userId }, function(result) {
         $scope.user = result.data.user;
     });
-    AccountSrv.getUserRemarksInGroup.action({ userId: userId }, function(result) {
+    AccountSrv.getUserRemarksInGroup.action({ userId: userId, groupId: $stateParams.groupId }, function(result) {
         $scope.data = result.data;
     });
 }])

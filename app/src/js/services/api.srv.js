@@ -59,7 +59,7 @@ angular.module('mark.services')
       },
       userRemarkOfGroup: {
         method: 'GET',
-        url: 'users/:userId/reamrk/:groupId'
+        url: 'users/:userId/remark/:groupId'
       },
       userAddBook: {
         method: 'POST',
