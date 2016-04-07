@@ -27,18 +27,18 @@ angular.module('mark.message')
         $scope.summary.like.unread = result.data.unreadlikecount;
         $scope.summary.reply.unread = result.data.unreadreplycount;
     });
-    MessageSrv.getSysMsgsSrv.action({userId: userId}, function(result) {
-        $scope.summary.sys.unread = result.data.unreadsyscount;
-        if (result.data.unreadsyslist.length > 0) $scope.summary.sys.message = result.data.unreadsyslist[0].content;
-    });
-    MessageSrv.getReplyMsgsSrv.action({userId: userId}, function(result) {
-        $scope.summary.reply.unread = result.data.unreadreplycount;
-        if (result.data.unreadreplylist.length > 0) $scope.summary.reply.message = result.data.unreadreplylist[0].content;
-    });
-    MessageSrv.getLikeMsgsSrv.action({userId: userId}, function(result) {
-        $scope.summary.like.unread = result.data.unreadlikecount;
-        if (result.data.unreadlikelist.length > 0) $scope.summary.like.message = result.data.unreadlikelist[0].content;
-    });
+    // MessageSrv.getSysMsgsSrv.action({userId: userId}, function(result) {
+    //     $scope.summary.sys.unread = result.data.unreadsyscount;
+    //     if (result.data.unreadsyslist.length > 0) $scope.summary.sys.message = result.data.unreadsyslist[0].content;
+    // });
+    // MessageSrv.getReplyMsgsSrv.action({userId: userId}, function(result) {
+    //     $scope.summary.reply.unread = result.data.unreadreplycount;
+    //     if (result.data.unreadreplylist.length > 0) $scope.summary.reply.message = result.data.unreadreplylist[0].content;
+    // });
+    // MessageSrv.getLikeMsgsSrv.action({userId: userId}, function(result) {
+    //     $scope.summary.like.unread = result.data.unreadlikecount;
+    //     if (result.data.unreadlikelist.length > 0) $scope.summary.like.message = result.data.unreadlikelist[0].content;
+    // });
 }])
 
 .controller('SysMsgListCtrl', ['$scope', 'MessageSrv', 'AccountSrv', function($scope, MessageSrv, AccountSrv) {
