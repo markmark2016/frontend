@@ -11,6 +11,8 @@ angular.module('mark.user', ['mark.services', 'mark.dialog'])
 }])
 .controller('UserDetailCtrl', ['$scope', '$stateParams', 'AccountSrv', function($scope, $stateParams, AccountSrv) {
     $scope.affectiveStatusMap = AccountSrv.affectiveMap;
+    $scope.userId = AccountSrv.getUserId();
+    $scope.pageUserId = $stateParams.userId;
 
     AccountSrv.getUserDetail.action({ userId: $stateParams.userId }, function (result){
         $scope.user = result.data.user;

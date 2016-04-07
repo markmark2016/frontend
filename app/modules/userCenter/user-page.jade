@@ -16,7 +16,7 @@ ion-view.view-user-detail(view-title='{{user.nickname}}{{(user.nickname ? " - " 
           span(ng-if='user.city || user.province') {{ user.city || user.province }}
           span(ng-if='user.occupation') {{ user.occupation }}
           span(ng-if='user.school') {{ user.school }}
-      ion-item.item.text-center.no-border
+      ion-item.item.text-center.no-border(ng-show="userId == pageUserId")
         a.button.button-circular.cyan-bordered.button-edit-profile(href='#/tab/edit-profile') 编辑资料
       ion-item.item.no-top-padding.no-bottom-padding
         .button-bar.no-border-radius
