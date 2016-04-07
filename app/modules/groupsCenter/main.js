@@ -176,6 +176,12 @@ angular.module('mark.groupsCenter')
 	var userId = AccountSrv.getUserId();
 	$scope.userId = userId;
 	$scope.user = {};
+	$scope.getGroupStatus = function(group) {
+		var now = new Date().getTime();
+		if (now > group.endDate) return 'end';
+		else if (now < group.beginDate) return 'ready';
+		else return 'pending';
+	};
 	GroupsCenterSrv.getAsDetailSrv.action({id:$stateParams.asId,userId:userId},function(result){
 	 	$scope.data = result.data;
 	 	$scope.categories = [];
