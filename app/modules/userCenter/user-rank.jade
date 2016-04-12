@@ -15,7 +15,7 @@ ion-view.view-user-rank(view-title='{{user.nickname}}{{(user.nickname ? " - " : 
             h2.rank-nickname {{rank.nickName}}
             span.rank-score {{rank.score}} 积分
     ion-list(ng-show="isActiveSection('group')")
-        a.item.item-group(ng-repeat="group in groupRanks" href="#/tab/user-rank/{{user.userId}}/group/{{group.id}}")
+        a.item.item-group(ng-repeat="group in groupRanks" href="#/tab/user-rank/{{user.id}}/group/{{group.id}}")
             img(src="{{group.groupImage}}")
             h2 {{group.groupName}}
             span.rank-ratio

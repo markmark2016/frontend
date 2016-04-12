@@ -47,7 +47,8 @@ ion-view.view-user-center(view-title='{{user.nickname}}{{(user.nickname ? " - " 
                 |             
                 h2 连续打卡
                 |             
-                p {{ user.totalPunch }} 天
+                p(ng-show="user.totalPunch") {{ user.totalPunch }} 天
+                p(ng-show="!user.totalPunch") 无
           |         
           .col.no-padding
             .card-table-cell
@@ -56,7 +57,8 @@ ion-view.view-user-center(view-title='{{user.nickname}}{{(user.nickname ? " - " 
                 |             
                 h2 累计读书
                 |             
-                p {{ user.totalRead }} 本
+                p(ng-show="user.totalRead") {{ user.totalRead }} 本
+                p(ng-show="!user.totalRead") 无
         |       
         .row.card-table-row.no-padding
           .col.no-padding
@@ -66,11 +68,12 @@ ion-view.view-user-center(view-title='{{user.nickname}}{{(user.nickname ? " - " 
                 |             
                 h2 累计书评
                 |             
-                p {{  user.totalRemark }} 条
+                p(ng-show="user.totalRemark") {{  user.totalRemark }} 条
+                p(ng-show="!user.totalRemark") 无
           |         
           .col.no-padding
             .card-table-cell
-              a.item.item-thumbnail(href="#/tab/user-coming/{{user.userId}}")
+              a.item.item-thumbnail(href="#/tab/user-comming")
                 img(src='src/img/icon_timeline.png')
                 |             
                 h2 个人轨迹
@@ -80,14 +83,14 @@ ion-view.view-user-center(view-title='{{user.nickname}}{{(user.nickname ? " - " 
         .row.card-table-row.no-padding
           .col.no-padding
             .card-table-cell
-              a.item.item-thumbnail(href="#/tab/user-coming/{{user.userId}}")
+              a.item.item-thumbnail(href="#/tab/user-comming")
                 img(src='src/img/icon_medals.png')
                 |             
                 h2 获得勋章
           |         
           .col.no-padding
             .card-table-cell
-              a.item.item-thumbnail(href="#/tab/user-coming/{{user.userId}}")
+              a.item.item-thumbnail(href="#/tab/user-comming")
                 img(src='src/img/icon_impression.png')
                 |             
                 h2 书友印象

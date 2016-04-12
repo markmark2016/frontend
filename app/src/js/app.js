@@ -156,6 +156,16 @@ angular.module('mark', ['ionic','LocalStorageModule', 'mark.dialog', 'mark.filte
       }
     }
   })
+  .state('tab.user-comming', {
+    url: '/user-comming',
+    cache: true,
+    views: {
+      'tab-user-center': {
+        templateUrl: 'modules/userCenter/user-comming.html',
+        controller: 'UserCommingCtrl'
+      }
+    }
+  })
   .state('tab.user-detail', {
     url: '/user-detail/:userId',
     cache: false,

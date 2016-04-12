@@ -21,4 +21,4 @@ ion-view.view-user-punch(view-title='{{user.nickname}}{{(user.nickname ? " - " :
                 .day 日
             .calender-days
                 .day(ng-repeat="i in blankDays")
-                a.day(ng-repeat="day in days" ng-class="{'today': day.isToday, 'punched': day.isPunched}" href="#/tab/user-punch/{{user.userId}}/day/{{day.timestamp}}") {{day.day}}
+                a.day(ng-repeat="day in days" ng-class="{'today': day.isToday, 'punched': day.isPunched}" href="#/tab/user-punch/{{user.id}}/day/{{day.timestamp}}") {{day.day}}

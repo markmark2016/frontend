@@ -59,7 +59,7 @@ angular.module('mark.user', ['mark.services', 'mark.dialog'])
         $scope.totalRank = result.data.totalranklist;
         $scope.groupRanks = result.data.groupranklist;
         for (var i = 0; i < $scope.totalRank.length; i++) {
-            if ($scope.totalRank[i].id == userId) {
+            if ($scope.totalRank[i].userId == userId) {
                 $scope.myRank = $scope.totalRank[i];
                 break;
             }
@@ -256,4 +256,5 @@ angular.module('mark.user', ['mark.services', 'mark.dialog'])
         $scope.data = result.data;
     });
 }])
+.controller('UserCommingCtrl', [function() {}])
 ;

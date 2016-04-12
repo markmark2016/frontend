@@ -23,14 +23,14 @@ ion-view.view-user-detail(view-title='{{user.nickname}}{{(user.nickname ? " - " 
           a.button.button-clear.button-stable(ng-class="{'border-bottom-active button-energized': isActiveSection('profile')}", ng-click="selectSection('profile')") 资料
           a.button.button-clear.button-stable(ng-class="{'border-bottom-active button-energized': isActiveSection('more')}", ng-click="selectSection('more')") 更多
       ion-item.item.item-user-profile(ng-show="isActiveSection('profile')")
-        ion-list
+        ion-list(ng-show="bookList.likeList.length")
           .item.book-list
             h2 最喜欢的书
             .book-item-wrapper(ng-repeat="book in bookList.likeList")
               .book-item
                 img(src="{{book.image}}")
                 p {{book.title}}
-        ion-list
+        ion-list(ng-show="bookList.wantList.length")
           .item.book-list
             h2 最想看的书
             .book-item-wrapper(ng-repeat="book in bookList.wantList")
