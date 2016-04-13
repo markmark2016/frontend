@@ -30,7 +30,7 @@ angular.module('mark.groupsCenter')
 	 	$scope.data = result.data;
 	});
 }])
-.controller('GroupDetailCtrl', ['$scope', 'ApiSrv','GroupsCenterSrv', 'RemarkSrv', 'WechatSrv', 'alertDialog','confirmDialog','needFocusDialog','$stateParams','$state', 'AccountSrv', function($scope, ApiSrv,GroupsCenterSrv, RemarkSrv, WechatSrv, alertDialog, confirmDialog, needFocusDialog, $stateParams,$state, AccountSrv) {
+.controller('GroupDetailCtrl', ['$scope', 'ApiSrv','GroupsCenterSrv', 'RemarkSrv', 'WechatSrv', 'alertDialog','confirmDialog','needFocusDialog','$stateParams','$state', 'AccountSrv', '$location', function($scope, ApiSrv,GroupsCenterSrv, RemarkSrv, WechatSrv, alertDialog, confirmDialog, needFocusDialog, $stateParams,$state, AccountSrv, $location) {
 	var userId = AccountSrv.getUserId();
 	$scope.userId = userId;
 	GroupsCenterSrv.getGroupDetailSrv.action({id:$stateParams.groupId,userId:userId},function(result){
@@ -102,10 +102,12 @@ angular.module('mark.groupsCenter')
 		needFocusDialog();
 	};
 
-	var activeSection = 'intr';
+	var activeSection = $stateParams.section || 'intr';
 	$scope.activeList = $scope.hotlist;
 	$scope.selectSection = function(section){
 	    activeSection = section;
+	    $location.path('/tab/group/' + $stateParams.groupId + '/' + section);
+	    // window.history.pushState({}, '#/tab/group/' + $stateParams.groupId + '/' + section);
 	};
 
 	$scope.isActiveSection = function(section){

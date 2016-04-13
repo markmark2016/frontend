@@ -88,6 +88,17 @@ angular.module('mark', ['ionic','LocalStorageModule', 'mark.dialog', 'mark.filte
       }
     }
   })
+  .state('tab.group-detail-section', {
+    url: '/group/:groupId/:section',
+    cache: false,
+    animation: 'none',
+    views: {
+      'tab-groups-center': {
+        templateUrl: 'modules/groupsCenter/group-detail.html',
+        controller: 'GroupDetailCtrl'
+      }
+    }
+  })
   .state('tab.group-detail-users', {
     url: '/group/:groupId/users',
     cache: false,
