@@ -36,6 +36,10 @@ angular.module('mark.services')
         }, failed);
     };
 
+    srv.getOAuthUrl = function(path) {
+        return "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxdac023cef2cea008&redirect_uri=http%3a%2f%2fwww.swanhi.com%2fmark-backend%2fwechat%2fauthorize&response_type=code&scope=snsapi_base&state=" + escape(path) + "#wechat_redirect";
+    };
+
     srv.onMenuShareTimeline = function(params) {
         var site_root = window.location.href.replace(/\?.*$/g, '').replace(/\#.*$/g, '').replace(/\/[^\/]*\.[^\/]*$/g, '').replace(/\/$/g, '');
         var defaultImg = site_root + '/img/logo_round.jpg';
@@ -43,7 +47,8 @@ angular.module('mark.services')
         params = $.extend({}, {
             title: '发现 - iMark', // 分享标题
             desc: defaultDesc, // 分享描述
-            link: window.location.href.replace(/\?[^\#]*/g, ''), // 分享链接
+            // link: window.location.href.replace(/\?[^\#]*/g, ''), // 分享链接
+            link: srv.getOAuthUrl(window.location.hash.replace('#', '') || '/tab/groups-center'),
             imgUrl: defaultImg, // 分享图标
             type: 'link', // 分享类型,music、video或link，不填默认为link
             dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
@@ -66,7 +71,8 @@ angular.module('mark.services')
         params = $.extend({}, {
             title: '发现 - iMark', // 分享标题
             desc: defaultDesc, // 分享描述
-            link: window.location.href.replace(/\?[^\#]*/g, ''), // 分享链接
+            // link: window.location.href.replace(/\?[^\#]*/g, ''), // 分享链接
+            link: srv.getOAuthUrl(window.location.hash.replace('#', '') || '/tab/groups-center'),
             imgUrl: defaultImg, // 分享图标
             type: 'link', // 分享类型,music、video或link，不填默认为link
             dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
