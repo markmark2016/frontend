@@ -105,7 +105,8 @@ angular.module('mark.groupsCenter')
 	var activeSection = $stateParams.section || 'intr';
 	$scope.activeList = $scope.hotlist;
 	$scope.selectSection = function(section){
-	    activeSection = section;
+		if (activeSection == section) return;
+	    // activeSection = section;
 	    $location.path('/tab/group/' + $stateParams.groupId + '/' + section);
 	    // window.history.pushState({}, '#/tab/group/' + $stateParams.groupId + '/' + section);
 	};

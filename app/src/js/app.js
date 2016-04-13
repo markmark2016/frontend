@@ -88,10 +88,35 @@ angular.module('mark', ['ionic','LocalStorageModule', 'mark.dialog', 'mark.filte
       }
     }
   })
-  .state('tab.group-detail-section', {
-    url: '/group/:groupId/:section',
+  .state('tab.group-detail-intr', {
+    url: '/group/:groupId/intr',
     cache: false,
     animation: 'none',
+    params: { section: 'intr' },
+    views: {
+      'tab-groups-center': {
+        templateUrl: 'modules/groupsCenter/group-detail.html',
+        controller: 'GroupDetailCtrl'
+      }
+    }
+  })
+  .state('tab.group-detail-comment', {
+    url: '/group/:groupId/comment',
+    cache: false,
+    animation: 'none',
+    params: { section: 'comment' },
+    views: {
+      'tab-groups-center': {
+        templateUrl: 'modules/groupsCenter/group-detail.html',
+        controller: 'GroupDetailCtrl'
+      }
+    }
+  })
+  .state('tab.group-detail-activity', {
+    url: '/group/:groupId/activity',
+    cache: false,
+    animation: 'none',
+    params: { section: 'activity' },
     views: {
       'tab-groups-center': {
         templateUrl: 'modules/groupsCenter/group-detail.html',
