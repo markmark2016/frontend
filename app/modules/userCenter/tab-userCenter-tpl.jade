@@ -94,7 +94,7 @@ ion-view.view-user-center(view-title='{{user.nickname}}{{(user.nickname ? " - " 
                 img(src='src/img/icon_impression.png')
                 |             
                 h2 书友印象
-ion-view.view-need-focus(view-title='请关注 MarkMark' ng-show="!userId && userIdLoaded")
+ion-view.view-need-focus(view-title='请关注 MarkMark' ng-if="!userId && userIdLoaded")
     ion-content
         .card
             .item.item-text-wrapper

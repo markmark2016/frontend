@@ -36,7 +36,7 @@ ion-view.view-group-apply(view-title="申请小组" ng-show="userId")
         ion-list
             .item
                 button.button.button-circular.yellow(ng-disabled="applyGroupForm.$invalid" ng-click="applyGroup()") 提交申请
-ion-view.view-need-focus(view-title='请关注 MarkMark' ng-show="!userId && userIdLoaded")
+ion-view.view-need-focus(view-title='请关注 MarkMark' ng-if="!userId && userIdLoaded")
     ion-content
         .card
             .item.item-text-wrapper

@@ -5,7 +5,7 @@ ion-view.view-message-list(view-title="{{viewTitle}}" ng-show="userId")
             h2 {{msg.userName}}
             p.content {{msg.content}}
             span.item-date {{ msg.createTime | recentDate }}
-ion-view.view-need-focus(view-title='请关注 MarkMark' ng-show="!userId && userIdLoaded")
+ion-view.view-need-focus(view-title='请关注 MarkMark' ng-if="!userId && userIdLoaded")
     ion-content
         .card
             .item.item-text-wrapper
