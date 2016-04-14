@@ -36,6 +36,6 @@ ion-view(view-title='{{ user.name }} - 个人主页')
           |           
           a.button.button-clear.button-stable(ng-class="{'border-bottom-active button-energized': isActiveSection('more')}", ng-click="selectSection('more')") &#x66F4;&#x591A;
     |     
-    div(ng-show="isActiveSection('myGroups')", ng-include="'modules/myGroups/templates/group-selection-tpl.html'", ng-controller='MyGroupsMainCtrl')
+    div(ng-if="isActiveSection('myGroups')", ng-include="'modules/myGroups/templates/group-selection-tpl.html'", ng-controller='MyGroupsMainCtrl')
     |     
-    div(ng-show="isActiveSection('profile')", ng-include="'modules/profile/profile-tpl.html'", ng-controller='ProfileMainCtrl')
+    div(ng-if="isActiveSection('profile')", ng-include="'modules/profile/profile-tpl.html'", ng-controller='ProfileMainCtrl')

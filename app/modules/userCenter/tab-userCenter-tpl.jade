@@ -1,4 +1,4 @@
-ion-view.view-user-center(view-title='{{user.nickname}}{{(user.nickname ? " - " : "")}}个人中心' ng-show="userId")
+ion-view.view-user-center(view-title='{{user.nickname}}{{(user.nickname ? " - " : "")}}个人中心' ng-if="userId")
   ion-content#user_center
     ion-list
       ion-item.item-avatar.item-icon-right(href='#/tab/user-detail/{{user.userId}}')
@@ -47,8 +47,8 @@ ion-view.view-user-center(view-title='{{user.nickname}}{{(user.nickname ? " - " 
                 |             
                 h2 连续打卡
                 |             
-                p(ng-show="user.totalPunch") {{ user.totalPunch }} 天
-                p(ng-show="!user.totalPunch") 无
+                p(ng-if="user.totalPunch") {{ user.totalPunch }} 天
+                p(ng-if="!user.totalPunch") 无
           |         
           .col.no-padding
             .card-table-cell
@@ -57,8 +57,8 @@ ion-view.view-user-center(view-title='{{user.nickname}}{{(user.nickname ? " - " 
                 |             
                 h2 累计读书
                 |             
-                p(ng-show="user.totalRead") {{ user.totalRead }} 本
-                p(ng-show="!user.totalRead") 无
+                p(ng-if="user.totalRead") {{ user.totalRead }} 本
+                p(ng-if="!user.totalRead") 无
         |       
         .row.card-table-row.no-padding
           .col.no-padding
@@ -68,8 +68,8 @@ ion-view.view-user-center(view-title='{{user.nickname}}{{(user.nickname ? " - " 
                 |             
                 h2 累计书评
                 |             
-                p(ng-show="user.totalRemark") {{  user.totalRemark }} 条
-                p(ng-show="!user.totalRemark") 无
+                p(ng-if="user.totalRemark") {{  user.totalRemark }} 条
+                p(ng-if="!user.totalRemark") 无
           |         
           .col.no-padding
             .card-table-cell

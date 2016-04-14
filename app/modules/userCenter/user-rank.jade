@@ -3,7 +3,7 @@ ion-view.view-user-rank(view-title='{{user.nickname}}{{(user.nickname ? " - " : 
         .button-bar.circular-button-bar
             a.button(ng-class="{'active': isActiveSection('total')}", ng-click="selectSection('total')") 总排名
             a.button(ng-class="{'active': isActiveSection('group')}", ng-click="selectSection('group')") 小组内
-    ion-list(ng-show="isActiveSection('total')")
+    ion-list(ng-if="isActiveSection('total')")
         .item.item-rank.self
             span.rank-num {{myRank.num}}
             img(src="{{myRank.headImage}}")
@@ -14,7 +14,7 @@ ion-view.view-user-rank(view-title='{{user.nickname}}{{(user.nickname ? " - " : 
             img(src="{{rank.headImage}}")
             h2.rank-nickname {{rank.nickName}}
             span.rank-score {{rank.score}} 积分
-    ion-list(ng-show="isActiveSection('group')")
+    ion-list(ng-if="isActiveSection('group')")
         a.item.item-group(ng-repeat="group in groupRanks" href="#/tab/user-rank/{{user.id}}/group/{{group.id}}")
             img(src="{{group.groupImage}}")
             h2 {{group.groupName}}

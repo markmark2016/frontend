@@ -16,21 +16,21 @@ ion-view.view-user-detail(view-title='{{user.nickname}}{{(user.nickname ? " - " 
           span(ng-if='user.city || user.province') {{ user.city || user.province }}
           span(ng-if='user.occupation') {{ user.occupation }}
           span(ng-if='user.school') {{ user.school }}
-      ion-item.item.text-center.no-border(ng-show="userId == pageUserId")
+      ion-item.item.text-center.no-border(ng-if="userId == pageUserId")
         a.button.button-circular.cyan-bordered.button-edit-profile(href='#/tab/edit-profile') 编辑资料
       ion-item.item.no-top-padding.no-bottom-padding
         .button-bar.no-border-radius
           a.button.button-clear.button-stable(ng-class="{'border-bottom-active button-energized': isActiveSection('profile')}", ng-click="selectSection('profile')") 资料
           a.button.button-clear.button-stable(ng-class="{'border-bottom-active button-energized': isActiveSection('more')}", ng-click="selectSection('more')") 更多
-      ion-item.item.item-user-profile(ng-show="isActiveSection('profile')")
-        ion-list(ng-show="bookList.likeList.length")
+      ion-item.item.item-user-profile(ng-if="isActiveSection('profile')")
+        ion-list(ng-if="bookList.likeList.length")
           .item.book-list
             h2 最喜欢的书
             .book-item-wrapper(ng-repeat="book in bookList.likeList")
               .book-item
                 img(src="{{book.image}}")
                 p {{book.title}}
-        ion-list(ng-show="bookList.wantList.length")
+        ion-list(ng-if="bookList.wantList.length")
           .item.book-list
             h2 最想看的书
             .book-item-wrapper(ng-repeat="book in bookList.wantList")
@@ -61,7 +61,7 @@ ion-view.view-user-detail(view-title='{{user.nickname}}{{(user.nickname ? " - " 
           .item.profile-item
             .profile-prop 情感状态
             .profile-value {{affectiveStatusMap[user.affectiveStatus]}}
-      ion-item.item.item-user-more(ng-show="isActiveSection('more')")
+      ion-item.item.item-user-more(ng-if="isActiveSection('more')")
         .user-more-item
           img(src="src/img/icon_book_reviews.png")
           p 累计书评

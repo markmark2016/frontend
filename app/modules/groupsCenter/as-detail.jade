@@ -9,19 +9,19 @@ ion-view.view-as-detail(view-title='社群')
             .text-center
                 i.icon.icon-collapse(ng-class="{'ion-ios-arrow-up': intr_uncollapsed, 'ion-ios-arrow-down': !intr_uncollapsed}" ng-click="intr_uncollapsed = !intr_uncollapsed")
         .book-cat-list
-            .book-cat-item(ng-repeat="cat in categories" ng-show="cat.list.length > 0")
+            .book-cat-item(ng-repeat="cat in categories" ng-if="cat.list.length > 0")
                 h2 {{cat.name}}
                 .book-list(ng-class="{'uncollapsed': cat.uncollapsed}")
                     a.book-item-wrapper(ng-repeat="book in cat.list" href="#/tab/group/{{book.id}}")
                         .book-item
                             img(src="{{book.groupImage}}")
                             p {{book.bookName}}
-                            //- .round-badge.lg(ng-show="book.userStatus" ng-class="{'red': (book.userStatus == 1), 'gray': (book.userStatus == 2)}") {{ ["", "正在读", "已读完"][book.userStatus] }}
-                            .round-badge.lg.cyan(ng-show="getGroupStatus(book) == 'ready'") 即将开始
-                            .round-badge.lg.red(ng-show="getGroupStatus(book) == 'pending'") 正在进行
-                            .round-badge.lg.gray(ng-show="getGroupStatus(book) == 'end'") 已结束
+                            //- .round-badge.lg(ng-if="book.userStatus" ng-class="{'red': (book.userStatus == 1), 'gray': (book.userStatus == 2)}") {{ ["", "正在读", "已读完"][book.userStatus] }}
+                            .round-badge.lg.cyan(ng-if="getGroupStatus(book) == 'ready'") 即将开始
+                            .round-badge.lg.red(ng-if="getGroupStatus(book) == 'pending'") 正在进行
+                            .round-badge.lg.gray(ng-if="getGroupStatus(book) == 'end'") 已结束
                 .text-center
-                    i.icon.icon-collapse(ng-show="cat.list.length > 6" ng-class="{'ion-ios-arrow-up': cat.uncollapsed, 'ion-ios-arrow-down': !cat.uncollapsed}" ng-click="cat.uncollapsed = !cat.uncollapsed")
+                    i.icon.icon-collapse(ng-if="cat.list.length > 6" ng-class="{'ion-ios-arrow-up': cat.uncollapsed, 'ion-ios-arrow-down': !cat.uncollapsed}" ng-click="cat.uncollapsed = !cat.uncollapsed")
 
 
 

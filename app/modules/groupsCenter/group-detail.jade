@@ -12,7 +12,7 @@ ion-view(view-title='小组' animation="none")
           a.tab-item(ng-click="selectSection('comment')" ng-class="{'active': isActiveSection('comment')}") 书评
           a.tab-item(ng-click="selectSection('activity')" ng-class="{'active': isActiveSection('activity')}") 活动
     //- ion-nav-view(name='tab-group-detail')
-    .view-group-detail-intr.pane-visible(title="小组" ng-show="isActiveSection('intr')")
+    .view-group-detail-intr.pane-visible(title="小组" ng-if="isActiveSection('intr')")
       .pane-visible
         ion-list.intr-list
           .item.users-list-h-warp
@@ -26,7 +26,7 @@ ion-view(view-title='小组' animation="none")
           .item
             h4 读书标语
             p {{data.readSlogan}}
-          .item(ng-show="data.groupDesc")
+          .item(ng-if="data.groupDesc")
             h4 小组简介
             p.desc {{data.groupDesc}}
           .item
@@ -35,14 +35,14 @@ ion-view(view-title='小组' animation="none")
             p 打卡频率：{{data.frequency}}
             //- p 保证金金额：{{data.num}}元
             p 最晚加入时间：{{data.latestDate | date:'yyyy.MM.dd'}}
-          .item(ng-show="data.bookSummary")
+          .item(ng-if="data.bookSummary")
             h4 图书简介
             p.desc {{data.bookSummary}}
           .item
-            a.button.button-circular.yellow(ng-show="!data.userStatus && userId" ng-click="joinGroup()") 我要加入
-            a.button.button-circular.red(ng-show="data.userStatus && userId" ng-click="quitGroup()") 退出小组
-            a.button.button-circular.yellow(ng-show="!userId" ng-click="joinGroupNeedFocus()") 我也要加入
-    .view-group-detail-comment.pane-visible(title="书评" ng-show="isActiveSection('comment')")
+            a.button.button-circular.yellow(ng-if="!data.userStatus && userId" ng-click="joinGroup()") 我要加入
+            a.button.button-circular.red(ng-if="data.userStatus && userId" ng-click="quitGroup()") 退出小组
+            a.button.button-circular.yellow(ng-if="!userId" ng-click="joinGroupNeedFocus()") 我也要加入
+    .view-group-detail-comment.pane-visible(title="书评" ng-if="isActiveSection('comment')")
       .pane-visible
         .bar-light
           .button-bar.circular-button-bar
@@ -62,7 +62,7 @@ ion-view(view-title='小组' animation="none")
               span.meta-item
                 i.icon.ion-android-chat
                 span.number {{remark.totalReply}}
-    .view-group-detail-activity(title="活动" ng-show="isActiveSection('activity')")
+    .view-group-detail-activity(title="活动" ng-if="isActiveSection('activity')")
       .pane-visible
         .card
           .item.item-text-wrapper

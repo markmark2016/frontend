@@ -17,17 +17,17 @@ ion-list.profile_list
         .book-item
           img(src='{{ book.image }}')
           p.title {{ book.title }}
-          .round-badge.red.lg.book-delete(ng-show="!readOnly.common" ng-click="deleteBook('like', book)")
+          .round-badge.red.lg.book-delete(ng-if="!readOnly.common" ng-click="deleteBook('like', book)")
             i.icon.ion-minus
-      .book-item-wrapper(ng-show="!readOnly.common")
+      .book-item-wrapper(ng-if="!readOnly.common")
         a.book-item(href='#/tab/select/like/book')
           .book-add
             i.icon.ion-ios-plus-outline
-      .book-item-wrapper(ng-show="!readOnly.common")
+      .book-item-wrapper(ng-if="!readOnly.common")
         a.book-item(href='#/tab/select/like/book')
           .book-add
             i.icon.ion-ios-plus-outline
-      .book-item-wrapper(ng-show="!readOnly.common")
+      .book-item-wrapper(ng-if="!readOnly.common")
         a.book-item(href='#/tab/select/like/book')
           .book-add
             i.icon.ion-ios-plus-outline
@@ -38,17 +38,17 @@ ion-list.profile_list
         .book-item
           img(src='{{ book.image }}')
           p.title {{ book.title }}
-          .round-badge.red.lg.book-delete(ng-show="!readOnly.common" ng-click="deleteBook('want', book)")
+          .round-badge.red.lg.book-delete(ng-if="!readOnly.common" ng-click="deleteBook('want', book)")
             i.icon.ion-minus
-      .book-item-wrapper(ng-show="!readOnly.common")
+      .book-item-wrapper(ng-if="!readOnly.common")
         a.book-item(href='#/tab/select/want/book')
           .book-add
             i.icon.ion-ios-plus-outline
-      .book-item-wrapper(ng-show="!readOnly.common")
+      .book-item-wrapper(ng-if="!readOnly.common")
         a.book-item(href='#/tab/select/want/book')
           .book-add
             i.icon.ion-ios-plus-outline
-      .book-item-wrapper(ng-show="!readOnly.common")
+      .book-item-wrapper(ng-if="!readOnly.common")
         a.book-item(href='#/tab/select/want/book')
           .book-add
             i.icon.ion-ios-plus-outline

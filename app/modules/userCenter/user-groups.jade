@@ -12,9 +12,9 @@ ion-view.view-user-groups(view-title='{{user.nickname}}{{(user.nickname ? " - " 
                     h2 {{ association.associationName }}
                     p {{ association.associationDesc }}
                 .icon-collapse(ng-click="association.collapsed = !association.collapsed")
-                    i.icon.ion-chevron-down(ng-show="!association.collapsed")
-                    i.icon.ion-chevron-up(ng-show="association.collapsed")
-            .item.in-as-list(ng-show="association.collapsed")
+                    i.icon.ion-chevron-down(ng-if="!association.collapsed")
+                    i.icon.ion-chevron-up(ng-if="association.collapsed")
+            .item.in-as-list(ng-if="association.collapsed")
                 a.item.item-thumbnail-left.item-in-as-group(ng-repeat="group in association.groupList" href="#/tab/group/{{group.id}}")
                     img(src="{{ group.groupImage }}")
                     h2 {{ group.groupName }}

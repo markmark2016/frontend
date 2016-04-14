@@ -4,4 +4,4 @@ ion-view.view-group-user-list(view-title='在读书友')
             img(src="{{user.headImage}}")
             h2 {{user.nickName}}
             p {{user.intro}}
-            .round-badge.cyan.lg(ng-show="user.leader") 领读人
+            .round-badge.cyan.lg(ng-if="user.leader") 领读人

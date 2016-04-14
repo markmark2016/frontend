@@ -1,4 +1,4 @@
-ion-view.view-group-apply(view-title="申请小组" ng-show="userId")
+ion-view.view-group-apply(view-title="申请小组" ng-if="userId")
     ion-list
         .item.item-header
             h2 申请小组
@@ -26,7 +26,7 @@ ion-view.view-group-apply(view-title="申请小组" ng-show="userId")
             label.item.item-input.item-stacked-label
                 span.input-label 邮箱
                 input(ng-class="{error: applyGroupForm.captainEmail.$dirty && applyGroupForm.captainEmail.$invalid}" type="email" name="captainEmail" ng-model="form.captainEmail" required)
-                span.error-msg(ng-show="applyGroupForm.captainEmail.$dirty && applyGroupForm.captainEmail.$invalid") 必须填入合法的邮箱（如：me@mark.com）
+                span.error-msg(ng-if="applyGroupForm.captainEmail.$dirty && applyGroupForm.captainEmail.$invalid") 必须填入合法的邮箱（如：me@mark.com）
             label.item.item-input.item-stacked-label
                 span.input-label 微信号
                 input(ng-class="{error: applyGroupForm.captainWecode.$dirty && applyGroupForm.captainWecode.$invalid}" type="text" name="captainWecode" ng-model="form.captainWecode" required)

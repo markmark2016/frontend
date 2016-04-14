@@ -1,4 +1,4 @@
-ion-view.view-message-list(view-title="{{viewTitle}}" ng-show="userId")
+ion-view.view-message-list(view-title="{{viewTitle}}" ng-if="userId")
     ion-list
         a.item.item-avatar(ng-repeat="msg in messages" href="{{msg.url}}")
             img(src="{{msg.headImage}}")

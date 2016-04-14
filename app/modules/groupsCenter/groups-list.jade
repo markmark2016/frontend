@@ -4,6 +4,6 @@ ion-list.groups-list
     h2 {{group.groupName}}
     h3 {{group.bookName}}
     //- p {{group.groupDesc}}
-    .round-badge.lg.cyan(ng-show="getGroupStatus(group) == 'ready'") 即将开始
-    .round-badge.lg.red(ng-show="getGroupStatus(group) == 'pending'") 正在进行
-    .round-badge.lg.gray(ng-show="getGroupStatus(group) == 'end'") 已结束
+    .round-badge.lg.cyan(ng-if="getGroupStatus(group) == 'ready'") 即将开始
+    .round-badge.lg.red(ng-if="getGroupStatus(group) == 'pending'") 正在进行
+    .round-badge.lg.gray(ng-if="getGroupStatus(group) == 'end'") 已结束
