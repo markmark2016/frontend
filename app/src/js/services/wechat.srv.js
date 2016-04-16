@@ -45,7 +45,7 @@ angular.module('mark.services')
         var defaultImg = site_root + '/img/logo_round.jpg';
         var defaultDesc = "品味书香，分享时光，一起“悦”读";
         params = $.extend({}, {
-            title: '发现 - iMark', // 分享标题
+            title: '发现 - MarkMark', // 分享标题
             desc: defaultDesc, // 分享描述
             // link: window.location.href.replace(/\?[^\#]*/g, ''), // 分享链接
             link: srv.getOAuthUrl(window.location.hash.replace('#', '') || '/tab/groups-center'),
@@ -69,7 +69,7 @@ angular.module('mark.services')
         var defaultImg = site_root + '/img/logo_round.jpg';
         var defaultDesc = "品味书香，分享时光，一起“悦”读";
         params = $.extend({}, {
-            title: '发现 - iMark', // 分享标题
+            title: '发现 - MarkMark', // 分享标题
             desc: defaultDesc, // 分享描述
             // link: window.location.href.replace(/\?[^\#]*/g, ''), // 分享链接
             link: srv.getOAuthUrl(window.location.hash.replace('#', '') || '/tab/groups-center'),

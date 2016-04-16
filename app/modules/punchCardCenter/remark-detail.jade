@@ -28,12 +28,12 @@ ion-view.view-remark-detail(view-title="书评")
                     p {{reply.interactDate | date:'yyyy-MM-dd'}}
                     p.content {{reply.content}}
 form.bar.item-input-inset.bar-remark-tools(name="remarkReplyForm" novalidate)
-    .button-bar(ng-if="!toggleReply")
+    .button-bar(ng-if="!status.toggleReply")
         a.button.button-icon.icon.ion-thumbsup(ng-class="remarkLiked ? 'active' : ''", ng-click="doLike()")
-        a.button.button-icon.icon.ion-android-chat(ng-click="toggleReply()")
+        a.button.button-icon.icon.ion-android-chat(ng-click="status.toggleReply = true")
         a.button.button-icon.icon.ion-edit(ng-if="remark.remark.userIdFk == userId" href="#/tab/edit-remark/{{remark.remark.id}}")
-    button.button.button-clear.button-icon.icon.ion-ios-arrow-down(ng-if="toggleReply", ng-click="toggleReply = !toggleReply")
-    label.item-input-wrapper(ng-if="toggleReply")
+    button.button.button-clear.button-icon.icon.ion-ios-arrow-down(ng-if="status.toggleReply", ng-click="status.toggleReply = !status.toggleReply")
+    label.item-input-wrapper(ng-if="status.toggleReply")
         textarea(type="text", name="remarkReplyContent", ng-model="remarkReplyContent" required)
-    button.button.button-clear.button-positive(ng-if="toggleReply", ng-click="doReply()", ng-disabled="remarkReplyForm.remarkReplyContent.$invalid") 发送
+    button.button.button-clear.button-positive(ng-if="status.toggleReply", ng-click="doReply()", ng-disabled="remarkReplyForm.remarkReplyContent.$invalid") 发送
 

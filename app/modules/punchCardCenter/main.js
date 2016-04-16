@@ -223,6 +223,7 @@ angular.module('mark.remark')
 
     $scope.group = {};
     $scope.remark = {};
+    $scope.status = {};
 
     $scope.remarkLiked = false;
 
@@ -253,7 +254,7 @@ angular.module('mark.remark')
         var bookname = $scope.remark.bookname ? ('《' + $scope.remark.bookname + '》') : "";
         var dayname = $scope.remark.continuepunch ? ('第' + $scope.remark.continuepunch + '天') : ""
         var shareParams = {
-            title: "今天我在iMark坚持阅读" + bookname + dayname + "。品味书香，分享时光，一起“悦”读！",
+            title: "今天我在MarkMark坚持阅读" + bookname + dayname + "。品味书香，分享时光，一起“悦”读！",
             desc: $scope.remark.remark.comment,
             imgUrl: (pictureUrls[0] || $scope.remark.image)
         };
@@ -295,7 +296,7 @@ angular.module('mark.remark')
             content: $scope.remarkReplyContent
         }, function() {
             refreshRemark();
-            $scope.toggleReply = false;
+            $scope.status.toggleReply = false;
             $scope.remarkReplyContent = undefined;
         }, function() {
             alertDialog($scope, '回复失败', "服务器开小差了，请稍等一下");

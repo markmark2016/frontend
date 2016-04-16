@@ -41,7 +41,7 @@ angular.module('mark.groupsCenter')
 	    AccountSrv.getUserDetail.action({ userId: userId }, function (result){
 	        $scope.user = result.data.user;
 	        var shareUserName = (($scope.user && $scope.user.nickname) ? $scope.user.nickname : "我");
-	        var shareAsName = (($scope.data && $scope.data.groupName) ? $scope.data.groupName : "iMark");
+	        var shareAsName = (($scope.data && $scope.data.groupName) ? $scope.data.groupName : "MarkMark");
 	        var shareDesc = (($scope.data && $scope.data.groupDesc) ? $scope.data.groupDesc : "品味书香，分享时光，一起“悦”读");
 	        var shareImg = (($scope.data && $scope.data.groupImage) ? $scope.data.groupImage : null);
 	        var shareParams = {
@@ -57,7 +57,7 @@ angular.module('mark.groupsCenter')
 	        });
 	    }, function() {
 	        var shareUserName = (($scope.user && $scope.user.nickname) ? $scope.user.nickname : "我");
-	        var shareAsName = (($scope.data && $scope.data.groupName) ? $scope.data.groupName : "iMark");
+	        var shareAsName = (($scope.data && $scope.data.groupName) ? $scope.data.groupName : "MarkMark");
 	        var shareDesc = (($scope.data && $scope.data.groupDesc) ? $scope.data.groupDesc : "品味书香，分享时光，一起“悦”读");
 	        var shareImg = (($scope.data && $scope.data.groupImage) ? $scope.data.groupImage : null);
 	        var shareParams = {
@@ -198,7 +198,7 @@ angular.module('mark.groupsCenter')
 	    AccountSrv.getUserDetail.action({ userId: userId }, function (result){
 	        $scope.user = result.data.user;
 	        var shareUserName = (($scope.user && $scope.user.nickname) ? $scope.user.nickname : "我");
-	        var shareAsName = (($scope.data && $scope.data.associationName) ? $scope.data.associationName : "iMark");
+	        var shareAsName = (($scope.data && $scope.data.associationName) ? $scope.data.associationName : "MarkMark");
 	        var shareDesc = (($scope.data && $scope.data.associationDesc) ? $scope.data.associationDesc : "品味书香，分享时光，一起“悦”读");
 	        var shareImg = (($scope.data && $scope.data.image) ? $scope.data.image : null);
 	        var shareParams = {
@@ -214,7 +214,7 @@ angular.module('mark.groupsCenter')
 	        });
 	    }, function (){
 	        var shareUserName = (($scope.user && $scope.user.nickname) ? $scope.user.nickname : "我");
-	        var shareAsName = (($scope.data && $scope.data.associationName) ? $scope.data.associationName : "iMark");
+	        var shareAsName = (($scope.data && $scope.data.associationName) ? $scope.data.associationName : "MarkMark");
 	        var shareDesc = (($scope.data && $scope.data.associationDesc) ? $scope.data.associationDesc : "品味书香，分享时光，一起“悦”读");
 	        var shareImg = (($scope.data && $scope.data.image) ? $scope.data.image : null);
 	        var shareParams = {
