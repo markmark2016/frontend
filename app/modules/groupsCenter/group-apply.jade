@@ -1,7 +1,7 @@
 ion-view.view-group-apply(view-title="申请小组" ng-if="userId")
-    ion-list
-        .item.item-header
-            h2 申请小组
+    //- ion-list
+    //-     .item.item-header
+    //-         h2 申请小组
     form(name="applyGroupForm" novalidate)
         ion-list
             label.item.item-input.item-stacked-label
@@ -13,16 +13,16 @@ ion-view.view-group-apply(view-title="申请小组" ng-if="userId")
             label.item.item-input.item-stacked-label
                 span.input-label 读书标语
                 input(ng-class="{error: applyGroupForm.readSlogan.$dirty && applyGroupForm.readSlogan.$invalid}" type="text" name="readSlogan" ng-model="form.readSlogan" required)
-            label.item.item-input.item-stacked-label
-                span.input-label 小组简介
-                textarea(ng-class="{error: applyGroupForm.groupDesc.$dirty && applyGroupForm.groupDesc.$invalid}" name="groupDesc" ng-model="form.groupDesc" required)
+            //- label.item.item-input.item-stacked-label
+            //-     span.input-label 小组简介
+            //-     textarea(ng-class="{error: applyGroupForm.groupDesc.$dirty && applyGroupForm.groupDesc.$invalid}" name="groupDesc" ng-model="form.groupDesc" required)
         ion-list
             label.item.item-input.item-stacked-label
                 span.input-label 申请人姓名
                 input(ng-class="{error: applyGroupForm.captainName.$dirty && applyGroupForm.captainName.$invalid}" type="text" name="captainName" ng-model="form.captainName" required)
-            label.item.item-input.item-stacked-label
-                span.input-label 申请人简介
-                textarea(ng-class="{error: applyGroupForm.captainBrief.$dirty && applyGroupForm.captainBrief.$invalid}" name="captainBrief" ng-model="form.captainBrief" required)
+            //- label.item.item-input.item-stacked-label
+            //-     span.input-label 申请人简介
+            //-     textarea(ng-class="{error: applyGroupForm.captainBrief.$dirty && applyGroupForm.captainBrief.$invalid}" name="captainBrief" ng-model="form.captainBrief" required)
             label.item.item-input.item-stacked-label
                 span.input-label 邮箱
                 input(ng-class="{error: applyGroupForm.captainEmail.$dirty && applyGroupForm.captainEmail.$invalid}" type="email" name="captainEmail" ng-model="form.captainEmail" required)
