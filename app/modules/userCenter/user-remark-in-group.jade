@@ -8,7 +8,7 @@ ion-view.view-user-remark-in-group(view-title='{{user.nickname}}{{(user.nickname
         a.item.item-avatar.item-remark(ng-repeat="remark in data.remarklist" href="#/tab/remark-detail/{{remark.remarkId}}")
             img(src="{{remark.headImage}}")
             h2 {{remark.userName}}
-            p {{remark.createTime | date: 'yyyy-MM-dd  hh:mm'}}
+            p {{remark.createTime | date: 'yyyy-MM-dd  HH:mm'}}
             h2.title {{remark.title}}
             p.content {{remark.comment}}
             .meta
