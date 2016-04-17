@@ -213,7 +213,7 @@ angular.module('mark.remark')
         });
     };
 }])
-.controller('RemarkDetailController', ['$scope', 'RemarkSrv', 'AccountSrv', 'WechatSrv', '$stateParams', 'alertDialog', 'needFocusDialog', function($scope, RemarkSrv, AccountSrv, WechatSrv, $stateParams, alertDialog, needFocusDialog) {
+.controller('RemarkDetailController', ['$scope', 'RemarkSrv', 'AccountSrv', 'WechatSrv', '$stateParams', 'alertDialog', 'needFocusDialog', '$location', function($scope, RemarkSrv, AccountSrv, WechatSrv, $stateParams, alertDialog, needFocusDialog, $location) {
     var groupId = $stateParams.groupId;
     var userId = AccountSrv.getUserId();
     $scope.userId = userId;
@@ -224,6 +224,7 @@ angular.module('mark.remark')
     $scope.group = {};
     $scope.remark = {};
     $scope.status = {};
+    $scope.interact = {};
 
     $scope.remarkLiked = false;
 
@@ -293,11 +294,11 @@ angular.module('mark.remark')
             remarkId: $scope.remark.remark.id,
             userId: userId,
             authorId: $scope.remark.remark.userIdFk,
-            content: $scope.remarkReplyContent
+            content: $scope.interact.remarkReplyContent
         }, function() {
             refreshRemark();
             $scope.status.toggleReply = false;
-            $scope.remarkReplyContent = undefined;
+            $scope.interact.remarkReplyContent = undefined;
         }, function() {
             alertDialog($scope, '回复失败', "服务器开小差了，请稍等一下");
         });
@@ -318,6 +319,12 @@ angular.module('mark.remark')
             }, function() {
                 alertDialog($scope, '点赞失败', "服务器开小差了，请稍等一下");
             });
+        }
+    };
+
+    $scope.gotoGroup = function() {
+        if ($scope.remark.remark.groupIdFk) {
+            $location.path('/tab/group/' + $scope.remark.remark.groupIdFk);
         }
     };
 }])
