@@ -53,15 +53,17 @@ angular.module('mark.remark')
             $scope.edit.remarkContent = result.data.remark.comment;
             var pictureUrlSplit = $scope.remark.pictureUrl.split(',');
             var pictureUrls = [];
-            for (var i = 0; i < pictureUrlSplit.length; i++) {
-                var canPushUrl = true;
-                for (var j = 0; j < pictureUrls.length; j++) {
-                    if (pictureUrlSplit[i] == pictureUrls[j]) {
-                        canPushUrl = false;
-                        break;
+            if ($scope.remark.pictureUrl.length > 0) {
+                for (var i = 0; i < pictureUrlSplit.length; i++) {
+                    var canPushUrl = true;
+                    for (var j = 0; j < pictureUrls.length; j++) {
+                        if (pictureUrlSplit[i] == pictureUrls[j]) {
+                            canPushUrl = false;
+                            break;
+                        }
                     }
+                    if (canPushUrl) pictureUrls.push(pictureUrlSplit[i]);
                 }
-                if (canPushUrl) pictureUrls.push(pictureUrlSplit[i]);
             }
             $scope.remark.remark.pictureUrls = pictureUrls;
             for (var i = 0; i < pictureUrls.length; i++) {
@@ -175,7 +177,8 @@ angular.module('mark.remark')
             comment: $scope.edit.remarkContent || "",
             pictureUrl: getPhotoUrls().join(',')
         }, function(result) {
-            $location.path('/tab/remark-today/' + groupId + '/' + userId);
+            // $location.path('/tab/remark-today/' + groupId + '/' + userId);
+            $location.path('/tab/group/' + groupId + '/comment');
         }, function(error) {
             alertDialog($scope, '提交失败', "服务器开小差了，请稍等一下");
         });
@@ -192,7 +195,8 @@ angular.module('mark.remark')
             comment: $scope.edit.remarkContent || "",
             pictureUrl: getPhotoUrls().join(',')
         }, function(result) {
-            $location.path('/tab/remark-today/' + groupId + '/' + userId);
+            // $location.path('/tab/remark-today/' + groupId + '/' + userId);
+            $location.path('/tab/group/' + groupId + '/comment');
         }, function(error) {
             alertDialog($scope, '提交失败', "服务器开小差了，请稍等一下");
         });
@@ -233,15 +237,17 @@ angular.module('mark.remark')
 
         var pictureUrlSplit = $scope.remark.pictureUrl.split(',');
         var pictureUrls = [];
-        for (var i = 0; i < pictureUrlSplit.length; i++) {
-            var canPushUrl = true;
-            for (var j = 0; j < pictureUrls.length; j++) {
-                if (pictureUrlSplit[i] == pictureUrls[j]) {
-                    canPushUrl = false;
-                    break;
+        if ($scope.remark.pictureUrl.length > 0) {
+            for (var i = 0; i < pictureUrlSplit.length; i++) {
+                var canPushUrl = true;
+                for (var j = 0; j < pictureUrls.length; j++) {
+                    if (pictureUrlSplit[i] == pictureUrls[j]) {
+                        canPushUrl = false;
+                        break;
+                    }
                 }
+                if (canPushUrl) pictureUrls.push(pictureUrlSplit[i]);
             }
-            if (canPushUrl) pictureUrls.push(pictureUrlSplit[i]);
         }
         $scope.remark.remark.pictureUrls = pictureUrls;
         for (var i = 0; i < $scope.remark.likelist.length; i++) {

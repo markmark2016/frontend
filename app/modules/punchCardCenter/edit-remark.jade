@@ -1,4 +1,4 @@
-ion-view.view-edit-remark(view-title="{{group.isComplete ? '写书评' : '打卡'}}" ng-if="userId")
+ion-view.view-edit-remark(view-title="打卡" ng-if="userId")
     ion-content(overflow-scroll='false')
         form(name="editRemarkForm" novalidate)
             ion-list
@@ -11,7 +11,7 @@ ion-view.view-edit-remark(view-title="{{group.isComplete ? '写书评' : '打卡
                         input(type="number" name="remarkPageEnd" ng-model="edit.remarkPageEnd" min="{{edit.remarkPageStart}}" required integer)
                         span 页
                         a.button.button-icon.icon.ion-ios-camera-outline.button-take-photo(ng-click="takePhoto($event)")
-                        input.input-file(ng-if="false" type="file" accept="image/*")
+                        input.input-file(ng-show="false" type="file" accept="image/*")
                     div.error(ng-if="editRemarkForm.remarkPageStart.$error.max || editRemarkForm.remarkPageEnd.$error.min") 起始页码必须小于终止页码
                     div.error(ng-if="editRemarkForm.remarkPageStart.$error.integer") 起始页码必须为数字
                     div.error(ng-if="editRemarkForm.remarkPageEnd.$error.integer") 终止页码必须为数字
