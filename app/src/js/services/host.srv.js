@@ -8,7 +8,7 @@ angular.module('mark.services')
   var productionHost = {
     env: 'production',
     wechat_debug: wechat_debug,
-    main: 'http://101.200.158.160/mark-backend/'
+    main: 'http://sub.markeveryday.com/mark-backend/'
   };
   var stagingHost = {
     env: 'staging',

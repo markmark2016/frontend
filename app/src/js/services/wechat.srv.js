@@ -37,7 +37,7 @@ angular.module('mark.services')
     };
 
     srv.getOAuthUrl = function(path) {
-        return "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxdac023cef2cea008&redirect_uri=http%3a%2f%2fwww.swanhi.com%2fmark-backend%2fwechat%2fauthorize&response_type=code&scope=snsapi_userinfo&state=" + escape(path) + "#wechat_redirect";
+        return "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx1ee69033f7a8a6f3&redirect_uri=http%3a%2f%2fsub.markeveryday.com%2fmark-backend%2fwechat%2fauthorize&response_type=code&scope=snsapi_userinfo&state=" + escape(path) + "#wechat_redirect";
     };
 
     srv.onMenuShareTimeline = function(params) {
