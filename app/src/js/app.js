@@ -474,7 +474,7 @@ angular.module('mark', ['ionic','LocalStorageModule', 'mark.dialog', 'mark.filte
     cache: false,
     views: {
       'tab-message-center': {
-        templateUrl: 'modules/messageCenter/message-list.html',
+        templateUrl: 'modules/messageCenter/message-sys-list.html',
         controller: 'SysMsgListCtrl'
       }
     }
@@ -484,7 +484,7 @@ angular.module('mark', ['ionic','LocalStorageModule', 'mark.dialog', 'mark.filte
     cache: false,
     views: {
       'tab-message-center': {
-        templateUrl: 'modules/messageCenter/message-list.html',
+        templateUrl: 'modules/messageCenter/message-reply-list.html',
         controller: 'ReplyMsgListCtrl'
       }
     }
@@ -494,7 +494,7 @@ angular.module('mark', ['ionic','LocalStorageModule', 'mark.dialog', 'mark.filte
     cache: false,
     views: {
       'tab-message-center': {
-        templateUrl: 'modules/messageCenter/message-list.html',
+        templateUrl: 'modules/messageCenter/message-like-list.html',
         controller: 'LikeMsgListCtrl'
       }
     }
