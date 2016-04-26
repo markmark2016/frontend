@@ -230,7 +230,7 @@ angular.module('mark.remark')
     $scope.status = {};
     $scope.interact = {};
 
-    $scope.remarkLiked = false;
+    $scope.status.remarkLiked = false;
 
     function getRemarkCallback(result) {
         $scope.remark = result.data;
@@ -252,7 +252,7 @@ angular.module('mark.remark')
         $scope.remark.remark.pictureUrls = pictureUrls;
         for (var i = 0; i < $scope.remark.likelist.length; i++) {
             if ($scope.remark.likelist[i].userId == userId) {
-                $scope.remarkLiked = true;
+                $scope.status.remarkLiked = true;
                 break;
             }
         }
@@ -315,7 +315,7 @@ angular.module('mark.remark')
             needFocusDialog($scope);
             return;
         }
-        if (!$scope.remarkLiked) {
+        if (!$scope.status.remarkLiked) {
             RemarkSrv.postLikeSrv.action({}, {
                 remarkId: $scope.remark.remark.id,
                 userId: userId,
@@ -324,7 +324,9 @@ angular.module('mark.remark')
                 refreshRemark();
             }, function() {
                 alertDialog($scope, '点赞失败', "服务器开小差了，请稍等一下");
+                $scope.status.remarkLiked = false;
             });
+            $scope.status.remarkLiked = true;
         }
     };
 

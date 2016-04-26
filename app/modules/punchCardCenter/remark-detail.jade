@@ -29,7 +29,7 @@ ion-view.view-remark-detail(view-title="书评")
                     p.content {{reply.content}}
 form.bar.item-input-inset.bar-remark-tools(name="remarkReplyForm" novalidate)
     .button-bar(ng-if="!status.toggleReply")
-        a.button.button-icon.icon.ion-thumbsup(ng-class="remarkLiked ? 'active' : ''", ng-click="doLike()")
+        a.button.button-icon.icon.ion-thumbsup(ng-class="status.remarkLiked ? 'active' : ''", ng-click="doLike()")
         a.button.button-icon.icon.ion-android-chat(ng-click="status.toggleReply = true")
         a.button.button-icon.icon.ion-edit(ng-if="remark.remark.userIdFk == userId" href="#/tab/edit-remark/{{remark.remark.id}}")
     button.button.button-clear.button-icon.icon.ion-ios-arrow-down(ng-if="status.toggleReply", ng-click="status.toggleReply = !status.toggleReply")
